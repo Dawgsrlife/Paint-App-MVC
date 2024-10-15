@@ -1,15 +1,15 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Jiaye_Tian email: aki.tian@mail.utoronto.ca utorid: tianji61
 
 Oct 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Assignment instructions did not received
+	What I will do today: Assignment instructions did not received
+	Obstacles I face: Assignment instructions did not received
 
 Oct 15,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Assignment instructions did not received
+	What I will do today: Add start codes, edit member.txt, construct UML for exisits
+	Obstacles I face: Nothing
 
 Oct 16,2024
 	What I did yesterday:
