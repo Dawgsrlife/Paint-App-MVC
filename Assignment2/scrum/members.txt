@@ -1,4 +1,4 @@
 member1: tianji61 Jiaye_Tian aki.tian@mail.utoronto.ca
-member2: UTORID NAME CONTACT_INFO
+member2: huaethan Ethan_Hua ethan.hua@mail.utoronto.ca
 member3: UTORID NAME CONTACT_INFO
 member4: UTORID NAME CONTACT_INFO
