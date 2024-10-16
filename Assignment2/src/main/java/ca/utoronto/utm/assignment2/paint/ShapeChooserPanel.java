@@ -29,6 +29,16 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                 String command = ((Button) event.getSource()).getText();
                 view.setMode(command);
                 System.out.println(command);
+
+                // highlight button when selected
+                for (Object o : this.getChildren()) {
+                        Button b = (Button) o;
+                        if (b.getText().equals(command)) {
+                                b.setStyle("-fx-background-color: yellow;");
+                        } else {
+                                b.setStyle(null);
+                        }
+                }
         }
 }
 
