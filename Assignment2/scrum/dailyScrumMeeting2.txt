@@ -1,20 +1,20 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Ethan Hua     email: ethan.hua@mail.utoronto.ca    utorid: 1010376111
 
 Oct 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: N/A
+	What I will do today: N/A
+	Obstacles I face: N/A
 
 Oct 15,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: N/A
+	What I will do today: Update members.txt with my contacts
+	Obstacles I face: Figuring out each of the files in the repo
 
 Oct 16,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Updated members.txt with my contacts
+	What I will do today: Work on BUG1.005
+	Obstacles I face: Figuring out the class hierarchy and how the class interact with each other
 
 Oct 17,2024
 	What I did yesterday:

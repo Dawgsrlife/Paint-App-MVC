@@ -70,6 +70,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    // System.out.println(this.model.getPoints());
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    this.model.addLineBreak();
                 }
                 break;
             case "Polyline": break;
@@ -84,8 +87,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 // Draw Lines
                 ArrayList<Point> points = this.model.getPoints();
 
+                ArrayList<Integer> lineBreaks = this.model.getLineBreaks();
+
                 g2d.setFill(Color.RED);
+
+                int j = 0;
                 for(int i=0;i<points.size()-1; i++){
+                        if(j < lineBreaks.size() && i == lineBreaks.get(j)) {
+//                            System.out.println(lineBreaks.get(j) + " " +
+//                                    points.get(i).x + " " + points.get(i).y + " " +
+//                                    points.get(i+1).x + " " + points.get(i+1).y);
+                            j++;
+                            continue;
+                        }
                         Point p1=points.get(i);
                         Point p2=points.get(i+1);
                         g2d.strokeLine(p1.x,p1.y,p2.x,p2.y);

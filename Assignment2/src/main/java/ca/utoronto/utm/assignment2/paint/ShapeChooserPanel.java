@@ -4,7 +4,12 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
+import java.util.*;
+
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
+        // Ethan: using buttonLabels as mode breaks the code
+        final private String[] buttonLabels = { "●", "▬", "■", "~", "〽" };
+        final private String[] buttonNames = {"Circle", "Rectangle", "Square", "Squiggle", "Polyline"};
 
         private View view;
 
@@ -21,7 +26,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
                 this.view = view;
 
-                String[] buttonLabels = { "●", "▬", "■", "~", "〽" };
+
 
                 // adding gap between elements
                 this.setVgap(5.0);
@@ -37,16 +42,35 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
                 }
         }
 
+        /**
+         * Returns the index of the object in the array, or -1 if it is not in the array
+         * @param arr The array to be searched
+         * @param item The item to be found
+         * @return The index of the item in the array, or -1 if it is not in the array
+         */
+        private int indexOf(Object[] arr, Object item) {
+                for (int i = 0; i < arr.length; i++) {
+                        if (arr[i].equals(item)) {
+                                return i;
+                        }
+                }
+                return -1;
+        }
+
         @Override
         public void handle(ActionEvent event) {
-                String command = ((Button) event.getSource()).getText();
+                // TODO: temporary fix to buttonLabels issue, this should be reimplemented
+                // TODO: at a later date
+                Button source = (Button) event.getSource();
+                int buttonNameIndex = indexOf(buttonLabels, source.getText());
+                String command = buttonNames[buttonNameIndex];
                 view.setMode(command);
                 System.out.println(command);
 
                 // highlight button when selected
                 for (Object o : this.getChildren()) {
                         Button b = (Button) o;
-                        if (b.getText().equals(command)) {
+                        if (b.getText().equals(source.getText())) {
                                 b.setStyle(SELECTED);
                         } else {
                                 b.setStyle(UNSELECTED);
