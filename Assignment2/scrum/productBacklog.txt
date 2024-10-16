@@ -85,6 +85,13 @@ I WANT   : To be able to select the current line thickness, to be applied
            	rectangle as well as two thickly outlined rectangles and a thick squiggle
 SO THAT  : 
 --------------------------------------------------------------------------
+TYPE     : USER STORY US?.008 : huaethan : NotStarted
+NAME     : Undo button
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL : 
+AS A     : user
+I WANT   : To be able to undo shapes or squiggles that I have previously made,
+	   removing them from the canvas.
 --------------------------------------------------------------------------
 TYPE     : BUG BUG?.003 : UTORID : NotStarted 
 NAME     : Architecture behind choosing selection mode is poor
