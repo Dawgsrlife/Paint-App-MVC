@@ -34,7 +34,7 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
 TYPE     : BUG BUG1.006 : tianji61 : Started
 NAME     : Circle drawing is broken
 PRIORITY : 1
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 30 minutes    ACTUAL :
 ISSUE    : The first click should specify the center of the circle, with
            a drag for the radius. gThis is not the case in the current
            implementation.
