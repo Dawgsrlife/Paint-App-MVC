@@ -93,6 +93,7 @@ AS A     : user
 I WANT   : To be able to undo shapes or squiggles that I have previously made,
 	   removing them from the canvas.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : BUG BUG?.003 : UTORID : NotStarted 
 NAME     : Architecture behind choosing selection mode is poor
 PRIORITY : 3
