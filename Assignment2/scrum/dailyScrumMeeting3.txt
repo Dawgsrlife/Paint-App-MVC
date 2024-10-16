@@ -1,15 +1,20 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Alexander He Meng email: alex.meng@mail.utoronto.ca utorid: mengale1
 
 Oct 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read the assignment page - the assignment has not yet
+	been released!
+	What I will do today: Getting in contact with my group members for this
+	assignment.
+	Obstacles I face: Figuring out the nature of scrum sprints.
 
 Oct 15,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read the assignment page.
+	What I will do today: Listen to Professor Arnold's lecture regarding the
+	introduction to this assignment; edit members.txt, run and test Paint.java
+	in the starter code.
+	Obstacles I face: The influx of new classes; getting to know this
+	assignment through the provided starter code.
 
 Oct 16,2024
 	What I did yesterday:
