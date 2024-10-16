@@ -17,19 +17,19 @@ Oct 16,2024
 	Obstacles I face: Nothing
 
 Oct 17,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG1.001 and BUG1.002
+	What I will do today: Fix BUG1.006
+	Obstacles I face: Nothing
 
 Oct 18,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG1.006
+	What I will do today: Implement US1.002
+	Obstacles I face: Nothing
 
 Oct 19,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US1.002
+	What I will do today: Implement US 1.004 and US 1.004
+	Obstacles I face: Nothing
 
 Oct 20,2024
 	What I did yesterday:
