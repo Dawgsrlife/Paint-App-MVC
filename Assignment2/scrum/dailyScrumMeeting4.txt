@@ -1,15 +1,17 @@
 # Fill in, commit and push each day.
-Member name:      email:     utorid:   
+Member name: Jiaqi_Chen     email: jackiejiaqi.chen@mail.utoronto.ca    utorid: chen2046
 
 Oct 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Check assignment page--not yet released.
+	What I will do today: Preview lecture notes.
+	Obstacles I face: New concepts with Design Patterns.
 
 Oct 15,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Check assignment page, review the concepts to be
+	used in software design.
+	What I will do today: Get in contact with group members, fill out basic members
+	info, understand the organization of the code and finish Architecture.txt.
+	Obstacles I face: Understand the issues of bugs mentioned in SprintBacklog1.
 
 Oct 16,2024
 	What I did yesterday:

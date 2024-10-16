@@ -8,7 +8,11 @@ High Level Architecture:
 	Model
 	The Model captures enough information to re-draw the sketch of
 	the user.
-	
+	Circle: Represent circle shape.
+	Point: Represent a coordinate in 2D.
+	Shape: An abstract class represents different shapes. (to be implemented)
+	PaintModel: Store and manage the data for points and shapes.
+
 	View+Controller
 	There is a View class as well as a few, what we call, view components.
 	The View class containing the BorderPane as well as containing all of its components.
@@ -24,12 +28,34 @@ High Level Architecture:
 	as appropriate. This means that each view component can speak to the
 	other view components. An example of this is when the ShapeChooserPanel
 	buttons are clicked, resulting in a mode change in the PaintPanel.
-	
+
+	View: The main container that holds all view components
+	ShapeChooserPanel: The controller that handles shape selection and
+	updates the current drawing mode.
+	PaintPanel: The canvas view where shapes are drawn and displayed.
+	Also handles MouseEvent as part of the controller.
+	Paint: Initializes the model (data) and view (UI) to start the paint
+	program.
+
 ---------------------------------------------------------------------
 TODO!!! Add in more architecture and discussion. For example, 
 do you do something interesting to fix the association between the 
 ShapeChooser and the PaintPanel? How about the PaintModel, something
 is clearly wrong with it. Can you come up with a better architecture?
+
+1.Association between ShapeChooserPanel and PaintPanel:
+Originally, the ShapeChooserPanel will communicate with PaintPanel by calling
+methods in the View, which causes MVC intertwined in a complex way.
+Instead, have the controller in ShapeChooserPanel and PaintPanel call the
+PaintModel directly, which help maintain and extend the system.
+
+2. PaintModel should work on all shapes:
+Add an abstract Shape class for modeling all shapes such as circles,
+rectangles, squares, etc.
+
+3. Make PaintModel class manage all shapes instead of only ArrayList<Circles>
+so that the model data can store all shapes regardless of type.
+
 ---------------------------------------------------------------------
 
 DESIGN PATTERNS USED
@@ -43,7 +69,20 @@ DESIGN PATTERNS USED
 	Composite:
 	Factory:
 	Builder:
-	Observer/Observable:
+	Observer/Observable: PaintPanel is the Observer, PaintModel is the Observable
 	... (any others you find useful) ...
 
 OTHER ARCHITECTURE DISCUSSIONS
+
+    1. Factory Design Pattern: Use Shape Factory to create a shape independently
+    that guarantee type safely and correct current mode. This can help clients
+    use the objects(e.g. a Circle object) created by Factory without worrying
+    about the concrete details, which improve minimize errors to other classes.
+
+    2. Iterator Pattern: Use Iterator to update every shapes store in the PaintModel
+    based on current mode. This allows other controllers in the system to traverse
+    ArrayList Shapes without worried about the dynamic changes to the shapes by the
+    users.
+
+    3. Strategy Pattern: Define a family of algorithms of drawing based on different
+    shapes.
