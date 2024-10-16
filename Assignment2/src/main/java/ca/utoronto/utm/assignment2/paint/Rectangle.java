@@ -38,6 +38,18 @@ public class Rectangle {
         this.start = start;
     }
 
+    /**
+     * Get g2d printing arguments
+     * @return a list of [upperLeft x, upperLeft y, with, height] of this Rectangle instance
+     */
+    public double[] getPrintDetails() {
+        double startX = Math.min(start.x, end.x);
+        double startY = Math.min(start.y, end.y);
+        double width = Math.abs(end.x - start.x);
+        double height = Math.abs(end.y - start.y);
+        return new double[]{startX, startY, width, height};
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
