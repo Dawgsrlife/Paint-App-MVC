@@ -4,6 +4,7 @@ import java.util.Objects;
 
 /**
  * A class representing a rectangle on the canvas
+ *
  * @author tianji61
  */
 public class Rectangle {
@@ -14,8 +15,9 @@ public class Rectangle {
 
     /**
      * Initialize a Rectangle with two given coordinates
+     *
      * @param start starting coordinate
-     * @param end ending coordinate
+     * @param end   ending coordinate
      */
     public Rectangle(Point start, Point end) {
         this.start = start;
@@ -40,6 +42,7 @@ public class Rectangle {
 
     /**
      * Get g2d printing arguments
+     *
      * @return a list of [upperLeft x, upperLeft y, with, height] of this Rectangle instance
      */
     public double[] getPrintDetails() {

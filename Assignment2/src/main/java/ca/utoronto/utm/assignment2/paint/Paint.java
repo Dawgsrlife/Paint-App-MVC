@@ -6,19 +6,19 @@ import javafx.stage.Stage;
 
 public class Paint extends Application {
 
-        PaintModel model; // Model
-        View view; // View + Controller
+    PaintModel model; // Model
+    View view; // View + Controller
 
-        public static void main(String[] args) {
-                launch(args);
-        }
+    public static void main(String[] args) {
+        launch(args);
+    }
 
-        @Override
-        public void start(Stage stage) throws Exception {
+    @Override
+    public void start(Stage stage) throws Exception {
 
-                this.model = new PaintModel();
+        this.model = new PaintModel();
 
-                // View + Controller
-                this.view = new View(model, stage);
-        }
+        // View + Controller
+        this.view = new View(model, stage);
+    }
 }

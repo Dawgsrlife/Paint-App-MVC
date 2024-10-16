@@ -1,4 +1,5 @@
 package ca.utoronto.utm.assignment2.paint;
+
 import javafx.scene.canvas.Canvas;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
@@ -11,7 +12,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
-    private String mode="Circle";
+    private String mode = "Circle";
     private PaintModel model;
 
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
@@ -19,7 +20,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
-        this.model=model;
+        this.model = model;
         this.model.addObserver(this);
 
         this.addEventHandler(MouseEvent.MOUSE_PRESSED, this);
@@ -28,11 +29,12 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
     }
+
     /**
-     *  Controller aspect of this
+     * Controller aspect of this
      */
-    public void setMode(String mode){
-        this.mode=mode;
+    public void setMode(String mode) {
+        this.mode = mode;
         System.out.println(this.mode);
     }
 
@@ -44,29 +46,29 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         EventType<MouseEvent> mouseEventType = (EventType<MouseEvent>) mouseEvent.getEventType();
 
         // "Circle", "Rectangle", "Square", "Squiggle", "Polyline"
-        switch(this.mode){
+        switch (this.mode) {
             case "Circle":
-                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Circle");
-                     Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
-                     this.circle=new Circle(centre, 0);
+                    Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.circle = new Circle(centre, 0);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // Problematic notion of radius and centre!!
-                    double radius = Math.abs(this.circle.getCentre().x-mouseEvent.getX());
+                    double radius = Math.abs(this.circle.getCentre().x - mouseEvent.getX());
                     this.circle.setRadius(radius);
                     this.model.addCircle(this.circle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
 
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if(this.circle!=null){
-                                System.out.println("Added Circle");
-                                this.circle=null;
-                        }
+                    if (this.circle != null) {
+                        System.out.println("Added Circle");
+                        this.circle = null;
+                    }
                 }
 
                 break;
             case "Rectangle":
-                if(mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     // record Rectangle on MOUSE_PRESSED
                     System.out.println("Started Rectangle");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
@@ -78,13 +80,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.model.addRectangle(this.rectangle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     // clean cache on MOUSE_RELEASED
-                    if(this.rectangle!=null){
+                    if (this.rectangle != null) {
                         System.out.println("Added Rectangle");
-                        this.rectangle=null;
+                        this.rectangle = null;
                     }
                 }
                 break;
-            case "Square": break;
+            case "Square":
+                break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
@@ -93,53 +96,56 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.model.addLineBreak();
                 }
                 break;
-            case "Polyline": break;
-            default: break;
+            case "Polyline":
+                break;
+            default:
+                break;
         }
     }
+
     @Override
     public void update(Observable o, Object arg) {
 
-                GraphicsContext g2d = this.getGraphicsContext2D();
-                g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
-                // Draw Lines
-                ArrayList<Point> points = this.model.getPoints();
+        GraphicsContext g2d = this.getGraphicsContext2D();
+        g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
+        // Draw Lines
+        ArrayList<Point> points = this.model.getPoints();
 
-                ArrayList<Integer> lineBreaks = this.model.getLineBreaks();
+        ArrayList<Integer> lineBreaks = this.model.getLineBreaks();
 
-                g2d.setFill(Color.RED);
+        g2d.setFill(Color.RED);
 
-                int j = 0;
-                for(int i=0;i<points.size()-1; i++){
-                        if(j < lineBreaks.size() && i == lineBreaks.get(j)) {
+        int j = 0;
+        for (int i = 0; i < points.size() - 1; i++) {
+            if (j < lineBreaks.size() && i == lineBreaks.get(j)) {
 //                            System.out.println(lineBreaks.get(j) + " " +
 //                                    points.get(i).x + " " + points.get(i).y + " " +
 //                                    points.get(i+1).x + " " + points.get(i+1).y);
-                            j++;
-                            continue;
-                        }
-                        Point p1=points.get(i);
-                        Point p2=points.get(i+1);
-                        g2d.strokeLine(p1.x,p1.y,p2.x,p2.y);
-                }
+                j++;
+                continue;
+            }
+            Point p1 = points.get(i);
+            Point p2 = points.get(i + 1);
+            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+        }
 
-                // Draw Circles
-                ArrayList<Circle> circles = this.model.getCircles();
+        // Draw Circles
+        ArrayList<Circle> circles = this.model.getCircles();
 
-                g2d.setFill(Color.LIGHTGREEN);
-                for(Circle c: this.model.getCircles()){
-                        double x = c.getCentre().x - c.getRadius();
-                        double y = c.getCentre().y - c.getRadius();
-                        double radius = c.getRadius();
-                        g2d.fillOval(x, y, radius * 2, radius * 2);
-                }
+        g2d.setFill(Color.LIGHTGREEN);
+        for (Circle c : this.model.getCircles()) {
+            double x = c.getCentre().x - c.getRadius();
+            double y = c.getCentre().y - c.getRadius();
+            double radius = c.getRadius();
+            g2d.fillOval(x, y, radius * 2, radius * 2);
+        }
 
-                // draw Rectangles
+        // draw Rectangles
         ArrayList<Rectangle> rectangles = this.model.getRectangles();
-                g2d.setFill(Color.LIGHTBLUE);
-                for(Rectangle r: this.model.getRectangles()) {
-                    double[] details = r.getPrintDetails();
-                    g2d.fillRect(details[0], details[1], details[2], details[3]);
-                }
+        g2d.setFill(Color.LIGHTBLUE);
+        for (Rectangle r : this.model.getRectangles()) {
+            double[] details = r.getPrintDetails();
+            g2d.fillRect(details[0], details[1], details[2], details[3]);
+        }
     }
 }
