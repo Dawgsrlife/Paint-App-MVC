@@ -8,13 +8,13 @@ Oct 14,2024
 
 Oct 15,2024
 	What I did yesterday: Assignment instructions did not received
-	What I will do today: Add start codes, edit member.txt, construct UML for exisits
+	What I will do today: Add start codes, edit member.txt, construct UML for existed classes
 	Obstacles I face: Nothing
 
 Oct 16,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Added start codes, edited member.txt, constructed UML for existed classes
+	What I will do today: Fix BUG1.001 and BUG1.002
+	Obstacles I face: Nothing
 
 Oct 17,2024
 	What I did yesterday:

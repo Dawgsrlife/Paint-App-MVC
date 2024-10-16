@@ -13,7 +13,7 @@ ESTIMATE : 1 hour    ACTUAL :
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.002 : UTORID : NotStarted
+TYPE     : BUG BUG1.002 : tianji61 : Complete
 NAME     : Drawing selection mode not indicated
 PRIORITY : 1
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
