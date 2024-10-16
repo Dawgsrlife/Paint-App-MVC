@@ -110,10 +110,10 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
                 g2d.setFill(Color.GREEN);
                 for(Circle c: this.model.getCircles()){
-                        double x = c.getCentre().x;
-                        double y = c.getCentre().y;
+                        double x = c.getCentre().x - c.getRadius();
+                        double y = c.getCentre().y - c.getRadius();
                         double radius = c.getRadius();
-                        g2d.fillOval(x, y, radius, radius);
+                        g2d.fillOval(x, y, radius * 2, radius * 2);
                 }
     }
 }
