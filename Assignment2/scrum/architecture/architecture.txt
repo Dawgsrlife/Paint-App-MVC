@@ -38,7 +38,6 @@ High Level Architecture:
 	program.
 
 ---------------------------------------------------------------------
-TODO!!! Add in more architecture and discussion. For example, 
 do you do something interesting to fix the association between the 
 ShapeChooser and the PaintPanel? How about the PaintModel, something
 is clearly wrong with it. Can you come up with a better architecture?
@@ -59,7 +58,7 @@ so that the model data can store all shapes regardless of type.
 ---------------------------------------------------------------------
 
 DESIGN PATTERNS USED
-	TODO!!! If you introduce a Design Pattern to solve a problem, 
+	TODO!!! If you introduce a Design Pattern to solve a problem,
 	discuss it below. Only add design patterns if they simplify and improve
 	the code. I see at least two that would greatly improve code. 
 		
