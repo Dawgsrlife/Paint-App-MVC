@@ -17,6 +17,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     private Rectangle rectangle;
+    private Square square;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -87,6 +88,22 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
             case "Square":
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    // record new Square on MOUSE_PRESSED
+                    System.out.println("Started Square");
+                    Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.square = new Square(start, null);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    // record Square ending coordinate on MOUSE_DRAGGED
+                    Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.square.setEnd(end);
+                    this.model.addSquare(this.square);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    if (this.square != null) {
+                        System.out.println("Added Square");
+                        this.square = null;
+                    }
+                }
                 break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
@@ -146,6 +163,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         for (Rectangle r : this.model.getRectangles()) {
             double[] details = r.getPrintDetails();
             g2d.fillRect(details[0], details[1], details[2], details[3]);
+        }
+
+        // draw squares
+        ArrayList<Square> squares = this.model.getSquares();
+        g2d.setFill(Color.LIGHTPINK);
+        for (Square s : this.model.getSquares()) {
+            double[] details = s.getPrintDetails();
+            g2d.fillRect(details[0], details[1], details[2], details[2]);
         }
     }
 }

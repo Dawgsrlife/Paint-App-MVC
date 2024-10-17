@@ -10,13 +10,13 @@ Oct 15,2024
 	What I did yesterday: Check assignment page, review the concepts to be
 	used in software design.
 	What I will do today: Get in contact with group members, fill out basic members
-	info, understand the organization of the code and finish Architecture.txt.
+	info, understand the organization of the code and upadate Architecture.txt.
 	Obstacles I face: Understand the issues of bugs mentioned in SprintBacklog1.
 
 Oct 16,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Update Arch.txt
+	What I will do today: Implementation of the drawing function for Square Class.
+	Obstacles I face: None
 
 Oct 17,2024
 	What I did yesterday:

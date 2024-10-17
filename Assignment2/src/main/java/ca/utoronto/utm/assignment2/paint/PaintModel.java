@@ -8,6 +8,7 @@ public class PaintModel extends Observable {
     private final ArrayList<Integer> lineBreaks = new ArrayList<>();
     private final ArrayList<Circle> circles = new ArrayList<>();
     private final ArrayList<Rectangle> rectangles = new ArrayList<>();
+    private final ArrayList<Square> squares = new ArrayList<>();
 
 
     public void addPoint(Point p) {
@@ -56,5 +57,23 @@ public class PaintModel extends Observable {
      */
     public ArrayList<Rectangle> getRectangles() {
         return rectangles;
+    }
+
+    /**
+     * Add a new square instance in model, notifying observers.
+     * @param s is the Square instance to be added
+     */
+    public void addSquare(Square s) {
+        this.squares.add(s);
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    /**
+     * Retrieves all Square instances that have been added to the model.
+     * @return an ArrayList containing all the Square instances.
+     **/
+    public ArrayList<Square> getSquares() {
+        return squares;
     }
 }
