@@ -27,7 +27,7 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG?.004 : UTORID : NotStarted 
+TYPE     : BUG BUG?.004 : UTORID : NotStarted
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
@@ -38,6 +38,13 @@ ISSUE    : Having a list of different types of drawable things in the
            Consider some design patterns, or change of responsibility
            here.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.0012 : huaethan : NotStarted
+NAME     : Circle radius selection is wrong
+PRIORITY : 1
+ESTIMATE : 30 minutes ACTUAL :
+ISSUE    : The radius of the Circle is not set properly. The outer edge of
+           the Circle should be touching the cursor.
 --------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
