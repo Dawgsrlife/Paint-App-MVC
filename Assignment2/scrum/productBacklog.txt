@@ -171,7 +171,16 @@ I WANT   : Add a button that clears the entire canvas, do not change the
            colors of the canvas.(background)
 SO THAT  : I can reset the drawing area
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.015 : chen2046 : NotStarted
+NAME     : Text Tool
+PRIORITY : 3
+ESTIMATE : 3 hour : ACTUAL :
+AS A     : user
+I WANT   : Adds the ability to place text on the canvas.
+SO THAT  : I can insert text on the canvas and customize its appearance
+           like font and color.
+--------------------------------------------------------------------------
 
 
 
