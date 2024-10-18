@@ -265,8 +265,8 @@ SO THAT  : I can see the rectangle I am about to build on release of the mouse b
 --------------------------------------------------------------------------
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
-PRIORITY : 3
-ESTIMATE : 2h    ACTUAL : 2h
+PRIORITY : 2
+ESTIMATE : 2 hour    ACTUAL : 2 hour
 AS A     : user
 I WANT   : Be able to start dragging and drawing the square on the canvas
            based on current mode when the mouse clicks on the square icon.
@@ -281,12 +281,23 @@ ISSUE    : A corner does not fix at the mouse clicked point when creating
            a Square on the panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.0012 : huaethan : Complete
+TYPE     : BUG BUG1.012 : huaethan : Complete
 NAME     : Circle radius selection is wrong
 PRIORITY : 1
 ESTIMATE : 30 minutes ACTUAL :
 ISSUE    : The radius of the Circle is not set properly. The outer edge of
            the Circle should be touching the cursor.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.012 : tianji61 : Complete
+NAME     : Canvas size adjustable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 2 hours
+AS A     : user
+I WANT   : To be able to adjust canvas size when changing the size of the
+           application window.
+SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
+           outside the current showing canvas.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
