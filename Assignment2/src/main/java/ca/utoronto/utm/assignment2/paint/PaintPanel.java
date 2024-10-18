@@ -55,7 +55,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.circle = new Circle(centre, 0);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // Problematic notion of radius and centre!!
-                    double radius = Math.abs(this.circle.getCentre().x - mouseEvent.getX());
+                    double radius =
+                            Math.sqrt(Math.pow(this.circle.getCentre().x - mouseEvent.getX(), 2) +
+                            Math.pow(this.circle.getCentre().y - mouseEvent.getY(), 2));
                     this.circle.setRadius(radius);
                     this.model.addCircle(this.circle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
