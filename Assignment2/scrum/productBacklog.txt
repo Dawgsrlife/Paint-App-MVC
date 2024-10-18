@@ -39,7 +39,6 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
@@ -151,6 +150,16 @@ I WANT   : To be able to just canvas size when changing the size of the
            application window.
 SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.013 : mengale1 : NotStarted
+NAME     : PolyLine
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : To be able to click twice to create points and see a line
+           constructed between both points.
+SO THAT  : I can create line segments on my canvas.
 --------------------------------------------------------------------------
 
 
