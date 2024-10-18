@@ -230,6 +230,14 @@ I WANT   : Be able to start dragging and drawing the square on the canvas
            based on current mode when the mouse clicks on the square icon.
 SO THAT  : I can draw squares to my canvas.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.005 : tianji61 : Complete
+NAME     : Square creation does not fix position on mouse move
+PRIORITY : 3
+ESTIMATE : 1 hour    ACTUAL : 1 hour
+ISSUE    : A corner does not fix at the mouse clicked point when creating
+           a Square on the panel.
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 

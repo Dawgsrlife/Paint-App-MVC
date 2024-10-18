@@ -9,18 +9,9 @@ public class Square extends Rectangle {
     public double[] getPrintDetails() {
         // using Math.min to get a better fx, without instant jumps when cursor switching quadrant
         double width = Math.min(Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
-        Point start = this.getPrintStartPoint(getStart(), getEnd(), width);
-        return new double[]{start.x, start.y, width};
-    }
-
-    private Point getPrintStartPoint(Point start, Point end, double width) {
-        if (end.x > start.x & end.y > start.y) {
-            return start;
-        } else if (end.x > start.x & end.y < start.y) {
-            return new Point(start.x, start.y - width);
-        } else if (end.x < start.x & end.y > start.y) {
-            return new Point(start.x - width, start.y);
-        }
-        return new Point(start.x - width, start.y - width);
+        // determine if a displacement on x / y is needed
+        int deltaX = getEnd().x > getStart().x ? 0 : -1;
+        int deltaY = getEnd().y > getStart().y ? 0 : -1;
+        return new double[]{getStart().x + deltaX * width, getStart().y + deltaY * width, width};
     }
 }
