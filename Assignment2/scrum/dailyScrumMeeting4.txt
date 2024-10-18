@@ -19,9 +19,10 @@ Oct 16,2024
 	Obstacles I face: None
 
 Oct 17,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Update Square Class
+	What I will do today: check sprintBacklog
+	Obstacles I face: When dragging to form a square, the coordinate of the starting
+	                  point changes as well.
 
 Oct 18,2024
 	What I did yesterday:
