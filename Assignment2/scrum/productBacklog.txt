@@ -181,17 +181,6 @@ I WANT   : Adds the ability to place text on the canvas.
 SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US1.016 : tianji61 : NotStarted
-NAME     : Cursor index
-PRIORITY : 3
-ESTIMATE : 30 minutes ACTUAL :
-AS A     : user
-I WANT   : To know which pixel I am pointing at.
-SO THAT  : I can make more precise editing on the canvas.
---------------------------------------------------------------------------
-
-
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -259,7 +248,8 @@ PRIORITY : 2
 ESTIMATE : 1 hour    ACTUAL : 1 hour
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to
-                   specify two corners of a rectangle to be drawn in the current style.
+           specify two corners of a rectangle to be drawn in the current
+           style.
 SO THAT  : I can add rectangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -307,6 +297,15 @@ I WANT   : To be able to adjust canvas size when changing the size of the
            application window.
 SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.016 : tianji61 : Started
+NAME     : Cursor index
+PRIORITY : 3
+ESTIMATE : 30 minutes ACTUAL : 1 hour
+AS A     : user
+I WANT   : To know which pixel I am pointing at.
+SO THAT  : I can make more precise editing on the canvas.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
