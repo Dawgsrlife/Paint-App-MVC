@@ -99,6 +99,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.square.setEnd(end);
                     this.model.addSquare(this.square);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    // clean cache on MOUSE_RELEASED
                     if (this.square != null) {
                         System.out.println("Added Square");
                         this.square = null;
@@ -165,7 +166,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.fillRect(details[0], details[1], details[2], details[3]);
         }
 
-        // draw squares
+        // draw Squares
         ArrayList<Square> squares = this.model.getSquares();
         g2d.setFill(Color.LIGHTPINK);
         for (Square s : this.model.getSquares()) {
