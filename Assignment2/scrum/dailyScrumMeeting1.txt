@@ -18,11 +18,11 @@ Oct 16,2024
 
 Oct 17,2024
 	What I did yesterday: Fixed BUG1.001 and BUG1.002
-	What I will do today: Fix BUG1.006
+	What I will do today: Fix BUG1.006 and BUG1.007
 	Obstacles I face: Nothing
 
 Oct 18,2024
-	What I did yesterday: Fixed BUG1.006
+	What I did yesterday: Fixed BUG1.006 and BUG1.007
 	What I will do today: Implement US1.002
 	Obstacles I face: Nothing
 
