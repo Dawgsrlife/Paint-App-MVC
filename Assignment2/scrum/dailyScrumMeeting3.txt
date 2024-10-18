@@ -17,9 +17,12 @@ Oct 15,2024
 	assignment through the provided starter code.
 
 Oct 16,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Edit members.txt and get to understand the java
+	                      classes.
+	What I will do today: Add user story entries and edit sprintBacklog1.txt
+	Obstacles I face: Figuring out where to begin; even though I'm looking
+	                  through all the classes, I currently struggle to link
+	                  together the contributions made by my group member.
 
 Oct 17,2024
 	What I did yesterday:
