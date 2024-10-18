@@ -161,6 +161,18 @@ I WANT   : To be able to click twice to create points and see a line
            constructed between both points.
 SO THAT  : I can create line segments on my canvas.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.014 : chen2046 : NotStarted
+NAME     : Clear Canvas Button
+PRIORITY : 3
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : Add a button that clears the entire canvas, do not change the
+           colors of the canvas.(background)
+SO THAT  : I can reset the drawing area
+--------------------------------------------------------------------------
+
+
 
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
@@ -244,7 +256,7 @@ SO THAT  : I can see the rectangle I am about to build on release of the mouse b
 --------------------------------------------------------------------------
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
-PRIORITY : 2
+PRIORITY : 3
 ESTIMATE : 2h    ACTUAL : 2h
 AS A     : user
 I WANT   : Be able to start dragging and drawing the square on the canvas
