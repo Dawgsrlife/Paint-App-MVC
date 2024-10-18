@@ -25,9 +25,14 @@ Oct 16,2024
 	                  together the contributions made by my group member.
 
 Oct 17,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Create Branch UserStory006 locally and push upstream
+	                      to the remote branch.
+	What I will do today: Have a meeting with my group members in call to
+	                      organize tackling the first sprint.
+	Obstacles I face:     Figuring out the git commands between making branches
+	                      on two different systems (portable laptop and desktop
+	                       at home) locally, and pulling/pushing from/to those
+	                       branches remotely.
 
 Oct 18,2024
 	What I did yesterday:
