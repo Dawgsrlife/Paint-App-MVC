@@ -260,7 +260,7 @@ ISSUE    : A corner does not fix at the mouse clicked point when creating
            a Square on the panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.0012 : huaethan : NotStarted
+TYPE     : BUG BUG1.0012 : huaethan : Complete
 NAME     : Circle radius selection is wrong
 PRIORITY : 1
 ESTIMATE : 30 minutes ACTUAL :
