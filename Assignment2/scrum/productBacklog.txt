@@ -141,17 +141,6 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.012 : tianji61 : NotStarted
-NAME     : Canvas size adjustable
-PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : To be able to just canvas size when changing the size of the
-           application window.
-SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
-           outside the current showing canvas.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.013 : mengale1 : NotStarted
 NAME     : PolyLine
 PRIORITY : 3
@@ -245,7 +234,7 @@ SO THAT  : I can see the rectangle I am about to build on release of the mouse b
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
 PRIORITY : 2
-ESTIMATE : 2h    ACTUAL : 2h
+ESTIMATE : 2 hour    ACTUAL : 2 hour
 AS A     : user
 I WANT   : Be able to start dragging and drawing the square on the canvas
            based on current mode when the mouse clicks on the square icon.
@@ -266,6 +255,17 @@ PRIORITY : 1
 ESTIMATE : 30 minutes ACTUAL :
 ISSUE    : The radius of the Circle is not set properly. The outer edge of
            the Circle should be touching the cursor.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.012 : tianji61 : Complete
+NAME     : Canvas size adjustable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 2 hours
+AS A     : user
+I WANT   : To be able to adjust canvas size when changing the size of the
+           application window.
+SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
+           outside the current showing canvas.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

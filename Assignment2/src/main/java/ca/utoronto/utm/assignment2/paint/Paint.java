@@ -20,5 +20,18 @@ public class Paint extends Application {
 
         // View + Controller
         this.view = new View(model, stage);
+
+        // listen to window size change events and change canvas size correspondingly
+        PaintPanel panel = view.getPaintPanel();
+        // width change handler
+        stage.widthProperty().addListener((obs, oldWidth, newWidth) -> {
+            panel.setWidth(newWidth.doubleValue());
+            panel.update(model, new Object());
+        });
+        // height change handler
+        stage.heightProperty().addListener((obs, oldHeight, newHeight) -> {
+            panel.setHeight(newHeight.doubleValue());
+            panel.update(model, new Object());
+        });
     }
 }
