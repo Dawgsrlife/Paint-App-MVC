@@ -231,7 +231,7 @@ I WANT   : Be able to start dragging and drawing the square on the canvas
 SO THAT  : I can draw squares to my canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.005 : tianji61 : Complete
+TYPE     : BUG BUG1.007 : tianji61 : Complete
 NAME     : Square creation does not fix position on mouse move
 PRIORITY : 3
 ESTIMATE : 1 hour    ACTUAL : 1 hour
