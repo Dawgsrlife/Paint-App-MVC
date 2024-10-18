@@ -17,9 +17,9 @@ Oct 16,2024
 	Obstacles I face: Figuring out the class hierarchy and how the class interact with each other
 
 Oct 17,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finished BUG1.005
+	What I will do today: Fix BUG1.0012
+	Obstacles I face: Understanding class hierarchy
 
 Oct 18,2024
 	What I did yesterday:

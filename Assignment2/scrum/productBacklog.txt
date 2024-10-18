@@ -39,13 +39,6 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.0012 : huaethan : NotStarted
-NAME     : Circle radius selection is wrong
-PRIORITY : 1
-ESTIMATE : 30 minutes ACTUAL :
-ISSUE    : The radius of the Circle is not set properly. The outer edge of
-           the Circle should be touching the cursor.
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
@@ -244,6 +237,14 @@ PRIORITY : 3
 ESTIMATE : 1 hour    ACTUAL : 1 hour
 ISSUE    : A corner does not fix at the mouse clicked point when creating
            a Square on the panel.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.0012 : huaethan : NotStarted
+NAME     : Circle radius selection is wrong
+PRIORITY : 1
+ESTIMATE : 30 minutes ACTUAL :
+ISSUE    : The radius of the Circle is not set properly. The outer edge of
+           the Circle should be touching the cursor.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
