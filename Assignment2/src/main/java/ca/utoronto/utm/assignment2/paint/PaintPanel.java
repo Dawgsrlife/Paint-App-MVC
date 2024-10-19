@@ -18,6 +18,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     private Rectangle rectangle;
     private Square square;
+    private String cursorCoordinate;
 
     public PaintPanel(PaintModel model) {
         super(300, 300);
@@ -60,8 +61,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                             Math.pow(this.circle.getCentre().y - mouseEvent.getY(), 2));
                     this.circle.setRadius(radius);
                     this.model.addCircle(this.circle);
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
-
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     if (this.circle != null) {
                         System.out.println("Added Circle");
@@ -121,6 +120,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             default:
                 break;
         }
+        this.cursorCoordinate = "X = " + mouseEvent.getX() + ", Y = " + mouseEvent.getY();
     }
 
     @Override
@@ -150,8 +150,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Circles
-        ArrayList<Circle> circles = this.model.getCircles();
-
         g2d.setFill(Color.LIGHTGREEN);
         for (Circle c : this.model.getCircles()) {
             double x = c.getCentre().x - c.getRadius();
@@ -161,7 +159,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // draw Rectangles
-        ArrayList<Rectangle> rectangles = this.model.getRectangles();
         g2d.setFill(Color.LIGHTBLUE);
         for (Rectangle r : this.model.getRectangles()) {
             double[] details = r.getPrintDetails();
@@ -169,11 +166,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // draw Squares
-        ArrayList<Square> squares = this.model.getSquares();
         g2d.setFill(Color.LIGHTPINK);
         for (Square s : this.model.getSquares()) {
             double[] details = s.getPrintDetails();
             g2d.fillRect(details[0], details[1], details[2], details[2]);
         }
+
+        // draw cursorCoordinate
+        g2d.setFill(Color.BLACK);
+        g2d.fillText(cursorCoordinate, 3, 13);
     }
 }

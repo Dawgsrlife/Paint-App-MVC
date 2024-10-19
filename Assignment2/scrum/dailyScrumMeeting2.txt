@@ -22,9 +22,9 @@ Oct 17,2024
 	Obstacles I face: Understanding class hierarchy
 
 Oct 18,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG1.0012
+	What I will do today: Add more user stories
+	Obstacles I face: Brainstorming ideas to put into user stories
 
 Oct 19,2024
 	What I did yesterday:

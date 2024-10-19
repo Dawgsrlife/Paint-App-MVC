@@ -113,4 +113,8 @@ public class View implements EventHandler<ActionEvent> {
         }
     }
 
+    public PaintPanel getPaintPanel() {
+        return this.paintPanel;
+    }
+
 }

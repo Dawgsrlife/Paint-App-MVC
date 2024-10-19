@@ -118,6 +118,17 @@ I WANT   : To be able to undo shapes or squiggles that I have previously made,
 	   removing them from the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : USER STORY US?.017 : huaethan : NotStarted
+NAME     : Smart Shape Snapping
+PRIORITY : 3
+ESTIMATE : 3 days : ACTUAL :
+AS A     : user
+I WANT   : To be able to draw a squiggle that resembles a shape and have the
+           program automatically snap it to become a Square, Rectangle,
+           or Circle.
+SO THAT  : I can draw shapes easily and accurately
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US?.009 : mengale1 : NotStarted
 NAME     : Eraser
 PRIORITY : 2
@@ -181,8 +192,6 @@ I WANT   : Adds the ability to place text on the canvas.
 SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
-
-
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -250,7 +259,8 @@ PRIORITY : 2
 ESTIMATE : 1 hour    ACTUAL : 1 hour
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to
-                   specify two corners of a rectangle to be drawn in the current style.
+           specify two corners of a rectangle to be drawn in the current
+           style.
 SO THAT  : I can add rectangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -265,8 +275,8 @@ SO THAT  : I can see the rectangle I am about to build on release of the mouse b
 --------------------------------------------------------------------------
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
-PRIORITY : 3
-ESTIMATE : 2h    ACTUAL : 2h
+PRIORITY : 2
+ESTIMATE : 2 hour    ACTUAL : 2 hour
 AS A     : user
 I WANT   : Be able to start dragging and drawing the square on the canvas
            based on current mode when the mouse clicks on the square icon.
@@ -281,12 +291,32 @@ ISSUE    : A corner does not fix at the mouse clicked point when creating
            a Square on the panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.0012 : huaethan : Complete
+TYPE     : BUG BUG1.012 : huaethan : Complete
 NAME     : Circle radius selection is wrong
 PRIORITY : 1
 ESTIMATE : 30 minutes ACTUAL :
 ISSUE    : The radius of the Circle is not set properly. The outer edge of
            the Circle should be touching the cursor.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.012 : tianji61 : Complete
+NAME     : Canvas size adjustable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 2 hours
+AS A     : user
+I WANT   : To be able to adjust canvas size when changing the size of the
+           application window.
+SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
+           outside the current showing canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.016 : tianji61 : Started
+NAME     : Cursor index
+PRIORITY : 3
+ESTIMATE : 30 minutes ACTUAL : 1 hour
+AS A     : user
+I WANT   : To know which pixel I am pointing at.
+SO THAT  : I can make more precise editing on the canvas.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
