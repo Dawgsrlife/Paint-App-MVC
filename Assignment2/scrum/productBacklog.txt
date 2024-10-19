@@ -196,10 +196,10 @@ I WANT   : To click the center of the circle, drag, and release to specify
 SO THAT  : I can add circles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.001 : tianji61 : Complete
+TYPE     : BUG BUG1.001 : mengale1 : Complete
 NAME     : Icons instead of text for drawing mode selection
 PRIORITY : 1
-ESTIMATE : 1 hour    ACTUAL : 15 minutes
+ESTIMATE : 1 hour    ACTUAL : 1 hour
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -254,10 +254,10 @@ I WANT   : To click on one corner of a rectangle, drag, and release to
 SO THAT  : I can add rectangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.004 : tianji61 : Complete
+TYPE     : USER STORY US1.004 : chen2046 : Complete
 NAME     : Draw Rectangle Feedback
 PRIORITY : 2
-ESTIMATE : 0 minute    ACTUAL : 0 minute(finished in US1.003)
+ESTIMATE : 1 hour    ACTUAL : 1 hour
 AS A     : user
 I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
 SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
