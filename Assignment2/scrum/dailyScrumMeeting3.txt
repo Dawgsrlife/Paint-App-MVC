@@ -36,8 +36,8 @@ Oct 17,2024
 
 Oct 18,2024
 	What I did yesterday: Complete BUG1.001
-	What I will do today:
-	Obstacles I face:
+	What I will do today: No contributions due to other course assignment due.
+	Obstacles I face: Completing the implementation of PolyLine quickly tmr.
 
 Oct 19,2024
 	What I did yesterday:
