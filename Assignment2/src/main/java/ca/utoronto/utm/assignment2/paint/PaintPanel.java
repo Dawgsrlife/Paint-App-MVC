@@ -138,15 +138,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                         // Update the model with a copy:
                         this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                     } else {
-                        System.out.println("Finished Polyline");
-
-                        // End the polyline:
-                        this.model.addLineBreak();
-                        // Reset the Points tracker:
-                        this.polylinePoints.clear();
-                    }
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isSecondaryButtonDown()) {
-                    if (!polylinePoints.isEmpty()) {
                         // Add subsequent points on right-click while the polyline is active:
 
                         Point newPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
@@ -154,6 +145,15 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                         this.model.addPoint(newPoint);  // to update the model
 
                         System.out.println("New Polyline Vertex: " + newPoint);
+                    }
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isSecondaryButtonDown()) {
+                    if (!polylinePoints.isEmpty()) {
+                        System.out.println("Finished Polyline");
+
+                        // End the polyline:
+                        this.model.addLineBreak();
+                        // Reset the Points tracker:
+                        this.polylinePoints.clear();
                     }
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
                     this.currentMousePosition = new Point(mouseEvent.getX(), mouseEvent.getY());
