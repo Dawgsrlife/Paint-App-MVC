@@ -40,9 +40,10 @@ Oct 18,2024
 	Obstacles I face: Completing the implementation of PolyLine quickly tmr.
 
 Oct 19,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: No contributions due to other course assignment due.
+	What I will do today: Progress on US1.013 (PolyLine).
+	Obstacles I face: Learning the connections between how the Java classes
+	                  interact.
 
 Oct 20,2024
 	What I did yesterday:
