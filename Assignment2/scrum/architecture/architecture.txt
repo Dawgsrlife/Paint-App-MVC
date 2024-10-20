@@ -58,21 +58,40 @@ so that the model data can store all shapes regardless of type.
 ---------------------------------------------------------------------
 
 DESIGN PATTERNS USED
-	TODO!!! If you introduce a Design Pattern to solve a problem,
 	discuss it below. Only add design patterns if they simplify and improve
-	the code. I see at least two that would greatly improve code. 
+	the code. I see at least two that would greatly improve code. (Factory, Command and Builder)
 		
-	Strategy:
-	Command: 
-	Singleton:
-	Composite:
-	Factory:
-	Builder:
-	Observer/Observable: PaintPanel is the Observer, PaintModel is the Observable
-	... (any others you find useful) ...
+	Strategy: In PaintPanel class, the Strategy Pattern allows the panel to draw shapes
+	          based on different shapes, which means each type of shape has a corresponding
+	          algorithm.(In the switch conditional block)
+	Command:  In View class, every event is directly executed other than encapsulated as a
+	          command, while the command determines whether users opts out of the canvas and
+	          controls the platform to exit. In the future, our team will implement undo
+	          functionality to store user action events into commands so that by withdrawing
+	          the latest command bar allows the user to withdraw the drawn graphic.
+	Singleton: The existence of only one instance of PaintModel ensures that other classes
+	           (e.g. PaintPanel, ShapeChooserPanel) will only get a unique instance of the
+	           same class. Without Singleton Pattern, multiple instances will be instantiated
+	           whenever the model is used, which would be error-prone and cost a lot more
+	           memory space.
+	Composite: There are variable instances ArrayList<Point> and ArrayList<Shape> being used
+	           in PaintModel Class. So the PaintModel is actually composited with Point Class,
+	           Circle Class, Rectangle and Square Class. Also, In ScribblePanel Class, there is
+	           a new HBox being created so that HBox composites nodes like ScribblePanel. The
+	           stage contains the scene(scene is created in start method) is also a composite
+	           pattern design.
+	Factory: ShapeFactory(Have not been implemented yet). Use it as an abstract class for all
+	         shapes.
+	Builder: Complex objects like Shape, Circle, Rectangle have multiple parameters such as
+             size, position, color, etc.). We can add a Builder class to customize all these
+             shapes with a more simplified construction according to client requirements.
+             And by doing so, adding a new feature in future would be simple and easy.
+	Observer/Observable: PaintPanel is the Observer, PaintModel is the Observable. When PaintModel
+	changes, it automatically notifies PaintPanel.
+
 
 OTHER ARCHITECTURE DISCUSSIONS
-
+    For future sprints implementation.
     1. Factory Design Pattern: Use Shape Factory to create a shape independently
     that guarantee type safely and correct current mode. This can help clients
     use the objects(e.g. a Circle object) created by Factory without worrying
