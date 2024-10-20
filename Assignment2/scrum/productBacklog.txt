@@ -39,6 +39,24 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG BUG?.009 : UTORID : NotStarted
+NAME     : Both icons and text for drawing mode selection
+PRIORITY : 2
+ESTIMATE : 2 hours    ACTUAL :
+ISSUE    : It would be nice to have both icons and text to describe the
+           drawing mode, because right now, the icons alone may be
+           confusing to understand
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.010 : huaethan : InProgress
+NAME     : Squiggle draws incorrectly if clicked without dragging
+PRIORITY : 1
+ESTIMATE : 1 hour    ACTUAL :
+ISSUE    : When the user is in the Squiggle mode, clicking without dragging
+           causes proceeding subsequent Squiggles to connect with each
+           other, which is not intended.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
@@ -161,16 +179,6 @@ I WANT   : To be able to just canvas size when changing the size of the
            application window.
 SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US?.013 : mengale1 : NotStarted
-NAME     : PolyLine
-PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL :
-AS A     : user
-I WANT   : To be able to click twice to create points and see a line
-           constructed between both points.
-SO THAT  : I can create line segments on my canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US?.014 : chen2046 : NotStarted
@@ -316,6 +324,16 @@ I WANT   : To be able to adjust canvas size when changing the size of the
            application window.
 SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.013 : mengale1 : Complete
+NAME     : Polyline
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL : 3 hours
+AS A     : user
+I WANT   : To be able to left-click to create the vertices that join line
+           segments, and right-click to finish this polyline.
+SO THAT  : I can create polylines on my canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US1.016 : tianji61 : Started
