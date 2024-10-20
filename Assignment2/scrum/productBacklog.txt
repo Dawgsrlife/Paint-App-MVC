@@ -39,6 +39,15 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG BUG?.009 : UTORID : NotStarted
+NAME     : Both icons and text for drawing mode selection
+PRIORITY : 2
+ESTIMATE : 2 hours    ACTUAL :
+ISSUE    : It would be nice to have both icons and text to describe the
+           drawing mode, because right now, the icons alone may be
+           confusing to understand
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
