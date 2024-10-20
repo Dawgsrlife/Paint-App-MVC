@@ -27,8 +27,8 @@ Oct 18,2024
 	Obstacles I face: Brainstorming ideas to put into user stories
 
 Oct 19,2024
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Added more user stories
+	What I will do today: Add more user stories find bugs
 	Obstacles I face:
 
 Oct 20,2024
