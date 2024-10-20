@@ -141,7 +141,7 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.013 : mengale1 : NotStarted
+TYPE     : USER STORY US1.013 : mengale1 : InProgress
 NAME     : PolyLine
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
