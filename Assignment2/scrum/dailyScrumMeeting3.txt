@@ -46,9 +46,11 @@ Oct 19,2024
 	                  interact.
 
 Oct 20,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Complete US1.013 (PolyLine).
+	What I will do today: Update productBacklog.txt and implement the Polyline
+	                      trail. Also, implementing the eraser tool.
+	Obstacles I face: Figuring out how to erase painted objects selectively
+	                  from the canvas.
 
 Oct 21,2024
 	What I did yesterday:
