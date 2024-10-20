@@ -192,6 +192,14 @@ I WANT   : Adds the ability to place text on the canvas.
 SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG?.008 : tianji61 : NotStarted
+NAME     : Shapes ordering
+PRIORITY : 2
+ESTIMATE : 30 minutes    ACTUAL :
+ISSUE    : Ordering of shapes when printed on canvas should follow the
+           order they have been created.
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
