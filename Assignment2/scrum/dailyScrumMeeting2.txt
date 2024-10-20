@@ -29,7 +29,7 @@ Oct 18,2024
 Oct 19,2024
 	What I did yesterday: Added more user stories
 	What I will do today: Add more user stories find bugs
-	Obstacles I face:
+	Obstacles I face: Finding bugs in the code may prove to be difficult
 
 Oct 20,2024
 	What I did yesterday:
