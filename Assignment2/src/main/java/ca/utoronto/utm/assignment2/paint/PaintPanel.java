@@ -1,11 +1,14 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.collections.ObservableList;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Polyline;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -19,6 +22,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private Rectangle rectangle;
     private Square square;
 
+    // Polyline:
+    private ArrayList<Point> polylinePoints;
+    private final int POLYLINE_STROKE_WIDTH = 3;
+    private Point currentMousePosition;
+
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model = model;
@@ -29,6 +37,10 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_MOVED, this);
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
+
+        // Polyline:
+        this.polylinePoints = new ArrayList<Point>();
+        this.currentMousePosition = null;
     }
 
     /**
@@ -117,10 +129,47 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
             case "Polyline":
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isPrimaryButtonDown()) {
+                    if (polylinePoints.isEmpty()) {
+                        System.out.println("Started Polyline");
+
+                        // Add the initial point:
+                        this.polylinePoints.add(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                        // Update the model with a copy:
+                        this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    } else {
+                        System.out.println("Finished Polyline");
+
+                        // End the polyline:
+                        this.model.addLineBreak();
+                        // Reset the Points tracker:
+                        this.polylinePoints.clear();
+                    }
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isSecondaryButtonDown()) {
+                    if (!polylinePoints.isEmpty()) {
+                        // Add subsequent points on right-click while the polyline is active:
+
+                        Point newPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
+                        this.polylinePoints.add(newPoint);
+                        this.model.addPoint(newPoint);  // to update the model
+
+                        System.out.println("New Polyline Vertex: " + newPoint);
+                    }
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
+                    this.currentMousePosition = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.model.notifyObservers(this.currentMousePosition);
+                }
                 break;
             default:
                 break;
         }
+    }
+
+    /**
+     * Clears the polyline.
+     */
+    public void clearPolyline() {
+        this.polylinePoints.clear();
     }
 
     @Override
