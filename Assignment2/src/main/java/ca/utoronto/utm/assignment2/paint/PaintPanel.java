@@ -25,9 +25,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private final int POLYLINE_STROKE_WIDTH = 3;
     private Point currentMousePosition;
 
-    // Stroke colour:
-    private Paint colour;
-
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model = model;
@@ -42,9 +39,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         // Polyline:
         this.polylinePoints = new ArrayList<Point>();
         this.currentMousePosition = null;
-
-        // Colour:
-        this.colour = Color.BLACK;
     }
 
     /**
@@ -132,8 +126,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
             case "Polyline":
-                this.getGraphicsContext2D().setStroke(this.colour);
-
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isPrimaryButtonDown()) {
                     if (polylinePoints.isEmpty()) {
                         System.out.println("Started Polyline");
