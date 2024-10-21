@@ -32,9 +32,9 @@ Oct 19,2024
 	Obstacles I face: Finding bugs in the code may prove to be difficult
 
 Oct 20,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Added BUG?.009 and BUG1.010
+	What I will do today: Continue finding bugs
+	Obstacles I face: Finding bugs
 
 Oct 21,2024
 	What I did yesterday:

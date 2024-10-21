@@ -339,7 +339,7 @@ SO THAT  : I can make more precise editing on the canvas.
 TYPE     : BUG BUG1.010 : huaethan : Complete
 NAME     : Squiggle draws incorrectly if clicked without dragging
 PRIORITY : 1
-ESTIMATE : 1 hour    ACTUAL :
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
 ISSUE    : When the user is in the Squiggle mode, clicking without dragging
            causes proceeding subsequent Squiggles to connect with each
            other, which is not intended.
