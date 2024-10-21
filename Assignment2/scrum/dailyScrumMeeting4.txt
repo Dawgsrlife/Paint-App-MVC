@@ -20,19 +20,19 @@ Oct 16,2024
 
 Oct 17,2024
 	What I did yesterday: Update Square Class
-	What I will do today: check sprintBacklog
+	What I will do today: check sprintBacklog.
 	Obstacles I face: When dragging to form a square, the coordinate of the starting
 	                  point changes as well.
 
 Oct 18,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read current uml and check square class.
+	What I will do today: Implement US1.004.
+	Obstacles I face: Add two user stories to productBacklog.
 
 Oct 19,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Add two user stories for future sprints.
+	What I will do today: Review design patterns and organize backlog.
+	Obstacles I face: the blueprint for implementing own-defined user stories.
 
 Oct 20,2024
 	What I did yesterday:

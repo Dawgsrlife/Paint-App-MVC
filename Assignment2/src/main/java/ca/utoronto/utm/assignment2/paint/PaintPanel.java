@@ -1,15 +1,11 @@
 package ca.utoronto.utm.assignment2.paint;
 
-import javafx.collections.ObservableList;
-import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Polyline;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -22,6 +18,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     private Rectangle rectangle;
     private Square square;
+    private String cursorCoordinate;
 
     // Polyline:
     private ArrayList<Point> polylinePoints;
@@ -80,13 +77,13 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.circle.setRadius(radius);
                     this.model.addCircle(this.circle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
+                // Put something here
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     if (this.circle != null) {
                         System.out.println("Added Circle");
                         this.circle = null;
                     }
                 }
-
                 break;
             case "Rectangle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
@@ -177,13 +174,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             default:
                 break;
         }
-    }
-
-    /**
-     * Clears the polyline.
-     */
-    public void clearPolyline() {
-        this.polylinePoints.clear();
+        this.cursorCoordinate = "X = " + mouseEvent.getX() + ", Y = " + mouseEvent.getY();
     }
 
     @Override
@@ -213,8 +204,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Circles
-        ArrayList<Circle> circles = this.model.getCircles();
-
         g2d.setFill(Color.LIGHTGREEN);
         for (Circle c : this.model.getCircles()) {
             double x = c.getCentre().x - c.getRadius();
@@ -224,7 +213,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // draw Rectangles
-        ArrayList<Rectangle> rectangles = this.model.getRectangles();
         g2d.setFill(Color.LIGHTBLUE);
         for (Rectangle r : this.model.getRectangles()) {
             double[] details = r.getPrintDetails();
@@ -232,11 +220,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // draw Squares
-        ArrayList<Square> squares = this.model.getSquares();
         g2d.setFill(Color.LIGHTPINK);
         for (Square s : this.model.getSquares()) {
             double[] details = s.getPrintDetails();
             g2d.fillRect(details[0], details[1], details[2], details[2]);
         }
+
+        // draw cursorCoordinate
+        g2d.setFill(Color.BLACK);
+        g2d.fillText(cursorCoordinate, 3, 13);
     }
 }

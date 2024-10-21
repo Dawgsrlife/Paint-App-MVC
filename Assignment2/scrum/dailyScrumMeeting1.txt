@@ -27,12 +27,12 @@ Oct 18,2024
 	Obstacles I face: Nothing
 
 Oct 19,2024
-	What I did yesterday: Implemented US1.002
-	What I will do today: Implement US 1.004 and US 1.004
+	What I did yesterday: Implemented US1.002, found BUG?.008
+	What I will do today: Implement US1.012
 	Obstacles I face: Nothing
 
 Oct 20,2024
-	What I did yesterday:
+	What I did yesterday: Implemented US1.012
 	What I will do today:
 	Obstacles I face:
 

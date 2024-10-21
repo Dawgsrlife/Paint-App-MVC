@@ -1,4 +1,0 @@
-member1: tianji61 Jiaye_Tian aki.tian@mail.utoronto.ca
-member2: huaethan Ethan_Hua ethan.hua@mail.utoronto.ca
-member3: mengale1 Alexander_He_Meng alex.meng@mail.utoronto.ca
-member4: chen2046 Jiaqi_chen jackiejiaqi.chen@mail.utoronto.ca

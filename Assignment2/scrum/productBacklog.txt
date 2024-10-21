@@ -39,6 +39,24 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG BUG?.009 : UTORID : NotStarted
+NAME     : Both icons and text for drawing mode selection
+PRIORITY : 2
+ESTIMATE : 2 hours    ACTUAL :
+ISSUE    : It would be nice to have both icons and text to describe the
+           drawing mode, because right now, the icons alone may be
+           confusing to understand
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.010 : huaethan : InProgress
+NAME     : Squiggle draws incorrectly if clicked without dragging
+PRIORITY : 1
+ESTIMATE : 1 hour    ACTUAL :
+ISSUE    : When the user is in the Squiggle mode, clicking without dragging
+           causes proceeding subsequent Squiggles to connect with each
+           other, which is not intended.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
@@ -141,7 +159,18 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.013 : mengale1 : InProgress
+TYPE     : USER STORY US1.012 : tianji61 : NotStarted
+NAME     : Canvas size adjustable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : To be able to just canvas size when changing the size of the
+           application window.
+SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
+           outside the current showing canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.013 : mengale1 : NotStarted
 NAME     : PolyLine
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -150,7 +179,45 @@ I WANT   : To be able to click twice to create points and see a line
            constructed between both points.
 SO THAT  : I can create line segments on my canvas.
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.014 : chen2046 : NotStarted
+NAME     : Clear Canvas Button
+PRIORITY : 3
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : Add a button that clears the entire canvas, do not change the
+           colors of the canvas.(background)
+SO THAT  : I can reset the drawing area
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.015 : chen2046 : NotStarted
+NAME     : Text Tool
+PRIORITY : 3
+ESTIMATE : 3 hour : ACTUAL :
+AS A     : user
+I WANT   : Adds the ability to place text on the canvas.
+SO THAT  : I can insert text on the canvas and customize its appearance
+           like font and color.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.017 : huaethan : NotStarted
+NAME     : Smart Shape Snapping
+PRIORITY : 3
+ESTIMATE : 3 days : ACTUAL :
+AS A     : user
+I WANT   : To be able to draw a squiggle that resembles a shape and have the
+           program automatically snap it to become a Square, Rectangle,
+           or Circle.
+SO THAT  : I can draw shapes easily and accurately
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG?.008 : tianji61 : NotStarted
+NAME     : Shapes ordering
+PRIORITY : 2
+ESTIMATE : 30 minutes    ACTUAL :
+ISSUE    : Ordering of shapes when printed on canvas should follow the
+           order they have been created.
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -164,7 +231,7 @@ I WANT   : To click the center of the circle, drag, and release to specify
 SO THAT  : I can add circles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.001 : tianji61 : Complete
+TYPE     : BUG BUG1.001 : mengale1 : Complete
 NAME     : Icons instead of text for drawing mode selection
 PRIORITY : 1
 ESTIMATE : 1 hour    ACTUAL : 15 minutes
@@ -218,14 +285,15 @@ PRIORITY : 2
 ESTIMATE : 1 hour    ACTUAL : 1 hour
 AS A     : user
 I WANT   : To click on one corner of a rectangle, drag, and release to
-                   specify two corners of a rectangle to be drawn in the current style.
+           specify two corners of a rectangle to be drawn in the current
+           style.
 SO THAT  : I can add rectangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.004 : tianji61 : Complete
+TYPE     : USER STORY US1.004 : chen2046 : Complete
 NAME     : Draw Rectangle Feedback
 PRIORITY : 2
-ESTIMATE : 0 minute    ACTUAL : 0 minute(finished in US1.003)
+ESTIMATE : 1 hour    ACTUAL : 1 hour
 AS A     : user
 I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid construction.
 SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
@@ -234,7 +302,7 @@ SO THAT  : I can see the rectangle I am about to build on release of the mouse b
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
 PRIORITY : 2
-ESTIMATE : 2h    ACTUAL : 2h
+ESTIMATE : 2 hour    ACTUAL : 2 hours
 AS A     : user
 I WANT   : Be able to start dragging and drawing the square on the canvas
            based on current mode when the mouse clicks on the square icon.
@@ -249,12 +317,42 @@ ISSUE    : A corner does not fix at the mouse clicked point when creating
            a Square on the panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.0012 : huaethan : NotStarted
+TYPE     : BUG BUG1.012 : huaethan : Complete
 NAME     : Circle radius selection is wrong
 PRIORITY : 1
 ESTIMATE : 30 minutes ACTUAL :
 ISSUE    : The radius of the Circle is not set properly. The outer edge of
            the Circle should be touching the cursor.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.012 : tianji61 : Complete
+NAME     : Canvas size adjustable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 2 hours
+AS A     : user
+I WANT   : To be able to adjust canvas size when changing the size of the
+           application window.
+SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
+           outside the current showing canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.013 : mengale1 : Complete
+NAME     : Polyline
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL : 3 hours
+AS A     : user
+I WANT   : To be able to left-click to create the vertices that join line
+           segments, and right-click to finish this polyline.
+SO THAT  : I can create polylines on my canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US1.016 : tianji61 : Started
+NAME     : Cursor index
+PRIORITY : 3
+ESTIMATE : 30 minutes ACTUAL : 1 hour
+AS A     : user
+I WANT   : To know which pixel I am pointing at.
+SO THAT  : I can make more precise editing on the canvas.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
