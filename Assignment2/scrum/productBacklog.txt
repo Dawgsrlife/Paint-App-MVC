@@ -48,15 +48,6 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.010 : huaethan : InProgress
-NAME     : Squiggle draws incorrectly if clicked without dragging
-PRIORITY : 1
-ESTIMATE : 1 hour    ACTUAL :
-ISSUE    : When the user is in the Squiggle mode, clicking without dragging
-           causes proceeding subsequent Squiggles to connect with each
-           other, which is not intended.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
@@ -353,6 +344,15 @@ ESTIMATE : 30 minutes ACTUAL : 1 hour
 AS A     : user
 I WANT   : To know which pixel I am pointing at.
 SO THAT  : I can make more precise editing on the canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.010 : huaethan : Complete
+NAME     : Squiggle draws incorrectly if clicked without dragging
+PRIORITY : 1
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+ISSUE    : When the user is in the Squiggle mode, clicking without dragging
+           causes proceeding subsequent Squiggles to connect with each
+           other, which is not intended.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
