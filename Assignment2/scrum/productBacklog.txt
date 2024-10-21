@@ -346,7 +346,7 @@ ISSUE    : When the user is in the Squiggle mode, clicking without dragging
 TYPE     : BUG BUG2.004 : tianji61 : Started
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ESTIMATE : 1 hour   ACTUAL :
 ISSUE    : Having a list of different types of drawable things in the
            model is cumbersome. In fact, it is currently incorrect, with
            Squiggle's not drawing properly. Need to re-architect the Model
