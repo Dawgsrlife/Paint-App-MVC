@@ -16,7 +16,7 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG?.003 : UTORID : NotStarted 
+TYPE     : BUG BUG?.003 : UTORID : NotStarted
 NAME     : Architecture behind choosing selection mode is poor
 PRIORITY : 3
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
@@ -25,18 +25,6 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            the drawing events. Consider some design patterns here.
            Refactor ShapeChooserPanel and PaintPanel to get rid of the
            'if' blocks in the PaintPanel mouse event code.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG?.004 : UTORID : NotStarted
-NAME     : Architecture behind Model is poor
-PRIORITY : 3
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
-ISSUE    : Having a list of different types of drawable things in the
-           model is cumbersome. In fact, it is currently incorrect, with
-           Squiggle's not drawing properly. Need to re-architect the Model
-           so that it is more flexible, and easier to work with.
-           Consider some design patterns, or change of responsibility
-           here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG BUG?.009 : UTORID : NotStarted
@@ -327,7 +315,7 @@ SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.013 : mengale1 : Complete
+TYPE     : USER STORY US1.013 : mengale1 : Complete
 NAME     : Polyline
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL : 3 hours
@@ -353,6 +341,18 @@ ESTIMATE : 1 hour    ACTUAL : 30 minutes
 ISSUE    : When the user is in the Squiggle mode, clicking without dragging
            causes proceeding subsequent Squiggles to connect with each
            other, which is not intended.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.004 : tianji61 : Started
+NAME     : Architecture behind Model is poor
+PRIORITY : 3
+ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+ISSUE    : Having a list of different types of drawable things in the
+           model is cumbersome. In fact, it is currently incorrect, with
+           Squiggle's not drawing properly. Need to re-architect the Model
+           so that it is more flexible, and easier to work with.
+           Consider some design patterns, or change of responsibility
+           here.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
