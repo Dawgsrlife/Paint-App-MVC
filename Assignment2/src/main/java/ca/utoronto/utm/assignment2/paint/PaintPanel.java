@@ -20,6 +20,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private Square square;
     private String cursorCoordinate;
 
+    // Polyline:
+    private ArrayList<Point> polylinePoints;
+    private final int POLYLINE_STROKE_WIDTH = 3;
+    private Point currentMousePosition;
+
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model = model;
@@ -30,6 +35,10 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_MOVED, this);
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
+
+        // Polyline:
+        this.polylinePoints = new ArrayList<Point>();
+        this.currentMousePosition = null;
     }
 
     /**
@@ -61,13 +70,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                             Math.pow(this.circle.getCentre().y - mouseEvent.getY(), 2));
                     this.circle.setRadius(radius);
                     this.model.addCircle(this.circle);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
+                // Put something here
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     if (this.circle != null) {
                         System.out.println("Added Circle");
                         this.circle = null;
                     }
                 }
-
                 break;
             case "Rectangle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
@@ -108,6 +118,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
             case "Squiggle":
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                }
                 if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                     // System.out.println(this.model.getPoints());
@@ -116,6 +129,42 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 }
                 break;
             case "Polyline":
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isPrimaryButtonDown()) {
+                    if (polylinePoints.isEmpty()) {
+                        System.out.println("Started Polyline");
+
+                        // Add the initial point:
+                        this.polylinePoints.add(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                        // Update the model with a copy:
+                        this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    } else {
+                        // TODO: Implement later... Clear the trail:
+
+                        // Add subsequent points on right-click while the polyline is active:
+                        Point newPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
+                        this.polylinePoints.add(newPoint);
+                        this.model.addPoint(newPoint);  // to update the model
+
+                        System.out.println("New Polyline Vertex: " + newPoint);
+                    }
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isSecondaryButtonDown()) {
+                    if (!polylinePoints.isEmpty()) {
+                        System.out.println("Finished Polyline");
+
+                        // End the polyline:
+                        this.model.addLineBreak();
+                        // Reset the Points tracker:
+                        this.polylinePoints.clear();
+                    }
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED) && !polylinePoints.isEmpty()) {
+                    // Display the polyline trail:
+
+                    // TODO: Clear the previous trail (if any)
+
+                    // Display the trail
+//                    this.currentMousePosition = new Point(mouseEvent.getX(), mouseEvent.getY());
+//                    this.model.addPoint(currentMousePosition);
+                }
                 break;
             default:
                 break;

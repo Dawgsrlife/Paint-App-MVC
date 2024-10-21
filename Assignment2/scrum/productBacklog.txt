@@ -48,15 +48,6 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.010 : huaethan : InProgress
-NAME     : Squiggle draws incorrectly if clicked without dragging
-PRIORITY : 1
-ESTIMATE : 1 hour    ACTUAL :
-ISSUE    : When the user is in the Squiggle mode, clicking without dragging
-           causes proceeding subsequent Squiggles to connect with each
-           other, which is not intended.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.005 : UTORID : NotStarted
 NAME     : Color selector
 PRIORITY : 3
@@ -136,17 +127,6 @@ I WANT   : To be able to undo shapes or squiggles that I have previously made,
 	   removing them from the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.017 : huaethan : NotStarted
-NAME     : Smart Shape Snapping
-PRIORITY : 3
-ESTIMATE : 3 days : ACTUAL :
-AS A     : user
-I WANT   : To be able to draw a squiggle that resembles a shape and have the
-           program automatically snap it to become a Square, Rectangle,
-           or Circle.
-SO THAT  : I can draw shapes easily and accurately
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.009 : mengale1 : NotStarted
 NAME     : Eraser
 PRIORITY : 2
@@ -181,6 +161,16 @@ SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : USER STORY US?.013 : mengale1 : NotStarted
+NAME     : PolyLine
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : To be able to click twice to create points and see a line
+           constructed between both points.
+SO THAT  : I can create line segments on my canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US?.014 : chen2046 : NotStarted
 NAME     : Clear Canvas Button
 PRIORITY : 3
@@ -199,6 +189,17 @@ AS A     : user
 I WANT   : Adds the ability to place text on the canvas.
 SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.017 : huaethan : NotStarted
+NAME     : Smart Shape Snapping
+PRIORITY : 3
+ESTIMATE : 3 days : ACTUAL :
+AS A     : user
+I WANT   : To be able to draw a squiggle that resembles a shape and have the
+           program automatically snap it to become a Square, Rectangle,
+           or Circle.
+SO THAT  : I can draw shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG BUG?.008 : tianji61 : NotStarted
@@ -224,7 +225,7 @@ SO THAT  : I can add circles to my canvas
 TYPE     : BUG BUG1.001 : mengale1 : Complete
 NAME     : Icons instead of text for drawing mode selection
 PRIORITY : 1
-ESTIMATE : 1 hour    ACTUAL : 1 hour
+ESTIMATE : 1 hour    ACTUAL : 15 minutes
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
@@ -292,7 +293,7 @@ SO THAT  : I can see the rectangle I am about to build on release of the mouse b
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
 PRIORITY : 2
-ESTIMATE : 2 hour    ACTUAL : 2 hour
+ESTIMATE : 2 hour    ACTUAL : 2 hours
 AS A     : user
 I WANT   : Be able to start dragging and drawing the square on the canvas
            based on current mode when the mouse clicks on the square icon.
@@ -343,6 +344,15 @@ ESTIMATE : 30 minutes ACTUAL : 1 hour
 AS A     : user
 I WANT   : To know which pixel I am pointing at.
 SO THAT  : I can make more precise editing on the canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG1.010 : huaethan : Complete
+NAME     : Squiggle draws incorrectly if clicked without dragging
+PRIORITY : 1
+ESTIMATE : 1 hour    ACTUAL : 30 minutes
+ISSUE    : When the user is in the Squiggle mode, clicking without dragging
+           causes proceeding subsequent Squiggles to connect with each
+           other, which is not intended.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
