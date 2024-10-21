@@ -8,7 +8,9 @@ High Level Architecture:
 	Model
 	The Model captures enough information to re-draw the sketch of
 	the user.
+
 	Circle: Represent circle shape.
+	Rectangle: Represent rectangle shape.
 	Point: Represent a coordinate in 2D.
 	Shape: An abstract class represents different shapes. (to be implemented)
 	PaintModel: Store and manage the data for points and shapes.
@@ -18,12 +20,10 @@ High Level Architecture:
 	The View class containing the BorderPane as well as containing all of its components.
 	View components are meant to be contained in the main View.
 	Examples of view components are PaintPanel and ShapeChooserPanel.
-	
 	The View class, and view components all implements their own controller.
 	For example, the PaintPanel listens to its own MouseEvents.
 	This is instead of separating out the Controller from the View. This choice
 	was made to simplify the code, yet still keep it modular and clear.
-	
 	Each view component can see the containing View as well as the Model
 	as appropriate. This means that each view component can speak to the
 	other view components. An example of this is when the ShapeChooserPanel
@@ -36,6 +36,15 @@ High Level Architecture:
 	Also handles MouseEvent as part of the controller.
 	Paint: Initializes the model (data) and view (UI) to start the paint
 	program.
+
+	Class Interaction by MVC:
+	View and model components work together trough shared references.
+    For example, PaintPanel and ShapeChooserPanel interact with the
+    model directly by fetching data(shape list). When the user
+    interacts with the ShapeChooserPanel like click on the shape they
+    want, this event triggers an update to the Controller PaintPanel.
+    PaintPanel then draws the selected shape and update it to the view,
+    and the view in turn displays drawing to users.
 
 ---------------------------------------------------------------------
 do you do something interesting to fix the association between the 
@@ -82,25 +91,18 @@ DESIGN PATTERNS USED
 	           pattern design.
 	Factory: ShapeFactory(Have not been implemented yet). Use it as an abstract class for all
 	         shapes.
-	Builder: Complex objects like Shape, Circle, Rectangle have multiple parameters such as
-             size, position, color, etc.). We can add a Builder class to customize all these
-             shapes with a more simplified construction according to client requirements.
-             And by doing so, adding a new feature in future would be simple and easy.
+	Builder: Not yet implemented. Can consider use builder pattern in the future.
 	Observer/Observable: PaintPanel is the Observer, PaintModel is the Observable. When PaintModel
 	changes, it automatically notifies PaintPanel.
 
 
 OTHER ARCHITECTURE DISCUSSIONS
-    For future sprints implementation.
-    1. Factory Design Pattern: Use Shape Factory to create a shape independently
-    that guarantee type safely and correct current mode. This can help clients
-    use the objects(e.g. a Circle object) created by Factory without worrying
-    about the concrete details, which improve minimize errors to other classes.
+    1. For future sprints implementation: Use factory, command and builder patterns.
+    2. How a developer adds a new shape feature such as Rectangle to the existing
+       code?
+       First, create the Rectangle class for modeling the features such as width and height.
+       Second, add the rectangle model into PaintModel since PaintModel is an observable.
+       In this way, changes to rectangle model can be communicated to other classes such as
+       controller PaintPanel. Third, integrate Rectangle into PaintPanel so that PaintPanel
+       can handle users mouse events to draw rectangles and update canvas.
 
-    2. Iterator Pattern: Use Iterator to update every shapes store in the PaintModel
-    based on current mode. This allows other controllers in the system to traverse
-    ArrayList Shapes without worried about the dynamic changes to the shapes by the
-    users.
-
-    3. Strategy Pattern: Define a family of algorithms of drawing based on different
-    shapes.

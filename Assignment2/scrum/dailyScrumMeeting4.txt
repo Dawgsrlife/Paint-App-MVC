@@ -26,7 +26,7 @@ Oct 17,2024
 
 Oct 18,2024
 	What I did yesterday: Read current uml and check square class.
-	What I will do today: Implement US1.004.
+	What I will do today: Implement US1.004, discuss and plan program during the group meeting
 	Obstacles I face: Add two user stories to productBacklog.
 
 Oct 19,2024
@@ -35,9 +35,9 @@ Oct 19,2024
 	Obstacles I face: the blueprint for implementing own-defined user stories.
 
 Oct 20,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Review design patterns and organize backlog.
+	What I will do today: Update arch.txt according to discussion.
+	Obstacles I face: None
 
 Oct 21,2024
 	What I did yesterday:
