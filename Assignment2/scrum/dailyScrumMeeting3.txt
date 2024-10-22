@@ -56,8 +56,8 @@ Oct 21,2024
 	What I did yesterday: Merged US1.013 (Polyline) into master and pushed into
 	                      the remote.
 
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Claim and start BUG2.003
+	Obstacles I face: Understanding the different design patterns
 
 Oct 22,2024
 	What I did yesterday:
