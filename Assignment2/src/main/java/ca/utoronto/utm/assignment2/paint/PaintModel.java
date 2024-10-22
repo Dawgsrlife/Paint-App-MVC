@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Observable;
 
 public class PaintModel extends Observable {
-    private final ArrayList<Point> points = new ArrayList<>();
-    private final ArrayList<Integer> lineBreaks = new ArrayList<>();
-
     private final ArrayList<Shape> shapes = new ArrayList<>();
 
     /**
@@ -25,23 +22,5 @@ public class PaintModel extends Observable {
      */
     public ArrayList<Shape> getShapes() {
         return shapes;
-    }
-
-    public void addPoint(Point p) {
-        this.points.add(p);
-        this.setChanged();
-        this.notifyObservers();
-    }
-
-    public ArrayList<Point> getPoints() {
-        return points;
-    }
-
-    public void addLineBreak() {
-        this.lineBreaks.add(points.size() - 1);
-    }
-
-    public ArrayList<Integer> getLineBreaks() {
-        return lineBreaks;
     }
 }

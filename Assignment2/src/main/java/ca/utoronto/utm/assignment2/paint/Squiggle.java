@@ -11,6 +11,7 @@ public class Squiggle extends Shape {
     public Squiggle(Point point) {
         super(point, null, "Squiggle", true,
                 Color.BLACK, null, 0.0);
+        points.add(point);
     }
 
     public void addPoint(Point point) {
@@ -36,5 +37,9 @@ public class Squiggle extends Shape {
     @Override
     public double[] getPaintInfo() {
         return new double[0];
+    }
+
+    public ArrayList<Point> getPoints() {
+        return points;
     }
 }

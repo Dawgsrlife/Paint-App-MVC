@@ -7,7 +7,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -15,16 +14,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private String mode = "Circle";
     private PaintModel model;
 
-    public Circle circle; // This is VERY UGLY, should somehow fix this!!
-    private Rectangle rectangle;
-    private Square square;
-    private Squiggle squiggle;
+    private Shape shape;
     private String cursorCoordinate;
-
-    // Polyline:
-    private ArrayList<Point> polylinePoints;
-    private final int POLYLINE_STROKE_WIDTH = 3;
-    private Point currentMousePosition;
 
     // public fields
     public static Color backgroundColor = Color.WHITE;
@@ -39,10 +30,6 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         this.addEventHandler(MouseEvent.MOUSE_MOVED, this);
         this.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
         this.addEventHandler(MouseEvent.MOUSE_DRAGGED, this);
-
-        // Polyline:
-        this.polylinePoints = new ArrayList<Point>();
-        this.currentMousePosition = null;
     }
 
     /**
@@ -56,7 +43,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     @Override
     public void handle(MouseEvent mouseEvent) {
         // Later when we learn about inner classes...
-        // https://docs.oracle.com/javafx/2/events/DraggablePanelsExample.java.htm
+        // https://docs.oracle.com/javafx/2/events/DraggablePanelsExample.java.html
 
         EventType<MouseEvent> mouseEventType = (EventType<MouseEvent>) mouseEvent.getEventType();
 
@@ -66,21 +53,17 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Circle");
                     Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.circle = new Circle(centre, 0);
+                    this.shape = new Circle(centre, 0);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // Problematic notion of radius and centre!!
                     double radius =
-                            Math.sqrt(Math.pow(this.circle.getStart().x - mouseEvent.getX(), 2) +
-                            Math.pow(this.circle.getStart().y - mouseEvent.getY(), 2));
-                    this.circle.setRadius(radius);
-                    this.model.addShape(this.circle);
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
-                // Put something here
+                            Math.sqrt(Math.pow(this.shape.getStart().x - mouseEvent.getX(), 2) +
+                            Math.pow(this.shape.getStart().y - mouseEvent.getY(), 2));
+                    Circle c = (Circle)this.shape;
+                    c.setRadius(radius);
+                    this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if (this.circle != null) {
-                        System.out.println("Added Circle");
-                        this.circle = null;
-                    }
+                    cleanCache();
                 }
                 break;
             case "Rectangle":
@@ -88,18 +71,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // record Rectangle on MOUSE_PRESSED
                     System.out.println("Started Rectangle");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.rectangle = new Rectangle(start, null);
+                    this.shape = new Rectangle(start, null);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // update Rectangle ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.rectangle.setEnd(end);
-                    this.model.addShape(this.rectangle);
+                    this.shape.setEnd(end);
+                    this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    // clean cache on MOUSE_RELEASED
-                    if (this.rectangle != null) {
-                        System.out.println("Added Rectangle");
-                        this.rectangle = null;
-                    }
+                    cleanCache();
                 }
                 break;
             case "Square":
@@ -107,65 +86,43 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // record new Square on MOUSE_PRESSED
                     System.out.println("Started Square");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.square = new Square(start, null);
+                    this.shape = new Square(start, null);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // record Square ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.square.setEnd(end);
-                    this.model.addShape(this.square);
+                    this.shape.setEnd(end);
+                    this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    // clean cache on MOUSE_RELEASED
-                    if (this.square != null) {
-                        System.out.println("Added Square");
-                        this.square = null;
-                    }
+                    cleanCache();
                 }
                 break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Squiggle");
-                    this.squiggle = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                    this.model.addShape(this.squiggle);
+                    this.shape = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    this.squiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                    update(model, new Object());
+                    Squiggle sq = (Squiggle)this.shape;
+                    sq.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if (this.squiggle != null) {
-                        System.out.println("Added Squiggle");
-                        this.squiggle = null;
-                    }
+                    cleanCache();
                 }
                 break;
             case "Polyline":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isPrimaryButtonDown()) {
-                    if (polylinePoints.isEmpty()) {
+                    if (this.shape == null) {
                         System.out.println("Started Polyline");
-
-                        // Add the initial point:
-                        this.polylinePoints.add(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                        // Update the model with a copy:
-                        this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                        this.shape = new Polyline(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                        this.model.addShape(this.shape);
                     } else {
+                        Polyline p = (Polyline)this.shape;
+                        p.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                         // TODO: Implement later... Clear the trail:
-
-                        // Add subsequent points on right-click while the polyline is active:
-                        Point newPoint = new Point(mouseEvent.getX(), mouseEvent.getY());
-                        this.polylinePoints.add(newPoint);
-                        this.model.addPoint(newPoint);  // to update the model
-
-                        System.out.println("New Polyline Vertex: " + newPoint);
                     }
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isSecondaryButtonDown()) {
-                    if (!polylinePoints.isEmpty()) {
-                        System.out.println("Finished Polyline");
-
-                        // End the polyline:
-                        this.model.addLineBreak();
-                        // Reset the Points tracker:
-                        this.polylinePoints.clear();
-                    }
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED) && !polylinePoints.isEmpty()) {
-                    // Display the polyline trail:
+                    cleanCache();
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
+                    // Display the shape trail:
 
                     // TODO: Clear the previous trail (if any)
 
@@ -178,6 +135,18 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 break;
         }
         this.cursorCoordinate = "X = " + mouseEvent.getX() + ", Y = " + mouseEvent.getY();
+        update();
+    }
+
+    /**
+     * notifies in console last shape creation event has ended
+     */
+    private void cleanCache() {
+        // clean cache on MOUSE_RELEASED
+        if (this.shape != null) {
+            System.out.println("    ^ Added");
+            this.shape = null;
+        }
     }
 
     @Override
@@ -187,36 +156,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         // draw background
         g2d.setFill(Color.WHITE);
         g2d.fillRect(0,0,this.getWidth(),this.getHeight());
-
-        // Draw Lines
-        g2d.setStroke(Color.BLACK);
-        ArrayList<Point> points = this.model.getPoints();
-
-        ArrayList<Integer> lineBreaks = this.model.getLineBreaks();
-
-        g2d.setFill(Color.RED);
-
-        int j = 0;
-        for (int i = 0; i < points.size() - 1; i++) {
-            if (j < lineBreaks.size() && i == lineBreaks.get(j)) {
-//                            System.out.println(lineBreaks.get(j) + " " +
-//                                    points.get(i).x + " " + points.get(i).y + " " +
-//                                    points.get(i+1).x + " " + points.get(i+1).y);
-                j++;
-                continue;
-            }
-            Point p1 = points.get(i);
-            Point p2 = points.get(i + 1);
-            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
-        }
-
         // draw shapes
         for (Shape s : this.model.getShapes()) {
             s.paint(g2d);
         }
-
         // draw cursorCoordinate
         g2d.setFill(Color.BLACK);
         g2d.fillText(cursorCoordinate, 3, 13);
+    }
+
+    /**
+     * Refresh canvas, repaint everything existed
+     */
+    public void update() {
+        update(model, new Object());
     }
 }
