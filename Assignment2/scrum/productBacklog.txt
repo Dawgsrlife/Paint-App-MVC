@@ -189,14 +189,6 @@ I WANT   : To be able to draw a squiggle that resembles a shape and have the
            or Circle.
 SO THAT  : I can draw shapes easily and accurately
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG?.008 : tianji61 : NotStarted
-NAME     : Shapes ordering
-PRIORITY : 2
-ESTIMATE : 30 minutes    ACTUAL :
-ISSUE    : Ordering of shapes when printed on canvas should follow the
-           order they have been created.
---------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -343,7 +335,7 @@ ISSUE    : When the user is in the Squiggle mode, clicking without dragging
            other, which is not intended.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.004 : tianji61 : Started
+TYPE     : BUG BUG2.004 : tianji61 : Completed
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 2 hours
@@ -353,6 +345,14 @@ ISSUE    : Having a list of different types of drawable things in the
            so that it is more flexible, and easier to work with.
            Consider some design patterns, or change of responsibility
            here.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.008 : tianji61 : Started
+NAME     : Shapes ordering
+PRIORITY : 2
+ESTIMATE : 30 minutes    ACTUAL :
+ISSUE    : Ordering of shapes when printed on canvas should follow the
+           order they have been created.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
