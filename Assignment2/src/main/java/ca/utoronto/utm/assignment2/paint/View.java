@@ -23,10 +23,19 @@ public class View implements EventHandler<ActionEvent> {
         this.paintPanel = new PaintPanel(this.paintModel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
 
+        //sub panels
         BorderPane root = new BorderPane();
+        BorderPane left = new BorderPane();
+        left.setTop(this.shapeChooserPanel);
+        left.setBottom(new PropertiesPanel(this));
+        BorderPane right = new BorderPane();
+        right.setTop(new StepsPanel(this));
+        right.setBottom(new EditingPanel(this));
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
-        root.setLeft(this.shapeChooserPanel);
+        root.setLeft(left);
+        root.setRight(right);
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Paint");

@@ -178,6 +178,33 @@ I WANT   : It makes more sense if coordinate display in tool selection panel
            instead of on the canvas.
 SO THAT  : I can see coordinates of cursor in tool selection panel.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.021 : tianji61 : NotStarted
+NAME     : GUI redesign
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : Refer to US2.020.
+SO THAT  : Justify properties of the shapes I am going to draw.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.022 : UTROID : NotStarted
+NAME     : Coordinate display
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : Refer to US2.020.
+SO THAT  : Undo and redo.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.023 : UTROID : NotStarted
+NAME     : Coordinate display
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : Refer to US2.020.
+SO THAT  : Justify properties of a shapes I drew.
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -306,7 +333,7 @@ I WANT   : To be able to left-click to create the vertices that join line
 SO THAT  : I can create polylines on my canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.016 : tianji61 : Started
+TYPE     : USER STORY US1.016 : tianji61 : Complete
 NAME     : Cursor index
 PRIORITY : 3
 ESTIMATE : 30 minutes ACTUAL : 1 hour
@@ -324,7 +351,7 @@ ISSUE    : When the user is in the Squiggle mode, clicking without dragging
            other, which is not intended.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.004 : tianji61 : Completed
+TYPE     : BUG BUG2.004 : tianji61 : Complete
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 2 hours
@@ -336,7 +363,7 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.008 : tianji61 : Completed
+TYPE     : BUG BUG2.008 : tianji61 : Complete
 NAME     : Shapes ordering
 PRIORITY : 2
 ESTIMATE : 30 minutes    ACTUAL : 2 hours
@@ -351,6 +378,16 @@ ESTIMATE : 30 minutes : ACTUAL : 30 minutes
 AS A     : user
 I WANT   : To be able to place oval shapes on the canvas by dragging to
            change its size.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.020 : tianji61 : Complete
+NAME     : GUI redesign
+PRIORITY : 2
+ESTIMATE : 30 minutes : ACTUAL : 30 minutes
+AS A     : user
+I WANT   : More functions on interface, allow me to change color,
+           edit shape and undo, redo ...
+SO THAT  : Make selection to those functions in corresponding areas
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

@@ -2,6 +2,7 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
@@ -30,6 +31,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
         // adding gap between elements
         this.setVgap(5.0);
+        this.setPadding(new Insets(10.0));
 
         int row = 0;
         for (String label : buttonLabels) {

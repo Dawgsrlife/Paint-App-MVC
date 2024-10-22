@@ -8,7 +8,7 @@ import java.util.Objects;
 /**
  * A class representing a shape on the canvas
  *
- * @author tianji61
+ * @author tianji61 / Starter Code
  */
 public class Circle extends Oval {
     private double radius;
