@@ -96,6 +96,19 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     cleanCache();
                 }
                 break;
+            case "Oval":
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    System.out.println("Started Oval");
+                    Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.shape = new Oval(start, null);
+                    this.model.addShape(this.shape);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    Oval o = (Oval)this.shape;
+                    o.setEnd(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    cleanCache();
+                }
+                break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Squiggle");
