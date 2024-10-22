@@ -36,7 +36,7 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.005 : UTORID : NotStarted
+TYPE     : USER STORY US2.005 : tianji61 : NotStarted
 NAME     : Color selector
 PRIORITY : 3
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
