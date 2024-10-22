@@ -25,6 +25,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private final int POLYLINE_STROKE_WIDTH = 3;
     private Point currentMousePosition;
 
+    // public fields
+    public static Color backgroundColor = Color.WHITE;
+
     public PaintPanel(PaintModel model) {
         super(300, 300);
         this.model = model;
@@ -66,8 +69,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // Problematic notion of radius and centre!!
                     double radius =
-                            Math.sqrt(Math.pow(this.circle.getCentre().x - mouseEvent.getX(), 2) +
-                            Math.pow(this.circle.getCentre().y - mouseEvent.getY(), 2));
+                            Math.sqrt(Math.pow(this.circle.getStart().x - mouseEvent.getX(), 2) +
+                            Math.pow(this.circle.getStart().y - mouseEvent.getY(), 2));
                     this.circle.setRadius(radius);
                     this.model.addCircle(this.circle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
@@ -174,9 +177,12 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
     @Override
     public void update(Observable o, Object arg) {
-
+        // get painter
         GraphicsContext g2d = this.getGraphicsContext2D();
-        g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
+        // draw background
+        g2d.setFill(Color.WHITE);
+        g2d.fillRect(0,0,this.getWidth(),this.getHeight());
+
         // Draw Lines
         ArrayList<Point> points = this.model.getPoints();
 
@@ -199,26 +205,18 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         }
 
         // Draw Circles
-        g2d.setFill(Color.LIGHTGREEN);
         for (Circle c : this.model.getCircles()) {
-            double x = c.getCentre().x - c.getRadius();
-            double y = c.getCentre().y - c.getRadius();
-            double radius = c.getRadius();
-            g2d.fillOval(x, y, radius * 2, radius * 2);
+            c.paint(g2d);
         }
 
         // draw Rectangles
-        g2d.setFill(Color.LIGHTBLUE);
         for (Rectangle r : this.model.getRectangles()) {
-            double[] details = r.getPrintDetails();
-            g2d.fillRect(details[0], details[1], details[2], details[3]);
+            r.paint(g2d);
         }
 
         // draw Squares
-        g2d.setFill(Color.LIGHTPINK);
         for (Square s : this.model.getSquares()) {
-            double[] details = s.getPrintDetails();
-            g2d.fillRect(details[0], details[1], details[2], details[2]);
+            s.paint(g2d);
         }
 
         // draw cursorCoordinate

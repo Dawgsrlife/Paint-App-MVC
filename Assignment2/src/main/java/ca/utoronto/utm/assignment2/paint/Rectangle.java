@@ -1,17 +1,14 @@
 package ca.utoronto.utm.assignment2.paint;
 
-import java.util.Objects;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
 /**
  * A class representing a rectangle on the canvas
  *
  * @author tianji61
  */
-public class Rectangle {
-
-    // two corner coordinates for Rectangle indexing and definition
-    private Point start;
-    private Point end;
+public class Rectangle extends Shape {
 
     /**
      * Initialize a Rectangle with two given coordinates
@@ -20,49 +17,35 @@ public class Rectangle {
      * @param end   ending coordinate
      */
     public Rectangle(Point start, Point end) {
-        this.start = start;
-        this.end = end;
+        super(start, end, "Rectangle", false,
+                Color.LIGHTBLUE, null, 5.0);
     }
 
-    public Point getEnd() {
-        return end;
+    @Override
+    void paint(GraphicsContext g2d) {
+        g2d.setFill(getColor());
+        double[] info = getPaintInfo();
+        g2d.fillRect(info[0], info[1], info[2], info[3]);
+        if (!isFilled()) {
+            removeFilled(g2d);
+        }
     }
 
-    public void setEnd(Point end) {
-        this.end = end;
+    @Override
+    void removeFilled(GraphicsContext g2d) {
+        g2d.setFill(PaintPanel.backgroundColor);
+        double[] info = getPaintInfo();
+        double width = getBorderWidth();
+        g2d.fillRect(info[0] + width, info[1] + width,
+                info[2] - width * 2, info[3] - width * 2);
     }
 
-    public Point getStart() {
-        return start;
-    }
-
-    public void setStart(Point start) {
-        this.start = start;
-    }
-
-    /**
-     * Get g2d printing arguments
-     *
-     * @return a list of [upperLeft x, upperLeft y, with, height] of this Rectangle instance
-     */
-    public double[] getPrintDetails() {
-        double startX = Math.min(start.x, end.x);
-        double startY = Math.min(start.y, end.y);
-        double width = Math.abs(end.x - start.x);
-        double height = Math.abs(end.y - start.y);
+    @Override
+    double[] getPaintInfo() {
+        double startX = Math.min(getStart().x, getEnd().x);
+        double startY = Math.min(getStart().y, getEnd().y);
+        double width = Math.abs(getEnd().x - getStart().x);
+        double height = Math.abs(getEnd().y - getStart().y);
         return new double[]{startX, startY, width, height};
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Rectangle rectangle = (Rectangle) o;
-        return Objects.equals(start, rectangle.start) && Objects.equals(end, rectangle.end);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(start, end);
     }
 }

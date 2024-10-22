@@ -1,21 +1,49 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
-public class Circle {
-    private Point centre;
+import java.util.Objects;
+
+/**
+ * A class representing a circle on the canvas
+ *
+ * @author tianji61
+ */
+public class Circle extends Shape {
     private double radius;
 
     public Circle(Point centre, int radius) {
-        this.centre = centre;
+        super(centre, null, "Circle", false,
+                Color.LIGHTGREEN, null, 5.0);
         this.radius = radius;
     }
 
-    public Point getCentre() {
-        return centre;
+    @Override
+    public void paint(GraphicsContext g2d) {
+        g2d.setFill(getColor());
+        double[] info = getPaintInfo();
+        g2d.fillOval(info[0], info[1], info[2], info[2]);
+        if (!isFilled()) {
+            removeFilled(g2d);
+        }
     }
 
-    public void setCentre(Point centre) {
-        this.centre = centre;
+    @Override
+    public void removeFilled(GraphicsContext g2d) {
+        g2d.setFill(PaintPanel.backgroundColor);
+        double[] info = getPaintInfo();
+        double width = getBorderWidth();
+        g2d.fillOval(info[0] + width, info[1] + width,
+                info[2] - width * 2, info[2] - width * 2);
+    }
+
+    @Override
+    public double[] getPaintInfo() {
+        double radius = getRadius();
+        double x = getStart().x - radius / 2;
+        double y = getStart().y - radius / 2;
+        return new double[]{x, y, radius};
     }
 
     public double getRadius() {
@@ -26,4 +54,16 @@ public class Circle {
         this.radius = radius;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Circle circle = (Circle) o;
+        return Double.compare(radius, circle.radius) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(radius);
+    }
 }

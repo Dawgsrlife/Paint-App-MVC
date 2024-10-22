@@ -33,13 +33,13 @@ Oct 19,2024
 
 Oct 20,2024
 	What I did yesterday: Implemented US1.012
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Continue finding bugs
+	Obstacles I face: Nothing
 
 Oct 21,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Found BUG2.008
+	What I will do today: BUG2.008 and BUG2.004
+	Obstacles I face: Nothing
 
 Oct 22,2024
 	What I did yesterday:
