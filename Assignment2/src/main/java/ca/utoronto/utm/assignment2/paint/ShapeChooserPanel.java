@@ -36,7 +36,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         int row = 0;
         for (String label : buttonLabels) {
             Button button = new Button(label);
-            button.setMinWidth(100);
+            button.setMinWidth(150);
             button.setStyle(UNSELECTED);
             if (label.equals("●")) button.setStyle(SELECTED);
             this.add(button, 0, row);

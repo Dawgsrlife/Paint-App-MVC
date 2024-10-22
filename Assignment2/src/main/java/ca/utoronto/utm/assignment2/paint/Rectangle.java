@@ -1,7 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 
 /**
  * A class representing a rectangle on the canvas
@@ -16,14 +15,14 @@ public class Rectangle extends Shape {
      * @param start starting coordinate
      * @param end   ending coordinate
      */
-    public Rectangle(Point start, Point end) {
+    public Rectangle(Point start, Point end, PaintProperties pp) {
         super(start, end, "Rectangle", false,
-                Color.LIGHTBLUE, null, 5.0);
+                pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
     }
 
     @Override
     void paint(GraphicsContext g2d) {
-        g2d.setFill(getColor());
+        g2d.setFill(getBorderColor());
         double[] info = getPaintInfo();
         g2d.fillRect(info[0], info[1], info[2], info[3]);
         if (!isFilled()) {
@@ -33,7 +32,7 @@ public class Rectangle extends Shape {
 
     @Override
     void removeFilled(GraphicsContext g2d) {
-        g2d.setFill(PaintPanel.backgroundColor);
+        g2d.setFill(getColor());
         double[] info = getPaintInfo();
         double width = getBorderWidth();
         g2d.fillRect(info[0] + width, info[1] + width,

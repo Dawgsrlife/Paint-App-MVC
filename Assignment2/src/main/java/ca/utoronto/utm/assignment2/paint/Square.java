@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 public class Square extends Rectangle {
 
     public Square(Point start, Point end) {
-        super(start, end);
+        super(start, end, null);
         setColor(Color.LIGHTPINK);
         setType("Square");
     }

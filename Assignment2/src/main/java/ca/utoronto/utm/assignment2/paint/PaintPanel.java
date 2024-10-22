@@ -13,6 +13,7 @@ import java.util.Observer;
 public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Observer {
     private String mode = "Circle";
     private PaintModel model;
+    private PropertiesPanel propertiesPanel;
 
     private Shape shape;
     private String cursorCoordinate;
@@ -20,10 +21,11 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     // public fields
     public static Color backgroundColor = Color.WHITE;
 
-    public PaintPanel(PaintModel model) {
-        super(300, 300);
+    public PaintPanel(PaintModel model, PropertiesPanel propertiesPanel) {
+        super(500, 500);
         this.model = model;
         this.model.addObserver(this);
+        this.propertiesPanel = propertiesPanel;
 
         this.addEventHandler(MouseEvent.MOUSE_PRESSED, this);
         this.addEventHandler(MouseEvent.MOUSE_RELEASED, this);
@@ -71,7 +73,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // record Rectangle on MOUSE_PRESSED
                     System.out.println("Started Rectangle");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.shape = new Rectangle(start, null);
+                    this.shape = new Rectangle(start, null, propertiesPanel.getPaintProperties());
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // update Rectangle ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
