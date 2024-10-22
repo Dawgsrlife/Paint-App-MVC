@@ -10,12 +10,13 @@ import java.util.Objects;
  *
  * @author tianji61
  */
-public class Circle extends Shape {
+public class Circle extends Oval {
     private double radius;
 
     public Circle(Point centre, int radius) {
-        super(centre, null, "Circle", false,
-                Color.LIGHTGREEN, null, 5.0);
+        super(centre, null);
+        this.setType("Circle");
+        this.setColor(Color.LIGHTGREEN);
         this.radius = radius;
     }
 
