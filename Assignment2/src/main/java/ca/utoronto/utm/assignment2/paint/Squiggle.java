@@ -19,7 +19,7 @@ public class Squiggle extends Shape {
     }
 
     @Override
-    void paint(GraphicsContext g2d) {
+    public void paint(GraphicsContext g2d) {
         g2d.setStroke(getColor());
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
@@ -29,12 +29,12 @@ public class Squiggle extends Shape {
     }
 
     @Override
-    void removeFilled(GraphicsContext g2d) {
+    public void removeFilled(GraphicsContext g2d) {
 
     }
 
     @Override
-    double[] getPaintInfo() {
+    public double[] getPaintInfo() {
         return new double[0];
     }
 }

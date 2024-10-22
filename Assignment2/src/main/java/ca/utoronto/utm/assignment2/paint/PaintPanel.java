@@ -125,13 +125,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Squiggle");
                     this.squiggle = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     this.model.addShape(this.squiggle);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     this.squiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    update(model, new Object());
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    if (this.square != null) {
+                    if (this.squiggle != null) {
                         System.out.println("Added Squiggle");
-                        this.square = null;
+                        this.squiggle = null;
                     }
                 }
                 break;
@@ -188,6 +189,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         g2d.fillRect(0,0,this.getWidth(),this.getHeight());
 
         // Draw Lines
+        g2d.setStroke(Color.BLACK);
         ArrayList<Point> points = this.model.getPoints();
 
         ArrayList<Integer> lineBreaks = this.model.getLineBreaks();
