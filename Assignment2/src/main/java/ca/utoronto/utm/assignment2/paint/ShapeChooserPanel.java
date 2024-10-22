@@ -9,8 +9,8 @@ import java.util.*;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
     // Ethan: using buttonLabels as mode breaks the code
-    final private String[] buttonLabels = {"●", "▬", "■", "~", "〽"};
-    final private String[] buttonNames = {"Circle", "Rectangle", "Square", "Squiggle", "Polyline"};
+    final private String[] buttonLabels = {"●", "▬", "■", "⬬", "~", "〽"};
+    final private String[] buttonNames = {"Circle", "Rectangle", "Square", "Oval", "Squiggle", "Polyline"};
 
     private View view;
 
