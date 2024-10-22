@@ -37,9 +37,9 @@ Oct 20,2024
 	Obstacles I face: Finding bugs
 
 Oct 21,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Found no bugs
+	What I will do today: Implement US2.018
+	Obstacles I face: Understanding how the new architecture works
 
 Oct 22,2024
 	What I did yesterday:
