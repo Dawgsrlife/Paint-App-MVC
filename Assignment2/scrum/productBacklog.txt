@@ -36,29 +36,6 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.005 : tianji61 : NotStarted
-NAME     : Color selector
-PRIORITY : 3
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
-AS A     : user
-I WANT   : To be able to select the current drawing color, to be applied
-           to subsequent shapes. Example:
-           		selects color red
-           		mode circle
-           		draw a circle
-           		draw a circle
-           		mode rectangle
-           		draw a rectangle
-           		select color green
-           		draw a rectangle
-           		draw a rectangle
-           		select mode squiggle
-           		draw a squiggle
-           	results in two red circles and a red rectangle as well as
-           	two green rectangles and a green squiggle
-SO THAT  :
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US?.006 : mengale1 : InProgress
 NAME     : Fill style selector
 PRIORITY : 3
@@ -388,6 +365,29 @@ ESTIMATE : 2 hours : ACTUAL : 2 hours
 AS A     : user
 I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of the shapes I am going to draw.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.005 : tianji61 : Started
+NAME     : Color selector
+PRIORITY : 3
+ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
+AS A     : user
+I WANT   : To be able to select the current drawing color, to be applied
+           to subsequent shapes. Example:
+           		selects color red
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select color green
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two red circles and a red rectangle as well as
+           	two green rectangles and a green squiggle.
+SO THAT  : I can draw shapes in different color.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
