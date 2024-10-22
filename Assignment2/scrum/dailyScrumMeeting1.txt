@@ -47,9 +47,9 @@ Oct 22,2024
 	Obstacles I face: Nothing
 
 Oct 23,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG2.008
+	What I will do today: Find a good pattern for GUI
+	Obstacles I face: Nothing
 
 Oct 24,2024
 	What I did yesterday:
