@@ -169,15 +169,6 @@ I WANT   : To be able to draw a squiggle that resembles a shape and have the
 SO THAT  : I can draw shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.018 : huaethan : InProgress
-NAME     : Oval
-PRIORITY : 3
-ESTIMATE : 30 minutes : ACTUAL :
-AS A     : user
-I WANT   : To be able to place oval shapes on the canvas by dragging to
-           change its size.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US2.019 : tianji61 : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
@@ -351,6 +342,15 @@ PRIORITY : 2
 ESTIMATE : 30 minutes    ACTUAL : 2 hours
 ISSUE    : Ordering of shapes when printed on canvas should follow the
            order they have been created.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.018 : huaethan : Complete
+NAME     : Oval
+PRIORITY : 3
+ESTIMATE : 30 minutes : ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To be able to place oval shapes on the canvas by dragging to
+           change its size.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
