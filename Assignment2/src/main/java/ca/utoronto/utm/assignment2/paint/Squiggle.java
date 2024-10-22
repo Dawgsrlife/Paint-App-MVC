@@ -21,7 +21,7 @@ public class Squiggle extends Shape {
     @Override
     void paint(GraphicsContext g2d) {
         g2d.setStroke(getColor());
-        for (int i = 0; i < points.size() - 1; i+=2) {
+        for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);
             g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
