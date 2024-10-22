@@ -25,12 +25,12 @@ public class Paint extends Application {
         // width change handler
         stage.widthProperty().addListener((obs, oldWidth, newWidth) -> {
             panel.setWidth(newWidth.doubleValue());
-            panel.update(model, new Object());
+            panel.update();
         });
         // height change handler
         stage.heightProperty().addListener((obs, oldHeight, newHeight) -> {
             panel.setHeight(newHeight.doubleValue());
-            panel.update(model, new Object());
+            panel.update();
         });
     }
 }

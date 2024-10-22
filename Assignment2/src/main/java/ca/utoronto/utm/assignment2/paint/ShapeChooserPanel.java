@@ -36,6 +36,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             Button button = new Button(label);
             button.setMinWidth(100);
             button.setStyle(UNSELECTED);
+            if (label.equals("●")) button.setStyle(SELECTED);
             this.add(button, 0, row);
             row++;
             button.setOnAction(this);
@@ -66,7 +67,6 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         int buttonNameIndex = indexOf(buttonLabels, source.getText());
         String command = buttonNames[buttonNameIndex];
         view.setMode(command);
-        System.out.println(command);
 
         // highlight button when selected
         for (Object o : this.getChildren()) {

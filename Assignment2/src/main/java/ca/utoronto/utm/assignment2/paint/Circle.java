@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 import java.util.Objects;
 
 /**
- * A class representing a circle on the canvas
+ * A class representing a shape on the canvas
  *
  * @author tianji61
  */
@@ -52,18 +52,5 @@ public class Circle extends Shape {
 
     public void setRadius(double radius) {
         this.radius = radius;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Circle circle = (Circle) o;
-        return Double.compare(radius, circle.radius) == 0;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(radius);
     }
 }

@@ -7,6 +7,7 @@ public class Square extends Rectangle {
     public Square(Point start, Point end) {
         super(start, end);
         setColor(Color.LIGHTPINK);
+        setType("Square");
     }
 
     @Override
