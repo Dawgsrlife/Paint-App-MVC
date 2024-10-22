@@ -6,7 +6,7 @@ import javafx.scene.paint.Color;
 public class Oval extends Shape {
 
     public Oval(Point start, Point end) {
-        super(start, end, "Oval", false, Color.BEIGE, null, 5.0);
+        super(start, end, "Oval", false, Color.ROSYBROWN, null, 5.0);
     }
 
     @Override
@@ -24,7 +24,7 @@ public class Oval extends Shape {
         g2d.setFill(PaintPanel.backgroundColor);
         double[] info = getPaintInfo();
         double width = getBorderWidth();
-        g2d.fillRect(info[0] + width, info[1] + width,
+        g2d.fillOval(info[0] + width, info[1] + width,
                 info[2] - width * 2, info[3] - width * 2);
     }
 

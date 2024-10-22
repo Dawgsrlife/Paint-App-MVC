@@ -42,9 +42,9 @@ public class Circle extends Oval {
     @Override
     public double[] getPaintInfo() {
         double radius = getRadius();
-        double x = getStart().x - radius / 2;
-        double y = getStart().y - radius / 2;
-        return new double[]{x, y, radius};
+        double x = getStart().x - radius;
+        double y = getStart().y - radius;
+        return new double[]{x, y, 2 * radius};
     }
 
     public double getRadius() {

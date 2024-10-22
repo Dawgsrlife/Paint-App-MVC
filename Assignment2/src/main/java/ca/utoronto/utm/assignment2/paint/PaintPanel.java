@@ -101,10 +101,10 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     System.out.println("Started Oval");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.shape = new Oval(start, null);
-                    this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     Oval o = (Oval)this.shape;
                     o.setEnd(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     cleanCache();
                 }
