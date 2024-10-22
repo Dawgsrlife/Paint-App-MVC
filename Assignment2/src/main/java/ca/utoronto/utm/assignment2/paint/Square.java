@@ -1,12 +1,9 @@
 package ca.utoronto.utm.assignment2.paint;
 
-import javafx.scene.paint.Color;
-
 public class Square extends Rectangle {
 
-    public Square(Point start, Point end) {
-        super(start, end, null);
-        setColor(Color.LIGHTPINK);
+    public Square(Point start, Point end, PaintProperties pp) {
+        super(start, end, pp);
         setType("Square");
     }
 

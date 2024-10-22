@@ -13,30 +13,10 @@ import java.util.Objects;
 public class Circle extends Oval {
     private double radius;
 
-    public Circle(Point centre, int radius) {
-        super(centre, null);
+    public Circle(Point centre, int radius, PaintProperties pp) {
+        super(centre, null, pp);
         this.setType("Circle");
-        this.setColor(Color.LIGHTGREEN);
         this.radius = radius;
-    }
-
-    @Override
-    public void paint(GraphicsContext g2d) {
-        g2d.setFill(getColor());
-        double[] info = getPaintInfo();
-        g2d.fillOval(info[0], info[1], info[2], info[2]);
-        if (!isFilled()) {
-            removeFilled(g2d);
-        }
-    }
-
-    @Override
-    public void removeFilled(GraphicsContext g2d) {
-        g2d.setFill(PaintPanel.backgroundColor);
-        double[] info = getPaintInfo();
-        double width = getBorderWidth();
-        g2d.fillOval(info[0] + width, info[1] + width,
-                info[2] - width * 2, info[2] - width * 2);
     }
 
     @Override
@@ -44,7 +24,7 @@ public class Circle extends Oval {
         double radius = getRadius();
         double x = getStart().x - radius;
         double y = getStart().y - radius;
-        return new double[]{x, y, 2 * radius};
+        return new double[]{x, y, 2 * radius, 2 * radius};
     }
 
     public double getRadius() {

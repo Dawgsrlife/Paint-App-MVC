@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class Squiggle extends Shape {
     private final ArrayList<Point> points = new ArrayList<>();
 
-    public Squiggle(Point point) {
+    public Squiggle(Point point, PaintProperties pp) {
         super(point, null, "Squiggle", true,
-                Color.BLACK, null, 0.0);
+                pp.getFillColor(), null, 0.0);
         points.add(point);
     }
 

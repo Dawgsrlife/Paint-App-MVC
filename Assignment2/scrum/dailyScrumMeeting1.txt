@@ -52,17 +52,17 @@ Oct 23,2024
 	Obstacles I face: Nothing
 
 Oct 24,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Found a good pattern for GUI and created US2.020, US2.021, US2.022, US2.023
+	What I will do today: Implement US2.020
+	Obstacles I face: Nothing
 
 Oct 25,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US2.020
+	What I will do today: Implement US20.005
+	Obstacles I face: Nothing
 
 Oct 26,2024
-	What I did yesterday:
+	What I did yesterday: Implemented US2.005
 	What I will do today:
 	Obstacles I face:
 

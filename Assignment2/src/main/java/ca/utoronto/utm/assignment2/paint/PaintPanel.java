@@ -55,7 +55,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Circle");
                     Point centre = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.shape = new Circle(centre, 0);
+                    this.shape = new Circle(centre, 0, propertiesPanel.getPaintProperties());
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // Problematic notion of radius and centre!!
                     double radius =
@@ -88,7 +88,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // record new Square on MOUSE_PRESSED
                     System.out.println("Started Square");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.shape = new Square(start, null);
+                    this.shape = new Square(start, null, propertiesPanel.getPaintProperties());
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     // record Square ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
@@ -102,7 +102,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Oval");
                     Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
-                    this.shape = new Oval(start, null);
+                    this.shape = new Oval(start, null, propertiesPanel.getPaintProperties());
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     Oval o = (Oval)this.shape;
                     o.setEnd(new Point(mouseEvent.getX(), mouseEvent.getY()));
@@ -114,7 +114,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Squiggle");
-                    this.shape = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                    this.shape = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()),
+                            propertiesPanel.getPaintProperties());
                     this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     Squiggle sq = (Squiggle)this.shape;
@@ -127,7 +128,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isPrimaryButtonDown()) {
                     if (this.shape == null) {
                         System.out.println("Started Polyline");
-                        this.shape = new Polyline(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                        this.shape = new Polyline(new Point(mouseEvent.getX(), mouseEvent.getY()),
+                                propertiesPanel.getPaintProperties());
                         this.model.addShape(this.shape);
                     } else {
                         Polyline p = (Polyline)this.shape;

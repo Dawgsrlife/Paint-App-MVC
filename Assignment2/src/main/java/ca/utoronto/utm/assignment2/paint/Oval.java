@@ -1,17 +1,17 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 
 public class Oval extends Shape {
 
-    public Oval(Point start, Point end) {
-        super(start, end, "Oval", false, Color.ROSYBROWN, null, 5.0);
+    public Oval(Point start, Point end, PaintProperties pp) {
+        super(start, end, "Oval", false,
+                pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
     }
 
     @Override
     void paint(GraphicsContext g2d) {
-        g2d.setFill(getColor());
+        g2d.setFill(getBorderColor());
         double[] info = getPaintInfo();
         g2d.fillOval(info[0], info[1], info[2], info[3]);
         if (!isFilled()) {
@@ -21,7 +21,7 @@ public class Oval extends Shape {
 
     @Override
     void removeFilled(GraphicsContext g2d) {
-        g2d.setFill(PaintPanel.backgroundColor);
+        g2d.setFill(getColor());
         double[] info = getPaintInfo();
         double width = getBorderWidth();
         g2d.fillOval(info[0] + width, info[1] + width,
