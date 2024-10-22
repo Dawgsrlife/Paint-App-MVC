@@ -18,6 +18,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     public Circle circle; // This is VERY UGLY, should somehow fix this!!
     private Rectangle rectangle;
     private Square square;
+    private Squiggle squiggle;
     private String cursorCoordinate;
 
     // Polyline:
@@ -72,7 +73,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                             Math.sqrt(Math.pow(this.circle.getStart().x - mouseEvent.getX(), 2) +
                             Math.pow(this.circle.getStart().y - mouseEvent.getY(), 2));
                     this.circle.setRadius(radius);
-                    this.model.addCircle(this.circle);
+                    this.model.addShape(this.circle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
                 // Put something here
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
@@ -92,7 +93,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // update Rectangle ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.rectangle.setEnd(end);
-                    this.model.addRectangle(this.rectangle);
+                    this.model.addShape(this.rectangle);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     // clean cache on MOUSE_RELEASED
                     if (this.rectangle != null) {
@@ -111,7 +112,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // record Square ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.square.setEnd(end);
-                    this.model.addSquare(this.square);
+                    this.model.addShape(this.square);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
                     // clean cache on MOUSE_RELEASED
                     if (this.square != null) {
@@ -122,13 +123,16 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
-                    this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                }
-                if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
-                    this.model.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                    // System.out.println(this.model.getPoints());
+                    System.out.println("Started Squiggle");
+                    this.squiggle = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()));
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    this.model.addShape(this.squiggle);
+                    this.squiggle.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    this.model.addLineBreak();
+                    if (this.square != null) {
+                        System.out.println("Added Squiggle");
+                        this.square = null;
+                    }
                 }
                 break;
             case "Polyline":
@@ -204,18 +208,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
             g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
         }
 
-        // Draw Circles
-        for (Circle c : this.model.getCircles()) {
-            c.paint(g2d);
-        }
-
-        // draw Rectangles
-        for (Rectangle r : this.model.getRectangles()) {
-            r.paint(g2d);
-        }
-
-        // draw Squares
-        for (Square s : this.model.getSquares()) {
+        // draw shapes
+        for (Shape s : this.model.getShapes()) {
             s.paint(g2d);
         }
 
