@@ -63,8 +63,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                             Math.pow(this.shape.getStart().y - mouseEvent.getY(), 2));
                     Circle c = (Circle)this.shape;
                     c.setRadius(radius);
-                    this.model.addShape(this.shape);
+                    this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    this.model.addShape(this.shape);
                     cleanCache();
                 }
                 break;
@@ -78,8 +79,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // update Rectangle ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.shape.setEnd(end);
-                    this.model.addShape(this.shape);
+                    this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    this.model.addShape(this.shape);
                     cleanCache();
                 }
                 break;
@@ -93,8 +95,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     // record Square ending coordinate on MOUSE_DRAGGED
                     Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
                     this.shape.setEnd(end);
-                    this.model.addShape(this.shape);
+                    this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    this.model.addShape(this.shape);
                     cleanCache();
                 }
                 break;
@@ -106,8 +109,9 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     Oval o = (Oval)this.shape;
                     o.setEnd(new Point(mouseEvent.getX(), mouseEvent.getY()));
-                    this.model.addShape(this.shape);
+                    this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    this.model.addShape(this.shape);
                     cleanCache();
                 }
                 break;
@@ -173,7 +177,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         // draw background
         g2d.setFill(Color.WHITE);
         g2d.fillRect(0,0,this.getWidth(),this.getHeight());
-        // draw shapes
+        // draw steps
         for (Shape s : this.model.getShapes()) {
             s.paint(g2d);
         }

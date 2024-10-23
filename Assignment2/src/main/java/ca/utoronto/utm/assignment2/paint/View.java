@@ -17,6 +17,7 @@ public class View implements EventHandler<ActionEvent> {
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
     private PropertiesPanel propertiesPanel;
+    private StepsPanel stepsPanel;
 
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
@@ -24,6 +25,7 @@ public class View implements EventHandler<ActionEvent> {
         this.propertiesPanel = new PropertiesPanel(this);
         this.paintPanel = new PaintPanel(this.paintModel, this.propertiesPanel);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
+        this.stepsPanel = new StepsPanel(this.paintModel);
 
         //sub panels
         BorderPane root = new BorderPane();
@@ -31,7 +33,7 @@ public class View implements EventHandler<ActionEvent> {
         left.setTop(this.shapeChooserPanel);
         left.setCenter(this.propertiesPanel);
         BorderPane right = new BorderPane();
-        right.setTop(new StepsPanel(this));
+        right.setTop(this.stepsPanel);
         right.setCenter(new EditingPanel(this));
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);

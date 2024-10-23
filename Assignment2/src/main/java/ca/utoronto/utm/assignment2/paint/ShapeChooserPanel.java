@@ -20,7 +20,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             "-fx-border-color: rgba(0, 0, 0, 0.2);" +
             "-fx-border-radius: 3px;";
 
-    private final String UNSELECTED = "-fx-background-color: rgba(225, 225, 225, 1);" +
+    private final String UNSELECTED = "-fx-background-color: rgba(233, 233, 233, 1);" +
             "-fx-border-color: rgba(0, 0, 0, 0.2);" +
             "-fx-border-radius: 3px;";
 
