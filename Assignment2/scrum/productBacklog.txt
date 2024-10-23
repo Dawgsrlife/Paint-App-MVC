@@ -36,6 +36,14 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : BUG BUG?.011 : UTORID : NotStarted
+NAME     : Drawing shapes lags the canvas
+PRIORITY : 2
+ESTIMATE : 2 hours    ACTUAL :
+ISSUE    : When drawing squiggles or polylines, the canvas works fine, but
+           when a shape is first drawn, the canvas stutters heavily.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US?.006 : mengale1 : InProgress
 NAME     : Fill style selector
 PRIORITY : 3
