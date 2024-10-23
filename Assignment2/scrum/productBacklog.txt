@@ -16,10 +16,10 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.003 : UTORID : mengale1
+TYPE     : BUG BUG2.003 : huaethan : InProgress
 NAME     : Architecture behind choosing selection mode is poor
 PRIORITY : 3
-ESTIMATE : 1 hour    ACTUAL :
+ESTIMATE : 3 hours    ACTUAL :
 ISSUE    : Code is not modular and is difficult to expand. Need a better
            architecture behind selecting a drawing mode, and handling
            the drawing events. Consider some design patterns here.
