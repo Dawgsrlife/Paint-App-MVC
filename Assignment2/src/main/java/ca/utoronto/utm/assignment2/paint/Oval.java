@@ -20,7 +20,7 @@ public class Oval extends Shape {
     }
 
     @Override
-    void removeFilled(GraphicsContext g2d) {
+    protected void removeFilled(GraphicsContext g2d) {
         g2d.setFill(getColor());
         double[] info = getPaintInfo();
         double width = getBorderWidth();
@@ -29,7 +29,7 @@ public class Oval extends Shape {
     }
 
     @Override
-    double[] getPaintInfo() {
+    protected double[] getPaintInfo() {
         double startX = Math.min(getStart().x, getEnd().x);
         double startY = Math.min(getStart().y, getEnd().y);
         double width = Math.abs(getEnd().x - getStart().x);
