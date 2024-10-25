@@ -67,9 +67,12 @@ Oct 22,2024
 	                  through "replacing strokes with nothingness."
 
 Oct 23,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Verify that the group is on track towards completing
+	                      sprint 2.
+	What I will do today: Add the user story for the triangle shape.
+	Obstacles I face: Making the decision between which style of triangle to
+                      create, and ensuring compatibility with the architecture
+                      we leverage.
 
 Oct 24,2024
 	What I did yesterday:

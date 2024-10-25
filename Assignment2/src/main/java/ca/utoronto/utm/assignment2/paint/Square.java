@@ -8,7 +8,7 @@ public class Square extends Rectangle {
     }
 
     @Override
-    double[] getPaintInfo() {
+    protected double[] getPaintInfo() {
         // using Math.min to get a better fx, without instant jumps when cursor switching quadrant
         double width = Math.min(Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
         // determine if a displacement on x / y is needed
