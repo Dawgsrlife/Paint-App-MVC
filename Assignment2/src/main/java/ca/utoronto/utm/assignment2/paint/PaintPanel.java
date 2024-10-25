@@ -65,8 +65,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     c.setRadius(radius);
                     this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    this.model.addShape(this.shape);
-                    cleanCache();
+                    finalizeShape();
                 }
                 break;
             case "Rectangle":
@@ -81,8 +80,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.shape.setEnd(end);
                     this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    this.model.addShape(this.shape);
-                    cleanCache();
+                    finalizeShape();
                 }
                 break;
             case "Square":
@@ -97,8 +95,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.shape.setEnd(end);
                     this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    this.model.addShape(this.shape);
-                    cleanCache();
+                    finalizeShape();
                 }
                 break;
             case "Oval":
@@ -111,8 +108,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     o.setEnd(new Point(mouseEvent.getX(), mouseEvent.getY()));
                     this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    this.model.addShape(this.shape);
-                    cleanCache();
+                    finalizeShape();
                 }
                 break;
             case "Squiggle":
@@ -120,12 +116,12 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     System.out.println("Started Squiggle");
                     this.shape = new Squiggle(new Point(mouseEvent.getX(), mouseEvent.getY()),
                             propertiesPanel.getPaintProperties());
-                    this.model.addShape(this.shape);
+                    this.model.addTempShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
                     Squiggle sq = (Squiggle)this.shape;
                     sq.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
-                    cleanCache();
+                    finalizeShape();
                 }
                 break;
             case "Polyline":
@@ -134,14 +130,14 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                         System.out.println("Started Polyline");
                         this.shape = new Polyline(new Point(mouseEvent.getX(), mouseEvent.getY()),
                                 propertiesPanel.getPaintProperties());
-                        this.model.addShape(this.shape);
+                        this.model.addTempShape(this.shape);
                     } else {
                         Polyline p = (Polyline)this.shape;
                         p.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                         // TODO: Implement later... Clear the trail:
                     }
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED) && mouseEvent.isSecondaryButtonDown()) {
-                    cleanCache();
+                    finalizeShape();
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_MOVED)) {
                     // Display the shape trail:
 
@@ -159,10 +155,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         update();
     }
 
-    /**
-     * notifies in console last shape creation event has ended
-     */
-    private void cleanCache() {
+    private void finalizeShape() {
+        this.model.addShape(this.shape);
         // clean cache on MOUSE_RELEASED
         if (this.shape != null) {
             System.out.println("    ^ Added");

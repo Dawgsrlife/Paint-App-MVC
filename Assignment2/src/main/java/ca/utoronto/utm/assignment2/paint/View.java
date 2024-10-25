@@ -33,7 +33,7 @@ public class View implements EventHandler<ActionEvent> {
         left.setTop(this.shapeChooserPanel);
         left.setCenter(this.propertiesPanel);
         BorderPane right = new BorderPane();
-        right.setTop(this.stepsPanel);
+        //right.setTop(this.stepsPanel);
         right.setCenter(new EditingPanel(this));
         root.setTop(createMenuBar());
         root.setCenter(this.paintPanel);
