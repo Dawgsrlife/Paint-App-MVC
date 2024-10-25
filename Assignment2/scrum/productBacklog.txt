@@ -182,7 +182,7 @@ I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of a shapes I drew.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.024 : mengale1 : NotStarted
+TYPE     : USER STORY US2.024 : mengale1 : InProgress
 NAME     : Triangle
 PRIORITY : 1
 ESTIMATE : 2 hours : ACTUAL :

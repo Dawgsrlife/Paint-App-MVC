@@ -75,9 +75,16 @@ Oct 23,2024
                       we leverage.
 
 Oct 24,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Add the user story for the triangle shape; push user
+	                      story 2.024 upstream to a new remote branch.
+	What I will do today: Set user story 2.024 (triangle) to InProgress and
+	                      begin working on it.
+	Obstacles I face:     Figuring out how to scale the triangle correctly, and
+	                      determining what kind of triangle (equilateral,
+	                      scalene, isosceles) to initially implement. Note:
+	                      later, consider allowing the user to make this choice
+	                       of triangle depending on whether they use their
+	                       ctrl, shift, and/or alt keys.
 
 Oct 25,2024
 	What I did yesterday:
