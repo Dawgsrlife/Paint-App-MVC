@@ -16,7 +16,7 @@ public class Triangle extends Shape {
      * @param end   ending coordinate
      */
     public Triangle(Point start, Point end, PaintProperties pp) {
-        super(start, end, "Triangle", false,
+        super(start, end, "Triangle", true,
                 pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
     }
 
@@ -45,8 +45,6 @@ public class Triangle extends Shape {
         double width = getBorderWidth();
         double[] xPoints = getXCoordinates(width);
         double[] yPoints = getYCoordinates(width);
-
-        // Fill the inner triangle with the shape colour
         g2d.fillPolygon(xPoints, yPoints, 3);
     }
 

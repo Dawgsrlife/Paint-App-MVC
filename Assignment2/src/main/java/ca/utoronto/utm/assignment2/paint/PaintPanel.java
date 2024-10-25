@@ -149,7 +149,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                                 propertiesPanel.getPaintProperties());
                         this.model.addShape(this.shape);
                     } else {
-                        Polyline p = (Polyline)this.shape;
+                        Polyline p = (Polyline) this.shape;
                         p.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                         // TODO: Implement later... Clear the trail:
                     }
