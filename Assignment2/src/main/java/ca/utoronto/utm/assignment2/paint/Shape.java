@@ -35,9 +35,9 @@ public abstract class Shape {
 
     abstract void paint(GraphicsContext g2d);
 
-    abstract void removeFilled(GraphicsContext g2d);
+    protected abstract void removeFilled(GraphicsContext g2d);
 
-    abstract double[] getPaintInfo();
+    protected abstract double[] getPaintInfo();
 
     public Point getStart() {
         return start;
