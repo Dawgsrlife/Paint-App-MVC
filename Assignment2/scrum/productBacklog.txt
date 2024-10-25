@@ -192,6 +192,23 @@ I WANT   : To be able to select the triangle tool and drag to size triangles.
 SO THAT  : I can draw triangle shapes of different colours and sizes on the
            canvas.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.025 : chen2046 : InProgress
+NAME     : Command design pattern for undo, redo, copy, paste, cut menubar.
+PRIORITY : 3
+ESTIMATE : 4 hours : ACTUAL :
+AS A     : user
+I WANT   : Undo: the canvas withdraws the most recently drawn graphic.
+           Redo: the canvas redo the graphic if they click undo in the
+           previous step.
+           Copy: Store the selected shape in a clipboard without removing
+           it from the canvas.
+           Paste: Add the shape stored in the clipboard to the canvas.
+           Cut: Store the selected shape in a clipboard and remove it from
+           the canvas.
+           All functionalities are provided through the command pattern
+           where the controller is CommandManager.
+--------------------------------------------------------------------------
 
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
