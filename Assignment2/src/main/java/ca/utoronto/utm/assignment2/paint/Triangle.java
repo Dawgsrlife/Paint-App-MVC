@@ -30,29 +30,24 @@ public class Triangle extends Shape {
         double[] xPoints = getXCoordinates();
         double[] yPoints = getYCoordinates();
 
-        // Set properties:
-        g2d.setLineWidth(getBorderWidth());
-        g2d.setStroke(getBorderColor());
+        // Fill the triangle with the border colour:
+        g2d.fillPolygon(xPoints, yPoints, 3);
 
-        // Fill the triangle if needed:
-        if (isFilled()) {
-            g2d.setFill(getColor());
-            g2d.fillPolygon(xPoints, yPoints, 3);
+        // If not filled, remove inner fill colour:
+        if (!isFilled()) {
+            removeFilled(g2d);
         }
-
-        // Outline the triangle:
-        g2d.strokePolygon(xPoints, yPoints, 3);
     }
 
     @Override
     void removeFilled(GraphicsContext g2d) {
-        if (!isFilled()) {
-            g2d.setFill(getColor());
-            double[] xPoints = getXCoordinates();
-            double[] yPoints = getYCoordinates();
-            g2d.fillPolygon(xPoints, yPoints, 3);
-        }
-        g2d.setLineWidth(getBorderWidth());
+        g2d.setFill(getColor());
+        double width = getBorderWidth();
+        double[] xPoints = getXCoordinates(width);
+        double[] yPoints = getYCoordinates(width);
+
+        // Fill the inner triangle with the shape colour
+        g2d.fillPolygon(xPoints, yPoints, 3);
     }
 
     @Override
@@ -83,6 +78,28 @@ public class Triangle extends Shape {
                 startY,           // Top point (top of the bounding box)
                 startY + height,  // Bottom-left corner
                 startY + height   // Bottom-right corner
+        };
+    }
+
+    private double[] getXCoordinates(double borderWidth) {
+        double[] info = getPaintInfo();
+        double startX = info[0] + borderWidth;
+        double width = info[2] - 2 * borderWidth;
+        return new double[]{
+                startX + width / 2, // Top point
+                startX,             // Bottom-left point
+                startX + width      // Bottom-right point
+        };
+    }
+
+    private double[] getYCoordinates(double borderWidth) {
+        double[] info = getPaintInfo();
+        double startY = info[1] + borderWidth;
+        double height = info[3] - 2 * borderWidth;
+        return new double[]{
+                startY,             // Top point
+                startY + height,    // Bottom-left point
+                startY + height     // Bottom-right point
         };
     }
 }
