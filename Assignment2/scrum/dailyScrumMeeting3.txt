@@ -87,9 +87,9 @@ Oct 24,2024
 	                       ctrl, shift, and/or alt keys.
 
 Oct 25,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Begin progress on US2.024 (triangle).
+	What I will do today: Complete US2.024 (triangle).
+	Obstacles I face: Bad performance and border not working for triangle.
 
 Oct 26,2024
 	What I did yesterday:

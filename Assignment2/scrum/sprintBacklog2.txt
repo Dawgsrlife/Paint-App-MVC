@@ -5,17 +5,6 @@
 # Sprint 2 Oct 20-Oct 27, 2024
 # Sprint 2 Backlog UserStories go below
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.024 : mengale1 : NotStarted
-NAME     : Triangle
-PRIORITY : 1
-ESTIMATE : 2 hours : ACTUAL :
-AS A     : user
-I WANT   : To be able to select the triangle tool and drag to size triangles.
-
-SO THAT  : I can draw triangle shapes of different colours and sizes on the
-           canvas.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG BUG2.003 : huaethan : InProgress
 NAME     : Architecture behind choosing selection mode is poor
 PRIORITY : 3
@@ -46,4 +35,15 @@ ESTIMATE : 30 minutes : ACTUAL : 30 minutes
 AS A     : user
 I WANT   : To be able to place oval shapes on the canvas by dragging to
            change its size.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US2.024 : mengale1 : Complete
+NAME     : Triangle
+PRIORITY : 1
+ESTIMATE : 2 hours : ACTUAL : 2 hours
+AS A     : user
+I WANT   : To be able to select the triangle tool and drag to size triangles.
+
+SO THAT  : I can draw triangle shapes of different colours and sizes on the
+           canvas.
 --------------------------------------------------------------------------
