@@ -40,7 +40,7 @@ Oct 20,2024
 	Obstacles I face: None
 
 Oct 21,2024
-	What I did yesterday:
+	What I did yesterday: Update arch.txt according to discussion.
 	What I will do today:
 	Obstacles I face:
 
@@ -51,13 +51,14 @@ Oct 22,2024
 
 Oct 23,2024
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Start US2.025 and update sprintBacklog2.txt
+	Obstacles I face: Nothing
 
 Oct 24,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Start US2.025 and update sprintBacklog2.txt
+	What I will do today: US2.025 in progress.
+	Obstacles I face: Found a bug: the size of arrayList shape is not correct when check how many shapes are
+	                  added to the arrayList in model.
 
 Oct 25,2024
 	What I did yesterday:
