@@ -10,8 +10,8 @@ import java.util.*;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
     // Ethan: using buttonLabels as mode breaks the code
-    final private String[] buttonLabels = {"●", "▬", "■", "⬬", "~", "〽"};
-    final private String[] buttonNames = {"Circle", "Rectangle", "Square", "Oval", "Squiggle", "Polyline"};
+    final private String[] buttonLabels = {"●", "▬", "■", "▲", "⬬", "~", "〽"};
+    final private String[] buttonNames = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline"};
 
     private View view;
 
@@ -25,9 +25,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             "-fx-border-radius: 3px;";
 
     public ShapeChooserPanel(View view) {
-
         this.view = view;
-
 
         // adding gap between elements
         this.setVgap(5.0);
