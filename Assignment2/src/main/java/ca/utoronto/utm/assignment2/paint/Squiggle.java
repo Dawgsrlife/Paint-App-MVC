@@ -1,7 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
@@ -12,11 +11,6 @@ public class Squiggle extends Shape {
         super(point, null, "Squiggle", true,
                 pp.getFillColor(), null, 0.0);
         points.add(point);
-    }
-
-    public void addPoint(Point point) {
-        points.add(point);
-        setEnd(point);
     }
 
     @Override
@@ -41,5 +35,11 @@ public class Squiggle extends Shape {
 
     public ArrayList<Point> getPoints() {
         return points;
+    }
+
+    @Override
+    public void setEnd(Point end) {
+        points.add(end);
+        super.setEnd(end);
     }
 }
