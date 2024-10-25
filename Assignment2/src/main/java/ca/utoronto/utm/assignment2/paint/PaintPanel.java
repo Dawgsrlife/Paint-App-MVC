@@ -51,7 +51,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
 
         EventType<MouseEvent> mouseEventType = (EventType<MouseEvent>) mouseEvent.getEventType();
 
-        // "Circle", "Rectangle", "Square", "Squiggle", "Polyline"
+        // "Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline"
         switch (this.mode) {
             case "Circle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
@@ -117,6 +117,23 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     cleanCache();
                 }
                 break;
+            case "Triangle":
+                if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
+                    // Start the triangle when the mouse is first pressed
+                    System.out.println("Started Triangle");
+
+                    Point start = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.shape = new Triangle(start, null, propertiesPanel.getPaintProperties());
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_DRAGGED)) {
+                    // Update the end point as the user drags the mouse:
+                    Point end = new Point(mouseEvent.getX(), mouseEvent.getY());
+                    this.shape.setEnd(end);
+                    this.model.addShape(this.shape);
+                } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    // Finish the shape on release:
+                    cleanCache();
+                }
+                break;
             case "Squiggle":
                 if (mouseEventType.equals(MouseEvent.MOUSE_PRESSED)) {
                     System.out.println("Started Squiggle");
@@ -138,7 +155,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                                 propertiesPanel.getPaintProperties());
                         this.model.addShape(this.shape);
                     } else {
-                        Polyline p = (Polyline)this.shape;
+                        Polyline p = (Polyline) this.shape;
                         p.addPoint(new Point(mouseEvent.getX(), mouseEvent.getY()));
                         // TODO: Implement later... Clear the trail:
                     }
