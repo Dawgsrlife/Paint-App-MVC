@@ -164,7 +164,7 @@ I WANT   : It makes more sense if coordinate display in tool selection panel
 SO THAT  : I can see coordinates of cursor in tool selection panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.022 : UTROID : NotStarted
+TYPE     : USER STORY US?.022 : chen2046 : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :

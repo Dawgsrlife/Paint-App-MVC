@@ -16,6 +16,13 @@ public class PaintModel extends Observable {
         this.notifyObservers();
     }
 
+    public void removeShape(Shape shape) {
+        shapes.remove(shape);
+        System.out.println("Shape removed: " + shape + ", Remaining shapes: " + shapes.size());
+        this.setChanged();
+        this.notifyObservers();
+    }
+
     /**
      * Get all shapes queued to be painted
      * @return An array list of all the shapes

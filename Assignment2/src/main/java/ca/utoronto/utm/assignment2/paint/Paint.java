@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 public class Paint extends Application {
     PaintModel model; // Model
     View view; // View + Controller
+    CommandManager commandManager;
 
     public static void main(String[] args) {
         launch(args);
@@ -16,9 +17,10 @@ public class Paint extends Application {
     public void start(Stage stage) throws Exception {
 
         this.model = new PaintModel();
-
         // View + Controller
         this.view = new View(model, stage);
+
+        this.commandManager = new CommandManager(view);
 
         // listen to window size change events and change canvas size correspondingly
         PaintPanel panel = view.getPaintPanel();

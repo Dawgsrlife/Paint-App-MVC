@@ -17,12 +17,15 @@ public class View implements EventHandler<ActionEvent> {
     private PaintPanel paintPanel;
     private ShapeChooserPanel shapeChooserPanel;
     private PropertiesPanel propertiesPanel;
+    private CommandManager commandManager;
+    private Shape clipbaordShape; // Shape to store copied/cut shape
 
     public View(PaintModel model, Stage stage) {
         this.paintModel = model;
 
+        this.commandManager = new CommandManager(this);
         this.propertiesPanel = new PropertiesPanel(this);
-        this.paintPanel = new PaintPanel(this.paintModel, this.propertiesPanel);
+        this.paintPanel = new PaintPanel(this.paintModel, this.propertiesPanel, this.commandManager);
         this.shapeChooserPanel = new ShapeChooserPanel(this);
 
         //sub panels
@@ -118,11 +121,13 @@ public class View implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
         System.out.println(((MenuItem) event.getSource()).getText());
         String command = ((MenuItem) event.getSource()).getText();
-        System.out.println(command);
-        if (command.equals("Exit")) {
-            Platform.exit();
+
+        switch (command) {
+            case "Exit" -> Platform.exit();
+            case "Undo" -> commandManager.undo();  // Delegate to CommandManager
+            case "Redo" -> commandManager.redo();  // Delegate to CommandManager
         }
-    }
+        }
 
     public PaintPanel getPaintPanel() {
         return this.paintPanel;

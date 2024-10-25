@@ -14,6 +14,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     private String mode = "Circle";
     private PaintModel model;
     private PropertiesPanel propertiesPanel;
+    private CommandManager commandManager;
 
     private Shape shape;
     private String cursorCoordinate;
@@ -21,11 +22,12 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
     // public fields
     public static Color backgroundColor = Color.WHITE;
 
-    public PaintPanel(PaintModel model, PropertiesPanel propertiesPanel) {
+    public PaintPanel(PaintModel model, PropertiesPanel propertiesPanel, CommandManager commandManager) {
         super(500, 500);
         this.model = model;
         this.model.addObserver(this);
         this.propertiesPanel = propertiesPanel;
+        this.commandManager = commandManager;
 
         this.addEventHandler(MouseEvent.MOUSE_PRESSED, this);
         this.addEventHandler(MouseEvent.MOUSE_RELEASED, this);
@@ -65,6 +67,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     c.setRadius(radius);
                     this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    Command drawCommand = new DrawCommand(this.model, this.shape);
+                    commandManager.executeCommand(drawCommand);
                     cleanCache();
                 }
                 break;
@@ -80,6 +84,8 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
                     this.shape.setEnd(end);
                     this.model.addShape(this.shape);
                 } else if (mouseEventType.equals(MouseEvent.MOUSE_RELEASED)) {
+                    Command drawCommand = new DrawCommand(this.model, this.shape);
+                    commandManager.executeCommand(drawCommand);
                     cleanCache();
                 }
                 break;
