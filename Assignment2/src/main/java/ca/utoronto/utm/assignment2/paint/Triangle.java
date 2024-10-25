@@ -16,7 +16,7 @@ public class Triangle extends Shape {
      * @param end   ending coordinate
      */
     public Triangle(Point start, Point end, PaintProperties pp) {
-        super(start, end, "Triangle", true,
+        super(start, end, "Triangle", false,
                 pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
     }
 
