@@ -57,9 +57,9 @@ Oct 24,2024
 	Obstacles I face: Nothing
 
 Oct 25,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Rested well
+	What I will do today: Finish BUG2.003
+	Obstacles I face: Making good design choices
 
 Oct 26,2024
 	What I did yesterday:
