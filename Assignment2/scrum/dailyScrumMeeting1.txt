@@ -63,13 +63,13 @@ Oct 25,2024
 
 Oct 26,2024
 	What I did yesterday: Implemented US2.005
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Help fix BUG arisen from fixing BUG2.003
+	Obstacles I face: Nothing
 
 Oct 27,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUGs arisen from BUG2.003
+	What I will do today: Plan GUI update
+	Obstacles I face: Nothing
 
 Oct 28,2024
 	What I did yesterday:
