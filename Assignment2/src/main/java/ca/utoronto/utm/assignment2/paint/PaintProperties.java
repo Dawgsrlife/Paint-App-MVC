@@ -2,6 +2,10 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.paint.Color;
 
+/**
+ * This class represents the properties of a shape, it is the model to characterize fill
+ * color, border color and border width.
+ */
 public class PaintProperties {
     private final Color fillColor;
     private final Color borderColor;
