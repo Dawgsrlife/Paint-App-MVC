@@ -13,11 +13,6 @@ public class Squiggle extends Shape {
         points.add(point);
     }
 
-    public void addPoint(Point point) {
-        points.add(point);
-        setEnd(point);
-    }
-
     @Override
     public void paint(GraphicsContext g2d) {
         g2d.setStroke(getColor());
@@ -40,5 +35,11 @@ public class Squiggle extends Shape {
 
     public ArrayList<Point> getPoints() {
         return points;
+    }
+
+    @Override
+    public void setEnd(Point end) {
+        points.add(end);
+        super.setEnd(end);
     }
 }
