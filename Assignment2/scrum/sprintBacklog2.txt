@@ -4,19 +4,7 @@
 
 # Sprint 2 Oct 20-Oct 27, 2024
 # Sprint 2 Backlog UserStories go below
---------------------------------------------------------------------------
-TYPE     : BUG BUG2.003 : huaethan : InProgress
-NAME     : Architecture behind choosing selection mode is poor
-PRIORITY : 3
-ESTIMATE : 3 hours    ACTUAL :
-ISSUE    : Code is not modular and is difficult to expand. Need a better
-           architecture behind selecting a drawing mode, and handling
-           the drawing events. Consider some design patterns here.
-           Refactor ShapeChooserPanel and PaintPanel to get rid of the
-           'if' blocks in the PaintPanel mouse event code.
---------------------------------------------------------------------------
 
-# COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
 TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
@@ -46,4 +34,15 @@ I WANT   : To be able to select the triangle tool and drag to size triangles.
 
 SO THAT  : I can draw triangle shapes of different colours and sizes on the
            canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.003 : huaethan | tianji61 : Complete
+NAME     : Architecture behind choosing selection mode is poor
+PRIORITY : 3
+ESTIMATE : 3 hours    ACTUAL : 4 hours
+ISSUE    : Code is not modular and is difficult to expand. Need a better
+           architecture behind selecting a drawing mode, and handling
+           the drawing events. Consider some design patterns here.
+           Refactor ShapeChooserPanel and PaintPanel to get rid of the
+           'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------

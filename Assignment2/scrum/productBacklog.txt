@@ -16,17 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.003 : huaethan : InProgress
-NAME     : Architecture behind choosing selection mode is poor
-PRIORITY : 3
-ESTIMATE : 3 hours    ACTUAL :
-ISSUE    : Code is not modular and is difficult to expand. Need a better
-           architecture behind selecting a drawing mode, and handling
-           the drawing events. Consider some design patterns here.
-           Refactor ShapeChooserPanel and PaintPanel to get rid of the
-           'if' blocks in the PaintPanel mouse event code.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG BUG?.009 : UTORID : NotStarted
 NAME     : Both icons and text for drawing mode selection
 PRIORITY : 2
@@ -425,6 +414,17 @@ I WANT   : To be able to select the current drawing color, to be applied
            	results in two red circles and a red rectangle as well as
            	two green rectangles and a green squiggle.
 SO THAT  : I can draw shapes in different color.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG2.003 : huaethan | tianji61 : Complete
+NAME     : Architecture behind choosing selection mode is poor
+PRIORITY : 3
+ESTIMATE : 3 hours    ACTUAL : 4 hours
+ISSUE    : Code is not modular and is difficult to expand. Need a better
+           architecture behind selecting a drawing mode, and handling
+           the drawing events. Consider some design patterns here.
+           Refactor ShapeChooserPanel and PaintPanel to get rid of the
+           'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
