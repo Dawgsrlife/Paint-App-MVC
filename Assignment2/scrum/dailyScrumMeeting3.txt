@@ -92,9 +92,11 @@ Oct 25,2024
 	Obstacles I face: Bad performance and border not working for triangle.
 
 Oct 26,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Complete US2.024 (triangle).
+	What I will do today: Adjust US2.024 to be compatible with the
+	                      architectural changes.
+	Obstacles I face: Understanding what changes are made to do the
+	re-implementation of triangle.
 
 Oct 27,2024
 	What I did yesterday:
