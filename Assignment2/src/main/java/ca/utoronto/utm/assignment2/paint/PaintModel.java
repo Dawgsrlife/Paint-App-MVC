@@ -89,7 +89,6 @@ public class PaintModel extends Observable {
         };
     }
 
-
     /**
      * this method updates current paint array
      * @param mode what mode is activated currently
@@ -100,6 +99,7 @@ public class PaintModel extends Observable {
     public void update(String mode, MouseEvent mouseEvent, Point point, PaintProperties pp) {
         // determine mouse event type
         EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
+
         if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
             if (mode.equals("Polyline") & this.shape != null) {
                 this.shape.setEnd(point);
@@ -109,7 +109,7 @@ public class PaintModel extends Observable {
                 this.shape = getPaintStrategy(mode, point, pp);
                 addTempShape(this.shape);
             }
-        } else if (event.equals(MouseEvent.MOUSE_DRAGGED)) {
+        } else if (event.equals(MouseEvent.MOUSE_DRAGGED) && !mode.equals("Polyline")) {
             // update shape ending point on MOUSE_DRAGGED
             this.shape.setEnd(point);
         } else if (!mode.equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED)) {
