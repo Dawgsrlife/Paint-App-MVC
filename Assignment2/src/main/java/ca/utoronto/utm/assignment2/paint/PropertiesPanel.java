@@ -17,14 +17,10 @@ import java.util.ArrayList;
  */
 public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent> {
 
-    private View view;
-
     private ArrayList<Slider> sliders = new ArrayList<>();
     private ArrayList<Text> texts = new ArrayList<>();
 
-    public PropertiesPanel(View view) {
-
-        this.view = view;
+    public PropertiesPanel() {
         // adding gap between elements
         this.setVgap(5.0);
         this.setPadding(new Insets(10.0));

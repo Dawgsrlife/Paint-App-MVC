@@ -6,8 +6,6 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-import java.util.*;
-
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
     // Ethan: using buttonLabels as mode breaks the code
     final private String[] buttonLabels = {"●", "▬", "■", "▲", "⬬", "~", "〽"};
@@ -67,6 +65,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         int buttonNameIndex = indexOf(buttonLabels, source.getText());
         String command = buttonNames[buttonNameIndex];
         view.setMode(command);
+
 
         // highlight button when selected
         for (Object o : this.getChildren()) {

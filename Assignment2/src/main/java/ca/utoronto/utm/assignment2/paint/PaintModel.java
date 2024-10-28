@@ -60,7 +60,7 @@ public class PaintModel extends Observable {
      * clears template shape
      * adds finalized version into models array
      */
-    private void finalizeShape() {
+    public void finalizeShape() {
         addShape(this.shape);
         // clean cache on MOUSE_RELEASED
         if (this.shape != null) {
@@ -109,7 +109,7 @@ public class PaintModel extends Observable {
                 this.shape = getPaintStrategy(mode, point, pp);
                 addTempShape(this.shape);
             }
-        } else if (event.equals(MouseEvent.MOUSE_DRAGGED)) {
+        } else if (event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
             // update shape ending point on MOUSE_DRAGGED
             this.shape.setEnd(point);
         } else if (!mode.equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED)) {

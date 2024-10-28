@@ -11,9 +11,8 @@ import javafx.scene.layout.GridPane;
  */
 public class EditingPanel extends GridPane implements EventHandler<ActionEvent> {
 
-    private View view;
 
-    public EditingPanel(View view) {
+    public EditingPanel() {
 
     }
 
