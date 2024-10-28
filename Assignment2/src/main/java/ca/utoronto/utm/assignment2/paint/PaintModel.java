@@ -109,7 +109,7 @@ public class PaintModel extends Observable {
                 this.shape = getPaintStrategy(mode, point, pp);
                 addTempShape(this.shape);
             }
-        } else if (event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
+        } else if (event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown() && !mode.equals("Polyline")) {
             // update shape ending point on MOUSE_DRAGGED
             this.shape.setEnd(point);
         } else if (!mode.equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED)) {
