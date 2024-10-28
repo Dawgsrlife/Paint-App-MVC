@@ -45,7 +45,7 @@ public class PaintModel extends Observable {
 
     /**
      * Add a Shape instance into tempShapes list
-     * for buffer indicating when  mouse is not
+     * for buffer indicating when mouse is not
      * released yet
      * @param shape a shape instance
      */
@@ -84,6 +84,7 @@ public class PaintModel extends Observable {
             case "Oval" -> new Oval(point, point, pp);
             case "Squiggle" -> new Squiggle(point, pp);
             case "Polyline" -> new Polyline(point, pp);
+            case "Triangle" -> new Triangle(point, point, pp);
             default -> throw new IllegalArgumentException("Unknown mode: " + mode);
         };
     }

@@ -95,13 +95,16 @@ Oct 26,2024
 	What I did yesterday: Complete US2.024 (triangle).
 	What I will do today: Adjust US2.024 to be compatible with the
 	                      architectural changes.
-	Obstacles I face: Understanding what changes are made to do the
-	re-implementation of triangle.
+	Obstacles I face: Understanding what changes are made to the
+	                  re-implementation of triangle.
 
 Oct 27,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read through group member's changes to the
+	                      architecture.
+	What I will do today: Adjust triangle to be compatible with the
+	                      architectural changes.
+	Obstacles I face: Figuring out which classes need to be changed as a result
+	                  of architectural changes.
 
 Oct 28,2024
 	What I did yesterday:
