@@ -1,5 +1,7 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.controlPanels;
 
+import ca.utoronto.utm.assignment2.paint.PaintModel;
+import ca.utoronto.utm.assignment2.paint.Shape;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
@@ -13,7 +15,7 @@ import javafx.scene.layout.GridPane;
  */
 public class StepsPanel extends GridPane implements EventHandler<MouseEvent> {
 
-    private PaintModel model;
+    private final PaintModel model;
 
     // css properties for status indicating
     private final String ACTIVE = "-fx-background-color: rgba(244, 244, 244);" +

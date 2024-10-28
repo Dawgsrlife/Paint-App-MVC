@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
 
+import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
+import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -8,10 +10,11 @@ import javafx.stage.Stage;
 
 public class Paint extends Application {
     PaintModel model; // Model
-    View view;
-    MyMunuBar menuBar;
-    ShapeChooserPanel shapeChooserPanel;
-    PropertiesPanel propertiesPanel;
+    PaintView view; // View
+    PaintController controller; // Controller
+    MyMunuBar menuBar; // Control
+    ShapeChooserPanel shapeChooserPanel; // Control
+    PropertiesPanel propertiesPanel; // Control
     // commandManager;
 
     public static void main(String[] args) {
@@ -23,9 +26,11 @@ public class Paint extends Application {
 
         this.model = new PaintModel();
         menuBar = new MyMunuBar();
+        shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
-        this.view = new View(model, propertiesPanel);
-        shapeChooserPanel = new ShapeChooserPanel(view);
+        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
+        this.view = new PaintView(model, controller);
+
 
 
         BorderPane root = new BorderPane();
@@ -35,7 +40,7 @@ public class Paint extends Application {
         left.setTop(shapeChooserPanel);
         left.setCenter(propertiesPanel);
         root.setLeft(left);
-        BorderPane right = new BorderPane();
+        //BorderPane right = new BorderPane();
         //right.setTop(this.stepsPanel);
         //right.setCenter(new EditingPanel(this));
         Scene scene = new Scene(root);

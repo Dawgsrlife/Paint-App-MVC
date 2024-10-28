@@ -1,5 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.controlPanels;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Slider;
@@ -17,8 +18,8 @@ import java.util.ArrayList;
  */
 public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent> {
 
-    private ArrayList<Slider> sliders = new ArrayList<>();
-    private ArrayList<Text> texts = new ArrayList<>();
+    private final ArrayList<Slider> sliders = new ArrayList<>();
+    private final ArrayList<Text> texts = new ArrayList<>();
 
     public PropertiesPanel() {
         // adding gap between elements

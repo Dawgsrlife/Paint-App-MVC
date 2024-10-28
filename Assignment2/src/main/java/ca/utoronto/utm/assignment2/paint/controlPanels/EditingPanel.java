@@ -1,4 +1,4 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.controlPanels;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
