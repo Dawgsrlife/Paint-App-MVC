@@ -58,7 +58,7 @@ public class PaintPanel extends Canvas implements EventHandler<MouseEvent>, Obse
         g2d.fillRect(0,0,this.getWidth(),this.getHeight());
         // draw steps
         for (Shape s : this.model.getShapes()) {
-            s.paint(g2d);
+            if (s != null) s.paint(g2d);
         }
         // draw cursorCoordinate
         g2d.setFill(Color.BLACK);
