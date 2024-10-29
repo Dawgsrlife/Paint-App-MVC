@@ -16,25 +16,25 @@ High Level Architecture:
 	PaintModel: Store and manage the data for points and shapes.
 
 	View+Controller
-	There is a View class as well as a few, what we call, view components.
+	There is a View class as well as a few, what we call, paintView components.
 	The View class containing the BorderPane as well as containing all of its components.
 	View components are meant to be contained in the main View.
-	Examples of view components are PaintPanel and ShapeChooserPanel.
-	The View class, and view components all implements their own controller.
+	Examples of paintView components are PaintPanel and ShapeChooserPanel.
+	The View class, and paintView components all implements their own controller.
 	For example, the PaintPanel listens to its own MouseEvents.
 	This is instead of separating out the Controller from the View. This choice
 	was made to simplify the code, yet still keep it modular and clear.
-	Each view component can see the containing View as well as the Model
-	as appropriate. This means that each view component can speak to the
-	other view components. An example of this is when the ShapeChooserPanel
+	Each paintView component can see the containing View as well as the Model
+	as appropriate. This means that each paintView component can speak to the
+	other paintView components. An example of this is when the ShapeChooserPanel
 	buttons are clicked, resulting in a mode change in the PaintPanel.
 
-	View: The main container that holds all view components
+	View: The main container that holds all paintView components
 	ShapeChooserPanel: The controller that handles shape selection and
 	updates the current drawing mode.
-	PaintPanel: The canvas view where shapes are drawn and displayed.
+	PaintPanel: The canvas paintView where shapes are drawn and displayed.
 	Also handles MouseEvent as part of the controller.
-	Paint: Initializes the model (data) and view (UI) to start the paint
+	Paint: Initializes the model (data) and paintView (UI) to start the paint
 	program.
 
 	Class Interaction by MVC:
@@ -43,8 +43,8 @@ High Level Architecture:
     model directly by fetching data(shape list). When the user
     interacts with the ShapeChooserPanel like click on the shape they
     want, this event triggers an update to the Controller PaintPanel.
-    PaintPanel then draws the selected shape and update it to the view,
-    and the view in turn displays drawing to users.
+    PaintPanel then draws the selected shape and update it to the paintView,
+    and the paintView in turn displays drawing to users.
 
 ---------------------------------------------------------------------
 do you do something interesting to fix the association between the 
