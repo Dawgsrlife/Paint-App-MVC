@@ -77,14 +77,14 @@ Oct 28,2024
 	Obstacles I face: Resting with conscience
 
 Oct 29,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Rested
+	What I will do today: CSC236
+	Obstacles I face: CSC236
 
 Oct 30,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: CSC236
+	What I will do today: CSC236
+	Obstacles I face: CSC236
 
 Oct 31,2024
 	What I did yesterday:
