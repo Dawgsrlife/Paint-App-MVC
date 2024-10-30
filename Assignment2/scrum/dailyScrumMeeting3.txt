@@ -107,14 +107,17 @@ Oct 27,2024
 	                  of architectural changes.
 
 Oct 28,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Adjusted triangle for compatibility with MVC
+	                      architectural changes.
+	What I will do today: Nothing, due to another assignment due.
+	Obstacles I face: Learning how to implement new features using the
+	                  updated code architecture.
 
 Oct 29,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing, due to another assignment due.
+	What I will do today: Read the Sprint 3 details from the assignment
+	                      instructions.
+	Obstacles I face: Understanding the new concept of pull requests.
 
 Oct 30,2024
 	What I did yesterday:
