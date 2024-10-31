@@ -120,9 +120,10 @@ Oct 29,2024
 	Obstacles I face: Understanding the new concept of pull requests.
 
 Oct 30,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Read the Sprint 3 details from the assignment
+                          instructions.
+	What I will do today: Nothing, due to another assignment due.
+	Obstacles I face: Understanding the new concept of pull requests.
 
 Oct 31,2024
 	What I did yesterday:
