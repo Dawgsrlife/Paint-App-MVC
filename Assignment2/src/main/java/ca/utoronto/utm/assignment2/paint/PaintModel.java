@@ -2,9 +2,11 @@ package ca.utoronto.utm.assignment2.paint;
 
 import java.util.ArrayList;
 import java.util.Observable;
+import java.util.Stack;
 
 public class PaintModel extends Observable {
-    private final ArrayList<Shape> shapes = new ArrayList<>();
+    private final Stack<Shape> shapes = new Stack<>();
+    private Stack<Shape> undoStack = new Stack<>();
     private Shape tempShape;
 
     /**
@@ -28,6 +30,20 @@ public class PaintModel extends Observable {
     }
     */
 
+    public void undo() {
+        if(shapes.isEmpty()) return;
+        undoStack.push(shapes.pop());
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public void redo() {
+        if(undoStack.isEmpty()) return;
+        shapes.push(undoStack.pop());
+        this.setChanged();
+        this.notifyObservers();
+    }
+
     /**
      * Get all steps queued to be painted
      * @return An array list of all the steps
@@ -46,6 +62,10 @@ public class PaintModel extends Observable {
      */
     public void addTempShape(Shape shape) {
         tempShape = shape;
+
+        // refresh the undo stack
+        undoStack.clear();
+
         this.setChanged();
         this.notifyObservers();
     }

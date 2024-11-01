@@ -87,8 +87,8 @@ Oct 30,2024
 	Obstacles I face: CSC236
 
 Oct 31,2024
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: CSC236
+	What I will do today: US
 	Obstacles I face:
 
 Nov 1,2024
