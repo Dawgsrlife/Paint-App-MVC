@@ -87,14 +87,14 @@ Oct 30,2024
 	Obstacles I face: CSC236
 
 Oct 31,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: CSC236
+	What I will do today: US3.008
+	Obstacles I face: US3.008
 
 Nov 1,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: US3.008
+	What I will do today: Create pull request for US3.008
+	Obstacles I face: NNN
 
 Nov 2,2024
 	What I did yesterday:
