@@ -132,9 +132,10 @@ Oct 31,2024
                       the remaining days.
 
 Nov 1,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing, due to personal plans.
+	What I will do today: Consider eraser implementation.
+	Obstacles I face: Having to quickly implement what's needed for Sprint 3 in
+                                            the remaining days.
 
 Nov 2,2024
 	What I did yesterday:
