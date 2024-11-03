@@ -197,10 +197,10 @@ I WANT   : Undo: the canvas withdraws the most recently drawn graphic.
            where the controller is CommandManager.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.026 : mengale1 : InProgress
+TYPE     : USER STORY US3.026 : mengale1 : Complete
 NAME     : Stroke size configuration
 PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
+ESTIMATE : 1 hour : ACTUAL : 1 hour
 AS A     : user
 I WANT   : To be able to configure the size of squiggles and polylines
 SO THAT  : I can draw squiggles and polylines of varying thicknesses.
