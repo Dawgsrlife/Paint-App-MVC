@@ -33,10 +33,10 @@ ISSUE    : When drawing squiggles or polylines, the canvas works fine, but
            when a shape is first drawn, the canvas stutters heavily.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.013 : mengale1 : InProgress
+TYPE     : BUG BUG3.013 : mengale1 : Complete
 NAME     : Complete polyline
 PRIORITY : 2
-ESTIMATE : 30 mins    ACTUAL :
+ESTIMATE : 30 mins    ACTUAL : 20 mins
 ISSUE    : Switching to another shape and then drawing with the new shape
            before completing a polyline removes the polyline. Ideally, just
            complete the polyline upon switching to another shape tool.
