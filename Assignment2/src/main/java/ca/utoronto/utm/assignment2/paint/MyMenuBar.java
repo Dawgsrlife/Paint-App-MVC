@@ -8,7 +8,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 
-public class MyMunuBar implements EventHandler<ActionEvent> {
+public class MyMenuBar implements EventHandler<ActionEvent> {
 
     public MenuBar createMenuBar() {
 

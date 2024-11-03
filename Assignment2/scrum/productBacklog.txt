@@ -16,23 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG?.009 : UTORID : NotStarted
-NAME     : Both icons and text for drawing mode selection
-PRIORITY : 2
-ESTIMATE : 2 hours    ACTUAL :
-ISSUE    : It would be nice to have both icons and text to describe the
-           drawing mode, because right now, the icons alone may be
-           confusing to understand
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG?.011 : UTORID : NotStarted
-NAME     : Drawing shapes lags the canvas
-PRIORITY : 2
-ESTIMATE : 2 hours    ACTUAL :
-ISSUE    : When drawing squiggles or polylines, the canvas works fine, but
-           when a shape is first drawn, the canvas stutters heavily.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG BUG3.013 : mengale1 : InProgress
 NAME     : Complete polyline
 PRIORITY : 2
@@ -131,7 +114,7 @@ I WANT   : Add a button that clears the entire canvas, do not change the
 SO THAT  : I can reset the drawing area
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.015 : chen2046 : NotStarted
+TYPE     : USER STORY US3.015 : chen2046 : NotStarted
 NAME     : Text Tool
 PRIORITY : 3
 ESTIMATE : 3 hour : ACTUAL :
@@ -152,7 +135,7 @@ I WANT   : To be able to draw a squiggle that resembles a shape and have the
 SO THAT  : I can draw shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.019 : tianji61 : NotStarted
+TYPE     : USER STORY US3.019 : tianji61 : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -195,15 +178,6 @@ I WANT   : Undo: the canvas withdraws the most recently drawn graphic.
            the canvas.
            All functionalities are provided through the command pattern
            where the controller is CommandManager.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US3.026 : mengale1 : InProgress
-NAME     : Stroke size configuration
-PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : To be able to configure the size of squiggles and polylines
-SO THAT  : I can draw squiggles and polylines of varying thicknesses.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US3.027 : mengale1 : InProgress
@@ -472,6 +446,32 @@ AS A     : user
 I WANT   : To be able to undo and redo shapes or squiggles that I have previously made,
 	       removing them from the canvas. This can be done by pressing 'ctrl + z' (undo)
 	       and 'ctrl + y' (redo).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.011 : tianji61 : Complete
+NAME     : Drawing shapes lags the canvas
+PRIORITY : 2
+ESTIMATE : 30 minutes    ACTUAL : 30 minutes
+ISSUE    : When drawing squiggles or polylines, the canvas works fine, but
+           when a shape is first drawn, the canvas stutters heavily.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.009 : tianji61 : Complete
+NAME     : Both icons and text for drawing mode selection
+PRIORITY : 2
+ESTIMATE : 10 minutes    ACTUAL : 10 minutes
+ISSUE    : It would be nice to have both icons and text to describe the
+           drawing mode, because right now, the icons alone may be
+           confusing to understand
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.026 : tianji61 : Complete
+NAME     : Stroke size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+AS A     : user
+I WANT   : To be able to configure the size of squiggles and polylines
+SO THAT  : I can draw squiggles and polylines of varying thicknesses.
 --------------------------------------------------------------------------
 
 

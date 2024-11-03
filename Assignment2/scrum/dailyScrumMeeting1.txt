@@ -72,39 +72,39 @@ Oct 27,2024
 	Obstacles I face: Nothing
 
 Oct 28,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Found a GUI template
+	What I will do today: Not accessible to internet
+	Obstacles I face: Nothing
 
 Oct 29,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not accessible to internet
+	What I will do today: Not accessible to internet
+	Obstacles I face: Not accessible to internet
 
 Oct 30,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not accessible to internet
+	What I will do today: Not accessible to internet
+	Obstacles I face: Not accessible to internet
 
 Oct 31,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not accessible to internet
+	What I will do today: Not accessible to internet
+	Obstacles I face: Not accessible to internet
 
 Nov 1,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Not accessible to internet
+	What I will do today: Fix BUG3.011
+	Obstacles I face: Nothing
 
 Nov 2,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG3.011
+	What I will do today: Make a pull request, and find someone would like to work on GUI completion
+	Obstacles I face: Nothing
 
 Nov 3,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Created PR BUS3.019
+	What I will do today: Fix BUG3.009 and implement US3.026
+	Obstacles I face: Nothing
 
 Nov 4,2024
 	What I did yesterday:
