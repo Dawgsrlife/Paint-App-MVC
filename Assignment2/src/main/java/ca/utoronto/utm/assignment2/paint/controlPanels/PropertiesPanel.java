@@ -14,12 +14,14 @@ import java.util.ArrayList;
 /**
  * This is a class defining PropertiesPanel
  *
- * @author tianji61 / Who ever is going to pick this branch
+ * @author tianji61 / mengale1
  */
 public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent> {
-
     private final ArrayList<Slider> sliders = new ArrayList<>();
     private final ArrayList<Text> texts = new ArrayList<>();
+    private Slider eraserSizeSlider;
+    private Text eraserSizeText;
+    private boolean isEraserMode = false;  // Track whether eraser mode is active
 
     public PropertiesPanel() {
         // adding gap between elements
@@ -51,12 +53,16 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
 
     @Override
     public void handle(MouseEvent mouseEvent) {
-        int index = 0;
-        for (Slider slider : sliders) {
-            if (mouseEvent.getSource() == slider) {
-                texts.get(index).setText(texts.get(index).getText().substring(0, 4) + (int)slider.getValue());
+        if (isEraserMode && mouseEvent.getSource() == eraserSizeSlider) {
+            eraserSizeText.setText("Eraser Size: " + (int) eraserSizeSlider.getValue());
+        } else {
+            int index = 0;
+            for (Slider slider : sliders) {
+                if (mouseEvent.getSource() == slider) {
+                    texts.get(index).setText(texts.get(index).getText().substring(0, 4) + (int) slider.getValue());
+                }
+                index++;
             }
-            index ++;
         }
     }
 

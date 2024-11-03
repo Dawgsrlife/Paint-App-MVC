@@ -26,7 +26,7 @@ I WANT   : To be able to select an Eraser tool and use it to delete
 SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.013 : mengale1 : InProgress
+TYPE     : BUG BUG3.013 : mengale1 : NotStarted
 NAME     : Complete polyline
 PRIORITY : 2
 ESTIMATE : 30 mins    ACTUAL :

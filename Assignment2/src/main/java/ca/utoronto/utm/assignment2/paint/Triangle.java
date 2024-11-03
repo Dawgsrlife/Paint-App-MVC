@@ -5,7 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 /**
  * A class representing a triangle on the canvas
  *
- * @author tianji61
+ * @author mengale1
  */
 public class Triangle extends Shape {
 
