@@ -6,16 +6,19 @@ import java.util.ArrayList;
 
 public class Squiggle extends Shape {
     private final ArrayList<Point> points = new ArrayList<>();
+    private double strokeSize;
 
     public Squiggle(Point point, PaintProperties pp) {
         super(point, null, "Squiggle", true,
                 pp.getFillColor(), null, 0.0);
         points.add(point);
+        strokeSize = pp.getStrokeSize();
     }
 
     @Override
     public void paint(GraphicsContext g2d) {
         g2d.setStroke(getColor());
+        g2d.setLineWidth(strokeSize);
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);

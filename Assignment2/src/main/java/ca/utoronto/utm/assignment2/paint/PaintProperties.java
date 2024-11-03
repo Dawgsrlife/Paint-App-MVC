@@ -10,10 +10,13 @@ public class PaintProperties {
     private final Color fillColor;
     private final Color borderColor;
     private final double borderWidth;
-    public PaintProperties(Color fillColor, Color borderColor, double borderLength) {
+    private final double strokeSize;
+
+    public PaintProperties(Color fillColor, Color borderColor, double borderWidth, double strokeSize) {
         this.fillColor = fillColor;
         this.borderColor = borderColor;
-        this.borderWidth = borderLength;
+        this.borderWidth = borderWidth;
+        this.strokeSize = strokeSize;
     }
 
     public Color getFillColor() {
@@ -26,5 +29,9 @@ public class PaintProperties {
 
     public double getBorderWidth() {
         return borderWidth;
+    }
+
+    public double getStrokeSize() {
+        return strokeSize;
     }
 }

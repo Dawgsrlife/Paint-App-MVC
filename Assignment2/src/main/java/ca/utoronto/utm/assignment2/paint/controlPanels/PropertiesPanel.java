@@ -14,10 +14,9 @@ import java.util.ArrayList;
 /**
  * This is a class defining PropertiesPanel
  *
- * @author tianji61 / Who ever is going to pick this branch
+ * @author tianji61 / mengale1
  */
 public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent> {
-
     private final ArrayList<Slider> sliders = new ArrayList<>();
     private final ArrayList<Text> texts = new ArrayList<>();
 
@@ -26,17 +25,24 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         this.setVgap(5.0);
         this.setPadding(new Insets(10.0));
         // templates
-        int[] columns = new int[]{2, 3, 4, 6, 7, 8, 10};
+        int[] columns = new int[]{2, 3, 4, 6, 7, 8, 10, 12};
         String[] textTemplate = new String[]{"R : ", "G : ", "B : ",
                 "R : ", "G : ", "B : ",
-                "px : "};
+                "px : ", "px : "};
 
         this.add(new Text("Fill Color"), 0, 1);
         this.add(new Text("Border Color"), 0, 5);
         this.add(new Text("Border Width"), 0, 9);
+        this.add(new Text("Stroke Size"), 0, 11);
+
         for (int i = 0; i < columns.length; i++) {
             Slider slider = new Slider();
-            slider.setMax(255);
+            if (i == 7) {  // Stroke Slider Case
+                slider.setMin(1);
+                slider.setMax(50);
+            } else {
+                slider.setMax(255);
+            }
             slider.setMaxWidth(100);
             slider.setOnMouseDragged(this);
             Text text = new Text();
@@ -46,7 +52,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
             this.sliders.add(slider);
             this.texts.add(text);
         }
-        this.sliders.get(6).setMax(100);
+        this.sliders.get(6).setMax(100);  // border width size
     }
 
     @Override
@@ -70,6 +76,9 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
                 (int)sliders.get(3).getValue(),
                 (int)sliders.get(4).getValue(),
                 (int)sliders.get(5).getValue());
-        return new PaintProperties(fillColor, borderColor, (sliders.get(6).getValue()));
+        double borderWidth = sliders.get(6).getValue();
+        double strokeSize = sliders.get(7).getValue();
+
+        return new PaintProperties(fillColor, borderColor, borderWidth, strokeSize);
     }
 }
