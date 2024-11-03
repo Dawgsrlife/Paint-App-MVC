@@ -135,12 +135,15 @@ Nov 1,2024
 	What I did yesterday: Nothing, due to personal plans.
 	What I will do today: Consider eraser implementation.
 	Obstacles I face: Having to quickly implement what's needed for Sprint 3 in
-                                            the remaining days.
+                      the remaining days.
 
 Nov 2,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Rested.
+	What I will do today: Add user stories and bugs to the sprint
+	                      backlog for sprint 3, as the product owner.
+	                      Consider eraser implementation.
+	Obstacles I face: Figuring out how shapes are being stored to implement a
+	                  stroke eraser.
 
 Nov 3,2024
 	What I did yesterday:
