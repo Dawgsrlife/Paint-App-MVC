@@ -54,6 +54,10 @@ public class PaintModel extends Observable {
         return tempShapes;
     }
 
+    public Shape getTempShape() {
+        return tempShape;
+    }
+
     /**
      * Add a Shape instance into tempShapes list
      * for buffer indicating when mouse is not
