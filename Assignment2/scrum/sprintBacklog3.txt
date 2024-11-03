@@ -5,3 +5,40 @@
 # Sprint 3 Oct 27-Nov 03, 2024
 # Sprint 3 Backlog UserStories go below
 
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.008 : huaethan : Complete
+NAME     : Undo/Redo button
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : To be able to undo and redo shapes or squiggles that I have previously made,
+	       removing them from the canvas. This can be done by pressing 'ctrl + z' (undo)
+	       and 'ctrl + y' (redo).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.009 : mengale1 : InProgress
+NAME     : Eraser
+PRIORITY : 2
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : To be able to select an Eraser tool and use it to delete
+           shapes and squiggles in a desired region.
+SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.013 : mengale1 : InProgress
+NAME     : Complete polyline
+PRIORITY : 2
+ESTIMATE : 30 mins    ACTUAL :
+ISSUE    : Switching to another shape and then drawing with the new shape
+           before completing a polyline removes the polyline. Ideally, just
+           complete the polyline upon switching to another shape tool.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.014 : UTORID : NotStarted
+NAME     : Undo and Redo MenuBar Button
+PRIORITY : 3
+ESTIMATE : 15 mins    ACTUAL :
+ISSUE    : The undo and redo buttons on the menubar are currently not
+           functional.
+--------------------------------------------------------------------------
