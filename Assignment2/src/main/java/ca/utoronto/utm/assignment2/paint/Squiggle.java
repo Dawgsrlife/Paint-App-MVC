@@ -9,13 +9,14 @@ public class Squiggle extends Shape {
 
     public Squiggle(Point point, PaintProperties pp) {
         super(point, null, "Squiggle", true,
-                pp.getFillColor(), null, 0.0);
+                pp.getFillColor(), null, pp.getBorderWidth());
         points.add(point);
     }
 
     @Override
     public void paint(GraphicsContext g2d) {
         g2d.setStroke(getColor());
+        g2d.setLineWidth(getBorderWidth());
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);
