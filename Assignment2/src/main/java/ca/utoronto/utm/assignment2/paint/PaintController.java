@@ -34,6 +34,10 @@ public class PaintController implements EventHandler<MouseEvent> {
                 this.shape.setEnd(point);
                 model.addTempShape(this.shape);
             } else {
+                // If the shape to be created is a Polyline, then finalize it
+                if (model.getTempShape() instanceof Polyline) {
+                    finalizeShape();
+                }
                 // create shape and initialize starting point on MOUSE_PRESSED
                 System.out.println("Started " + scp.getMode());
                 this.shape = getPaintStrategy(scp.getMode(), point, pp.getPaintProperties());
