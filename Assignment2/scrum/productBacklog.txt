@@ -180,7 +180,7 @@ I WANT   : Undo: the canvas withdraws the most recently drawn graphic.
            where the controller is CommandManager.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.027 : mengale1 : InProgress
+TYPE     : USER STORY US?.027 : mengale1 : InProgress
 NAME     : PrecisionEraser size configuration
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL :
