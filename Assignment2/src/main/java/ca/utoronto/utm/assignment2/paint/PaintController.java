@@ -26,6 +26,7 @@ public class PaintController implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent mouseEvent) {
         Point point = new Point(mouseEvent.getX(), mouseEvent.getY());
+
         // determine mouse event type
         EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
         if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
@@ -36,6 +37,7 @@ public class PaintController implements EventHandler<MouseEvent> {
                 // create shape and initialize starting point on MOUSE_PRESSED
                 System.out.println("Started " + scp.getMode());
                 this.shape = getPaintStrategy(scp.getMode(), point, pp.getPaintProperties());
+
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
             // update shape ending point on MOUSE_DRAGGED
@@ -80,6 +82,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             case "Squiggle" -> new Squiggle(point, pp);
             case "Polyline" -> new Polyline(point, pp);
             case "Triangle" -> new Triangle(point, point, pp);
+            case "PrecisionEraser" -> new PrecisionEraser(point, pp);
             default -> throw new IllegalArgumentException("Unknown mode: " + mode);
         };
     }

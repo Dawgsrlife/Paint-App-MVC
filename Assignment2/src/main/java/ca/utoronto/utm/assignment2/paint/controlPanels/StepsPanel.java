@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 
 
 /**
- * This is a class defining StepsPanelg
+ * This is a class defining StepsPanel
  *
  * @author tianji61 / Who ever is going to pick this branch
  */

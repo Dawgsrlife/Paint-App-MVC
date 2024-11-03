@@ -81,8 +81,8 @@ I WANT   : To be able to select the current line thickness, to be applied
 SO THAT  :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.009 : mengale1 : InProgress
-NAME     : Precision Eraser
+TYPE     : USER STORY US3.009 : mengale1 : Complete
+NAME     : Eraser
 PRIORITY : 2
 ESTIMATE : 2 hours : ACTUAL : 1 hour
 AS A     : user
