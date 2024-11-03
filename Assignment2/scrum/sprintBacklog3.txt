@@ -17,7 +17,7 @@ I WANT   : To be able to undo and redo shapes or squiggles that I have previousl
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US3.009 : mengale1 : InProgress
-NAME     : Eraser
+NAME     : Precision Eraser
 PRIORITY : 2
 ESTIMATE : 2 hours : ACTUAL :
 AS A     : user

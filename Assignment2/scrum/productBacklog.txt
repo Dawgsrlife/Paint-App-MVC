@@ -99,9 +99,9 @@ SO THAT  :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US3.009 : mengale1 : InProgress
-NAME     : Eraser
+NAME     : Precision Eraser
 PRIORITY : 2
-ESTIMATE : 2 hours : ACTUAL :
+ESTIMATE : 2 hours : ACTUAL : 1 hour
 AS A     : user
 I WANT   : To be able to select an Eraser tool and use it to delete
            shapes and squiggles in a desired region.
@@ -445,6 +445,7 @@ I WANT   : To be able to undo and redo shapes or squiggles that I have previousl
 	       removing them from the canvas. This can be done by pressing 'ctrl + z' (undo)
 	       and 'ctrl + y' (redo).
 --------------------------------------------------------------------------
+
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 
