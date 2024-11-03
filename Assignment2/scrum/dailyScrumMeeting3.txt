@@ -146,9 +146,12 @@ Nov 2,2024
 	                  stroke eraser.
 
 Nov 3,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Add user stories and bugs to the sprint
+                          backlog for sprint 3, as the product owner.
+                          Consider eraser implementation.
+	What I will do today: Implement US3.009, US2.026. Fix BUG3.013.
+	Obstacles I face: Hooking everything up and understanding the backend
+                      implementation that I have never touched.
 
 Nov 4,2024
 	What I did yesterday:

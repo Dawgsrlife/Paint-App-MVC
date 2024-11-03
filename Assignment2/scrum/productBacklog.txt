@@ -215,7 +215,16 @@ I WANT   : To be able to configure the size of the PrecisionEraser stroke.
 SO THAT  : I can be as precise or imprecise as needed when creating erase
            strokes.
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US?.028 : UTORID : NotStarted
+NAME     : StrokeEraser
+PRIORITY : 2
+ESTIMATE : 2 hours : ACTUAL :
+AS A     : user
+I WANT   : To be able to erase strokes drawn on the canvas
+SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
+           away at them using a PrecisionEraser
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
