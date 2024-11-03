@@ -7,15 +7,21 @@ import javafx.scene.paint.Color;
  * color, border color and border width.
  */
 public class PaintProperties {
+    private final boolean filled;
     private final Color fillColor;
     private final Color borderColor;
     private final double borderWidth;
-    public PaintProperties(Color fillColor, Color borderColor, double borderLength) {
+
+    public PaintProperties(Boolean filled, Color fillColor, Color borderColor, double borderLength) {
+        this.filled = filled;
         this.fillColor = fillColor;
         this.borderColor = borderColor;
         this.borderWidth = borderLength;
     }
 
+    public boolean isFilled() {
+        return filled;
+    }
     public Color getFillColor() {
         return fillColor;
     }

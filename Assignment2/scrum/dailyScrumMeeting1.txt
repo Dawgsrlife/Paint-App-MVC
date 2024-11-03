@@ -107,9 +107,9 @@ Nov 3,2024
 	Obstacles I face: Nothing
 
 Nov 4,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Found BUG3.015
+	What I will do today: Fix BUG3.015
+	Obstacles I face: Nothing
 
 Nov 5,2024
 	What I did yesterday:

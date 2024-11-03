@@ -35,7 +35,7 @@ public abstract class Shape {
 
     abstract void paint(GraphicsContext g2d);
 
-    protected abstract void removeFilled(GraphicsContext g2d);
+    protected abstract void fill(GraphicsContext g2d);
 
     protected abstract double[] getPaintInfo();
 

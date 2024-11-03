@@ -25,7 +25,7 @@ public class Squiggle extends Shape {
     }
 
     @Override
-    public void removeFilled(GraphicsContext g2d) {
+    public void fill(GraphicsContext g2d) {
 
     }
 

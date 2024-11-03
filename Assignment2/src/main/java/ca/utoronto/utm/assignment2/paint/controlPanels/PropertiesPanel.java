@@ -3,6 +3,7 @@ package ca.utoronto.utm.assignment2.paint.controlPanels;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
  */
 public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent> {
 
+    private final CheckBox fill = new CheckBox("");
     private final ArrayList<Slider> sliders = new ArrayList<>();
     private final ArrayList<Text> texts = new ArrayList<>();
 
@@ -26,19 +28,22 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         this.setVgap(5.0);
         this.setPadding(new Insets(10.0));
         // templates
-        int[] columns = new int[]{2, 3, 4, 6, 7, 8, 10};
+        int[] columns = new int[]{3, 4, 5, 7, 8, 9, 11};
         String[] textTemplate = new String[]{"R : ", "G : ", "B : ",
                 "R : ", "G : ", "B : ",
                 "px : "};
 
-        this.add(new Text("Fill Color"), 0, 1);
-        this.add(new Text("Border Color"), 0, 5);
-        this.add(new Text("Border Width"), 0, 9);
+        this.add(new Text("Fill"), 0, 1);
+        this.add(fill, 1, 1);
+        this.add(new Text("Fill Color"), 0, 2);
+        this.add(new Text("Border Color"), 0, 6);
+        this.add(new Text("Border Width"), 0, 10);
         for (int i = 0; i < columns.length; i++) {
             Slider slider = new Slider();
             slider.setMax(255);
             slider.setMaxWidth(100);
             slider.setOnMouseDragged(this);
+            slider.setOnMousePressed(this);
             Text text = new Text();
             text.setText(textTemplate[i] + (int)slider.getValue());
             this.add(slider, 0, columns[i]);
@@ -70,6 +75,6 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
                 (int)sliders.get(3).getValue(),
                 (int)sliders.get(4).getValue(),
                 (int)sliders.get(5).getValue());
-        return new PaintProperties(fillColor, borderColor, (sliders.get(6).getValue()));
+        return new PaintProperties(fill.isSelected(), fillColor, borderColor, sliders.get(6).getValue());
     }
 }

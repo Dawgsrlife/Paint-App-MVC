@@ -473,6 +473,14 @@ AS A     : user
 I WANT   : To be able to configure the size of squiggles and polylines
 SO THAT  : I can draw squiggles and polylines of varying thicknesses.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.015 : tianji61 : Complete
+NAME     : PropertyPanel repeatedly used
+PRIORITY : 1
+ESTIMATE : 2 hours    ACTUAL : 1 hour
+ISSUE    : Sometimes same property assign to all shapes of the canvas on
+           creating a new shape.
+--------------------------------------------------------------------------
 
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

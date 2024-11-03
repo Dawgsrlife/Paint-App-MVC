@@ -16,25 +16,28 @@ public class Rectangle extends Shape {
      * @param end   ending coordinate
      */
     public Rectangle(Point start, Point end, PaintProperties pp) {
-        super(start, end, "Rectangle", false,
+        super(start, end, "Rectangle", pp.isFilled(),
                 pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
     }
 
     @Override
     void paint(GraphicsContext g2d) {
-        g2d.setFill(getBorderColor());
-        double[] info = getPaintInfo();
-        g2d.fillRect(info[0], info[1], info[2], info[3]);
-        if (!isFilled()) {
-            removeFilled(g2d);
+        if (getBorderWidth() != 0.0) {
+            g2d.setStroke(getBorderColor());
+            g2d.setLineWidth(getBorderWidth());
+            double[] info = getPaintInfo();
+            g2d.strokeRect(info[0], info[1], info[2], info[3]);
+        }
+        if (isFilled()) {
+            fill(g2d);
         }
     }
 
     @Override
-    protected void removeFilled(GraphicsContext g2d) {
+    protected void fill(GraphicsContext g2d) {
         g2d.setFill(getColor());
         double[] info = getPaintInfo();
-        double width = getBorderWidth();
+        double width = getBorderWidth() / 2;
         g2d.fillRect(info[0] + width, info[1] + width,
                 info[2] - width * 2, info[3] - width * 2);
     }
