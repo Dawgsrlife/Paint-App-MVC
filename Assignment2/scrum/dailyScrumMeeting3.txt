@@ -31,8 +31,8 @@ Oct 17,2024
 	                      organize tackling the first sprint.
 	Obstacles I face:     Figuring out the git commands between making branches
 	                      on two different systems (portable laptop and desktop
-	                       at home) locally, and pulling/pushing from/to those
-	                       branches remotely.
+	                      at home) locally, and pulling/pushing from/to those
+	                      branches remotely.
 
 Oct 18,2024
 	What I did yesterday: Complete BUG1.001
