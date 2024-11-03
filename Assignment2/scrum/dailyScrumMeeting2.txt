@@ -97,14 +97,14 @@ Nov 1,2024
 	Obstacles I face: NNN
 
 Nov 2,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Created pull request for US3.008
+	What I will do today: Rest
+	Obstacles I face: Resting
 
 Nov 3,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Rested
+	What I will do today: Handle pull request for US3.009
+	Obstacles I face: Handling
 
 Nov 4,2024
 	What I did yesterday:
