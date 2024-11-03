@@ -26,6 +26,25 @@ I WANT   : To be able to select an Eraser tool and use it to delete
 SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
+TYPE     : USER STORY US3.026 : mengale1 : InProgress
+NAME     : Stroke size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : To be able to configure the size of squiggles and polylines
+SO THAT  : I can draw squiggles and polylines of varying thicknesses.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.027 : mengale1 : InProgress
+NAME     : PrecisionEraser size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : To be able to configure the size of the PrecisionEraser stroke.
+SO THAT  : I can be as precise or imprecise as needed when creating erase
+           strokes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : BUG BUG3.013 : mengale1 : InProgress
 NAME     : Complete polyline
 PRIORITY : 2

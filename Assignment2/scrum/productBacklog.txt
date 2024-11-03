@@ -196,6 +196,25 @@ I WANT   : Undo: the canvas withdraws the most recently drawn graphic.
            All functionalities are provided through the command pattern
            where the controller is CommandManager.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.026 : mengale1 : InProgress
+NAME     : Stroke size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : To be able to configure the size of squiggles and polylines
+SO THAT  : I can draw squiggles and polylines of varying thicknesses.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.027 : mengale1 : InProgress
+NAME     : PrecisionEraser size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL :
+AS A     : user
+I WANT   : To be able to configure the size of the PrecisionEraser stroke.
+SO THAT  : I can be as precise or imprecise as needed when creating erase
+           strokes.
+--------------------------------------------------------------------------
 
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
