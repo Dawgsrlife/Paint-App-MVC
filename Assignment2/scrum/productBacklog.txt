@@ -345,7 +345,7 @@ ISSUE    : When the user is in the Squiggle mode, clicking without dragging
            other, which is not intended.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.004 : tianji61 : Complete
+TYPE     : BUG BUG3.004 : tianji61 : Complete
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 2 hours
