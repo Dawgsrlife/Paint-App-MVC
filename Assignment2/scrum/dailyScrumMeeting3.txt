@@ -154,7 +154,8 @@ Nov 3,2024
                       implementation that I have never touched.
 
 Nov 4,2024
-	What I did yesterday:
+	What I did yesterday: Implement US3.009, US2.026. Fix BUG3.013. Do pull
+	                      requests for US3.008 and BUG3.004.
 	What I will do today:
 	Obstacles I face:
 
