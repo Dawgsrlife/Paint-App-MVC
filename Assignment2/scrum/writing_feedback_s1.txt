@@ -1,0 +1,12 @@
+S&O:3
+WM:3
+AE:3
+
+Feedback:
+- [S&O] the inconsistency in the user stories, e.g. "US1.004", "I WANT   : Similarly to Draw Circle Feedback" doesn't flow as a sentence as the structure of a user story is expected to
+- [S&O] The document follows a clear structure, with distinct sections for architecture discussion and design patterns.
+- [S&O] Consider more detailed sub-headings to reflect key discussions, e.g., "Proposed Improvements for Shape Management" instead of just listing the idea.
+- [WM] Some sentences are awkwardly phrased, e.g., "Command: In View class, every event is directly executed other than encapsulated as a command" could be clearer as "In the View class, events are executed directly, instead of being encapsulated in commands."
+- [WM] A few verb forms are unclear or slightly confusing: "help maintain and extend the system" could be improved to "helps maintain and extend the system."
+- [AE] Technical terms (e.g., Strategy, Singleton, Observer) are used appropriately and with reasonable explanation.
+- [AE] Using placeholder notes like "discuss it below" disrupts professionalism and completeness. Also, the writing needs slightly more attention to clarity for those new to the project.
