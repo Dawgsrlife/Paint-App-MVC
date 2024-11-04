@@ -1,15 +1,12 @@
 Pull Requests:
 
+BUG3.004 author:tianji61 puller:mengale1 status:Completed
+
+BUG3.013 author:mengale1 puller:huaethan status:Completed
+
 US3.008 author:huaethan puller:mengale1 status:Completed
 
 US3.009 author:mengale1 puller:huaethan status:Completed
 
 US3.026 author:mengale1 puller:tianji61 status:Waiting
-
-US3.019 author:tianji61 upller: UTROID status:NotStarted
-US3.009 author:mengale1 puller:huaethan status:Rejected
-BUG3.004 author:tianji61 puller:mengale1 status:Waiting
-
-BUG3.013 author:mengale1 puller:huaethan status:Completed
-
 

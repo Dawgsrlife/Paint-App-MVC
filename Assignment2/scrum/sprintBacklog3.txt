@@ -38,29 +38,20 @@ I WANT   : To be able to select an Eraser tool and use it to delete
 SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.013 : mengale1 : Complete
 TYPE     : USER STORY US3.026 : mengale1 : InProgress
 NAME     : Stroke size configuration
 PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
+ESTIMATE : 1 hour : ACTUAL : 1 hour
 AS A     : user
 I WANT   : To be able to configure the size of squiggles and polylines
 SO THAT  : I can draw squiggles and polylines of varying thicknesses.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.013 : mengale1 : NotStarted
+TYPE     : BUG BUG3.013 : mengale1 : Complete
 NAME     : Complete polyline
 PRIORITY : 2
 ESTIMATE : 30 mins    ACTUAL : 20 mins
 ISSUE    : Switching to another shape and then drawing with the new shape
            before completing a polyline removes the polyline. Ideally, just
            complete the polyline upon switching to another shape tool.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG3.014 : UTORID : NotStarted
-NAME     : Undo and Redo MenuBar Button
-PRIORITY : 3
-ESTIMATE : 15 mins    ACTUAL :
-ISSUE    : The undo and redo buttons on the menubar are currently not
-           functional.
 --------------------------------------------------------------------------
