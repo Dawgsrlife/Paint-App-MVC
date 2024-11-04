@@ -73,11 +73,11 @@ Oct 27,2024
 
 Oct 28,2024
 	What I did yesterday: Found a GUI template
-	What I will do today: Not accessible to internet
+	What I will do today: Fix BUG3.004
 	Obstacles I face: Nothing
 
 Oct 29,2024
-	What I did yesterday: Not accessible to internet
+	What I did yesterday: Fixed BUG3.004
 	What I will do today: Not accessible to internet
 	Obstacles I face: Not accessible to internet
 
@@ -103,11 +103,11 @@ Nov 2,2024
 
 Nov 3,2024
 	What I did yesterday: Created PR BUS3.019
-	What I will do today: Fix BUG3.009 and implement US3.026
+	What I will do today: Fix BUG3.009 and review US3.026
 	Obstacles I face: Nothing
 
 Nov 4,2024
-	What I did yesterday: Found BUG3.015
+	What I did yesterday: Found BUG3.015, Fixed BUG3.009, reviewed pr on US3.026
 	What I will do today: Fix BUG3.015
 	Obstacles I face: Nothing
 
