@@ -38,7 +38,7 @@ I WANT   : To be able to select an Eraser tool and use it to delete
 SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.026 : mengale1 : InProgress
+TYPE     : USER STORY US3.026 : mengale1 : Complete
 NAME     : Stroke size configuration
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL : 1 hour
