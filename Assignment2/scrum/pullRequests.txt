@@ -8,7 +8,7 @@ US3.026 author:mengale1 puller:tianji61 status:Waiting
 
 US3.019 author:tianji61 upller: UTROID status:NotStarted
 US3.009 author:mengale1 puller:huaethan status:Rejected
-BUG3.004 author:tianji61 puller: UTROID status:Waiting
+BUG3.004 author:tianji61 puller: UTROID status:NeedsToBeReviewed
 
 BUG3.013 author:mengale1 puller:huaethan status:Completed
 
