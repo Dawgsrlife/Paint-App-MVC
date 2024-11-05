@@ -93,15 +93,6 @@ I WANT   : It makes more sense if coordinate display in tool selection panel
 SO THAT  : I can see coordinates of cursor in tool selection panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.022 : chen2046 : NotStarted
-NAME     : Coordinate display
-PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL :
-AS A     : user
-I WANT   : Refer to US2.020.
-SO THAT  : Undo and redo.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : UTROID : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
