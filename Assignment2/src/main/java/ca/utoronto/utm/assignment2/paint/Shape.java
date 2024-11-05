@@ -97,6 +97,6 @@ public abstract class Shape {
 
     @Override
     public String toString() {
-        return start + "," + end + "," + type + "," + filled + "," + color + "," + borderColor + "," + borderWidth;
+        return start.x + ","+ start.y + "," + end.x + "," + end.y + "," + type + "," + filled + "," + color + "," + borderColor + "," + borderWidth + "\n";
     }
 }
