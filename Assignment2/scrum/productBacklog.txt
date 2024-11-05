@@ -490,10 +490,10 @@ SO THAT  : I can adjust the thickness of a border and / or squiggle
            thickness with a single slider.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.016 : tianji61 : Started
+TYPE     : BUG BUG4.016 : tianji61 : Complete
 NAME     : Duplicated control panel
 PRIORITY : 3
-ESTIMATE : 15 mins    ACTUAL :
+ESTIMATE : 15 mins    ACTUAL : 15mins
 ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
            be removed
 --------------------------------------------------------------------------
