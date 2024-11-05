@@ -479,10 +479,10 @@ ISSUE    : The undo and redo buttons on the menubar are currently not
            functional.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.019 : tianji61 : Started
+TYPE     : USER STORY US4.019 : tianji61 : Complete
 NAME     : Coordinate display
 PRIORITY : 3
-ESTIMATE : 15 minutes   ACTUAL :
+ESTIMATE : 15 minutes   ACTUAL : 15 minutes
 AS A     : user
 I WANT   : It makes more sense if coordinate display in tool selection
            panel instead of on the canvas.

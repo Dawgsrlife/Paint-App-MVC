@@ -17,10 +17,11 @@ public class PaintController implements EventHandler<MouseEvent> {
     private EditingPanel ep;
     private Shape shape;
 
-    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp) {
+    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, EditingPanel ep) {
         this.model = model;
         this.scp = scp;
         this.pp = pp;
+        this.ep = ep;
     }
 
     @Override
@@ -29,7 +30,9 @@ public class PaintController implements EventHandler<MouseEvent> {
 
         // determine mouse event type
         EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
-        if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
+        if (event.equals(MouseEvent.MOUSE_MOVED)) {
+            ep.setMouseCoords(mouseEvent);
+        } else if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
             if (scp.getMode().equals("Polyline") & this.shape != null) {
                 this.shape.setEnd(point);
                 model.addTempShape(this.shape);
