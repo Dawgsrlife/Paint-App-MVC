@@ -24,7 +24,7 @@ public class CommandMenuBar implements EventHandler<ActionEvent> {
 
         menu = new Menu("File");
 
-        menuItem = new MenuItem("New");
+        menuItem = new CommandNew();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
@@ -32,13 +32,13 @@ public class CommandMenuBar implements EventHandler<ActionEvent> {
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Save");
+        menuItem = new CommandSave();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
         menu.getItems().add(new SeparatorMenuItem());
 
-        menuItem = new MenuItem("Exit");
+        menuItem = new CommandExit();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
@@ -61,11 +61,11 @@ public class CommandMenuBar implements EventHandler<ActionEvent> {
         menu.getItems().add(menuItem);
 
         menu.getItems().add(new SeparatorMenuItem());
-        menuItem = new MenuItem("Undo");
+        menuItem = new CommandUndo();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Redo");
+        menuItem = new CommandRedo();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
@@ -76,9 +76,7 @@ public class CommandMenuBar implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
-        MenuItem menuItem = (MenuItem) event.getSource();
-        String command = menuItem.getText();
-        System.out.println(command);
-        Receiver.execute(this.model, command);
+        Command c = (Command) event.getSource();
+        c.execute(model);
     }
 }
