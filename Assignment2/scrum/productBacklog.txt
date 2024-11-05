@@ -23,7 +23,6 @@ ESTIMATE : 15 mins    ACTUAL :
 ISSUE    : The undo and redo buttons on the menubar are currently not
            functional.
 --------------------------------------------------------------------------
-
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.006 : mengale1 : InProgress
 NAME     : Fill style selector
@@ -489,6 +488,14 @@ I WANT   : To be able to select the current line thickness, to be applied
            	rectangle as well as two thickly outlined rectangles and a thick squiggle
 SO THAT  : I can adjust the thickness of a border and / or squiggle
            thickness with a single slider.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.015 : tianji61 : Started
+NAME     : Duplicated control panel
+PRIORITY : 3
+ESTIMATE : 15 mins    ACTUAL :
+ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
+           be removed
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
