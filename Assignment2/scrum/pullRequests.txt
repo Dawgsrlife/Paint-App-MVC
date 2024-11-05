@@ -1,5 +1,7 @@
 Pull Requests:
 
+US4.100 author:tuanji61 puller:UTROID status:waiting
+
 US4.007 author:tianji61 puller:huaethan status:Completed
 BUG4.016 author:tianji61 puller:huaethan status:Completed
 US4.019 author:tianji61 puller:huaethan status:Completed
