@@ -17,7 +17,7 @@ public class Triangle extends Shape {
      */
     public Triangle(Point start, Point end, PaintProperties pp) {
         super(start, end, "Triangle", pp.isFilled(),
-                pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
+                pp.getFillColor(), pp.getBorderColor(), pp.getStrokeThickness());
     }
 
     /**
