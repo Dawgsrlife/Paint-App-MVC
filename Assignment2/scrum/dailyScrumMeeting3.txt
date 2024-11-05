@@ -156,8 +156,9 @@ Nov 3,2024
 Nov 4,2024
 	What I did yesterday: Implement US3.009, US2.026. Fix BUG3.013. Do pull
 	                      requests for US3.008 and BUG3.004.
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Complete BUG4.015 and add it to the pull requests.
+	Obstacles I face: Fixing eraser stroke size, where unexpected behaviour
+	                  occurs; tracing.
 
 Nov 5,2024
 	What I did yesterday:
