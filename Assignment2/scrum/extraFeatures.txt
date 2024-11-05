@@ -1,13 +1,14 @@
 (replicate sections below for each feature you want to highlight)
 --------------------------------------------------------------------------------
-FeatureName: (name)
+FeatureName: Cursor Coordinate Display
 
 Description: 
-	(describe the feature)
+	Display cursor's current coordinate, in order to make user aware of where
+	the shape is going to be located.
 
 
 Reference: 
-	(list of the BUG/US involved in creating this feature)
+	US4.019
 --------------------------------------------------------------------------------
 FeatureName: (name)
 
