@@ -22,9 +22,6 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     private final CheckBox fill = new CheckBox("");
     private final ArrayList<Slider> sliders = new ArrayList<>();
     private final ArrayList<Text> texts = new ArrayList<>();
-    private Slider eraserSizeSlider;
-    private Text eraserSizeText;
-    private boolean isEraserMode = false;  // Track whether eraser mode is active
 
     public PropertiesPanel() {
         // adding gap between elements
@@ -44,7 +41,12 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         this.add(new Text("Stroke Size"), 0, 12);
         for (int i = 0; i < columns.length; i++) {
             Slider slider = new Slider();
-            slider.setMax(255);
+            if (i == 7) {  // Stroke Slider Case
+                slider.setMin(1);
+                slider.setMax(50);
+            } else {
+                slider.setMax(255);
+            }
             slider.setMaxWidth(100);
             slider.setOnMouseDragged(this);
             slider.setOnMousePressed(this);
@@ -60,16 +62,12 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
 
     @Override
     public void handle(MouseEvent mouseEvent) {
-        if (isEraserMode && mouseEvent.getSource() == eraserSizeSlider) {
-            eraserSizeText.setText("Eraser Size: " + (int) eraserSizeSlider.getValue());
-        } else {
-            int index = 0;
-            for (Slider slider : sliders) {
-                if (mouseEvent.getSource() == slider) {
-                    texts.get(index).setText(texts.get(index).getText().substring(0, 4) + (int) slider.getValue());
-                }
-                index++;
+        int index = 0;
+        for (Slider slider : sliders) {
+            if (mouseEvent.getSource() == slider) {
+                texts.get(index).setText(texts.get(index).getText().substring(0, 4) + (int)slider.getValue());
             }
+            index ++;
         }
     }
 
@@ -83,6 +81,8 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
                 (int)sliders.get(3).getValue(),
                 (int)sliders.get(4).getValue(),
                 (int)sliders.get(5).getValue());
-        return new PaintProperties(fill.isSelected(), fillColor, borderColor, sliders.get(7).getValue());
+        double borderWidth = sliders.get(6).getValue();
+        double strokeSize = sliders.get(7).getValue();
+        return new PaintProperties(fill.isSelected(), fillColor, borderColor, borderWidth, strokeSize);
     }
 }
