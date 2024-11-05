@@ -17,7 +17,7 @@ public class Rectangle extends Shape {
      */
     public Rectangle(Point start, Point end, PaintProperties pp) {
         super(start, end, "Rectangle", pp.isFilled(),
-                pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
+                pp.getFillColor(), pp.getBorderColor(), pp.getStrokeThickness());
     }
 
     @Override

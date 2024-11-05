@@ -12,7 +12,7 @@ public class Squiggle extends Shape {
         super(point, null, "Squiggle", true,
                 pp.getFillColor(), null, 0.0);
         points.add(point);
-        strokeSize = pp.getStrokeSize();
+        strokeSize = pp.getStrokeThickness();
     }
 
     @Override

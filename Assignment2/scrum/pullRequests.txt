@@ -1,8 +1,8 @@
 Pull Requests:
 
-US4.007 author:tianji61 puller:mengale1 status:InProcess
 BUG4.014 author:tianji61 | huaethan puller:UTROID status:Waiting
 
+US4.007 author:tianji61 puller:huaethan status:Completed
 BUG4.016 author:tianji61 puller:huaethan status:Completed
 US4.019 author:tianji61 puller:huaethan status:Completed
 BUG3.004 author:tianji61 puller:mengale1 status:Completed

@@ -438,10 +438,10 @@ ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
            behaviour, such as existing eraser strokes becoming large and small.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.007 : tianji61 : Started
+TYPE     : USER STORY US4.007 : tianji61 : Complete
 NAME     : Line thickness selector
 PRIORITY : 3
-ESTIMATE : 30 minutes    ACTUAL :
+ESTIMATE : 30 minutes    ACTUAL : 30 minutes
 AS A     : user
 I WANT   : To be able to select the current line thickness, to be applied
            to subsequent shapes. Example:

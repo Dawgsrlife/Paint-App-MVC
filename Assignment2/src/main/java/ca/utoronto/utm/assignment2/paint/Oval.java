@@ -6,7 +6,7 @@ public class Oval extends Shape {
 
     public Oval(Point start, Point end, PaintProperties pp) {
         super(start, end, "Oval", pp.isFilled(),
-                pp.getFillColor(), pp.getBorderColor(), pp.getBorderWidth());
+                pp.getFillColor(), pp.getBorderColor(), pp.getStrokeThickness());
     }
 
     @Override
