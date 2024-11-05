@@ -16,14 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.014 : UTORID : NotStarted
-NAME     : Undo and Redo MenuBar Button
-PRIORITY : 3
-ESTIMATE : 15 mins    ACTUAL :
-ISSUE    : The undo and redo buttons on the menubar are currently not
-           functional.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.006 : mengale1 : InProgress
 NAME     : Fill style selector
 PRIORITY : 3
@@ -496,6 +488,14 @@ PRIORITY : 3
 ESTIMATE : 15 mins    ACTUAL :
 ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
            be removed
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.014 : tianji61 : Started
+NAME     : Undo and Redo MenuBar Button
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL :
+ISSUE    : The undo and redo buttons on the menubar are currently not
+           functional.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
