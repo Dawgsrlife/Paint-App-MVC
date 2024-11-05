@@ -31,7 +31,6 @@ public class Paint extends Application {
         menuBar = new CommandMenuBar();
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
-        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
         editingPanel = new EditingPanel();
         this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, editingPanel);
         this.view = new PaintView(model, controller);
