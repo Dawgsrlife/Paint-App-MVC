@@ -51,6 +51,9 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
             this.texts.add(text);
         }
         this.sliders.get(6).setMax(20);
+        this.sliders.get(6).setValue(1);
+        this.texts.get(6).setText("px : 1");
+
     }
 
     @Override
