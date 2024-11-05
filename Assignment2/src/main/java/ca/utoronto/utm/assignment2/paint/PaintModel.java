@@ -6,33 +6,8 @@ import java.util.Stack;
 
 public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
-    private Stack<Shape> undoStack = new Stack<>();
+    private final Stack<Shape> undoStack = new Stack<>();
     private Shape tempShape;
-
-    /**
-     * Add a Shape instance into steps list
-     * @param shape a shape instance
-     */
-    public void addShape(Shape shape) {
-        tempShape = null;
-        shapes.add(shape);
-        this.setChanged();
-        this.notifyObservers();
-    }
-
-    public void undo() {
-        if(shapes.isEmpty()) return;
-        undoStack.push(shapes.pop());
-        this.setChanged();
-        this.notifyObservers();
-    }
-
-    public void redo() {
-        if(undoStack.isEmpty()) return;
-        shapes.push(undoStack.pop());
-        this.setChanged();
-        this.notifyObservers();
-    }
 
     /**
      * Get all steps queued to be painted
@@ -60,6 +35,37 @@ public class PaintModel extends Observable {
         // refresh the undo stack
         undoStack.clear();
 
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    /**
+     * Add a Shape instance into steps list
+     * @param shape a shape instance
+     */
+    public void addShape(Shape shape) {
+        tempShape = null;
+        shapes.add(shape);
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public void undo() {
+        if(shapes.isEmpty()) return;
+        undoStack.push(shapes.pop());
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public void redo() {
+        if(undoStack.isEmpty()) return;
+        shapes.push(undoStack.pop());
+        this.setChanged();
+        this.notifyObservers();
+    }
+
+    public void clear() {
+        shapes.clear();
         this.setChanged();
         this.notifyObservers();
     }
