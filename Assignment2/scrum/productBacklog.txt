@@ -16,25 +16,24 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.013 : mengale1 : InProgress
-NAME     : Complete polyline
-PRIORITY : 2
-ESTIMATE : 30 mins    ACTUAL :
-ISSUE    : Switching to another shape and then drawing with the new shape
-           before completing a polyline removes the polyline. Ideally, just
-           complete the polyline upon switching to another shape tool.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG?.014 : UTORID : NotStarted
+TYPE     : BUG BUG4.014 : UTORID : NotStarted
 NAME     : Undo and Redo MenuBar Button
 PRIORITY : 3
 ESTIMATE : 15 mins    ACTUAL :
 ISSUE    : The undo and redo buttons on the menubar are currently not
            functional.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.015 : mengale1 : InProgress
+NAME     : Stroke size configuration issue
+PRIORITY : 2
+ESTIMATE : 30 mins    ACTUAL : 20 mins
+ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
+           behaviour, such as existing eraser strokes becoming large and small.
+--------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.006 : mengale1 : InProgress
+TYPE     : USER STORY US4.006 : mengale1 : InProgress
 NAME     : Fill style selector
 PRIORITY : 3
 ESTIMATE : 1 hour : ACTUAL :
@@ -57,7 +56,7 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
 SO THAT  : I can modify my canvas with different colours.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.007 : UTORID : NotStarted
+TYPE     : USER STORY US4.007 : UTORID : NotStarted
 NAME     : Line thickness selector
 PRIORITY : 3
 ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
@@ -81,17 +80,7 @@ I WANT   : To be able to select the current line thickness, to be applied
 SO THAT  :
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.009 : mengale1 : Complete
-NAME     : Eraser
-PRIORITY : 2
-ESTIMATE : 2 hours : ACTUAL : 1 hour
-AS A     : user
-I WANT   : To be able to select an Eraser tool and use it to delete
-           shapes and squiggles in a desired region.
-SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US?.010 : mengale1 : NotStarted
+TYPE     : USER STORY US4.010 : mengale1 : NotStarted
 NAME     : Highlighter
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -104,7 +93,7 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.014 : chen2046 : NotStarted
+TYPE     : USER STORY US4.014 : chen2046 : NotStarted
 NAME     : Clear Canvas Button
 PRIORITY : 3
 ESTIMATE : 1 hour : ACTUAL :
@@ -114,7 +103,7 @@ I WANT   : Add a button that clears the entire canvas, do not change the
 SO THAT  : I can reset the drawing area
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.015 : chen2046 : NotStarted
+TYPE     : USER STORY US4.015 : chen2046 : NotStarted
 NAME     : Text Tool
 PRIORITY : 3
 ESTIMATE : 3 hour : ACTUAL :
@@ -124,7 +113,7 @@ SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.017 : huaethan : NotStarted
+TYPE     : USER STORY US4.017 : huaethan : NotStarted
 NAME     : Smart Shape Snapping
 PRIORITY : 3
 ESTIMATE : 3 days : ACTUAL :
@@ -135,7 +124,7 @@ I WANT   : To be able to draw a squiggle that resembles a shape and have the
 SO THAT  : I can draw shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.019 : tianji61 : NotStarted
+TYPE     : USER STORY US4.019 : tianji61 : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -145,7 +134,7 @@ I WANT   : It makes more sense if coordinate display in tool selection panel
 SO THAT  : I can see coordinates of cursor in tool selection panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.022 : chen2046 : NotStarted
+TYPE     : USER STORY US4.022 : chen2046 : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -154,7 +143,7 @@ I WANT   : Refer to US2.020.
 SO THAT  : Undo and redo.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.023 : UTROID : NotStarted
+TYPE     : USER STORY US4.023 : UTROID : NotStarted
 NAME     : Coordinate display
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -163,7 +152,7 @@ I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of a shapes I drew.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.025 : chen2046 : InProgress
+TYPE     : USER STORY US4.025 : chen2046 : InProgress
 NAME     : Command design pattern for undo, redo, copy, paste, cut menubar.
 PRIORITY : 3
 ESTIMATE : 4 hours : ACTUAL :
@@ -180,7 +169,7 @@ I WANT   : Undo: the canvas withdraws the most recently drawn graphic.
            where the controller is CommandManager.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.027 : mengale1 : InProgress
+TYPE     : USER STORY US4.027 : mengale1 : InProgress
 NAME     : PrecisionEraser size configuration
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL :
@@ -190,7 +179,7 @@ SO THAT  : I can be as precise or imprecise as needed when creating erase
            strokes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US?.028 : UTORID : NotStarted
+TYPE     : USER STORY US4.028 : UTORID : NotStarted
 NAME     : StrokeEraser
 PRIORITY : 2
 ESTIMATE : 2 hours : ACTUAL :
@@ -465,7 +454,7 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.026 : tianji61 : Complete
+TYPE     : USER STORY US3.026 : mengale1 : Complete
 NAME     : Stroke size configuration
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL : 1 hour
@@ -480,6 +469,25 @@ PRIORITY : 1
 ESTIMATE : 2 hours    ACTUAL : 1 hour
 ISSUE    : Sometimes same property assign to all shapes of the canvas on
            creating a new shape.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US3.009 : mengale1 : Complete
+NAME     : Eraser
+PRIORITY : 2
+ESTIMATE : 2 hours : ACTUAL : 1 hour
+AS A     : user
+I WANT   : To be able to select an Eraser tool and use it to delete
+           shapes and squiggles in a desired region.
+SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG3.013 : mengale1 : Complete
+NAME     : Complete polyline
+PRIORITY : 2
+ESTIMATE : 30 mins    ACTUAL : 20 mins
+ISSUE    : Switching to another shape and then drawing with the new shape
+           before completing a polyline removes the polyline. Ideally, just
+           complete the polyline upon switching to another shape tool.
 --------------------------------------------------------------------------
 
 
