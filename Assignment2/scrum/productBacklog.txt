@@ -23,14 +23,6 @@ ESTIMATE : 15 mins    ACTUAL :
 ISSUE    : The undo and redo buttons on the menubar are currently not
            functional.
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG4.015 : mengale1 : InProgress
-NAME     : Stroke size configuration issue
-PRIORITY : 2
-ESTIMATE : 30 mins    ACTUAL : 20 mins
-ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
-           behaviour, such as existing eraser strokes becoming large and small.
---------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.006 : mengale1 : InProgress
@@ -489,7 +481,14 @@ ISSUE    : Switching to another shape and then drawing with the new shape
            before completing a polyline removes the polyline. Ideally, just
            complete the polyline upon switching to another shape tool.
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.015 : mengale1 : Complete
+NAME     : Stroke size configuration issue
+PRIORITY : 2
+ESTIMATE : 30 mins    ACTUAL : 30 mins
+ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
+           behaviour, such as existing eraser strokes becoming large and small.
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 
