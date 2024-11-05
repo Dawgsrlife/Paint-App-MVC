@@ -488,6 +488,34 @@ I WANT   : It makes more sense if coordinate display in tool selection
            panel instead of on the canvas.
 SO THAT  : I can see coordinates of cursor in tool selection panel.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.100 : tianji61 : Started
+NAME     : MenuBar - New
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL :
+AS A     : user
+I WANT   : Clear the whole canvas.
+SO THAT  : Draw on a new canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.101 : tianji61 : Started
+NAME     : MenuBar - Open
+PRIORITY : 3
+ESTIMATE : 15 minutes   ACTUAL :
+AS A     : user
+I WANT   : Open a canvas I saved before.
+SO THAT  : Continue work on a file on a saved canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.102 : tianji61 : Started
+NAME     : MenuBar - Save
+PRIORITY : 3
+ESTIMATE : 15 minutes   ACTUAL :
+AS A     : user
+I WANT   : Save a canvas.
+SO THAT  : Save a canvas, so that I can resume work on the canvas saved
+           later.
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 
