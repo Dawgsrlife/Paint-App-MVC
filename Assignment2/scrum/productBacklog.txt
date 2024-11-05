@@ -113,15 +113,15 @@ SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.017 : huaethan : NotStarted
+TYPE     : USER STORY US4.017 : huaethan : InProgress
 NAME     : Smart Shape Snapping
 PRIORITY : 3
 ESTIMATE : 3 days : ACTUAL :
 AS A     : user
 I WANT   : To be able to draw a squiggle that resembles a shape and have the
-           program automatically snap it to become a Square, Rectangle,
-           or Circle.
-SO THAT  : I can draw shapes easily and accurately
+           program automatically turn it into a circle or polygon with up to
+           5 sides.
+SO THAT  : I can draw a variety of shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.019 : tianji61 : NotStarted
