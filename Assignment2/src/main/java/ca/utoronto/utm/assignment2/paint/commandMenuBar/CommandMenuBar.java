@@ -1,6 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
-import javafx.application.Platform;
+import ca.utoronto.utm.assignment2.paint.PaintModel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -8,9 +8,13 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 
-public class MyMenuBar implements EventHandler<ActionEvent> {
+public class CommandMenuBar implements EventHandler<ActionEvent> {
 
-    public MenuBar createMenuBar() {
+    PaintModel model;
+
+    public MenuBar createMenuBar(PaintModel model) {
+
+        this.model = model;
 
         MenuBar menuBar = new MenuBar();
         Menu menu;
@@ -70,14 +74,11 @@ public class MyMenuBar implements EventHandler<ActionEvent> {
         return menuBar;
     }
 
-
     @Override
     public void handle(ActionEvent event) {
-        System.out.println(((MenuItem) event.getSource()).getText());
-        String command = ((MenuItem) event.getSource()).getText();
+        MenuItem menuItem = (MenuItem) event.getSource();
+        String command = menuItem.getText();
         System.out.println(command);
-        if (command.equals("Exit")) {
-            Platform.exit();
-        }
+        Receiver.execute(this.model, command);
     }
 }
