@@ -3,7 +3,6 @@ package ca.utoronto.utm.assignment2.paint;
 import ca.utoronto.utm.assignment2.paint.controlPanels.EditingPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
-import ca.utoronto.utm.assignment2.paint.controlPanels.StepsPanel;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
@@ -13,7 +12,6 @@ public class PaintController implements EventHandler<MouseEvent> {
     private final PaintModel model;
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
-    private StepsPanel sp;
     private EditingPanel ep;
     private Shape shape;
 
