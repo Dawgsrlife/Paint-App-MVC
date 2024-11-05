@@ -20,16 +20,6 @@ public class PaintModel extends Observable {
         this.notifyObservers();
     }
 
-    /*
-    future undo functionality
-    public void removeShape(Shape shape) {
-        shapes.remove(shape);
-        System.out.println("Shape removed: " + shape + ", Remaining shapes: " + shapes.size());
-        this.setChanged();
-        this.notifyObservers();
-    }
-    */
-
     public void undo() {
         if(shapes.isEmpty()) return;
         undoStack.push(shapes.pop());

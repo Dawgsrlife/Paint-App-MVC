@@ -3,6 +3,7 @@ package ca.utoronto.utm.assignment2.paint;
 
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
+import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandMenuBar;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
@@ -12,8 +13,7 @@ public class Paint extends Application {
     PaintModel model; // Model
     PaintView view; // View
     PaintController controller; // Controller
-    KeyHandler keyHandler; // KeyListener
-    MyMenuBar menuBar; // Control
+    CommandMenuBar menuBar; // Control
     ShapeChooserPanel shapeChooserPanel; // Control
     PropertiesPanel propertiesPanel; // Control
     // commandManager;
@@ -26,16 +26,15 @@ public class Paint extends Application {
     public void start(Stage stage) throws Exception {
 
         this.model = new PaintModel();
-        menuBar = new MyMenuBar();
+        menuBar = new CommandMenuBar();
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
         this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
-        this.keyHandler = new KeyHandler(model);
         this.view = new PaintView(model, controller);
 
 
         BorderPane root = new BorderPane();
-        root.setTop(menuBar.createMenuBar());
+        root.setTop(menuBar.createMenuBar(model));
         root.setCenter(view);
         BorderPane left = new BorderPane();
         left.setTop(shapeChooserPanel);
@@ -45,8 +44,6 @@ public class Paint extends Application {
         //right.setTop(this.stepsPanel);
         //right.setCenter(new EditingPanel(this));
         Scene scene = new Scene(root);
-        scene.setOnKeyPressed(keyHandler);
-        scene.setOnKeyReleased(keyHandler);
         stage.setScene(scene);
         stage.setTitle("Paint");
         stage.show();
