@@ -94,4 +94,9 @@ public abstract class Shape {
     public void setBorderWidth(double borderWidth) {
         this.borderWidth = borderWidth;
     }
+
+    @Override
+    public String toString() {
+        return start + "," + end + "," + type + "," + filled + "," + color + "," + borderColor + "," + borderWidth;
+    }
 }
