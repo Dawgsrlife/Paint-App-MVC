@@ -526,6 +526,16 @@ I WANT   : Save a canvas.
 SO THAT  : Save a canvas, so that I can resume work on the canvas saved
            later.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.103 : tianji61 : InProgress
+NAME     : Shape selector
+PRIORITY : 1
+ESTIMATE : 3 hour   ACTUAL :
+ISSUE    : Developing furthur features relies on selecting a shape currently
+           exists on the canvas, it would be nice to have a selector mode,
+           and deal with the situation that a using wants to select and
+           edit a specific shape.
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
 
