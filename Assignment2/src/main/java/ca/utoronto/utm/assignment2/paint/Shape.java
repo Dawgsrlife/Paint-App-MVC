@@ -18,19 +18,13 @@ public abstract class Shape {
     private Point start;
     private Point end;
     private String type;
-    private boolean filled;
-    private Color color;
-    private Color borderColor;
-    private double borderWidth;
+    private final PaintProperties properties;
 
-    public Shape(Point start, Point end, String type, boolean filled, Color color, Color borderColor, double borderWidth) {
+    public Shape(Point start, Point end, String type, PaintProperties properties) {
         this.start = start;
         this.end = end;
         this.type = type;
-        this.filled = filled;
-        this.color = color;
-        this.borderColor = borderColor;
-        this.borderWidth = borderWidth;
+        this.properties = properties;
     }
 
     abstract void paint(GraphicsContext g2d);
@@ -38,6 +32,9 @@ public abstract class Shape {
     protected abstract void fill(GraphicsContext g2d);
 
     protected abstract double[] getPaintInfo();
+
+    abstract boolean includeCursor(Point p);
+
 
     public Point getStart() {
         return start;
@@ -63,40 +60,12 @@ public abstract class Shape {
         this.type = type;
     }
 
-    public boolean isFilled() {
-        return filled;
-    }
-
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public Color getBorderColor() {
-        return borderColor;
-    }
-
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
-
-    public double getBorderWidth() {
-        return borderWidth;
-    }
-
-    public void setBorderWidth(double borderWidth) {
-        this.borderWidth = borderWidth;
+    public PaintProperties getProperties() {
+        return properties;
     }
 
     @Override
     public String toString() {
-        return start + "," + end+ "," + type + "," + filled + "," + color + "," + borderColor + "," + borderWidth;
+        return start + "," + end+ "," + type + "," + properties;
     }
 }

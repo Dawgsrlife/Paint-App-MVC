@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.shape.Polygon;
 
 /**
  * A class representing a triangle on the canvas
@@ -16,8 +17,7 @@ public class Triangle extends Shape {
      * @param end   ending coordinate
      */
     public Triangle(Point start, Point end, PaintProperties pp) {
-        super(start, end, "Triangle", pp.isFilled(),
-                pp.getFillColor(), pp.getBorderColor(), pp.getStrokeThickness());
+        super(start, end, "Triangle", pp);
     }
 
     /**
@@ -31,23 +31,22 @@ public class Triangle extends Shape {
         double[] yPoints = getYCoordinates();
 
         // Fill the triangle with the border colour:
-        g2d.strokePolygon(xPoints, yPoints, 3);
-        if (getBorderWidth() != 0.0) {
-            g2d.setStroke(getBorderColor());
-            g2d.setLineWidth(getBorderWidth());
+        if (getProperties().getStrokeThickness() != 0.0) {
+            g2d.setStroke(getProperties().getStrokeColor());
+            g2d.setLineWidth(getProperties().getStrokeThickness());
             g2d.strokePolygon(xPoints, yPoints, 3);
         }
 
         // If not filled, remove inner fill colour:
-        if (isFilled()) {
+        if (getProperties().isFilled()) {
             fill(g2d);
         }
     }
 
     @Override
     protected void fill(GraphicsContext g2d) {
-        g2d.setFill(getColor());
-        double width = getBorderWidth();
+        g2d.setFill(getProperties().getFillColor());
+        double width = getProperties().getStrokeThickness();
         double[] xPoints = getXCoordinates(width);
         double[] yPoints = getYCoordinates(width);
         g2d.fillPolygon(xPoints, yPoints, 3);
@@ -60,6 +59,12 @@ public class Triangle extends Shape {
         double width = Math.abs(getEnd().x - getStart().x);
         double height = Math.abs(getEnd().y - getStart().y);
         return new double[]{startX, startY, width, height};
+    }
+
+    @Override
+    boolean includeCursor(Point p) {
+        // TODO: need review on consistency to javafx.polygon
+        return false;
     }
 
     private double[] getXCoordinates() {

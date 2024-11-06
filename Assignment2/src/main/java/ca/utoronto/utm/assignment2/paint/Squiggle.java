@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.shape.Polyline;
 
 import java.util.ArrayList;
 
@@ -9,8 +10,7 @@ public class Squiggle extends Shape {
     private final double strokeSize;
 
     public Squiggle(Point point, PaintProperties pp, ArrayList<Point> path) {
-        super(point, point, "Squiggle", true,
-                pp.getFillColor(), pp.getBorderColor(), 0.0);
+        super(point, point, "Squiggle", pp);
         points.add(point);
         if (path != null) this.points.addAll(path);
         strokeSize = pp.getStrokeThickness();
@@ -18,7 +18,7 @@ public class Squiggle extends Shape {
 
     @Override
     public void paint(GraphicsContext g2d) {
-        g2d.setStroke(getColor());
+        g2d.setStroke(getProperties().getStrokeColor());
         g2d.setLineWidth(strokeSize);
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
@@ -35,6 +35,12 @@ public class Squiggle extends Shape {
     @Override
     public double[] getPaintInfo() {
         return new double[0];
+    }
+
+    @Override
+    boolean includeCursor(Point p) {
+        // TODO: QUESTIONABLE
+        return false;
     }
 
     public ArrayList<Point> getPoints() {
