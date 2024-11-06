@@ -161,9 +161,10 @@ Nov 4,2024
 	                  occurs; tracing.
 
 Nov 5,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Complete BUG4.015 and add it to the pull requests.
+	What I will do today: Handle pull requests for US4.100, US4.102, and US4
+	                      .101; complete US4.006. Update productBacklog.txt
+	Obstacles I face: Learning how to use CSS to style a nicer frontend.
 
 Nov 6,2024
 	What I did yesterday:
