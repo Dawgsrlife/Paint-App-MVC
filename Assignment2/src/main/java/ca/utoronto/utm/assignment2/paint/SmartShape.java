@@ -77,18 +77,18 @@ public class SmartShape extends Squiggle {
             for(int j = 1; j < i; j++) {
                 double m0 = getSlope(currVertex, tempPoints.get(j));
                 double m1 = getSlope(tempPoints.get(j), tempPoints.get(i));
-                System.out.println(m0 + " " + m1);
                 double currSlopeDiff = Math.abs(m0 - m1);
                 if(currSlopeDiff > maxSlopeDiff) {
                     extremePoint = tempPoints.get(j);
                     maxSlopeDiff = currSlopeDiff;
                 }
             }
-            // System.out.println(extremePoint.x + " " + extremePoint.y);
-            // System.out.println(maxSlopeDiff);
+
             if(maxSlopeDiff > SLOPE_LENIENCE &&
                dist(tempPoints.get(i), extremePoint) > VERTEX_DISTANCE &&
                dist(extremePoint, currVertex) > VERTEX_DISTANCE) {
+                System.out.println("Slope: " + maxSlopeDiff);
+                System.out.println("Coords: " + extremePoint.x + " " + extremePoint.y);
                 vertices.add(extremePoint);
                 currVertex = extremePoint;
             }
