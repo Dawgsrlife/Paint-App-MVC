@@ -1,7 +1,5 @@
 Pull Requests:
 
-US4.101 author:tuanji61 puller:mengale1 status:InProcess
-
 US4.007 author:tianji61 puller:huaethan status:Completed
 BUG4.016 author:tianji61 puller:huaethan status:Completed
 US4.019 author:tianji61 puller:huaethan status:Completed
@@ -14,3 +12,4 @@ BUG4.015 author:mengale1 puller:tianji61 status:Completed
 BUG4.014 author:tianji61 | huaethan puller:mengale1 status:Completed
 US4.100 author:tuanji61 puller:mengale1 status:Completed
 US4.102 author:tuanji61 puller:mengale1 status:Completed
+US4.101 author:tuanji61 puller:mengale1 status:Completed
