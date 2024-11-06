@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class SmartShape extends Squiggle {
     final private double CLOSE_CONDITION = 10; // distance between first and last point
                                        // must be within this value
-    final private double SLOPE_LENIENCE = 1.5; // the difference between the slopes to be considered a vertex
-    final private double VERTEX_DISTANCE = 10; // defines the minimum distance between two vertices
+    final private double SLOPE_LENIENCE = 2 * Math.PI / 5; // 72 degrees in radians
+    final private double VERTEX_DISTANCE = 50; // defines the minimum distance between two vertices
 
     private boolean isSquiggle;
 
@@ -19,12 +19,30 @@ public class SmartShape extends Squiggle {
         tempPoints = new ArrayList<>();
     }
 
-    private double dist(Point a, Point b) {
-        return Math.sqrt((a.y - b.y)*(a.y - b.y) + (a.x - b.x)*(a.x - b.x));
+    /**
+     * Gets the vector obtained from a - b
+     * @param a First point, can be considered a vector
+     * @param b Second point, can be considered a vector
+     * @return the vector a - b
+     */
+    private Point getVector(Point a, Point b) {
+        return new Point(a.x - b.x, a.y - b.y);
     }
 
-    private double getSlope(Point a, Point b) {
-        return (b.y - a.y)/(b.x - a.x);
+    private double dist(Point a, Point b) {
+        Point v = getVector(a,b);
+        return Math.sqrt(v.x * v.x + v.y * v.y);
+    }
+
+    private double dist(Point a) {
+        return dist(a, new Point(0,0));
+    }
+
+    private double getRelativeAngle(Point a, Point b, Point origin) {
+        Point aVec = getVector(a,origin);
+        Point bVec = getVector(b,origin);
+        double normedDotProduct = (aVec.x * bVec.x + aVec.y * bVec.y)/(dist(aVec) * dist(bVec));
+        return Math.acos(normedDotProduct);
     }
 
     @Override
@@ -43,7 +61,6 @@ public class SmartShape extends Squiggle {
         int numPoints = points.size();
         double[] xArr = new double[numPoints];
         double[] yArr = new double[numPoints];
-        // System.out.println(numPoints);
         for(int i = 0; i < numPoints; i++) {
             xArr[i] = points.get(i).x;
             yArr[i] = points.get(i).y;
@@ -75,16 +92,14 @@ public class SmartShape extends Squiggle {
             Point extremePoint = currVertex;
             double maxSlopeDiff = 0;
             for(int j = 1; j < i; j++) {
-                double m0 = getSlope(currVertex, tempPoints.get(j));
-                double m1 = getSlope(tempPoints.get(j), tempPoints.get(i));
-                double currSlopeDiff = Math.abs(m0 - m1);
+                double currSlopeDiff = getRelativeAngle(currVertex, tempPoints.get(i), tempPoints.get(j));
                 if(currSlopeDiff > maxSlopeDiff) {
                     extremePoint = tempPoints.get(j);
                     maxSlopeDiff = currSlopeDiff;
                 }
             }
 
-            if(maxSlopeDiff > SLOPE_LENIENCE &&
+            if(maxSlopeDiff < SLOPE_LENIENCE &&
                dist(tempPoints.get(i), extremePoint) > VERTEX_DISTANCE &&
                dist(extremePoint, currVertex) > VERTEX_DISTANCE) {
                 System.out.println("Slope: " + maxSlopeDiff);
@@ -93,15 +108,16 @@ public class SmartShape extends Squiggle {
                 currVertex = extremePoint;
             }
         }
-        if(Math.abs(
-           getSlope(tempPoints.getLast(), tempPoints.getFirst()) -
-           getSlope(tempPoints.getFirst(), vertices.getFirst())
-        ) > SLOPE_LENIENCE) vertices.add(tempPoints.getFirst());
+        if(getRelativeAngle(vertices.getFirst(), vertices.getLast(), tempPoints.getFirst()) < SLOPE_LENIENCE)
+            vertices.add(tempPoints.getFirst());
 
         this.getPoints().clear();
         for(Point p : vertices) {
             super.setEnd(p);
         }
+
+        System.out.println("Vertices: " + vertices.size());
+        System.out.println("Points: " + vertices);
 
         isSquiggle = false;
     }
