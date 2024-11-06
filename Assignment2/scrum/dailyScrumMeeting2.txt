@@ -112,9 +112,9 @@ Nov 4,2024
 	Obstacles I face: Figuring out how to implement this user story
 
 Nov 5,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Created the SmartShape class
+	What I will do today: Handle pull requests and continue working on US4.017
+	Obstacles I face: Deciding which algorithm is best
 
 Nov 6,2024
 	What I did yesterday:
