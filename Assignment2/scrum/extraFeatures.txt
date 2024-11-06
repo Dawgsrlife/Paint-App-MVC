@@ -10,13 +10,30 @@ Description:
 Reference: 
 	US4.019
 --------------------------------------------------------------------------------
-FeatureName: (name)
+FeatureName: New
 
 Description: 
-	(describe the feature)
+	Work on a new canvas, with everything added previously removed.
 
 
 Reference: 
-	(list of the BUG/US involved in creating this feature)
+	US4.100
 --------------------------------------------------------------------------------
-...
+FeatureName: Open
+
+Description:
+	Open a previously saved *.a2s canvas file.
+
+
+Reference:
+	US4.101
+--------------------------------------------------------------------------------
+FeatureName: Save
+
+Description:
+	Save current canvas into a *.a2s file.
+
+
+Reference:
+	US4.102
+--------------------------------------------------------------------------------
