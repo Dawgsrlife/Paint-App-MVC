@@ -28,7 +28,7 @@ public class CommandMenuBar implements EventHandler<ActionEvent> {
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Open");
+        menuItem = new CommandOpen();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 

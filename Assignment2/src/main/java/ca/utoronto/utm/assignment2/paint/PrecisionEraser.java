@@ -2,11 +2,14 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 
+import java.util.ArrayList;
+
 public class PrecisionEraser extends Squiggle {
     private double eraserSize = 10.0;
 
-    public PrecisionEraser(Point point, PaintProperties pp) {
-        super(point, pp);
+    public PrecisionEraser(Point point, PaintProperties pp, ArrayList<Point> path) {
+        super(point, pp, path);
+        setType("PrecisionEraser");
     }
 
     @Override
