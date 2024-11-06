@@ -26,7 +26,7 @@ ISSUE    : When increasing the border of the triangle, the triangle does not
            all other shapes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.220 : UTORID : NotStarted
+TYPE     : BUG BUG4.220 : mengale1 : InProgress
 NAME     : Polyline Structure Is Not Optimized
 PRIORITY : 3
 ESTIMATE : 30 mins   ACTUAL :
