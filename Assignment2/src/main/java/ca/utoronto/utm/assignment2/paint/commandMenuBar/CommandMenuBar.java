@@ -32,7 +32,7 @@ public class CommandMenuBar implements EventHandler<ActionEvent> {
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Save");
+        menuItem = new CommandSave();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
