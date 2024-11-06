@@ -26,9 +26,19 @@ ISSUE    : When increasing the border of the triangle, the triangle does not
            all other shapes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.310 : UTORID : NotStarted
-NAME     : Coordinates Not Functional During Drawing
+TYPE     : BUG BUG4.220 : UTORID : NotStarted
+NAME     : Polyline Structure Is Not Optimized
 PRIORITY : 3
+ESTIMATE : 30 mins   ACTUAL :
+ISSUE    : PaintController currently handles the behaviour of Polyline.
+           Ideally, Polyline should be stateless in the controller and handle
+           its responsibility of adding points and finalizing itself in its own
+            class.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.410 : UTORID : NotStarted
+NAME     : Coordinates Not Functional During Drawing
+PRIORITY : 2
 ESTIMATE : 30 mins   ACTUAL :
 ISSUE    : When drawing a shape (or even when holding any mouse button),
            the coordinates do not update.
