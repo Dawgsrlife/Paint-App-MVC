@@ -16,6 +16,16 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
+TYPE     : BUG BUG4.210 : tianji61 : InProgress
+NAME     : Triangle Border Behaviour and Shape Compatibility
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL :
+ISSUE    : When increasing the border of the triangle, the triangle does not
+           correctly draw on the canvas, sometimes resulting in the top vertex
+           being cut off. This is connected with triangle's compatibility with
+           all other shapes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 TYPE     : USER STORY US4.006 : mengale1 : InProgress
 NAME     : Fill style selector
 PRIORITY : 3
