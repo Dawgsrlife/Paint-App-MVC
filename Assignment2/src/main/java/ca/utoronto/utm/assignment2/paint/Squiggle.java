@@ -6,12 +6,13 @@ import java.util.ArrayList;
 
 public class Squiggle extends Shape {
     private final ArrayList<Point> points = new ArrayList<>();
-    private double strokeSize;
+    private final double strokeSize;
 
-    public Squiggle(Point point, PaintProperties pp) {
-        super(point, null, "Squiggle", true,
-                pp.getFillColor(), null, 0.0);
+    public Squiggle(Point point, PaintProperties pp, ArrayList<Point> path) {
+        super(point, point, "Squiggle", true,
+                pp.getFillColor(), pp.getBorderColor(), 0.0);
         points.add(point);
+        if (path != null) this.points.addAll(path);
         strokeSize = pp.getStrokeThickness();
     }
 
@@ -44,5 +45,14 @@ public class Squiggle extends Shape {
     public void setEnd(Point end) {
         points.add(end);
         super.setEnd(end);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder path = new StringBuilder();
+        for (Point p : getPoints()) {
+            if (!p.equals(getStart())) path.append(",").append(p);
+        }
+        return super.toString() + path;
     }
 }

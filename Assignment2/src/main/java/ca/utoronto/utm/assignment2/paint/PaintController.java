@@ -12,7 +12,7 @@ public class PaintController implements EventHandler<MouseEvent> {
     private final PaintModel model;
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
-    private EditingPanel ep;
+    private final EditingPanel ep;
     private Shape shape;
 
     public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, EditingPanel ep) {
@@ -41,7 +41,7 @@ public class PaintController implements EventHandler<MouseEvent> {
                 }
                 // create shape and initialize starting point on MOUSE_PRESSED
                 System.out.println("Started " + scp.getMode());
-                this.shape = getPaintStrategy(scp.getMode(), point, pp.getPaintProperties());
+                this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
 
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
@@ -69,26 +69,5 @@ public class PaintController implements EventHandler<MouseEvent> {
             System.out.println("    ^ Added");
             this.shape = null;
         }
-    }
-
-    /**
-     * this method returns a corresponding shape instance to mode
-     * @param mode what mode is activated currently
-     * @param point starting point
-     * @param pp paint properties
-     * @return an instance of a shape instance
-     */
-    private Shape getPaintStrategy(String mode, Point point, PaintProperties pp) {
-        return switch (mode) {
-            case "Circle" -> new Circle(point, point, pp);
-            case "Rectangle" -> new Rectangle(point, point, pp);
-            case "Square" -> new Square(point, point, pp);
-            case "Oval" -> new Oval(point, point, pp);
-            case "Squiggle" -> new Squiggle(point, pp);
-            case "Polyline" -> new Polyline(point, pp);
-            case "Triangle" -> new Triangle(point, point, pp);
-            case "PrecisionEraser" -> new PrecisionEraser(point, pp);
-            default -> throw new IllegalArgumentException("Unknown mode: " + mode);
-        };
     }
 }
