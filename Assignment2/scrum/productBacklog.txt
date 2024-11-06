@@ -84,7 +84,7 @@ SO THAT  : I can draw a variety of shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : UTROID : NotStarted
-NAME     : Coordinate display
+NAME     : Editing panel
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
 AS A     : user

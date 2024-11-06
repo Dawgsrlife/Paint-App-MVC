@@ -112,34 +112,37 @@ Nov 4,2024
 	Obstacles I face: Nothing
 
 Nov 5,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG3.015
+	What I will do today: Fix BUG4.014, BUG4.016, implement US4.007, US4.019
+	Obstacles I face: Nothing
 
 Nov 6,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Fixed BUG4.014, BUG4.016, implemented US4.007, US4.019
+	What I will do today: Implement US4.100
+	Obstacles I face: Nothing
 
 Nov 7,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US4.100
+	What I will do today: Implement US4.102
+	Obstacles I face: Nothing
 
 Nov 8,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US4.102
+	What I will do today: Implement US4.101
+	Obstacles I face: Nothing
 
 Nov 9,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US4.102
+	What I will do today: Implement US4.101
+	Obstacles I face: Nothing
 
 Nov 10,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implemented US4.101
+	What I will do today: Remove the stage property handler in Paint.java
+	Obstacles I face: Didn't really find a way to implement today's plan,
+	                  to implement this stage is need, passing the container
+	                  into controller does not satisfy any of the models also
+	                  look elegant at all.
 
 Nov 11,2024
 	What I did yesterday:
