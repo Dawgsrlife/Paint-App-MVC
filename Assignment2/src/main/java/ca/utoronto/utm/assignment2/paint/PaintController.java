@@ -49,9 +49,11 @@ public class PaintController implements EventHandler<MouseEvent> {
             model.addTempShape(this.shape);
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED)) {
             // finalize by putting shape into models array
+            this.shape.finalizeShape();
             finalizeShape();
         } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown()) {
             // finalize by putting shape into models array (polyline)
+            this.shape.finalizeShape();
             finalizeShape();
         }
     }
@@ -87,6 +89,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             case "Polyline" -> new Polyline(point, pp);
             case "Triangle" -> new Triangle(point, point, pp);
             case "PrecisionEraser" -> new PrecisionEraser(point, pp);
+            case "SmartShape" -> new SmartShape(point, pp);
             default -> throw new IllegalArgumentException("Unknown mode: " + mode);
         };
     }

@@ -94,4 +94,6 @@ public abstract class Shape {
     public void setBorderWidth(double borderWidth) {
         this.borderWidth = borderWidth;
     }
+
+    public void finalizeShape() {}
 }
