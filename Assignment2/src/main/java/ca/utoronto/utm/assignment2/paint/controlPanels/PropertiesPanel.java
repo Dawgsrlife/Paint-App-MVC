@@ -29,7 +29,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
 
     public PropertiesPanel() {
         // Background, padding styling, and gaps
-        this.setPrefWidth(150);
+        this.setPrefWidth(185);
         this.setStyle("-fx-background-color: #f0f0f0; -fx-border-color: #cccccc; -fx-border-width: 2px;");
         this.setVgap(5.0);
         this.setHgap(15);
