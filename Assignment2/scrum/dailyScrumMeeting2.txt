@@ -117,9 +117,9 @@ Nov 5,2024
 	Obstacles I face: Deciding which algorithm is best
 
 Nov 6,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed pull requests and came up with a new implementation for SmartShape
+	What I will do today: Continue working on SmartShape
+	Obstacles I face: This goofy ahh class
 
 Nov 7,2024
 	What I did yesterday:
