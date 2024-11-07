@@ -5,10 +5,10 @@ import javafx.scene.canvas.GraphicsContext;
 import java.util.ArrayList;
 
 public class SmartShape extends Squiggle {
-    final private double CLOSE_CONDITION = 10; // distance between first and last point
+    final private double CLOSE_CONDITION = 15; // distance between first and last point
                                        // must be within this value
     final private double SLOPE_LENIENCE = 2 * Math.PI / 3; // 120 degrees in radians
-    final private double VERTEX_DISTANCE = 20; // defines the minimum distance between two vertices
+    final private double VERTEX_DISTANCE = 30; // defines the minimum distance between two vertices
 
     private boolean isSquiggle;
 
