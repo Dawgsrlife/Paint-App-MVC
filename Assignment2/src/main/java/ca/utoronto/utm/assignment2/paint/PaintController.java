@@ -24,10 +24,37 @@ public class PaintController implements EventHandler<MouseEvent> {
 
     @Override
     public void handle(MouseEvent mouseEvent) {
+        // Grab Point and Mouse Event Type
         Point point = new Point(mouseEvent.getX(), mouseEvent.getY());
+        EventType<MouseEvent> eventType = (EventType<MouseEvent>) mouseEvent.getEventType();
 
-        // determine mouse event type
-        EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
+        // Corresponding Mouse Behaviour
+        switch (eventType.getName()) {
+            case "MOUSE_MOVED" -> {
+                ep.setMouseCoords(mouseEvent);
+                shape.onMouseMoved(point);
+            }
+            case "MOUSE_PRESSED" -> {
+                shape.onMousePressed(point, mouseEvent.isPrimaryButtonDown(), mouseEvent.isSecondaryButtonDown());
+
+                if (shape.canDisplayShape()) model.addTempShape(shape);
+                if (shape.canFinalize()) finalizeShape();
+
+                System.out.println("Started " + scp.getMode());
+                this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
+            }
+            case "MOUSE_DRAGGED" -> {
+                shape.onMouseDragged(point, mouseEvent.isPrimaryButtonDown(), mouseEvent.isSecondaryButtonDown());
+
+                if (shape.canDisplayShape()) model.addTempShape(shape);
+            }
+            case "MOUSE_RELEASED" -> {
+                shape.onMouseReleased(point);
+
+                if (shape.canDisplayShape()) finalizeShape();
+            }
+        }
+
         if (event.equals(MouseEvent.MOUSE_MOVED)) {
             ep.setMouseCoords(mouseEvent);
         } else if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
@@ -36,6 +63,8 @@ public class PaintController implements EventHandler<MouseEvent> {
                 model.addTempShape(this.shape);
             } else {
                 // If the shape to be created is a Polyline, then finalize it
+
+                // Instead, do !model.getTempShape().canFinalize() to check if you need to finalize
                 if (model.getTempShape() instanceof Polyline) {
                     finalizeShape();
                 }

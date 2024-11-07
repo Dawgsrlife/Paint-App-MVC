@@ -13,8 +13,7 @@ import javafx.scene.paint.Color;
  * @author tianji61
  */
 public abstract class Shape {
-
-    // default fields
+    // Default fields
     private Point start;
     private Point end;
     private String type;
@@ -22,6 +21,10 @@ public abstract class Shape {
     private Color color;
     private Color borderColor;
     private double borderWidth;
+
+    // State flags
+    private boolean canFinalize;
+    private boolean displayShape;
 
     public Shape(Point start, Point end, String type, boolean filled, Color color, Color borderColor, double borderWidth) {
         this.start = start;
@@ -31,6 +34,9 @@ public abstract class Shape {
         this.color = color;
         this.borderColor = borderColor;
         this.borderWidth = borderWidth;
+
+        this.canFinalize = false;
+        this.displayShape = false;
     }
 
     abstract void paint(GraphicsContext g2d);
@@ -38,6 +44,84 @@ public abstract class Shape {
     protected abstract void fill(GraphicsContext g2d);
 
     protected abstract double[] getPaintInfo();
+
+    /**
+     * Handles the behaviour of the Shape when the mouse is moved.
+     * <p>
+     * There is no operation for the generic shape.
+     *
+     * @param point
+     */
+    public void onMouseMoved(Point point) {
+        // No-op for default behaviour
+    }
+
+    /**
+     * Handles the behaviour of the Shape when the mouse is pressed.
+     * <p>
+     * The shape only adds its initial point and does nothing else.
+     *
+     * @param point
+     * @param isPrimaryButtonDown
+     * @param isSecondaryButtonDown
+     */
+    public void onMousePressed(Point point, boolean isPrimaryButtonDown, boolean isSecondaryButtonDown) {
+        if (isPrimaryButtonDown && isSecondaryButtonDown) {
+            // Do nothing
+        } else if (isPrimaryButtonDown) {
+            // Add the initial point of the Shape
+            setStart(point);  // see if you keep this later or not (corresponds with docstring)
+        } else if (isSecondaryButtonDown) {
+            // Consider adding functionality here
+        }
+    }
+
+    /**
+     * Handles the behaviour of the Shape when the mouse is dragged.
+     * <p>
+     * The shape obtains a new ending point, to wherever the mouse cursor is dragged.
+     *
+     * @param point
+     * @param isPrimaryButtonDown
+     * @param isSecondaryButtonDown
+     */
+    public void onMouseDragged(Point point, boolean isPrimaryButtonDown, boolean isSecondaryButtonDown) {
+        if (isPrimaryButtonDown && isSecondaryButtonDown) {
+            // Do nothing
+        } else if (isPrimaryButtonDown) {
+            // Set the end point
+            setEnd(point);
+        } else if (isSecondaryButtonDown) {
+            // Consider adding functionality here (like with secondary colours)
+        }
+    }
+
+    /**
+     * Handles the behaviour of the Shape when the mouse is released.
+     * <p>
+     * Flags that this Shape can be finalized.
+     *
+     * @param point
+     */
+    public void onMouseReleased(Point point) {
+        this.canFinalize = true;  // Finalize shape flag
+    }
+
+    public boolean canFinalize() {
+        return canFinalize;
+    }
+
+    public boolean canDisplayShape() {
+        return displayShape;
+    }
+
+    public void setCanFinalize(boolean canFinalize) {
+        this.canFinalize = canFinalize;
+    }
+
+    public void setDisplayShape(boolean displayShape) {
+        this.displayShape = displayShape;
+    }
 
     public Point getStart() {
         return start;
@@ -97,6 +181,6 @@ public abstract class Shape {
 
     @Override
     public String toString() {
-        return start + "," + end+ "," + type + "," + filled + "," + color + "," + borderColor + "," + borderWidth;
+        return start + "," + end + "," + type + "," + filled + "," + color + "," + borderColor + "," + borderWidth;
     }
 }
