@@ -59,6 +59,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         for (int i = 0; i < columns.length; i++) {
             Slider slider = new Slider();
             slider.setMaxWidth(100);
+            slider.setMax(255);
             slider.setOnMouseDragged(this);
             slider.setOnMousePressed(this);
 
