@@ -470,7 +470,7 @@ ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
            be removed
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.014 : tianji61 | huaethan : Complete
+TYPE     : BUG BUG4.014 : tianji61 : Complete
 NAME     : Undo and Redo MenuBar Button
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 30 minutes
