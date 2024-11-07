@@ -1,6 +1,6 @@
 Pull Requests:
 
-US4.103 author:tianji61 puller:UTROID status:waiting
+US4.103 author:tianji61 puller:mengale1 status:waiting
 US4.014 author:chen2046 puller:UTROID status:waiting
 
 US4.006 author:mengale1 puller:huaethan status:Completed
