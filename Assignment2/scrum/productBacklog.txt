@@ -80,22 +80,26 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.014 : chen2046 : NotStarted
-NAME     : Clear Canvas Button
+TYPE     : USER STORY US4.014 : chen2046 : Completed
+NAME     : Clear Canvas(This overlaps with New button on the file menubar.
+           In order not to make the function cumbersome and simple, keep the
+           New function without Clear button.
 PRIORITY : 3
-ESTIMATE : 1 hour : ACTUAL :
+ESTIMATE : 1 hour : ACTUAL : 1 hour
 AS A     : user
-I WANT   : Add a button that clears the entire canvas, do not change the
-           colors of the canvas.(background)
+I WANT   : Click the New button to reset the drawing area to a white,
+           unpainted canvas.
 SO THAT  : I can reset the drawing area
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.015 : chen2046 : NotStarted
+TYPE     : USER STORY US4.015 : chen2046 : InProgress
 NAME     : Text Tool
 PRIORITY : 3
 ESTIMATE : 3 hour : ACTUAL :
 AS A     : user
-I WANT   : Adds the ability to place text on the canvas.
+I WANT   : Click on the Text button to display a text box that can be moved
+           to the corresponding position on the canvas, and in the text box
+           you can enter the desired words.
 SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
