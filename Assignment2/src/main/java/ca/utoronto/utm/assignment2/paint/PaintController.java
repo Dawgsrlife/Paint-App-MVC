@@ -5,8 +5,10 @@ import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 public class PaintController implements EventHandler<MouseEvent> {
 
@@ -14,8 +16,10 @@ public class PaintController implements EventHandler<MouseEvent> {
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
     private final EditingPanel ep;
-    private final Pane canvasPane;
+    private Pane canvasPane;
     private Shape shape;
+    private TextField activeTextField;
+    private Text activeText;
 
     public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, EditingPanel ep) {
         this(model, scp, pp, ep, new Pane());
@@ -26,7 +30,7 @@ public class PaintController implements EventHandler<MouseEvent> {
         this.scp = scp;
         this.pp = pp;
         this.ep = ep;
-        this.canvasPane = canvasPane;
+        this.canvasPane = canvasPane; //Store user's text
     }
 
 
@@ -39,10 +43,12 @@ public class PaintController implements EventHandler<MouseEvent> {
         if (event.equals(MouseEvent.MOUSE_MOVED)) {
             ep.setMouseCoords(mouseEvent);
         } else if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
+            if (scp.getMode().equals("TextBox")) {
+                handleTextBoxEvent(mouseEvent, point);}
             if (scp.getMode().equals("Polyline") & this.shape != null) {
                 this.shape.setEnd(point);
                 model.addTempShape(this.shape);
-            } else {
+            }else {
                 // If the shape to be created is a Polyline, then finalize it
                 if (model.getTempShape() instanceof Polyline) {
                     finalizeShape();
@@ -50,15 +56,8 @@ public class PaintController implements EventHandler<MouseEvent> {
                 // create shape and initialize starting point on MOUSE_PRESSED
                 System.out.println("Started " + scp.getMode());
                 this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
-
-                // Special handling for TextBox
-                if (scp.getMode().equals("TextBox")) {
-                    TextBox textBox = (TextBox) this.shape;
-                    // Add the TextField to the UI for user input
-                    textBox.addTextFieldToPane(canvasPane);
-                    model.addTempShape(textBox);
-                }
             }
+
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
             // update shape ending point on MOUSE_DRAGGED
             this.shape.setEnd(point);
@@ -86,7 +85,24 @@ public class PaintController implements EventHandler<MouseEvent> {
         }
     }
 
-    public Pane getCanvasPane() {
-        return this.canvasPane;
+    /**
+     * This is a helper method to
+     * @param mouseEvent
+     * @param point
+     */
+    private void handleTextBoxEvent(MouseEvent mouseEvent, Point point) {
+        if (scp.getMode().equals("TextBox")) {
+            // Create TextBox and add to model
+            TextBox textBox = new TextBox(point, point, pp.getPaintProperties().isFilled(),pp.getPaintProperties().getFillColor(),
+                    pp.getPaintProperties().getBorderColor(), pp.getPaintProperties().getBorderWidth());
+            model.addTempShape(textBox);
+            model.setActiveTextBox(textBox);
+            textBox.activateTextField(canvasPane);
+        }
     }
+
+    public void setCanvasPane(Pane canvasPane) {
+        this.canvasPane = canvasPane;
+    }
+
 }

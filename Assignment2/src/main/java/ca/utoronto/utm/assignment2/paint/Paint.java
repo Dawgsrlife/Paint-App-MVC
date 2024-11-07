@@ -39,13 +39,14 @@ public class Paint extends Application {
         this.editingPanel = new EditingPanel();
         this.controller = new PaintController(this.model, this.shapeChooserPanel, this.propertiesPanel, this.editingPanel);
 
-        Pane canvasPane = this.controller.getCanvasPane();
+        Pane canvasPane = new Pane(); // Create new Pane
+        this.controller.setCanvasPane(canvasPane);
         this.view = new PaintView(this.model, this.controller);
         canvasPane.getChildren().add(this.view);
 
         BorderPane root = new BorderPane();
         root.setTop(this.menuBar.createMenuBar(this.model));
-        root.setCenter(view);
+        root.setCenter(canvasPane); //
         BorderPane left = new BorderPane();
         left.setTop(this.shapeChooserPanel);
         left.setCenter(this.propertiesPanel);

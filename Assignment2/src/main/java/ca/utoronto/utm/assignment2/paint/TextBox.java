@@ -2,6 +2,7 @@ package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -19,6 +20,7 @@ public class TextBox extends Shape {
         super(start, end, "TextBox", filled, color, borderColor, borderWidth);
         this.text = ""; // Initially no text
         this.font = new Font("Arial", 20); // Default font and size
+
         this.textField = new TextField();
         this.textField.setLayoutX(start.x);
         this.textField.setLayoutY(start.y);
@@ -26,38 +28,42 @@ public class TextBox extends Shape {
         this.textField.setVisible(false);
     }
 
-    public void addTextFieldToPane(javafx.scene.layout.Pane pane) {
-        textField.setVisible(true);
-        pane.getChildren().add(textField);
-        textField.requestFocus(); // Focus on the TextField to enable typing
-        textField.setOnAction(e -> {
-            text = textField.getText();
-            textField.setVisible(false);
-            pane.getChildren().remove(textField);
-        });
-    }
-
     @Override
-    void paint(GraphicsContext g2d) {
-        double x = Math.min(getStart().x, getEnd().x);
-        double y = Math.min(getStart().y, getEnd().y);
-        double width = Math.abs(getStart().x - getEnd().x);
-        double height = Math.abs(getStart().y- getEnd().y);
+    public void paint(GraphicsContext g2d) {
 
         g2d.setStroke(getBorderColor());
         g2d.setLineWidth(getBorderWidth());
-        g2d.setFont(font);
+        g2d.strokeRect(getStart().x, getStart().y, Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
+
         g2d.setFill(getColor());
+        g2d.setFont(new javafx.scene.text.Font("Arial", 20));
+        g2d.fillText(this.text, getStart().x + 5, getStart().y + 20);
+    }
 
-        if (isFilled()) {
-            g2d.fillRect(x, y, width, height);
-        }
-        g2d.strokeRect(x, y, width, height);
 
-        if (!text.isEmpty()) {
-            // Draw the text inside the rectangle
-            g2d.setFill(getColor());
-            g2d.fillText(text, x + 5, y + 20); // Adding padding to make text look better
+    public void activateTextField(Pane canvasPane) {
+        textField = new TextField();
+        textField.setLayoutX(this.getStart().x);
+        textField.setLayoutY(this.getStart().y);
+        textField.setMinWidth(100);
+        textField.setFont(new javafx.scene.text.Font("Arial", 20));
+        textField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black;");
+
+        canvasPane.getChildren().add(textField);
+        textField.requestFocus();
+        textField.setOnAction(e -> saveTextAndRemoveTextField(canvasPane));
+        textField.focusedProperty().addListener((obs, oldVal, newVal) -> {
+            if (!newVal) {
+                saveTextAndRemoveTextField(canvasPane);
+            }
+        });
+    }
+
+    private void saveTextAndRemoveTextField(Pane canvasPane) {
+        if (textField != null) {
+            this.text = textField.getText();
+            canvasPane.getChildren().remove(textField);
+            textField = null;
         }
     }
 
@@ -82,16 +88,7 @@ public class TextBox extends Shape {
         info[3] = Math.abs(getStart().y - getEnd().y);
         return info;
     }
-
-    public String getText() {
-        return text;
-    }
-
     public void setText(String text) {
         this.text = text;
-    }
-
-    public TextField getTextField() {
-        return textField;
     }
 }
