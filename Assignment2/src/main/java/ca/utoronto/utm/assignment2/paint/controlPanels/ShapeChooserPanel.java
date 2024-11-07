@@ -15,11 +15,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
         int row = 0;
         // Ethan: using buttonLabels as mode breaks the code
-        String[] labels= {"●", "▬", "■", "▲", "⬬", "~", "〽", "😎"};
-        String[] commands = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "PrecisionEraser"};
+        String[] labels= {"select","●", "▬", "■", "▲", "⬬", "~", "〽", "😎"};
+        String[] commands = {"select","Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "PrecisionEraser"};
         for (int i = 0; i < labels.length; i++) {
             ShapeChooserPanelButton button = new ShapeChooserPanelButton(labels[i] + " " + commands[i], commands[i], false);
-            if (labels[i].equals("●")) button.setSelected(true);
+            if (labels[i].equals("select")) button.setSelected(true);
             this.add(button, 0, row);
             row++;
             button.setOnAction(this);
@@ -36,7 +36,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     }
 
     public String getMode() {
-        String mode = "Circle";
+        String mode = "Select";
         for (Object o : this.getChildren()) {
             ShapeChooserPanelButton button = (ShapeChooserPanelButton) o;
             if (button.isSelected()) mode = button.getCommand();

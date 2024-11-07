@@ -25,13 +25,18 @@ public class PaintController implements EventHandler<MouseEvent> {
     @Override
     public void handle(MouseEvent mouseEvent) {
         Point point = new Point(mouseEvent.getX(), mouseEvent.getY());
+        ep.setMouseCoords(mouseEvent);
 
         // determine mouse event type
         EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
         if (event.equals(MouseEvent.MOUSE_MOVED)) {
-            ep.setMouseCoords(mouseEvent);
         } else if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
-            if (scp.getMode().equals("Polyline") & this.shape != null) {
+            if (scp.getMode().equals("select")) {
+                this.shape = model.getSelected(point);
+                if (this.shape != null) {
+                    ep.setSelectedShapeDetails(this.shape, model);
+                }
+            } else if (scp.getMode().equals("Polyline") & this.shape != null) {
                 this.shape.setEnd(point);
                 model.addTempShape(this.shape);
             } else {
@@ -44,14 +49,14 @@ public class PaintController implements EventHandler<MouseEvent> {
                 this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
 
             }
-        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
+        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown() & !scp.getMode().equals("select")) {
             // update shape ending point on MOUSE_DRAGGED
             this.shape.setEnd(point);
             model.addTempShape(this.shape);
-        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED)) {
+        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED) & !scp.getMode().equals("select")) {
             // finalize by putting shape into models array
             finalizeShape();
-        } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown()) {
+        } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown() & !scp.getMode().equals("select")) {
             // finalize by putting shape into models array (polyline)
             finalizeShape();
         }
