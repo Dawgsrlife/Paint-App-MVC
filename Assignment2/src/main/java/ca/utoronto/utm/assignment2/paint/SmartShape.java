@@ -15,6 +15,7 @@ public class SmartShape extends Squiggle {
     public ArrayList<Point> tempPoints;
     public SmartShape(Point point, PaintProperties pp) {
         super(point, pp);
+        setFilled(pp.isFilled());
         isSquiggle = true;
         tempPoints = new ArrayList<>();
     }
@@ -69,8 +70,12 @@ public class SmartShape extends Squiggle {
         g2d.setStroke(getBorderColor());
         g2d.setLineWidth(getBorderWidth());
 
-        if(isFilled()) g2d.fillPolygon(xArr, yArr, numPoints);
-        else g2d.strokePolygon(xArr, yArr, numPoints);
+        g2d.strokePolygon(xArr, yArr, numPoints);
+
+        if(isFilled()) {
+            g2d.setFill(getColor());
+            g2d.fillPolygon(xArr, yArr, numPoints);
+        }
     }
 
     /**
