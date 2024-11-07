@@ -37,7 +37,7 @@ public class CommandOpen extends MenuItem implements Command {
                 String type = details[4];
                 PaintProperties pp = new PaintProperties(
                         Boolean.parseBoolean(details[5]), Color.web(details[6]),
-                        Color.web(details[7]), Double.parseDouble(details[8]));
+                        Color.web(details[7]), Double.parseDouble(details[8]), Double.parseDouble(details[9]));
                 ArrayList<Point> path = new ArrayList<>();
                 if (details.length >= 10) {
                     for (int i = 9; i < details.length - 1; i += 2) {

@@ -11,12 +11,14 @@ public class PaintProperties {
     private final Color fillColor;
     private final Color borderColor;
     private final double strokeThickness;
+    private final double borderWidth;
 
-    public PaintProperties(Boolean filled, Color fillColor, Color borderColor, double strokeThickness) {
+    public PaintProperties(Boolean filled, Color fillColor, Color borderColor, double strokeThickness, double borderWidth) {
         this.filled = filled;
         this.fillColor = fillColor;
         this.borderColor = borderColor;
         this.strokeThickness = strokeThickness;
+        this.borderWidth = borderWidth;
     }
 
     public boolean isFilled() {
@@ -34,4 +36,6 @@ public class PaintProperties {
     public double getStrokeThickness() {
         return strokeThickness;
     }
+
+    public double getBorderWidth() {return borderWidth;}
 }

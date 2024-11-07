@@ -6,6 +6,7 @@ import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 public class PaintController implements EventHandler<MouseEvent> {
 
@@ -13,14 +14,21 @@ public class PaintController implements EventHandler<MouseEvent> {
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
     private final EditingPanel ep;
+    private final Pane canvasPane;
     private Shape shape;
 
     public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, EditingPanel ep) {
+        this(model, scp, pp, ep, new Pane());
+    }
+
+    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, EditingPanel ep, Pane canvasPane) {
         this.model = model;
         this.scp = scp;
         this.pp = pp;
         this.ep = ep;
+        this.canvasPane = canvasPane;
     }
+
 
     @Override
     public void handle(MouseEvent mouseEvent) {
@@ -43,6 +51,13 @@ public class PaintController implements EventHandler<MouseEvent> {
                 System.out.println("Started " + scp.getMode());
                 this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
 
+                // Special handling for TextBox
+                if (scp.getMode().equals("TextBox")) {
+                    TextBox textBox = (TextBox) this.shape;
+                    // Add the TextField to the UI for user input
+                    textBox.addTextFieldToPane(canvasPane);
+                    model.addTempShape(textBox);
+                }
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
             // update shape ending point on MOUSE_DRAGGED
@@ -69,5 +84,9 @@ public class PaintController implements EventHandler<MouseEvent> {
             System.out.println("    ^ Added");
             this.shape = null;
         }
+    }
+
+    public Pane getCanvasPane() {
+        return this.canvasPane;
     }
 }

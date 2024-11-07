@@ -122,6 +122,6 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
                 (int)sliders.get(4).getValue(),
                 (int)sliders.get(5).getValue());
         double borderWidth = sliders.get(6).getValue();
-        return new PaintProperties(fill.isSelected(), fillColor, borderColor, borderWidth);
+        return new PaintProperties(fill.isSelected(), fillColor, borderColor,borderWidth, borderWidth);
     }
 }
