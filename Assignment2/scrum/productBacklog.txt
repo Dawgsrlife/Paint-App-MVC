@@ -44,7 +44,7 @@ ISSUE    : When drawing a shape (or even when holding any mouse button),
            the coordinates do not update.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.010 : mengale1 : NotStarted
+TYPE     : USER STORY US4.010 : UTORID : NotStarted
 NAME     : Highlighter
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
