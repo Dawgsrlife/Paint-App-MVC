@@ -14,13 +14,11 @@ public class TextBox extends Shape {
 
     private String text;
     private TextField textField;
-    private boolean showDottedBorder;
     private Font font;
 
     public TextBox(Point start, Point end, boolean filled, Color color, Color borderColor, double borderWidth) {
         super(start, end, "TextBox", filled, color, borderColor, borderWidth);
         this.text = ""; // Initially no text
-        this.showDottedBorder = true; //Initially the dotted lines indicate the range of a text box size
         this.font = new Font("Arial", 20); // Default font and size
 
         this.textField = new TextField();
@@ -32,20 +30,16 @@ public class TextBox extends Shape {
 
     @Override
     public void paint(GraphicsContext g2d) {
-        // Draw Textbox borderColor and border-width
-        //if (showDottedBorder) {
-           // g2d.setStroke(getBorderColor());
-           // g2d.setLineWidth(getBorderWidth());
-           // g2d.setLineDashes(5);
-           // g2d.strokeRect(getStart().x, getStart().y, Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
-        //}
-        // The exact Text which users enter
+        g2d.setStroke(getBorderColor());
+        g2d.setLineWidth(getBorderWidth());
+        g2d.strokeRect(getStart().x, getStart().y, Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
+
+        // Display the text inside the box
         if (!text.isEmpty()) {
             g2d.setFill(getColor());
-            g2d.setFont(new Font("Arial", 20));
+            g2d.setFont(font);
             g2d.fillText(this.text, getStart().x + 5, getStart().y + 20);
         }
-
     }
 
     private void setupField(Pane canvasPane) {
@@ -62,9 +56,13 @@ public class TextBox extends Shape {
     }
 
     public void activateTextField(Pane canvasPane, PaintController controller) {
-        this.setupField(canvasPane);
+        if (textField != null) {
+            canvasPane.getChildren().remove(textField);
+        }
 
-        // When the User clicks enter or TextField loses focus, save the text string
+        this.setupField(canvasPane);
+        canvasPane.getChildren().add(textField);
+
         textField.setOnAction(e -> saveTextAndRemoveTextField(canvasPane, controller));
         textField.focusedProperty().addListener((obs, oldVal, newVal) -> {
             if (!newVal) {
@@ -73,12 +71,12 @@ public class TextBox extends Shape {
         });
     }
 
+
     private void saveTextAndRemoveTextField(Pane canvasPane, PaintController controller) {
         if (textField != null) {
             this.text = textField.getText();
             canvasPane.getChildren().remove(textField);
             textField = null;
-            showDottedBorder = false; // Hide the border, only concrete text left
 
             controller.persistTextBox(this); // Return text into controller in order to be saved into model later
         }
