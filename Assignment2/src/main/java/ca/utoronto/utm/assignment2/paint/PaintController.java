@@ -86,7 +86,7 @@ public class PaintController implements EventHandler<MouseEvent> {
     }
 
     /**
-     * This is a helper method to
+     * This is a helper method to handle TextBox
      * @param mouseEvent
      * @param point
      */
@@ -96,8 +96,10 @@ public class PaintController implements EventHandler<MouseEvent> {
             TextBox textBox = new TextBox(point, point, pp.getPaintProperties().isFilled(),pp.getPaintProperties().getFillColor(),
                     pp.getPaintProperties().getBorderColor(), pp.getPaintProperties().getBorderWidth());
             model.addTempShape(textBox);
+
+
+            textBox.activateTextField(canvasPane, this);
             model.setActiveTextBox(textBox);
-            textBox.activateTextField(canvasPane);
         }
     }
 
@@ -105,4 +107,8 @@ public class PaintController implements EventHandler<MouseEvent> {
         this.canvasPane = canvasPane;
     }
 
+    public void persistTextBox(TextBox textBox) {
+        model.addShape(textBox);
+        model.setActiveTextBox(textBox);
+    }
 }

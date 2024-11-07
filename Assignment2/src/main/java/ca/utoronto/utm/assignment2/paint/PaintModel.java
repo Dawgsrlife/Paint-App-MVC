@@ -78,8 +78,6 @@ public class PaintModel extends Observable {
      */
     public void setActiveTextBox(TextBox textBox) {
         this.activeTextBox = textBox;
-        this.setChanged();
-        this.notifyObservers();
     }
     
 }
