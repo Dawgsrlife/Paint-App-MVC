@@ -33,12 +33,12 @@ public class TextBox extends Shape {
     @Override
     public void paint(GraphicsContext g2d) {
         // Draw Textbox borderColor and border-width
-        if (showDottedBorder) {
-            g2d.setStroke(getBorderColor());
-            g2d.setLineWidth(getBorderWidth());
-            g2d.setLineDashes(5);
-            g2d.strokeRect(getStart().x, getStart().y, Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
-        }
+        //if (showDottedBorder) {
+           // g2d.setStroke(getBorderColor());
+           // g2d.setLineWidth(getBorderWidth());
+           // g2d.setLineDashes(5);
+           // g2d.strokeRect(getStart().x, getStart().y, Math.abs(getEnd().x - getStart().x), Math.abs(getEnd().y - getStart().y));
+        //}
         // The exact Text which users enter
         if (!text.isEmpty()) {
             g2d.setFill(getColor());
