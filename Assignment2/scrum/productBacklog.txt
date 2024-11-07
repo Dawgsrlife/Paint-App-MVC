@@ -57,18 +57,6 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.014 : chen2046 : Completed
-NAME     : Clear Canvas(This overlaps with New button on the file menubar.
-           In order not to make the function cumbersome and simple, keep the
-           New function without Clear button.
-PRIORITY : 3
-ESTIMATE : 1 hour : ACTUAL : 1 hour
-AS A     : user
-I WANT   : Click the New button to reset the drawing area to a white,
-           unpainted canvas.
-SO THAT  : I can reset the drawing area
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.015 : chen2046 : InProgress
 NAME     : Text Tool
 PRIORITY : 3
@@ -560,4 +548,15 @@ ISSUE    : Developing furthur features relies on selecting a shape currently
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.014 : chen2046 : InComplete
+NAME     : Clear Canvas(This overlaps with New button on the file menubar.
+           In order not to make the function cumbersome and simple, keep the
+           New function without Clear button.
+PRIORITY : 3
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+AS A     : user
+I WANT   : Click the New button to reset the drawing area to a white,
+           unpainted canvas.
+SO THAT  : I can reset the drawing area
+--------------------------------------------------------------------------
