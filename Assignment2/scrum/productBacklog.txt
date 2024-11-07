@@ -36,15 +36,7 @@ ISSUE    : PaintController currently handles the behaviour of Polyline.
             class.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.410 : UTORID : NotStarted
-NAME     : Coordinates Not Functional During Drawing
-PRIORITY : 2
-ESTIMATE : 30 mins   ACTUAL :
-ISSUE    : When drawing a shape (or even when holding any mouse button),
-           the coordinates do not update.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.010 : UTORID : NotStarted
+TYPE     : USER STORY US4.010 : huaethan : NotStarted
 NAME     : Highlighter
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -80,7 +72,7 @@ I WANT   : To be able to draw a squiggle that resembles a shape and have the
 SO THAT  : I can draw a variety of shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.023 : UTROID : NotStarted
+TYPE     : USER STORY US4.023 : mengale1 : NotStarted
 NAME     : Editing panel
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -124,6 +116,16 @@ AS A     : user
 I WANT   : To be able to erase strokes drawn on the canvas
 SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
            away at them using a PrecisionEraser
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.410 : tianji61 : NotStarted
+NAME     : Pretty GUI
+PRIORITY : 2
+ESTIMATE : 5 hours : ACTUAL :
+AS A     : user
+I WANT   : A satisfying GUI that isn't just the basic old look of JavaFX
+SO THAT  : I can enjoy a paint application with a sleek and modern look and
+           feel.
 --------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
