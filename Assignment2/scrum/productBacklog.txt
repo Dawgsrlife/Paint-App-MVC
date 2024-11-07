@@ -16,16 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.210 : tianji61 : InProgress
-NAME     : Triangle Border Behaviour and Shape Compatibility
-PRIORITY : 3
-ESTIMATE : 1 hour   ACTUAL :
-ISSUE    : When increasing the border of the triangle, the triangle does not
-           correctly draw on the canvas, sometimes resulting in the top vertex
-           being cut off. This is connected with triangle's compatibility with
-           all other shapes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG BUG4.220 : mengale1 : InProgress
 NAME     : Polyline Structure Is Not Optimized
 PRIORITY : 3
@@ -547,6 +537,16 @@ ISSUE    : Developing furthur features relies on selecting a shape currently
            exists on the canvas, it would be nice to have a selector mode,
            and deal with the situation that a using wants to select and
            edit a specific shape.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.210 : tianji61 : InProgress
+NAME     : Triangle Border Behaviour and Shape Compatibility
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL :
+ISSUE    : When increasing the border of the triangle, the triangle does not
+           correctly draw on the canvas, sometimes resulting in the top vertex
+           being cut off. This is connected with triangle's compatibility with
+           all other shapes.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
