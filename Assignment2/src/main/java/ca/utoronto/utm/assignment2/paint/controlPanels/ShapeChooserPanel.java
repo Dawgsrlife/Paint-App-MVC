@@ -15,8 +15,8 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
 
         int row = 0;
         // Ethan: using buttonLabels as mode breaks the code
-        String[] labels= {"●", "▬", "■", "▲", "⬬", "~", "〽", "😎", "⁺₊✧"};
-        String[] commands = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "PrecisionEraser", "SmartShape"};
+        String[] labels= {"●", "▬", "■", "▲", "⬬", "~", "〽", "⁺₊✧", "😎"};
+        String[] commands = {"Circle", "Rectangle", "Square", "Triangle", "Oval", "Squiggle", "Polyline", "SmartShape", "PrecisionEraser"};
         for (int i = 0; i < labels.length; i++) {
             ShapeChooserPanelButton button = new ShapeChooserPanelButton(labels[i] + " " + commands[i], commands[i], false);
             if (labels[i].equals("●")) button.setSelected(true);
