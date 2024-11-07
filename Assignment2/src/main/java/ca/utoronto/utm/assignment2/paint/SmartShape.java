@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class SmartShape extends Squiggle {
     final private double CLOSE_CONDITION = 10; // distance between first and last point
                                        // must be within this value
-    final private double SLOPE_LENIENCE = 2 * Math.PI / 5; // 72 degrees in radians
-    final private double VERTEX_DISTANCE = 50; // defines the minimum distance between two vertices
+    final private double SLOPE_LENIENCE = 3 * Math.PI / 5; // 108 degrees in radians
+    final private double VERTEX_DISTANCE = 20; // defines the minimum distance between two vertices
 
     private boolean isSquiggle;
 
@@ -57,6 +57,7 @@ public class SmartShape extends Squiggle {
             super.paint(g2d);
             return;
         }
+
         ArrayList<Point> points = this.getPoints();
         int numPoints = points.size();
         double[] xArr = new double[numPoints];
@@ -66,8 +67,11 @@ public class SmartShape extends Squiggle {
             yArr[i] = points.get(i).y;
             // System.out.println(xArr[i] + " " + yArr[i]);
         }
-        if(isFilled()) g2d.fillPolygon(xArr, yArr, numPoints);
-        else g2d.fillPolygon(xArr, yArr, numPoints);
+        g2d.setStroke(getBorderColor());
+        g2d.setLineWidth(getBorderWidth());
+        g2d.strokePolygon(xArr, yArr, numPoints);
+
+        if(isFilled()) g2d.fill();
     }
 
     /**
@@ -85,26 +89,31 @@ public class SmartShape extends Squiggle {
     public void finalizeShape() {
         if(dist(tempPoints.getFirst(), tempPoints.getLast()) > CLOSE_CONDITION) return;
         ArrayList<Point> vertices = new ArrayList<>();
-        Point currVertex = tempPoints.getFirst();
+        int currVertexIndex = 0;
+        Point currVertex = tempPoints.get(currVertexIndex);
         for (int i = 0; i < tempPoints.size(); i++) {
             if(i == 0) continue;
 
-            Point extremePoint = currVertex;
-            double maxSlopeDiff = 0;
-            for(int j = 1; j < i; j++) {
-                double currSlopeDiff = getRelativeAngle(currVertex, tempPoints.get(i), tempPoints.get(j));
-                if(currSlopeDiff > maxSlopeDiff) {
+            int extremePointIndex = currVertexIndex;
+            Point extremePoint = tempPoints.get(currVertexIndex);
+            double minAngle = Integer.MAX_VALUE;
+            for(int j = currVertexIndex + 1; j < i; j++) {
+                double currAngle = getRelativeAngle(currVertex, tempPoints.get(i), tempPoints.get(j));
+                if(currAngle < minAngle &&
+                   dist(tempPoints.get(i), tempPoints.get(j)) > VERTEX_DISTANCE &&
+                   dist(tempPoints.get(j), currVertex) > VERTEX_DISTANCE) {
+                    extremePointIndex = j;
                     extremePoint = tempPoints.get(j);
-                    maxSlopeDiff = currSlopeDiff;
+                    minAngle = currAngle;
                 }
             }
 
-            if(maxSlopeDiff < SLOPE_LENIENCE &&
-               dist(tempPoints.get(i), extremePoint) > VERTEX_DISTANCE &&
-               dist(extremePoint, currVertex) > VERTEX_DISTANCE) {
-                System.out.println("Slope: " + maxSlopeDiff);
+            if(minAngle < SLOPE_LENIENCE) {
+                System.out.println("Slope: " + minAngle);
                 System.out.println("Coords: " + extremePoint.x + " " + extremePoint.y);
+                System.out.println(i);
                 vertices.add(extremePoint);
+                currVertexIndex = extremePointIndex;
                 currVertex = extremePoint;
             }
         }
