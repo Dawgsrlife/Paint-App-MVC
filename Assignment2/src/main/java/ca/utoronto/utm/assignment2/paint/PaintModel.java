@@ -1,5 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.shape.Circle;
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
@@ -37,8 +39,7 @@ public class PaintModel extends Observable {
         // refresh the undo stack
         undoStack.clear();
 
-        this.setChanged();
-        this.notifyObservers();
+        update();
     }
 
     /**
@@ -48,26 +49,36 @@ public class PaintModel extends Observable {
     public void addShape(Shape shape) {
         tempShape = null;
         shapes.add(shape);
-        this.setChanged();
-        this.notifyObservers();
+        update();
     }
 
     public void undo() {
         if(shapes.isEmpty()) return;
         undoStack.push(shapes.pop());
-        this.setChanged();
-        this.notifyObservers();
+        update();
     }
 
     public void redo() {
         if(undoStack.isEmpty()) return;
         shapes.push(undoStack.pop());
-        this.setChanged();
-        this.notifyObservers();
+        update();
     }
 
     public void clear() {
         shapes.clear();
+        update();
+    }
+
+    public Shape getSelected(Point p) {
+        for (int j = shapes.size() - 1; j >= 0; j--) {
+            if (shapes.get(j).includeCursor(p)) {
+                return shapes.get(j);
+            }
+        }
+        return null;
+    }
+
+    public void update() {
         this.setChanged();
         this.notifyObservers();
     }

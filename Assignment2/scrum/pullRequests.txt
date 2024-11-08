@@ -1,8 +1,6 @@
 Pull Requests:
 
-US4.103 author:tianji61 puller:UTROID status:waiting
-US4.014 author:chen2046 puller:UTROID status:waiting
-
+US4.210 author:tianji61 puller:huaethan status:Completed
 US4.006 author:mengale1 puller:huaethan status:Completed
 US4.007 author:tianji61 puller:huaethan status:Completed
 BUG4.016 author:tianji61 puller:huaethan status:Completed
@@ -13,7 +11,8 @@ US3.008 author:huaethan puller:mengale1 status:Completed
 US3.009 author:mengale1 puller:huaethan status:Completed
 US3.026 author:mengale1 puller:tianji61 status:Completed
 BUG4.015 author:mengale1 puller:tianji61 status:Completed
-BUG4.014 author:tianji61 | huaethan puller:mengale1 status:Completed
+BUG4.014 author:tianji61 puller:mengale1 status:Completed
 US4.100 author:tuanji61 puller:mengale1 status:Completed
 US4.102 author:tuanji61 puller:mengale1 status:Completed
 US4.101 author:tuanji61 puller:mengale1 status:Completed
+US4.103 author:tianji61 puller:mengale1 status:Completed

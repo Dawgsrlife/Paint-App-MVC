@@ -16,16 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.210 : tianji61 : InProgress
-NAME     : Triangle Border Behaviour and Shape Compatibility
-PRIORITY : 3
-ESTIMATE : 1 hour   ACTUAL :
-ISSUE    : When increasing the border of the triangle, the triangle does not
-           correctly draw on the canvas, sometimes resulting in the top vertex
-           being cut off. This is connected with triangle's compatibility with
-           all other shapes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : BUG BUG4.220 : mengale1 : InProgress
 NAME     : Polyline Structure Is Not Optimized
 PRIORITY : 3
@@ -36,38 +26,7 @@ ISSUE    : PaintController currently handles the behaviour of Polyline.
             class.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.410 : UTORID : NotStarted
-NAME     : Coordinates Not Functional During Drawing
-PRIORITY : 2
-ESTIMATE : 30 mins   ACTUAL :
-ISSUE    : When drawing a shape (or even when holding any mouse button),
-           the coordinates do not update.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.006 : mengale1 : InProgress
-NAME     : Fill style selector
-PRIORITY : 3
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : To be able to select the current drawing style (filled or outline), to be applied
-           to subsequent shapes. Example:
-           		selects fill style solid
-           		mode circle
-           		draw a circle
-           		draw a circle
-           		mode rectangle
-           		draw a rectangle
-           		select fill style outline
-           		draw a rectangle
-           		draw a rectangle
-           		select mode squiggle
-           		draw a squiggle
-           	results in two solid circles and a solid rectangle as well as
-           	two outlined rectangles and a squiggle
-SO THAT  : I can modify my canvas with different colours.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.010 : mengale1 : NotStarted
+TYPE     : USER STORY US4.010 : huaethan : NotStarted
 NAME     : Highlighter
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -78,18 +37,6 @@ I WANT   : To be able to select a Highlighter tool and use it to draw on the
            between the new highlighter stroke and the existing strokes.
 SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.014 : chen2046 : Completed
-NAME     : Clear Canvas(This overlaps with New button on the file menubar.
-           In order not to make the function cumbersome and simple, keep the
-           New function without Clear button.
-PRIORITY : 3
-ESTIMATE : 1 hour : ACTUAL : 1 hour
-AS A     : user
-I WANT   : Click the New button to reset the drawing area to a white,
-           unpainted canvas.
-SO THAT  : I can reset the drawing area
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.015 : chen2046 : InProgress
@@ -115,7 +62,7 @@ I WANT   : To be able to draw a squiggle that resembles a shape and have the
 SO THAT  : I can draw a variety of shapes easily and accurately
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.023 : UTROID : NotStarted
+TYPE     : USER STORY US4.023 : mengale1 : NotStarted
 NAME     : Editing panel
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -503,7 +450,7 @@ ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
            be removed
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.014 : tianji61 | huaethan : Complete
+TYPE     : BUG BUG4.014 : tianji61 : Complete
 NAME     : Undo and Redo MenuBar Button
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 30 minutes
@@ -572,15 +519,46 @@ I WANT   : To be able to select the current drawing style (filled or outline), t
 SO THAT  : I can modify my canvas with different colours.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.103 : tianji61 : InProgress
+TYPE     : USER STORY US4.103 : tianji61 : Complete
 NAME     : Shape selector
 PRIORITY : 1
-ESTIMATE : 3 hour   ACTUAL :
+ESTIMATE : 3 hour   ACTUAL : 3 hours
 ISSUE    : Developing furthur features relies on selecting a shape currently
            exists on the canvas, it would be nice to have a selector mode,
            and deal with the situation that a using wants to select and
            edit a specific shape.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.210 : tianji61 : Complete
+NAME     : Triangle Border Behaviour and Shape Compatibility
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL : 2 hours
+ISSUE    : When increasing the border of the triangle, the triangle does not
+           correctly draw on the canvas, sometimes resulting in the top vertex
+           being cut off. This is connected with triangle's compatibility with
+           all other shapes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.410 : tianji61 : Started
+NAME     : Pretty GUI
+PRIORITY : 2
+ESTIMATE : 5 hours : ACTUAL :
+AS A     : user
+I WANT   : A satisfying GUI that isn't just the basic old look of JavaFX
+SO THAT  : I can enjoy a paint application with a sleek and modern look and
+           feel.
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.014 : chen2046 : InComplete
+NAME     : Clear Canvas(This overlaps with New button on the file menubar.
+           In order not to make the function cumbersome and simple, keep the
+           New function without Clear button.
+PRIORITY : 3
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+AS A     : user
+I WANT   : Click the New button to reset the drawing area to a white,
+           unpainted canvas.
+SO THAT  : I can reset the drawing area
+--------------------------------------------------------------------------

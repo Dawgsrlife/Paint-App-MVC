@@ -37,3 +37,12 @@ Description:
 Reference:
 	US4.102
 --------------------------------------------------------------------------------
+FeatureName: Polygon painter
+
+Description:
+	Draw a right polygon with as much sides as you want! Can't believe it does
+	not have its own backlog, since it's a side product we got when fixing
+	another bug
+Reference:
+	US4.210
+--------------------------------------------------------------------------------
