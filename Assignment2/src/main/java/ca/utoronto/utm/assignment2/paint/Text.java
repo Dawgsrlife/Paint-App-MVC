@@ -68,18 +68,20 @@ public class Text extends Shape {
     }
 
     public void activateTextField(Pane canvasPane, PaintController controller) {
-        if (textField != null) {
-            canvasPane.getChildren().remove(textField);
-        }
+        canvasPane.getChildren().remove(textField);
         setupTextField(getStart());
         canvasPane.getChildren().add(textField);
 
-        textField.setOnAction(e -> saveTextAndRemoveTextField(canvasPane, controller));
-        textField.focusedProperty().addListener((obs, oldVal, newVal) -> {
-            if (!newVal) {
+        textField.setOnAction(e -> {
+            if (!textField.getText().trim().isEmpty()) { // check if there is a text entered by users
                 saveTextAndRemoveTextField(canvasPane, controller);
+            } else {
+                // remove textField if it is empty
+                canvasPane.getChildren().remove(textField);
+                textField = null;
             }
         });
+
     }
 
     private void saveTextAndRemoveTextField(Pane canvasPane, PaintController controller) {
