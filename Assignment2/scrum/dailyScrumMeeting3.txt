@@ -176,9 +176,13 @@ Nov 6,2024
 	                  to in the instances themselves instead of in the controller.
 
 Nov 7,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Have our scrum meeting, delegating tasks as the
+                          product owner, and working on a final plan towards
+                          finishing the project. Handle US4.103 pull request.
+                          Additionally, progress for BUG4.220
+	What I will do today: Progress for BUG4.220 and handle pull requests.
+	Obstacles I face: Deciding whether to use a drawing strategy or boolean
+	                  fields for/in shapes to conduct controller behaviour.
 
 Nov 8,2024
 	What I did yesterday:
