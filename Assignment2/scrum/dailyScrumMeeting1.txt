@@ -138,13 +138,14 @@ Nov 8,2024
 
 Nov 9,2024
 	What I did yesterday: Implemented US4.102
-	What I will do today: Implement US4.101
-	Obstacles I face: Nothing
+	What I will do today: Implement US4.101, implement part of US4.410
+	Obstacles I face: I hate fx styles, it's so hard to use :(.
 
 Nov 10,2024
 	What I did yesterday: Implemented US4.101
-	What I will do today: Remove the stage property handler in Paint.java
-	Obstacles I face:
+	What I will do today: Remove the stage property handler in Paint.java, fully implement US4.410
+	Obstacles I face: Tried to apply smooth transitions on the elements, but would rely on a lot of
+	                  stuff nothing related to this assignment, thus gave up at the end.
 
 Nov 11,2024
 	What I did yesterday:
