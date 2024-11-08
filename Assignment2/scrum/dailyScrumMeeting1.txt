@@ -122,14 +122,19 @@ Nov 6,2024
 	Obstacles I face: Nothing
 
 Nov 7,2024
-	What I did yesterday: Implemented US4.100
-	What I will do today: Implement US4.102, fix BUG4.210
-	Obstacles I face: Find a good algorithm to calculate the vertices of a polygon
+	What I did yesterday: Implemented US4.100 and US4.101
+	What I will do today: Implement US4.102 and US4.103, remove the stage
+	                      property handler in Paint.java
+	Obstacles I face: Didn't really find a way to implement today's plan,
+	                  to implement this stage is need, passing the container
+	                  into controller does not satisfy any of the models also
+	                  look elegant at all.
 
 Nov 8,2024
-	What I did yesterday: Implemented US4.102, fixed BUG4.210
-	What I will do today: Implement US4.101
-	Obstacles I face: Nothing
+	What I did yesterday: Implemented US4.102
+	What I will do today: Implement US4.101, fix BUG4.210,
+	Obstacles I face: Implemented polygon as a side effect of fixing triangle, kind of funny,
+	                  we got some unexpected new feature now.
 
 Nov 9,2024
 	What I did yesterday: Implemented US4.102
@@ -139,10 +144,7 @@ Nov 9,2024
 Nov 10,2024
 	What I did yesterday: Implemented US4.101
 	What I will do today: Remove the stage property handler in Paint.java
-	Obstacles I face: Didn't really find a way to implement today's plan,
-	                  to implement this stage is need, passing the container
-	                  into controller does not satisfy any of the models also
-	                  look elegant at all.
+	Obstacles I face:
 
 Nov 11,2024
 	What I did yesterday:
