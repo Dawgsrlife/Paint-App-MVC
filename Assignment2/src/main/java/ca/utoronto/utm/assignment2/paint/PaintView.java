@@ -10,7 +10,7 @@ import java.util.Observer;
 
 public class PaintView extends Canvas implements Observer {
     private final PaintModel model;
-    static final Color backgroundColor = Color.WHITE;  // Package-private
+    public static final Color BACKGROUND_COLOR = Color.WHITE;  // Package-private
 
     public PaintView(PaintModel model, PaintController controller) {
         super(500, 500);
@@ -29,7 +29,7 @@ public class PaintView extends Canvas implements Observer {
         // get painter
         GraphicsContext g2d = this.getGraphicsContext2D();
         // draw background
-        g2d.setFill(backgroundColor);
+        g2d.setFill(BACKGROUND_COLOR);
         g2d.fillRect(0,0,this.getWidth(),this.getHeight());
         // draw shapes
         for (Shape s : model.getShapes()) {

@@ -27,21 +27,21 @@ public class Paint extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        BorderPane root = new BorderPane();
+        Scene scene = new Scene(root);
+
         this.model = new PaintModel();
-        menuBar = new CommandMenuBar(model);
+        menuBar = new CommandMenuBar(model, scene);
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
         this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
         this.view = new PaintView(model, controller);
 
-
-        BorderPane root = new BorderPane();
         root.setTop(menuBar);
         root.setCenter(view);
         root.setLeft(shapeChooserPanel);
         root.setRight(propertiesPanel);
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("paint-style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("commandMenuBar/paint-style.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Paint");
         stage.show();

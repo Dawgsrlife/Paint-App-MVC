@@ -3,6 +3,7 @@ package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
@@ -11,10 +12,12 @@ import javafx.scene.control.SeparatorMenuItem;
 public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent> {
 
     PaintModel model;
+    Scene scene;
 
-    public CommandMenuBar(PaintModel model) {
+    public CommandMenuBar(PaintModel model, Scene scene) {
 
         this.model = model;
+        this.scene = scene;
         Menu menu;
         MenuItem menuItem;
         getStyleClass().add("menu-bar");
@@ -85,11 +88,40 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
         menuItem.getStyleClass().add("menu-item");
 
         getMenus().add(menu);
+
+        // Another menu for Accessibility
+
+        menu = new Menu("Accessibility");
+        menu.getStyleClass().add("menu");
+
+        menuItem = new CommandDarkMode();
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
+
+        menuItem = new CommandLightMode();
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
+
+        getMenus().add(menu);
+
+        // Another menu for Help
+
+        menu = new Menu("Help");
+        menu.getStyleClass().add("menu");
+
+        menuItem = new CommandCopyright();
+        menuItem.setOnAction(this);
+        menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
+
+        getMenus().add(menu);
     }
 
     @Override
     public void handle(ActionEvent event) {
         Command c = (Command) event.getSource();
-        c.execute(model);
+        c.execute(model, scene);
     }
 }
