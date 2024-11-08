@@ -5,6 +5,7 @@ import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 public class PaintController implements EventHandler<MouseEvent> {
 
@@ -12,11 +13,13 @@ public class PaintController implements EventHandler<MouseEvent> {
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
     private Shape shape;
+    private final Pane canvasPane;
 
-    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp) {
+    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, Pane canvasPane) {
         this.model = model;
         this.scp = scp;
         this.pp = pp;
+        this.canvasPane = canvasPane;
     }
 
     @Override
@@ -53,11 +56,18 @@ public class PaintController implements EventHandler<MouseEvent> {
                 model.addTempShape(this.shape);
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED) & !scp.getMode().equals("select")) {
-            // finalize by putting shape into models array
-            finalizeShape();
+            if (scp.getMode().equals("Text") & this.shape != null) {
+                // Finalize the Text shape and activate the TextField for input
+                Text textShape = (Text) this.shape;
+                textShape.activateTextField(canvasPane, this);  // Display the TextField after drawing the text box
+            } else {
+                // Finalize and add the shape to the model for other modes
+                finalizeShape();
+            }
         } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown() & !scp.getMode().equals("select")) {
             // finalize by putting shape into models array (polyline)
             finalizeShape();
+            System.out.println("Finished " + scp.getMode());
         }
     }
 
@@ -73,5 +83,13 @@ public class PaintController implements EventHandler<MouseEvent> {
             System.out.println("    ^ Added");
             this.shape = null;
         }
+    }
+
+    /**
+     * This method is called by Text shape after user input is complete,
+     * saving the finalized text into the model.
+     */
+    public void persistTextBox(Text textShape) {
+        model.addShape(textShape);
     }
 }

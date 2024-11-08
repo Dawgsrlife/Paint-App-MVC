@@ -7,6 +7,7 @@ import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandMenuBar;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Paint extends Application {
@@ -24,18 +25,20 @@ public class Paint extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
         this.model = new PaintModel();
-        menuBar = new CommandMenuBar();
-        shapeChooserPanel = new ShapeChooserPanel();
-        propertiesPanel = new PropertiesPanel();
-        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
-        this.view = new PaintView(model, controller);
+        this.menuBar = new CommandMenuBar();
+        this.shapeChooserPanel = new ShapeChooserPanel();
+        this.propertiesPanel = new PropertiesPanel();
+
+        // Create a Pane to be used as the canvas
+        Pane canvasPane = new Pane();
+        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
+        this.view = new PaintView(model, controller, canvasPane); // Pass canvasPane to view
 
 
         BorderPane root = new BorderPane();
         root.setTop(menuBar.createMenuBar(model));
-        root.setCenter(view);
+        root.setCenter(canvasPane); // Set canvasPane in the center for drawing
         root.setLeft(shapeChooserPanel);
         root.setRight(propertiesPanel);
         Scene scene = new Scene(root);

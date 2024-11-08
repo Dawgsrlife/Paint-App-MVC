@@ -10,7 +10,6 @@ public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
     private final Stack<Shape> undoStack = new Stack<>();
     private Shape tempShape;
-    private TextBox activeTextBox;
 
 
     /**
@@ -82,13 +81,4 @@ public class PaintModel extends Observable {
         this.setChanged();
         this.notifyObservers();
     }
-
-    /**
-     * Set the active TextBox for editing.
-     * @param textBox the TextBox to be set as active
-     */
-    public void setActiveTextBox(TextBox textBox) {
-        this.activeTextBox = textBox;
-    }
-    
 }
