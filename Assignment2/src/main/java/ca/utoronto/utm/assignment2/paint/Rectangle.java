@@ -1,7 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.shape.Ellipse;
 
 /**
  * A class representing a rectangle on the canvas
@@ -54,7 +53,21 @@ public class Rectangle extends Shape {
     @Override
     boolean includeCursor(Point p) {
         double[] info = getPaintInfo();
-        javafx.scene.shape.Rectangle r = new javafx.scene.shape.Rectangle(info[0], info[1], info[2], info[3]);
-        return r.contains(p.x, p.y);
+        javafx.scene.shape.Rectangle outer = new javafx.scene.shape.Rectangle(
+                info[0] - getProperties().getStrokeThickness() / 2,
+                info[1] - getProperties().getStrokeThickness() / 2,
+                info[2] + getProperties().getStrokeThickness(),
+                info[3] + getProperties().getStrokeThickness());
+        if (getProperties().isFilled()) {
+            System.out.println(outer.contains(p.x, p.y));
+            return outer.contains(p.x, p.y);
+        }
+        javafx.scene.shape.Rectangle inner = new javafx.scene.shape.Rectangle(
+                info[0] + getProperties().getStrokeThickness() / 2,
+                info[1] + getProperties().getStrokeThickness() / 2,
+                info[2] - getProperties().getStrokeThickness(),
+                info[3] - getProperties().getStrokeThickness()
+        );
+        return outer.contains(p.x, p.y) & !inner.contains(p.x, p.y);
     }
 }

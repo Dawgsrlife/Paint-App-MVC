@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.shape.Ellipse;
 import javafx.scene.shape.Polyline;
 
 import java.util.ArrayList;
@@ -45,7 +46,13 @@ public class Squiggle extends Shape {
 
     @Override
     boolean includeCursor(Point p) {
-        // TODO: QUESTIONABLE
+        for (Point point : points) {
+            Ellipse strokePoint = new Ellipse(point.x, point.y, getProperties().getStrokeThickness(), getProperties().getStrokeThickness());
+            if (strokePoint.contains(p.x, p.y)) {
+                System.out.println("in");
+                return true;
+            }
+        }
         return false;
     }
 

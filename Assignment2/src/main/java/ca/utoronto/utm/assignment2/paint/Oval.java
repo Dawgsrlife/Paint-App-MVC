@@ -43,7 +43,15 @@ public class Oval extends Shape {
     @Override
     boolean includeCursor(Point p) {
         double[] info = getPaintInfo();
-        Ellipse e = new Ellipse(info[0], info[1], info[2], info[3]);
-        return e.contains(p.x, p.y);
+        Ellipse outer = new Ellipse(info[0] + (info[2] / 2), info[1] + (info[3] / 2),
+                info[2] / 2 + getProperties().getStrokeThickness() / 2,
+                info[3] / 2 + getProperties().getStrokeThickness() / 2);
+        if (getProperties().isFilled()) {
+            return outer.contains(p.x, p.y);
+        }
+        Ellipse inner = new Ellipse(info[0] + (info[2] / 2), info[1] + (info[3] / 2),
+                info[2] / 2 - getProperties().getStrokeThickness() / 2,
+                info[3] / 2 - getProperties().getStrokeThickness() / 2);
+        return outer.contains(p.x, p.y) & !inner.contains(p.x, p.y);
     }
 }

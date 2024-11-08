@@ -11,12 +11,14 @@ public class PaintProperties {
     private Color fillColor;
     private Color strokeColor;
     private double strokeThickness;
+    private int vertices;
 
-    public PaintProperties(Boolean filled, Color fillColor, Color strokeColor, double strokeThickness) {
+    public PaintProperties(Boolean filled, Color fillColor, Color strokeColor, double strokeThickness, int vertices) {
         this.filled = filled;
         this.fillColor = fillColor;
         this.strokeColor = strokeColor;
         this.strokeThickness = strokeThickness;
+        this.vertices = vertices;
     }
 
     public boolean isFilled() {
@@ -51,8 +53,16 @@ public class PaintProperties {
         this.strokeThickness = strokeThickness;
     }
 
+    public int getVertices() {
+        return vertices;
+    }
+
+    public void setVertices(int vertices) {
+        this.vertices = vertices;
+    }
+
     @Override
     public String toString() {
-        return filled + "," + fillColor + "," + strokeColor + "," + strokeThickness;
+        return filled + "," + fillColor + "," + strokeColor + "," + strokeThickness + "," + vertices;
     }
 }

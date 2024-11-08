@@ -123,11 +123,11 @@ Nov 6,2024
 
 Nov 7,2024
 	What I did yesterday: Implemented US4.100
-	What I will do today: Implement US4.102
-	Obstacles I face: Nothing
+	What I will do today: Implement US4.102, fix BUG4.210
+	Obstacles I face: Find a good algorithm to calculate the vertices of a polygon
 
 Nov 8,2024
-	What I did yesterday: Implemented US4.102
+	What I did yesterday: Implemented US4.102, fixed BUG4.210
 	What I will do today: Implement US4.101
 	Obstacles I face: Nothing
 
