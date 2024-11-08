@@ -3,7 +3,6 @@ package ca.utoronto.utm.assignment2.paint;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 /**
@@ -13,14 +12,15 @@ import javafx.scene.text.Font;
  * shape controller PropertiesPanel.
  * Author: chen2046
  */
-public class Text extends Shape {
+public class Text extends Rectangle {
 
     private String text;
     private TextField textField;
-    private Font font;
+    private final Font font;
 
     public Text(Point start, Point end, PaintProperties properties) {
-        super(start, end, "Text", properties);
+        super(start, end, properties);
+        setType("Text");
         this.text = ""; // Initially empty text
         this.font = new Font("Arial", 20); // Default font and size
 
@@ -50,21 +50,16 @@ public class Text extends Shape {
         if (getProperties().isFilled()) {
             fill(g2d);
         }
-
-        if (!text.isEmpty()) {
-            g2d.setFill(Color.BLACK);
-            g2d.setFont(font);
-            g2d.fillText(this.text, info[0] + 5, info[1] + 20); // Text offset
-        }
     }
 
     @Override
     protected void fill(GraphicsContext g2d) {
-        g2d.setFill(getProperties().getFillColor());
         double[] info = getPaintInfo();
-        double width = getProperties().getStrokeThickness() / 2;
-        g2d.fillRect(info[0] + width, info[1] + width,
-                info[2] - width * 2, info[3] - width * 2);
+        if (!text.isEmpty()) {
+            g2d.setFill(getProperties().getFillColor());
+            g2d.setFont(font);
+            g2d.fillText(this.text, info[0] + 5, info[1] + 20); // Text offset
+        }
     }
 
     public void activateTextField(Pane canvasPane, PaintController controller) {
@@ -93,19 +88,4 @@ public class Text extends Shape {
         }
     }
 
-    @Override
-    protected double[] getPaintInfo() {
-        double x = Math.min(getStart().x, getEnd().x);
-        double y = Math.min(getStart().y, getEnd().y);
-        double width = Math.abs(getEnd().x - getStart().x);
-        double height = Math.abs(getEnd().y - getStart().y);
-        return new double[]{x, y, width, height};
-    }
-
-    @Override
-    boolean includeCursor(Point p) {
-        double[] info = getPaintInfo();
-        javafx.scene.shape.Rectangle bounds = new javafx.scene.shape.Rectangle(info[0], info[1], info[2], info[3]);
-        return bounds.contains(p.x, p.y);
-    }
 }
