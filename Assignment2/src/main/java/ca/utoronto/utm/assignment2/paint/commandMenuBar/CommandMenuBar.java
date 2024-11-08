@@ -8,70 +8,83 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 
-public class CommandMenuBar implements EventHandler<ActionEvent> {
+public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent> {
 
     PaintModel model;
 
-    public MenuBar createMenuBar(PaintModel model) {
+    public CommandMenuBar(PaintModel model) {
 
         this.model = model;
-
-        MenuBar menuBar = new MenuBar();
         Menu menu;
         MenuItem menuItem;
+        getStyleClass().add("menu-bar");
 
         // A menu for File
 
         menu = new Menu("File");
+        menu.getStyleClass().add("menu");
 
         menuItem = new CommandNew();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
         menuItem = new CommandOpen();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
         menuItem = new CommandSave();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
-        menu.getItems().add(new SeparatorMenuItem());
+        SeparatorMenuItem separator = new SeparatorMenuItem();
+        menu.getItems().add(separator);
+        separator.getStyleClass().add("separator");
 
         menuItem = new CommandExit();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
-        menuBar.getMenus().add(menu);
+        getMenus().add(menu);
 
         // Another menu for Edit
 
         menu = new Menu("Edit");
+        menu.getStyleClass().add("menu");
 
         menuItem = new MenuItem("Cut");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
         menuItem = new MenuItem("Copy");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
         menuItem = new MenuItem("Paste");
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
-        menu.getItems().add(new SeparatorMenuItem());
+        separator = new SeparatorMenuItem();
+        menu.getItems().add(separator);
+        separator.getStyleClass().add("separator");
+
         menuItem = new CommandUndo();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
         menuItem = new CommandRedo();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
+        menuItem.getStyleClass().add("menu-item");
 
-        menuBar.getMenus().add(menu);
-
-        return menuBar;
+        getMenus().add(menu);
     }
 
     @Override

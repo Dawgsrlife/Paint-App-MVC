@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class Paint extends Application {
     PaintModel model; // Model
     PaintView view; // View
@@ -26,7 +28,7 @@ public class Paint extends Application {
     public void start(Stage stage) throws Exception {
 
         this.model = new PaintModel();
-        menuBar = new CommandMenuBar();
+        menuBar = new CommandMenuBar(model);
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
         this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
@@ -34,11 +36,12 @@ public class Paint extends Application {
 
 
         BorderPane root = new BorderPane();
-        root.setTop(menuBar.createMenuBar(model));
+        root.setTop(menuBar);
         root.setCenter(view);
         root.setLeft(shapeChooserPanel);
         root.setRight(propertiesPanel);
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("paint-style.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Paint");
         stage.show();

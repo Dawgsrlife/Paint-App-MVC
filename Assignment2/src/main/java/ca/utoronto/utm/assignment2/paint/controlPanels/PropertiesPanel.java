@@ -38,6 +38,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         this.setVgap(5.0);
         this.setHgap(15);
         this.setPadding(new Insets(10.0));
+        getStyleClass().add("properties-panel");
 
         // Cursor info display
         this.add(cursor, 0, 0);
@@ -159,23 +160,23 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         fill.setSelected(pp.isFilled());
         // load fill RGB color parameter
         String hexCode = pp.getFillColor().toString().substring(2,10);
-        int resultRed = Integer.valueOf(hexCode.substring(0, 2), 16);
-        int resultGreen = Integer.valueOf(hexCode.substring(2, 4), 16);
-        int resultBlue = Integer.valueOf(hexCode.substring(4, 6), 16);
-        int resultAlpha = Integer.valueOf(hexCode.substring(6, 8), 16);
-        sliders.get(0).setValue(resultRed);
-        sliders.get(1).setValue(resultGreen);
-        sliders.get(2).setValue(resultBlue);
-        sliders.get(3).setValue(resultAlpha);
+        int red = Integer.valueOf(hexCode.substring(0, 2), 16);
+        int green = Integer.valueOf(hexCode.substring(2, 4), 16);
+        int blue = Integer.valueOf(hexCode.substring(4, 6), 16);
+        int alpha = Integer.valueOf(hexCode.substring(6, 8), 16);
+        sliders.get(0).setValue(red);
+        sliders.get(1).setValue(green);
+        sliders.get(2).setValue(blue);
+        sliders.get(3).setValue(alpha);
         // load stroke RGB color parameter
         hexCode = pp.getStrokeColor().toString().substring(2,10);
-        resultRed = Integer.valueOf(hexCode.substring(0, 2), 16);
-        resultGreen = Integer.valueOf(hexCode.substring(2, 4), 16);
-        resultBlue = Integer.valueOf(hexCode.substring(4, 6), 16);
-        sliders.get(4).setValue(resultRed);
-        sliders.get(5).setValue(resultGreen);
-        sliders.get(6).setValue(resultBlue);
-        sliders.get(7).setValue(resultBlue);
+        red = Integer.valueOf(hexCode.substring(0, 2), 16);
+        green = Integer.valueOf(hexCode.substring(2, 4), 16);
+        blue = Integer.valueOf(hexCode.substring(4, 6), 16);
+        sliders.get(4).setValue(red);
+        sliders.get(5).setValue(green);
+        sliders.get(6).setValue(blue);
+        sliders.get(7).setValue(alpha);
         // load stroke thickness
         sliders.get(8).setValue((int)pp.getStrokeThickness());
         // load vertices count
