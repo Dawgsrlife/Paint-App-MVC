@@ -121,24 +121,27 @@ Nov 4,2024
 	Obstacles I face: Consider what counts as a good user page that clear and elegant。
 
 Nov 5,2024
-	What I did yesterday: Re-implement ShapeChooserPanel and ShapeCHooserPanelButton
+	What I did yesterday: Re-implement ShapeChooserPanel and ShapeChooserPanelButton
 	                      for redesign Canvas buttons.
 	What I will do today: Add Text button into the Canvas.
 	Obstacles I face: Decide where to put the Text button.
 
 Nov 6,2024
 	What I did yesterday: Add Text button into the Canvas.
-	What I will do today: Improve the functionality of Text. Working on
-	Obstacles I face:
+	What I will do today: Improve the functionality of Text. Working on US4.015.
+	Obstacles I face: A bug was found in the implementation of US4.015. that textField appears when
+	                  users click the screen instead of textField should only appear when the textBox
+	                  is drawn. Also, everytime users change the property of a textbox, the text itself
+	                  is changed along with it.
 
 Nov 7,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement textbox features.
+	What I will do today: There is an update on master, change my branch to fix in master code.
+	Obstacles I face: Some code breaks after merge master into US4.015.
 
 Nov 8,2024
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Work on US4.015.
+	What I will do today: Finish US4.015. Wait other group member to pull US4.015 into master.
 	Obstacles I face:
 
 Nov 9,2024
@@ -150,24 +153,3 @@ Nov 10,2024
 	What I did yesterday:
 	What I will do today:
 	Obstacles I face:
-
-Nov 11,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 12,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 13,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
