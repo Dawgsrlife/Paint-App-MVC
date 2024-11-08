@@ -36,11 +36,4 @@ public class PaintView extends Canvas implements Observer {
             if (s != null) s.paint(g2d);
         }
     }
-
-    /**
-     * Refresh canvas, repaint everything existed
-     */
-    public void update() {
-        update(model, new Object());
-    }
 }
