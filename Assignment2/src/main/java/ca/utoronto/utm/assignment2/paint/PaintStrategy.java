@@ -22,6 +22,7 @@ public class PaintStrategy {
             case "Squiggle" -> new Squiggle(start, pp, path);
             case "Polyline" -> new Polyline(start, pp, path);
             case "PrecisionEraser" -> new PrecisionEraser(start, pp, path);
+            case "Polygon" -> new Polygon(start, end, pp);
             default -> throw new IllegalArgumentException("Unknown mode: " + mode);
         };
     }

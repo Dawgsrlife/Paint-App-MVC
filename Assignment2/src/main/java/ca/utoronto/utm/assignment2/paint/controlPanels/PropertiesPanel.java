@@ -36,10 +36,10 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         this.setPadding(new Insets(10.0));
 
         // Templates for labels and slider positions
-        int[] columns = new int[]{3, 4, 5, 7, 8, 9, 11};
+        int[] columns = new int[]{3, 4, 5, 7, 8, 9, 11, 12};
         String[] textTemplate = new String[]{"R : ", "G : ", "B : ",
                 "R : ", "G : ", "B : ",
-                "px : "};
+                "px : ", "# : "};
 
         // Layout setup
         Text fillLabel = new Text("Fill");
@@ -91,7 +91,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         for (Slider slider : sliders) {
             if (mouseEvent.getSource() == slider) {
                 // Update the corresponding text
-                texts.get(index).setText(texts.get(index).getText().substring(0, 4) + (int)slider.getValue());
+                texts.get(index).setText(texts.get(index).getText().split(":")[0] + ": " + (int)slider.getValue());
             }
 
             // Update preview colours for fill and border
@@ -123,6 +123,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
                 (int)sliders.get(4).getValue(),
                 (int)sliders.get(5).getValue());
         double borderWidth = sliders.get(6).getValue();
-        return new PaintProperties(fill.isSelected(), fillColor, borderColor, borderWidth);
+        int vertices = (int)sliders.get(7).getValue();
+        return new PaintProperties(fill.isSelected(), fillColor, borderColor, borderWidth, vertices);
     }
 }
