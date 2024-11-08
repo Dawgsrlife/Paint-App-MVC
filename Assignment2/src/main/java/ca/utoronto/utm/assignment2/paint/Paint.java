@@ -1,7 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
 
-import ca.utoronto.utm.assignment2.paint.controlPanels.EditingPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandMenuBar;
@@ -17,7 +16,6 @@ public class Paint extends Application {
     CommandMenuBar menuBar; // Control
     ShapeChooserPanel shapeChooserPanel; // Control
     PropertiesPanel propertiesPanel; // Control
-    EditingPanel editingPanel;
     // commandManager;
 
     public static void main(String[] args) {
@@ -31,19 +29,15 @@ public class Paint extends Application {
         menuBar = new CommandMenuBar();
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
-        editingPanel = new EditingPanel();
-        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, editingPanel);
+        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
         this.view = new PaintView(model, controller);
 
 
         BorderPane root = new BorderPane();
         root.setTop(menuBar.createMenuBar(model));
         root.setCenter(view);
-        BorderPane left = new BorderPane();
-        left.setTop(shapeChooserPanel);
-        left.setCenter(propertiesPanel);
-        root.setLeft(left);
-        root.setRight(editingPanel);
+        root.setLeft(shapeChooserPanel);
+        root.setRight(propertiesPanel);
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("Paint");

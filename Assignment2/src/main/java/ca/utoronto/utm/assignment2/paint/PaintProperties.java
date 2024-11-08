@@ -63,6 +63,6 @@ public class PaintProperties {
 
     @Override
     public String toString() {
-        return filled + "," + fillColor + "," + strokeColor + "," + strokeThickness;
+        return filled + "," + fillColor + "," + strokeColor + "," + strokeThickness + "," + vertices;
     }
 }
