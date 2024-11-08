@@ -11,6 +11,7 @@ public class PaintModel extends Observable {
     private final Stack<Shape> undoStack = new Stack<>();
     private Shape tempShape;
 
+
     /**
      * Get all steps queued to be painted
      * @return An array list of all the steps
