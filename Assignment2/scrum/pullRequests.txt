@@ -1,7 +1,4 @@
 Pull Requests:
-waiting:
-US4.015 author:chen2046 puller:utorid status:Completed
-
 
 US4.410     author:tianji61 puller:UTROID status:waiting
 
