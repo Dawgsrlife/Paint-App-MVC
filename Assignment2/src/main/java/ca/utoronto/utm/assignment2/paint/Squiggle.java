@@ -5,6 +5,12 @@ import javafx.scene.shape.Polyline;
 
 import java.util.ArrayList;
 
+/**
+ * This class represents a squiggle on the canvas, which is
+ * an ordered set of points connected to each by a line.
+ * The points are defined on every left click drag of the mouse
+ * or release of the left mouse button
+ */
 public class Squiggle extends Shape {
     private final ArrayList<Point> points = new ArrayList<>();
     private final double strokeSize;
