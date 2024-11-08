@@ -107,16 +107,6 @@ I WANT   : To be able to erase strokes drawn on the canvas
 SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
            away at them using a PrecisionEraser
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.410 : tianji61 : NotStarted
-NAME     : Pretty GUI
-PRIORITY : 2
-ESTIMATE : 5 hours : ACTUAL :
-AS A     : user
-I WANT   : A satisfying GUI that isn't just the basic old look of JavaFX
-SO THAT  : I can enjoy a paint application with a sleek and modern look and
-           feel.
---------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -547,6 +537,16 @@ ISSUE    : When increasing the border of the triangle, the triangle does not
            correctly draw on the canvas, sometimes resulting in the top vertex
            being cut off. This is connected with triangle's compatibility with
            all other shapes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.410 : tianji61 : Started
+NAME     : Pretty GUI
+PRIORITY : 2
+ESTIMATE : 5 hours : ACTUAL :
+AS A     : user
+I WANT   : A satisfying GUI that isn't just the basic old look of JavaFX
+SO THAT  : I can enjoy a paint application with a sleek and modern look and
+           feel.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
