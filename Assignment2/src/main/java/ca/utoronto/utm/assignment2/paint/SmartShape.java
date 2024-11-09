@@ -13,9 +13,9 @@ public class SmartShape extends Squiggle {
     private boolean isSquiggle;
 
     public ArrayList<Point> tempPoints;
-    public SmartShape(Point point, PaintProperties pp) {
-        super(point, pp);
-        setFilled(pp.isFilled());
+    public SmartShape(Point point, PaintProperties pp, ArrayList<Point> path) {
+        super(point, pp, path);
+        getProperties().setFilled(pp.isFilled());
         isSquiggle = true;
         tempPoints = new ArrayList<>();
     }
@@ -67,13 +67,15 @@ public class SmartShape extends Squiggle {
             xArr[i] = points.get(i).x;
             yArr[i] = points.get(i).y;
         }
-        g2d.setStroke(getBorderColor());
-        g2d.setLineWidth(getBorderWidth());
+
+        PaintProperties pp = getProperties();
+        g2d.setStroke(pp.getStrokeColor());
+        g2d.setLineWidth(pp.getStrokeThickness());
 
         g2d.strokePolygon(xArr, yArr, numPoints);
 
-        if(isFilled()) {
-            g2d.setFill(getColor());
+        if(pp.isFilled()) {
+            g2d.setFill(pp.getFillColor());
             g2d.fillPolygon(xArr, yArr, numPoints);
         }
     }
@@ -91,6 +93,7 @@ public class SmartShape extends Squiggle {
      */
     @Override
     public void finalizeShape() {
+        if(tempPoints.isEmpty()) return;
         if(dist(tempPoints.getFirst(), tempPoints.getLast()) > CLOSE_CONDITION) return;
         ArrayList<Point> vertices = new ArrayList<>();
         int currVertexIndex = 0;
