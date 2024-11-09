@@ -57,9 +57,8 @@ PRIORITY : 3
 ESTIMATE : 3 days : ACTUAL :
 AS A     : user
 I WANT   : To be able to draw a squiggle that resembles a shape and have the
-           program automatically turn it into a circle or polygon with up to
-           5 sides.
-SO THAT  : I can draw a variety of shapes easily and accurately
+           program automatically turn it into a polygon
+SO THAT  : I can draw a variety of shapes quickly and easily
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : mengale1 : NotStarted
