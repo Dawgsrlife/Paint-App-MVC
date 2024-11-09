@@ -7,6 +7,7 @@ import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandMenuBar;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -29,13 +30,14 @@ public class Paint extends Application {
 
         BorderPane root = new BorderPane();
         Scene scene = new Scene(root);
+        Pane canvasPane = new Pane();
 
         this.model = new PaintModel();
         menuBar = new CommandMenuBar(model, scene);
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
-        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel);
-        this.view = new PaintView(model, controller);
+        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
+        this.view = new PaintView(model, controller, canvasPane);
 
         root.setTop(menuBar);
         root.setCenter(view);
