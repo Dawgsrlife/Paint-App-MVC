@@ -16,71 +16,17 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.014 : UTORID : NotStarted
-NAME     : Undo and Redo MenuBar Button
+TYPE     : BUG BUG4.220 : mengale1 : InProgress
+NAME     : Polyline Structure Is Not Optimized
 PRIORITY : 3
-ESTIMATE : 15 mins    ACTUAL :
-ISSUE    : The undo and redo buttons on the menubar are currently not
-           functional.
+ESTIMATE : 30 mins   ACTUAL :
+ISSUE    : PaintController currently handles the behaviour of Polyline.
+           Ideally, Polyline should be stateless in the controller and handle
+           its responsibility of adding points and finalizing itself in its own
+            class.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.015 : mengale1 : InProgress
-NAME     : Stroke size configuration issue
-PRIORITY : 2
-ESTIMATE : 30 mins    ACTUAL : 20 mins
-ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
-           behaviour, such as existing eraser strokes becoming large and small.
---------------------------------------------------------------------------
-
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.006 : mengale1 : InProgress
-NAME     : Fill style selector
-PRIORITY : 3
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : To be able to select the current drawing style (filled or outline), to be applied
-           to subsequent shapes. Example:
-           		selects fill style solid
-           		mode circle
-           		draw a circle
-           		draw a circle
-           		mode rectangle
-           		draw a rectangle
-           		select fill style outline
-           		draw a rectangle
-           		draw a rectangle
-           		select mode squiggle
-           		draw a squiggle
-           	results in two solid circles and a solid rectangle as well as
-           	two outlined rectangles and a squiggle
-SO THAT  : I can modify my canvas with different colours.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.007 : UTORID : NotStarted
-NAME     : Line thickness selector
-PRIORITY : 3
-ESTIMATE : (1 hour, 2 hours, 4 hours, 1 day, 2 days, 4 days)    ACTUAL :
-AS A     : user
-I WANT   : To be able to select the current line thickness, to be applied
-           to subsequent shapes. Example:
-           		select fill style outline
-           		selects line thickness 1
-           		mode circle
-           		draw a circle
-           		draw a circle
-           		mode rectangle
-           		draw a rectangle
-           		select line thickness 9
-           		draw a rectangle
-           		draw a rectangle
-           		select mode squiggle
-           		draw a squiggle
-           	results in two thinly outlined circles and a thinly outlined
-           	rectangle as well as two thickly outlined rectangles and a thick squiggle
-SO THAT  :
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.010 : mengale1 : NotStarted
+TYPE     : USER STORY US4.010 : huaethan : NotStarted
 NAME     : Highlighter
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -93,22 +39,14 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.014 : chen2046 : NotStarted
-NAME     : Clear Canvas Button
-PRIORITY : 3
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : Add a button that clears the entire canvas, do not change the
-           colors of the canvas.(background)
-SO THAT  : I can reset the drawing area
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.015 : chen2046 : NotStarted
+TYPE     : USER STORY US4.015 : chen2046 : InProgress
 NAME     : Text Tool
 PRIORITY : 3
 ESTIMATE : 3 hour : ACTUAL :
 AS A     : user
-I WANT   : Adds the ability to place text on the canvas.
+I WANT   : Click on the Text button to display a text box that can be moved
+           to the corresponding position on the canvas, and in the text box
+           you can enter the desired words.
 SO THAT  : I can insert text on the canvas and customize its appearance
            like font and color.
 --------------------------------------------------------------------------
@@ -119,32 +57,12 @@ PRIORITY : 3
 ESTIMATE : 3 days : ACTUAL :
 AS A     : user
 I WANT   : To be able to draw a squiggle that resembles a shape and have the
-           program automatically turn it into a circle or polygon with up to
-           5 sides.
-SO THAT  : I can draw a variety of shapes easily and accurately
+           program automatically turn it into a polygon
+SO THAT  : I can draw a variety of shapes quickly and easily
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.019 : tianji61 : NotStarted
-NAME     : Coordinate display
-PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL :
-AS A     : user
-I WANT   : It makes more sense if coordinate display in tool selection panel
-           instead of on the canvas.
-SO THAT  : I can see coordinates of cursor in tool selection panel.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.022 : chen2046 : NotStarted
-NAME     : Coordinate display
-PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL :
-AS A     : user
-I WANT   : Refer to US2.020.
-SO THAT  : Undo and redo.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.023 : UTROID : NotStarted
-NAME     : Coordinate display
+TYPE     : USER STORY US4.023 : mengale1 : NotStarted
+NAME     : Editing panel
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
 AS A     : user
@@ -489,7 +407,157 @@ ISSUE    : Switching to another shape and then drawing with the new shape
            before completing a polyline removes the polyline. Ideally, just
            complete the polyline upon switching to another shape tool.
 --------------------------------------------------------------------------
-
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.015 : mengale1 : Complete
+NAME     : Stroke size configuration issue
+PRIORITY : 2
+ESTIMATE : 30 mins    ACTUAL : 30 mins
+ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
+           behaviour, such as existing eraser strokes becoming large and small.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.007 : tianji61 : Complete
+NAME     : Line thickness selector
+PRIORITY : 3
+ESTIMATE : 30 minutes    ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To be able to select the current line thickness, to be applied
+           to subsequent shapes. Example:
+           		select fill style outline
+           		selects line thickness 1
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select line thickness 9
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two thinly outlined circles and a thinly outlined
+           	rectangle as well as two thickly outlined rectangles and a thick squiggle
+SO THAT  : I can adjust the thickness of a border and / or squiggle
+           thickness with a single slider.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.016 : tianji61 : Complete
+NAME     : Duplicated control panel
+PRIORITY : 3
+ESTIMATE : 15 mins    ACTUAL : 15mins
+ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
+           be removed
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.014 : tianji61 : Complete
+NAME     : Undo and Redo MenuBar Button
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL : 30 minutes
+ISSUE    : The undo and redo buttons on the menubar are currently not
+           functional.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.019 : tianji61 : Complete
+NAME     : Coordinate display
+PRIORITY : 3
+ESTIMATE : 15 minutes   ACTUAL : 15 minutes
+AS A     : user
+I WANT   : It makes more sense if coordinate display in tool selection
+           panel instead of on the canvas.
+SO THAT  : I can see coordinates of cursor in tool selection panel.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.100 : tianji61 : Started
+NAME     : MenuBar - New
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL :
+AS A     : user
+I WANT   : Clear the whole canvas.
+SO THAT  : Draw on a new canvas
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.101 : tianji61 : Started
+NAME     : MenuBar - Open
+PRIORITY : 3
+ESTIMATE : 15 minutes   ACTUAL :
+AS A     : user
+I WANT   : Open a canvas I saved before.
+SO THAT  : Continue work on a file on a saved canvas.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.102 : tianji61 : Started
+NAME     : MenuBar - Save
+PRIORITY : 3
+ESTIMATE : 15 minutes   ACTUAL :
+AS A     : user
+I WANT   : Save a canvas.
+SO THAT  : Save a canvas, so that I can resume work on the canvas saved
+           later.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.006 : mengale1 : Complete
+NAME     : Fill style selector
+PRIORITY : 3
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+AS A     : user
+I WANT   : To be able to select the current drawing style (filled or outline), to be applied
+           to subsequent shapes. Example:
+           		selects fill style solid
+           		mode circle
+           		draw a circle
+           		draw a circle
+           		mode rectangle
+           		draw a rectangle
+           		select fill style outline
+           		draw a rectangle
+           		draw a rectangle
+           		select mode squiggle
+           		draw a squiggle
+           	results in two solid circles and a solid rectangle as well as
+           	two outlined rectangles and a squiggle
+SO THAT  : I can modify my canvas with different colours.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.103 : tianji61 : Complete
+NAME     : Shape selector
+PRIORITY : 1
+ESTIMATE : 3 hour   ACTUAL : 3 hours
+ISSUE    : Developing furthur features relies on selecting a shape currently
+           exists on the canvas, it would be nice to have a selector mode,
+           and deal with the situation that a using wants to select and
+           edit a specific shape.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.210 : tianji61 : Complete
+NAME     : Triangle Border Behaviour and Shape Compatibility
+PRIORITY : 3
+ESTIMATE : 1 hour   ACTUAL : 2 hours
+ISSUE    : When increasing the border of the triangle, the triangle does not
+           correctly draw on the canvas, sometimes resulting in the top vertex
+           being cut off. This is connected with triangle's compatibility with
+           all other shapes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.410 : tianji61 : Complete
+NAME     : Pretty GUI
+PRIORITY : 2
+ESTIMATE : 5 hours : ACTUAL : 4 hours
+AS A     : user
+I WANT   : A satisfying GUI that isn't just the basic old look of JavaFX
+SO THAT  : I can enjoy a paint application with a sleek and modern look and
+           feel.
+--------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
-
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.014 : chen2046 : InComplete
+NAME     : Clear Canvas(This overlaps with New button on the file menubar.
+           In order not to make the function cumbersome and simple, keep the
+           New function without Clear button.
+PRIORITY : 3
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+AS A     : user
+I WANT   : Click the New button to reset the drawing area to a white,
+           unpainted canvas.
+SO THAT  : I can reset the drawing area
+--------------------------------------------------------------------------

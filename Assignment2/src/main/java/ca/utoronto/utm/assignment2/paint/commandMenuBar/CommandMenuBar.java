@@ -1,6 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
-import javafx.application.Platform;
+import ca.utoronto.utm.assignment2.paint.PaintModel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Menu;
@@ -8,9 +8,13 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 
-public class MyMenuBar implements EventHandler<ActionEvent> {
+public class CommandMenuBar implements EventHandler<ActionEvent> {
 
-    public MenuBar createMenuBar() {
+    PaintModel model;
+
+    public MenuBar createMenuBar(PaintModel model) {
+
+        this.model = model;
 
         MenuBar menuBar = new MenuBar();
         Menu menu;
@@ -20,21 +24,21 @@ public class MyMenuBar implements EventHandler<ActionEvent> {
 
         menu = new Menu("File");
 
-        menuItem = new MenuItem("New");
+        menuItem = new CommandNew();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Open");
+        menuItem = new CommandOpen();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Save");
+        menuItem = new CommandSave();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
         menu.getItems().add(new SeparatorMenuItem());
 
-        menuItem = new MenuItem("Exit");
+        menuItem = new CommandExit();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
@@ -57,11 +61,11 @@ public class MyMenuBar implements EventHandler<ActionEvent> {
         menu.getItems().add(menuItem);
 
         menu.getItems().add(new SeparatorMenuItem());
-        menuItem = new MenuItem("Undo");
+        menuItem = new CommandUndo();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
-        menuItem = new MenuItem("Redo");
+        menuItem = new CommandRedo();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
 
@@ -70,14 +74,9 @@ public class MyMenuBar implements EventHandler<ActionEvent> {
         return menuBar;
     }
 
-
     @Override
     public void handle(ActionEvent event) {
-        System.out.println(((MenuItem) event.getSource()).getText());
-        String command = ((MenuItem) event.getSource()).getText();
-        System.out.println(command);
-        if (command.equals("Exit")) {
-            Platform.exit();
-        }
+        Command c = (Command) event.getSource();
+        c.execute(model);
     }
 }

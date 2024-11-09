@@ -1,21 +1,48 @@
 (replicate sections below for each feature you want to highlight)
 --------------------------------------------------------------------------------
-FeatureName: (name)
+FeatureName: Cursor Coordinate Display
 
 Description: 
-	(describe the feature)
+	Display cursor's current coordinate, in order to make user aware of where
+	the shape is going to be located.
 
 
 Reference: 
-	(list of the BUG/US involved in creating this feature)
+	US4.019
 --------------------------------------------------------------------------------
-FeatureName: (name)
+FeatureName: New
 
 Description: 
-	(describe the feature)
+	Work on a new canvas, with everything added previously removed.
 
 
 Reference: 
-	(list of the BUG/US involved in creating this feature)
+	US4.100
 --------------------------------------------------------------------------------
-...
+FeatureName: Open
+
+Description:
+	Open a previously saved *.a2s canvas file.
+
+
+Reference:
+	US4.101
+--------------------------------------------------------------------------------
+FeatureName: Save
+
+Description:
+	Save current canvas into a *.a2s file.
+
+
+Reference:
+	US4.102
+--------------------------------------------------------------------------------
+FeatureName: Polygon painter
+
+Description:
+	Draw a right polygon with as much sides as you want! Can't believe it does
+	not have its own backlog, since it's a side product we got when fixing
+	another bug
+Reference:
+	US4.210
+--------------------------------------------------------------------------------

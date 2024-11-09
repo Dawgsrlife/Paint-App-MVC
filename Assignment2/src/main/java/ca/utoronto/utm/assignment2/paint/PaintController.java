@@ -1,36 +1,41 @@
 package ca.utoronto.utm.assignment2.paint;
 
-import ca.utoronto.utm.assignment2.paint.controlPanels.EditingPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
-import ca.utoronto.utm.assignment2.paint.controlPanels.StepsPanel;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 public class PaintController implements EventHandler<MouseEvent> {
 
     private final PaintModel model;
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
-    private StepsPanel sp;
-    private EditingPanel ep;
     private Shape shape;
+    private final Pane canvasPane;
 
-    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp) {
+    public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, Pane canvasPane) {
         this.model = model;
         this.scp = scp;
         this.pp = pp;
+        this.canvasPane = canvasPane;
     }
 
     @Override
     public void handle(MouseEvent mouseEvent) {
         Point point = new Point(mouseEvent.getX(), mouseEvent.getY());
+        pp.setMouseCoords(point);
 
         // determine mouse event type
         EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
         if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
-            if (scp.getMode().equals("Polyline") & this.shape != null) {
+            if (scp.getMode().equals("select")) {
+                this.shape = model.getSelected(point);
+                if (this.shape != null) {
+                    pp.loadPaintProperties(shape);
+                }
+            } else if (scp.getMode().equals("Polyline") & this.shape != null) {
                 this.shape.setEnd(point);
                 model.addTempShape(this.shape);
             } else {
@@ -40,21 +45,31 @@ public class PaintController implements EventHandler<MouseEvent> {
                 }
                 // create shape and initialize starting point on MOUSE_PRESSED
                 System.out.println("Started " + scp.getMode());
-                this.shape = getPaintStrategy(scp.getMode(), point, pp.getPaintProperties());
-
+                this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
-            // update shape ending point on MOUSE_DRAGGED
-            this.shape.setEnd(point);
-            model.addTempShape(this.shape);
-        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED)) {
-            // finalize by putting shape into models array
-            this.shape.finalizeShape();
-            finalizeShape();
-        } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown()) {
+            if (scp.getMode().equals("select") & this.shape != null) {
+                System.out.println("drag");
+            } else if (this.shape != null){
+                // update shape ending point on MOUSE_DRAGGED
+                this.shape.setEnd(point);
+                model.addTempShape(this.shape);
+            }
+        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED) & !scp.getMode().equals("select")) {
+            if (scp.getMode().equals("Text") & this.shape != null) {
+                // Finalize the Text shape and activate the TextField for input
+                Text textShape = (Text) this.shape;
+                textShape.activateTextField(canvasPane, this);  // Display the TextField after drawing the text box
+            } else {
+                // Finalize and add the shape to the model for other modes
+                this.shape.finalizeShape();
+                finalizeShape();
+            }
+        } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown() & !scp.getMode().equals("select")) {
             // finalize by putting shape into models array (polyline)
             this.shape.finalizeShape();
             finalizeShape();
+            System.out.println("Finished " + scp.getMode());
         }
     }
 
@@ -73,24 +88,10 @@ public class PaintController implements EventHandler<MouseEvent> {
     }
 
     /**
-     * this method returns a corresponding shape instance to mode
-     * @param mode what mode is activated currently
-     * @param point starting point
-     * @param pp paint properties
-     * @return an instance of a shape instance
+     * This method is called by Text shape after user input is complete,
+     * saving the finalized text into the model.
      */
-    private Shape getPaintStrategy(String mode, Point point, PaintProperties pp) {
-        return switch (mode) {
-            case "Circle" -> new Circle(point, point, pp);
-            case "Rectangle" -> new Rectangle(point, point, pp);
-            case "Square" -> new Square(point, point, pp);
-            case "Oval" -> new Oval(point, point, pp);
-            case "Squiggle" -> new Squiggle(point, pp);
-            case "Polyline" -> new Polyline(point, pp);
-            case "Triangle" -> new Triangle(point, point, pp);
-            case "PrecisionEraser" -> new PrecisionEraser(point, pp);
-            case "SmartShape" -> new SmartShape(point, pp);
-            default -> throw new IllegalArgumentException("Unknown mode: " + mode);
-        };
+    public void persistTextBox(Text textShape) {
+        model.addShape(textShape);
     }
 }

@@ -1,48 +1,16 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import javafx.scene.shape.Circle;
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
 
 public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
-    private Stack<Shape> undoStack = new Stack<>();
+    private final Stack<Shape> undoStack = new Stack<>();
     private Shape tempShape;
 
-    /**
-     * Add a Shape instance into steps list
-     * @param shape a shape instance
-     */
-    public void addShape(Shape shape) {
-        tempShape = null;
-        shapes.add(shape);
-        this.setChanged();
-        this.notifyObservers();
-    }
-
-    /*
-    future undo functionality
-    public void removeShape(Shape shape) {
-        shapes.remove(shape);
-        System.out.println("Shape removed: " + shape + ", Remaining shapes: " + shapes.size());
-        this.setChanged();
-        this.notifyObservers();
-    }
-    */
-
-    public void undo() {
-        if(shapes.isEmpty()) return;
-        undoStack.push(shapes.pop());
-        this.setChanged();
-        this.notifyObservers();
-    }
-
-    public void redo() {
-        if(undoStack.isEmpty()) return;
-        shapes.push(undoStack.pop());
-        this.setChanged();
-        this.notifyObservers();
-    }
 
     /**
      * Get all steps queued to be painted
@@ -70,6 +38,46 @@ public class PaintModel extends Observable {
         // refresh the undo stack
         undoStack.clear();
 
+        update();
+    }
+
+    /**
+     * Add a Shape instance into steps list
+     * @param shape a shape instance
+     */
+    public void addShape(Shape shape) {
+        tempShape = null;
+        shapes.add(shape);
+        update();
+    }
+
+    public void undo() {
+        if(shapes.isEmpty()) return;
+        undoStack.push(shapes.pop());
+        update();
+    }
+
+    public void redo() {
+        if(undoStack.isEmpty()) return;
+        shapes.push(undoStack.pop());
+        update();
+    }
+
+    public void clear() {
+        shapes.clear();
+        update();
+    }
+
+    public Shape getSelected(Point p) {
+        for (int j = shapes.size() - 1; j >= 0; j--) {
+            if (shapes.get(j).includeCursor(p)) {
+                return shapes.get(j);
+            }
+        }
+        return null;
+    }
+
+    public void update() {
         this.setChanged();
         this.notifyObservers();
     }

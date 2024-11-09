@@ -156,28 +156,39 @@ Nov 3,2024
 Nov 4,2024
 	What I did yesterday: Implement US3.009, US2.026. Fix BUG3.013. Do pull
 	                      requests for US3.008 and BUG3.004.
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Complete BUG4.015 and add it to the pull requests.
+	Obstacles I face: Fixing eraser stroke size, where unexpected behaviour
+	                  occurs; tracing.
 
 Nov 5,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Complete BUG4.015 and add it to the pull requests.
+	What I will do today: Handle pull requests for US4.100, US4.102, and US4
+	                      .101; complete US4.006. Update productBacklog.txt
+	Obstacles I face: Learning how to use CSS to style a nicer frontend.
 
 Nov 6,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Handle pull requests and add to the product backlog.
+	What I will do today: Have our scrum meeting, delegating tasks as the
+	                      product owner, and working on a final plan towards
+	                      finishing the project. Handle US4.103 pull request.
+	Obstacles I face: Figuring out how to change the handling the flags of
+	                  mouse events for all shapes (and specifically, polyline)
+	                  to in the instances themselves instead of in the controller.
 
 Nov 7,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Have our scrum meeting, delegating tasks as the
+                          product owner, and working on a final plan towards
+                          finishing the project. Handle US4.103 pull request.
+                          Additionally, progress for BUG4.220
+	What I will do today: Progress for BUG4.220 and handle pull requests.
+	Obstacles I face: Deciding whether to use a drawing strategy or boolean
+	                  fields for/in shapes to conduct controller behaviour.
 
 Nov 8,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Progress for BUG4.220 and handle pull requests.
+	What I will do today: Study for STA256 Term Test 2
+	Obstacles I face: STA256 TT2; having to implement everything with limited
+	                  time.
 
 Nov 9,2024
 	What I did yesterday:
@@ -188,24 +199,3 @@ Nov 10,2024
 	What I did yesterday:
 	What I will do today:
 	Obstacles I face:
-
-Nov 11,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 12,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 13,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-

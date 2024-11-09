@@ -4,33 +4,65 @@ import javafx.scene.paint.Color;
 
 /**
  * This class represents the properties of a shape, it is the model to characterize fill
- * color, border color and border width.
+ * color, border color, border width, and stroke size.
  */
 public class PaintProperties {
-    private final boolean filled;
-    private final Color fillColor;
-    private final Color borderColor;
-    private final double borderWidth;
+    private boolean filled;
+    private Color fillColor;
+    private Color strokeColor;
+    private double strokeThickness;
+    private int vertices;
 
-    public PaintProperties(Boolean filled, Color fillColor, Color borderColor, double borderLength) {
+    public PaintProperties(Boolean filled, Color fillColor, Color strokeColor, double strokeThickness, int vertices) {
         this.filled = filled;
         this.fillColor = fillColor;
-        this.borderColor = borderColor;
-        this.borderWidth = borderLength;
+        this.strokeColor = strokeColor;
+        this.strokeThickness = strokeThickness;
+        this.vertices = vertices;
     }
 
     public boolean isFilled() {
         return filled;
     }
+
+    public void setFilled(boolean filled) {
+        this.filled = filled;
+    }
+
     public Color getFillColor() {
         return fillColor;
     }
 
-    public Color getBorderColor() {
-        return borderColor;
+    public void setFillColor(Color fillColor) {
+        this.fillColor = fillColor;
     }
 
-    public double getBorderWidth() {
-        return borderWidth;
+    public Color getStrokeColor() {
+        return strokeColor;
+    }
+
+    public void setStrokeColor(Color strokeColor) {
+        this.strokeColor = strokeColor;
+    }
+
+    public double getStrokeThickness() {
+        return strokeThickness;
+    }
+
+    public void setStrokeThickness(double strokeThickness) {
+        this.strokeThickness = strokeThickness;
+    }
+
+    public int getVertices() {
+        return vertices;
+    }
+
+    public void setVertices(int vertices) {
+        this.vertices = vertices;
+    }
+
+    @Override
+    public String toString() {
+        return filled + "," + fillColor + "," + strokeColor + "," + strokeThickness + "," + vertices;
     }
 }
