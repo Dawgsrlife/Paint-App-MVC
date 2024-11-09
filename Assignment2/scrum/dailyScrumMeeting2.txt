@@ -127,14 +127,14 @@ Nov 7,2024
 	Obstacles I face: This is difficult bruh
 
 Nov 8,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Gave up on detecting round shapes
+	What I will do today: Nothing
+	Obstacles I face: Guilty conscience
 
 Nov 9,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing
+	What I will do today: Finish US4.017 and start US4.010
+	Obstacles I face: I have little time
 
 Nov 10,2024
 	What I did yesterday:
