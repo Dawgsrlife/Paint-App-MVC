@@ -1,6 +1,6 @@
 Pull Requests:
 
-BUG4.430    author:huaethan puller:UTORID   status:Waiting
+BUG4.430    author:huaethan puller:chen2046   status:Waiting
 US4.029     author:chen2046 puller:huaethan status:waiting
 
 US4.017     author:huaethan puller:tianji61 status:Completed
