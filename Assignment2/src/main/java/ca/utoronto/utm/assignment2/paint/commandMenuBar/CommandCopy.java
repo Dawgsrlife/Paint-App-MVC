@@ -1,25 +1,37 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
-import ca.utoronto.utm.assignment2.paint.Clipboard;
-import ca.utoronto.utm.assignment2.paint.PaintModel;
-import ca.utoronto.utm.assignment2.paint.Shape;
-import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
+import ca.utoronto.utm.assignment2.paint.*;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 
-public class CommandCopy extends MenuItem implements Command {
-    PropertiesPanel propertiesPanel;
+import java.util.ArrayList;
 
-    public CommandCopy(PropertiesPanel propertiesPanel) {
+public class CommandCopy extends MenuItem implements Command {
+
+    public CommandCopy() {
         super("copy");
-        this.propertiesPanel = propertiesPanel;
     }
 
     @Override
-    public void execute(PaintModel model, Scene scene) {
-        Shape selectedShape = propertiesPanel.getCurrentlyLoadedShape();
-        if (selectedShape != null) {
-            Clipboard.add(selectedShape);
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
+        if (controller.getShape() != null) {
+            Shape oldShape = controller.getShape();
+            Point start = new Point(oldShape.getStart().getX(), oldShape.getStart().getY());
+            Point end = new Point(oldShape.getEnd().getX(), oldShape.getEnd().getY());
+            ArrayList<Point> points = new ArrayList<>();
+            PaintProperties newProperties = new PaintProperties(
+                    oldShape.getProperties().isFilled(),
+                    oldShape.getProperties().getFillColor(),
+                    oldShape.getProperties().getStrokeColor(),
+                    oldShape.getProperties().getStrokeThickness(),
+                    oldShape.getProperties().getVertices());
+            Shape newCopy = PaintStrategy.getPaintStrategy(
+                    controller.getShape().getType(),
+                    start, end,
+                    newProperties, points);
+            controller.setShape(newCopy);
+            model.addShape(newCopy);
+            System.out.println("in");
         }
     }
 }

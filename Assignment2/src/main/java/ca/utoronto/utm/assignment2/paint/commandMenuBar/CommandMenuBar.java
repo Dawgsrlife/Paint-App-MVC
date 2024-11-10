@@ -2,7 +2,6 @@ package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
 import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
-import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -15,10 +14,12 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
 
     PaintModel model;
     Scene scene;
+    PaintController controller;
 
-    public CommandMenuBar(PropertiesPanel propertiesPanel, PaintModel model, Scene scene, PaintController controller) {
+    public CommandMenuBar(PaintModel model, Scene scene, PaintController controller) {
         this.model = model;
         this.scene = scene;
+        this.controller = controller;
         Menu menu;
         MenuItem menuItem;
         getStyleClass().add("menu-bar");
@@ -61,17 +62,17 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
         menu = new Menu("Edit");
         menu.getStyleClass().add("menu");
 
-        menuItem = new CommandCut(propertiesPanel, model, scene, controller);
+        menuItem = new CommandCut();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");
 
-        menuItem = new CommandCopy(propertiesPanel);
+        menuItem = new CommandCopy();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");
 
-        menuItem = new CommandPaste(propertiesPanel);
+        menuItem = new CommandPaste();
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");
@@ -125,7 +126,7 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
     @Override
     public void handle(ActionEvent event) {
         Command c = (Command) event.getSource();
-        c.execute(model, scene);
+        c.execute(model, scene, controller);
 
     }
 }
