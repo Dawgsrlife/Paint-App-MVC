@@ -76,7 +76,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             finalizeShape();
             System.out.println("Finished " + scp.getMode());
         }
-        lastPoint = point;
+        model.setLastPoint(point);
     }
 
     /**
