@@ -1,7 +1,8 @@
 Pull Requests:
+US4.025     author:chen2046 puller: status:waiting
+US4.029     author:chen2046 puller: status:waiting
 
-
-US4.017     author:huaethan puller:tianji61 status:Complete
+US4.017     author:huaethan puller:tianji61 status:Completed
 US4.410     author:tianji61 puller:huaethan status:Completed
 US4.210     author:tianji61 puller:huaethan status:Completed
 US4.006     author:mengale1 puller:huaethan status:Completed
