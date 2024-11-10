@@ -9,20 +9,31 @@ public class PolylineModeStrategy extends DrawModeStrategy implements ModeStrate
     }
 
     @Override
+    public void onMouseMoved(Point point) {
+        // No-op
+        // Maybe add a Polyline trail to here later!
+    }
+
+    @Override
     public void onMousePressed(Point point, boolean isPrimaryButton, boolean isSecondaryButton) {
-        if (true) {  //TODO:temp
-            // Disable the ability to do anything by pressing both buttons
-            if (isPrimaryButton && isSecondaryButton) return;
+        // Disable the ability to do anything by pressing both buttons
+        if (isPrimaryButton && isSecondaryButton) return;
 
-            if (isPrimaryButton) {
-                Shape shape = model.getCurrentShape();
+        Shape shape = model.getCurrentShape();
 
-                shape.setEnd(point);
-                model.addTempShape(shape);
-            } else if (isSecondaryButton) {
-                model.getCurrentShape().finalizeShape();
-                finalizeShape();  // from superclass
-            }
+        // TODO: handle polyline creation
+        if (shape == null) {
+            System.out.println("Make polyline work! Not yet working with this Strategy.");
+            return;
+        }
+
+        if (isPrimaryButton) {
+            shape.setEnd(point);
+            model.addTempShape(shape);
+        } else if (isSecondaryButton) {
+            shape.finalizeShape();
+            finalizeShape();  // from superclass
+            shape.setFinalized(true);  // After ending a Polyline, mark it finalized
         }
     }
 

@@ -12,6 +12,11 @@ public class SelectModeStrategy implements ModeStrategy {
     }
 
     @Override
+    public void onMouseMoved(Point point) {
+        // No-op
+    }
+
+    @Override
     public void onMousePressed(Point point, boolean isPrimaryButton, boolean isSecondaryButton) {
         // Only handle for left-clicks (or primary button usage)
         // Thus, exit if the primary button isn't used
@@ -23,6 +28,8 @@ public class SelectModeStrategy implements ModeStrategy {
 
     @Override
     public void onMouseDragged(Point point) {
+        if (model.getCurrentShape() == null) return;
+
         Shape shape = model.getCurrentShape();
         Point lastPoint = model.getLastPoint();
 

@@ -27,6 +27,7 @@ public abstract class Shape {
         this.end = end;
         this.type = type;
         this.properties = properties;
+
         this.finalized = true;
     }
 

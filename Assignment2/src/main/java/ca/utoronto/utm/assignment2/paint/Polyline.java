@@ -7,6 +7,7 @@ public class Polyline extends Squiggle {
     public Polyline(Point point, PaintProperties pp, ArrayList<Point> path) {
         super(point, pp, path);
         setType("Polyline");
+
         this.setFinalized(false);
     }
 }

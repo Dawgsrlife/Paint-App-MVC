@@ -14,31 +14,50 @@ public class DrawModeStrategy implements ModeStrategy {
     }
 
     @Override
+    public void onMouseMoved(Point point) {
+        // No-op
+    }
+
+    @Override
     public void onMousePressed(Point point, boolean isPrimaryButton, boolean isSecondaryButton) {
         // Only handle for left-clicks (or primary button usage):
         // Thus, exit if the primary button isn't used
         if (!isPrimaryButton) return;
 
-        if (!model.getTempShape().isFinalized()) finalizeShape();
+        // Relies on short-circuit evaluation:
+        if (model.getTempShape() != null && !model.getTempShape().isFinalized()) finalizeShape();
         // E.g. Polyline isn't finalized until the user right-clicks ^
         // so simply finalize it when they attempt to draw with another shape.
 
         model.setCurrentShape(PaintStrategy.getPaintStrategy(mode, point, point, properties.getPaintProperties(), null));
+
+        // TODO: remove the print statement for the final product
+        System.out.println("Started " + mode);
     }
 
     @Override
     public void onMouseDragged(Point point) {
         Shape shape = model.getCurrentShape();
+
+        if (shape == null) return;
+
         shape.setEnd(point);
         model.addTempShape(shape);
     }
 
     @Override
     public void onMouseReleased(Point point) {
+        if (model.getCurrentShape() == null) return;
+
         model.getCurrentShape().finalizeShape();
         finalizeShape();
     }
 
+    /**
+     * Finalizes a drawing process.
+     * <p>
+     * Updates the model with the shape to be created and clears the selected shape.
+     */
     public void finalizeShape() {
         Shape shape = model.getCurrentShape();
         model.addShape(shape);
