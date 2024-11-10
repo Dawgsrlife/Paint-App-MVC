@@ -58,7 +58,7 @@ SO THAT  : I can be as precise or imprecise as needed when creating erase
            strokes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.028 : UTORID : NotStarted
+TYPE     : USER STORY US4.028 : chen2046 : InProgress
 NAME     : StrokeEraser
 PRIORITY : 2
 ESTIMATE : 2 hours : ACTUAL :
