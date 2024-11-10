@@ -142,14 +142,14 @@ Nov 7,2024
 Nov 8,2024
 	What I did yesterday: Work on US4.015.
 	What I will do today: Finish US4.015. Wait other group member to pull US4.015 into master.
-	Obstacles I face:
+	Obstacles I face: Some bugs occurs on Text.
 
 Nov 9,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish US4.015.
+	What I will do today: Finish US4.025.
+	Obstacles I face: CommandPaste needed to be improved since it only pastes on the same place.
 
 Nov 10,2024
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Finish US4.025.
+	What I will do today: Finish US4.029. Fix some bugs for text features.
 	Obstacles I face:
