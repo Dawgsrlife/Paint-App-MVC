@@ -16,18 +16,6 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.220 : mengale1 : Complete
-NAME     : PaintController Does not Follow Open/Closed Principle
-PRIORITY : 3
-ESTIMATE : 2 hours ACTUAL : 3 hours
-ISSUE    : PaintController currently handles the behaviour of Polyline.
-           Ideally, PaintController uses the Strategy design method to handle
-           the modes of drawing, selecting, etc.
-           Also, Polyline should be stateless in the controller and handle
-           its responsibility of adding points and finalizing itself in its own
-           class.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : mengale1 : NotStarted
 NAME     : Editing panel
 PRIORITY : 3
@@ -578,6 +566,18 @@ AS A     : user
 I WANT   : To be able to configure the size of the PrecisionEraser stroke.
 SO THAT  : I can be as precise or imprecise as needed when creating erase
            strokes.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.220 : mengale1 : Complete
+NAME     : PaintController Does not Follow Open/Closed Principle
+PRIORITY : 3
+ESTIMATE : 2 hours ACTUAL : 3 hours
+ISSUE    : PaintController currently handles the behaviour of Polyline.
+           Ideally, PaintController uses the Strategy design method to handle
+           the modes of drawing, selecting, etc.
+           Also, Polyline should be stateless in the controller and handle
+           its responsibility of adding points and finalizing itself in its own
+           class.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
