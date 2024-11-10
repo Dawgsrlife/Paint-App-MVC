@@ -3,6 +3,7 @@ package ca.utoronto.utm.assignment2.paint.controlPanels;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import ca.utoronto.utm.assignment2.paint.Point;
 import ca.utoronto.utm.assignment2.paint.Shape;
+import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandCut;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -29,6 +30,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     private final ArrayList<Label> labels = new ArrayList<>();
     private final ArrayList<TextField> coordinates = new ArrayList<>();
     private final ArrayList<Rectangle> rectangles = new ArrayList<>();
+    private Shape currentShape;
 
     public PropertiesPanel() {
         // Background, padding styling, and gaps
@@ -204,5 +206,34 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         coordinates.get(4).setText((int)s.getEnd().getY() - s.getStart().getY() + "");
         coordinates.get(4).setDisable(false);
         updateVisualizer();
+
+        this.currentShape = s;
+    }
+
+    public Shape getCurrentlyLoadedShape(String command) {
+        if (command.equals("select")) {
+            // Return the currently selected shape
+            return currentShape;
+        } else if (command.equals("cut")) {
+            // Return the currently selected shape to be cut
+            return currentShape;
+        }
+        // Otherwise, return null since no shape is selected for cutting
+        return null;
+    }
+
+    public void clearProperties() {
+        currentShape = null;
+        // Clear text fields, reset sliders, or update the UI accordingly
+    }
+
+    public void cutSelectedShape() {
+        if (currentShape != null) {
+            // Remove the current shape from the model (assuming model reference is available)
+            //Zmodel.removeShape(currentShape);
+
+            // Clear the current shape after cutting
+            clearProperties();
+        }
     }
 }

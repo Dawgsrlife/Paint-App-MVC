@@ -10,6 +10,8 @@ public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
     private final Stack<Shape> undoStack = new Stack<>();
     private Shape tempShape;
+    private boolean cutMode = false;
+
 
 
     /**
@@ -81,4 +83,10 @@ public class PaintModel extends Observable {
         this.setChanged();
         this.notifyObservers();
     }
+
+    public void removeShape(Shape selectedShape) {
+        shapes.remove(selectedShape);
+        update();
+    }
+
 }

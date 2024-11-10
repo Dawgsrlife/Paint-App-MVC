@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
+import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
+import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -14,13 +16,13 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
     PaintModel model;
     Scene scene;
 
-    public CommandMenuBar(PaintModel model, Scene scene) {
-
+    public CommandMenuBar(PropertiesPanel propertiesPanel, PaintModel model, Scene scene, PaintController controller) {
         this.model = model;
         this.scene = scene;
         Menu menu;
         MenuItem menuItem;
         getStyleClass().add("menu-bar");
+
 
         // A menu for File
 
@@ -53,12 +55,13 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
 
         getMenus().add(menu);
 
+
         // Another menu for Edit
 
         menu = new Menu("Edit");
         menu.getStyleClass().add("menu");
 
-        menuItem = new MenuItem("Cut");
+        menuItem = new CommandCut(propertiesPanel, model, scene, controller);
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");
@@ -123,5 +126,6 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
     public void handle(ActionEvent event) {
         Command c = (Command) event.getSource();
         c.execute(model, scene);
+
     }
 }

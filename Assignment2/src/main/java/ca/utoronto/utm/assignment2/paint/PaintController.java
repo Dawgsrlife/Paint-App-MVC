@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandCut;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import javafx.event.EventHandler;
@@ -94,4 +95,10 @@ public class PaintController implements EventHandler<MouseEvent> {
     public void persistTextBox(Text textShape) {
         model.addShape(textShape);
     }
+
+    public void removeShape(Shape selectedShape) {
+            model.removeShape(selectedShape);
+    }
+
 }
+
