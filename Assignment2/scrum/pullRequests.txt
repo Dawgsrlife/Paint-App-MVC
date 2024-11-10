@@ -15,6 +15,8 @@ BUG3.013    author:mengale1 puller:huaethan status:Completed
 US3.008     author:huaethan puller:mengale1 status:Completed
 US3.009     author:mengale1 puller:huaethan status:Completed
 US3.026     author:mengale1 puller:tianji61 status:Completed
+US4.010     author:huaethan puller:tianji61 status:Completed
+US4.027     author:mengale1 puller:tianji61 status:Completed
 BUG4.015    author:mengale1 puller:tianji61 status:Completed
 BUG4.014    author:tianji61 puller:mengale1 status:Completed
 US4.100     author:tuanji61 puller:mengale1 status:Completed
@@ -24,4 +26,3 @@ US4.103     author:tianji61 puller:mengale1 status:Completed
 US4.015     author:chen2046 puller:tianji61 status:Completed
 US4.420     author:tianji61 puller:chen2046 status:Completed
 US4.025     author:chen2046 puller:tianji61 status:Completed
-US4.010     author:huaethan puller:tianji61 status:Completed

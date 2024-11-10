@@ -35,16 +35,6 @@ I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of a shapes I drew.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.027 : mengale1 : InProgress
-NAME     : PrecisionEraser size configuration
-PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : To be able to configure the size of the PrecisionEraser stroke.
-SO THAT  : I can be as precise or imprecise as needed when creating erase
-           strokes.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.028 : chen2046 : InProgress
 NAME     : StrokeEraser
 PRIORITY : 2
@@ -576,6 +566,16 @@ I WANT   : To be able to select a Highlighter tool and use it to draw on the
            between the new highlighter stroke and the existing strokes.
 SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.027 : mengale1 : Completed
+NAME     : PrecisionEraser size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 15 minutes
+AS A     : user
+I WANT   : To be able to configure the size of the PrecisionEraser stroke.
+SO THAT  : I can be as precise or imprecise as needed when creating erase
+           strokes.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
