@@ -16,14 +16,16 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.220 : mengale1 : InProgress
-NAME     : Polyline Structure Is Not Optimized
+TYPE     : BUG BUG4.220 : mengale1 : Complete
+NAME     : PaintController Does not Follow Open/Closed Principle
 PRIORITY : 3
-ESTIMATE : 30 mins   ACTUAL :
+ESTIMATE : 2 hours ACTUAL : 3 hours
 ISSUE    : PaintController currently handles the behaviour of Polyline.
-           Ideally, Polyline should be stateless in the controller and handle
+           Ideally, PaintController uses the Strategy design method to handle
+           the modes of drawing, selecting, etc.
+           Also, Polyline should be stateless in the controller and handle
            its responsibility of adding points and finalizing itself in its own
-            class.
+           class.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : mengale1 : NotStarted
