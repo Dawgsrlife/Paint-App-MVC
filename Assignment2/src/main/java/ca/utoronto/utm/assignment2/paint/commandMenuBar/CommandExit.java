@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
+import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
 import javafx.application.Platform;
 import javafx.scene.Scene;
@@ -12,7 +13,7 @@ public class CommandExit extends MenuItem implements Command {
     }
 
     @Override
-    public void execute(PaintModel model, Scene scene) {
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
         Platform.exit();
     }
 }

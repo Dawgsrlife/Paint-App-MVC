@@ -1,8 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.controlPanels;
 
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
-import ca.utoronto.utm.assignment2.paint.Point;
-import ca.utoronto.utm.assignment2.paint.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -60,7 +60,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
         this.add(rectangles.getLast(), 2, 2);
 
-        this.add(new Label("Border Color"), 0, 7);
+        this.add(new Label("Stroke Color"), 0, 7);
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
         this.add(rectangles.getLast(), 2, 7);
 

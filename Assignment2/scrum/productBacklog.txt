@@ -26,19 +26,6 @@ ISSUE    : PaintController currently handles the behaviour of Polyline.
             class.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.010 : huaethan : NotStarted
-NAME     : Highlighter
-PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL :
-AS A     : user
-I WANT   : To be able to select a Highlighter tool and use it to draw on the
-           canvas. If there is already shapes and squiggles, or even former
-           highlighter strokes, darken the shade of the intersecting regions
-           between the new highlighter stroke and the existing strokes.
-SO THAT  : I can highlight important parts of the canvas or use the tool for
-           unique visual effects.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : mengale1 : NotStarted
 NAME     : Editing panel
 PRIORITY : 3
@@ -46,16 +33,6 @@ ESTIMATE : 2 hours : ACTUAL :
 AS A     : user
 I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of a shapes I drew.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.027 : mengale1 : InProgress
-NAME     : PrecisionEraser size configuration
-PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
-AS A     : user
-I WANT   : To be able to configure the size of the PrecisionEraser stroke.
-SO THAT  : I can be as precise or imprecise as needed when creating erase
-           strokes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : USER STORY US4.028 : chen2046 : InProgress
@@ -66,6 +43,14 @@ AS A     : user
 I WANT   : To be able to erase strokes drawn on the canvas
 SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
            away at them using a PrecisionEraser
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.430 : huaethan : Completed
+NAME     : SmartShape is not selectable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+ISSUE    : The selection tool is not functional when trying to select
+           a SmartShape
 --------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
@@ -568,6 +553,29 @@ I WANT   : To be able to cut, copy and paste on the canvas based on the mouse
 SO THAT  : I can copy with keyboard(Ctrl + C).
            I can paste with keyboard(Ctrl + V).
            I can cut with keyboard(Ctrl + X).
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.010 : huaethan : Completed
+NAME     : Highlighter
+PRIORITY : 3
+ESTIMATE : 30 minutes : ACTUAL : 30 minutes
+AS A     : user
+I WANT   : To be able to select a Highlighter tool and use it to draw on the
+           canvas. If there is already shapes and squiggles, or even former
+           highlighter strokes, darken the shade of the intersecting regions
+           between the new highlighter stroke and the existing strokes.
+SO THAT  : I can highlight important parts of the canvas or use the tool for
+           unique visual effects.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.027 : mengale1 : Completed
+NAME     : PrecisionEraser size configuration
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL : 15 minutes
+AS A     : user
+I WANT   : To be able to configure the size of the PrecisionEraser stroke.
+SO THAT  : I can be as precise or imprecise as needed when creating erase
+           strokes.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

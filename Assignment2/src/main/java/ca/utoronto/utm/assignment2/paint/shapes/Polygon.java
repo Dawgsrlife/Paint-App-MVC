@@ -1,5 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ public class Polygon extends Shape {
     }
 
     @Override
-    void paint(GraphicsContext g2d) {
+    public void paint(GraphicsContext g2d) {
         if (getProperties().getStrokeThickness() != 0.0) {
             g2d.setStroke(getProperties().getStrokeColor());
             g2d.setLineWidth(getProperties().getStrokeThickness());
@@ -32,10 +33,10 @@ public class Polygon extends Shape {
 
     @Override
     public double[] getPaintInfo() {
-        double radius = Math.sqrt(Math.pow(getStart().x - getEnd().x, 2) +
-                Math.pow(getStart().y - getEnd().y, 2));
-        double theta = Math.atan((getStart().y - getEnd().y) / (getStart().x - getEnd().x));
-        return new double[]{getStart().x, getStart().y, radius, theta};
+        double radius = Math.sqrt(Math.pow(getStart().getX() - getEnd().getX(), 2) +
+                Math.pow(getStart().getY() - getEnd().getY(), 2));
+        double theta = Math.atan((getStart().getY() - getEnd().getY()) / (getStart().getX() - getEnd().getX()));
+        return new double[]{getStart().getX(), getStart().getY(), radius, theta};
     }
 
     public ArrayList<double[]> getPaintInfo(double border) {
@@ -51,13 +52,13 @@ public class Polygon extends Shape {
     }
 
     @Override
-    boolean includeCursor(Point p) {
+    public boolean includeCursor(Point p) {
         javafx.scene.shape.Polygon outer = getFxPolygon(- getProperties().getStrokeThickness() / 2);
         if (getProperties().isFilled()) {
-            return outer.contains(p.x, p.y);
+            return outer.contains(p.getX(), p.getY());
         }
         javafx.scene.shape.Polygon inner = getFxPolygon(getProperties().getStrokeThickness() / 2);
-        return outer.contains(p.x, p.y) & !inner.contains(p.x, p.y);
+        return outer.contains(p.getX(), p.getY()) & !inner.contains(p.getX(), p.getY());
     }
 
     private javafx.scene.shape.Polygon getFxPolygon(double border) {
@@ -70,5 +71,13 @@ public class Polygon extends Shape {
             count++;
         }
         return new javafx.scene.shape.Polygon(vertices);
+    }
+
+    @Override
+    public void move(double dx, double dy) {
+        getStart().setX(getStart().getX() + dx);
+        getStart().setY(getStart().getY() + dy);
+        getEnd().setX(getEnd().getX() + dx);
+        getEnd().setY(getEnd().getY() + dy);
     }
 }

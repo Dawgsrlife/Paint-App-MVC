@@ -2,6 +2,10 @@ package ca.utoronto.utm.assignment2.paint;
 
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Polyline;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Text;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
@@ -74,5 +78,13 @@ public class PaintController implements EventHandler<MouseEvent> {
      */
     public void persistTextBox(Text textShape) {
         model.addShape(textShape);
+    }
+
+    public Shape getShape() {
+        return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
     }
 }

@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
-import javafx.scene.shape.Circle;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -97,5 +98,14 @@ public class PaintModel extends Observable {
     public void update() {
         this.setChanged();
         this.notifyObservers();
+    }
+
+    public void removeShape(Shape selectedShape) {
+        shapes.remove(selectedShape);
+        update();
+    }
+
+    public void addUndoStack(Shape selectedShape) {
+        undoStack.push(selectedShape);
     }
 }
