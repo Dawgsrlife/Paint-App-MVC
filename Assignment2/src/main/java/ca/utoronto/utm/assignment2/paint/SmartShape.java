@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
@@ -46,6 +47,10 @@ public class SmartShape extends Squiggle {
         return Math.acos(normedDotProduct);
     }
 
+    private double getSlope(Point a, Point b) {
+        return (a.getY() - b.getY()) / (a.getX() - b.getX());
+    }
+
     @Override
     public void setEnd(Point point) {
         tempPoints.add(point);
@@ -78,6 +83,55 @@ public class SmartShape extends Squiggle {
             g2d.setFill(pp.getFillColor());
             g2d.fillPolygon(xArr, yArr, numPoints);
         }
+    }
+
+    @Override
+    public boolean includeCursor(Point p) {
+        ArrayList<Point> points = this.getPoints();
+        if(points.isEmpty()) return false;
+        if(isSquiggle) return super.includeCursor(p);
+        if(getProperties().isFilled()) {
+            javafx.scene.shape.Polygon polygon = getFxPolygon();
+            return polygon.contains(p.getX(), p.getY());
+        }
+
+        for(int i = 0; i < points.size(); i++) {
+            Point a, b;
+            if(i == 0) {
+                a = points.getFirst();
+                b = points.getLast();
+            }
+            else {
+                a = points.get(i);
+                b = points.get(i-1);
+            }
+            Point c = getVector(a,b);
+            Point zero = new Point(0, 0);
+            Point normalVector = new Point(a.getY() / dist(a, zero), - a.getX() / dist(a, zero));
+            double border = getProperties().getStrokeThickness() / 2;
+            double[] temp = {
+                b.getX() + border * normalVector.getX(),
+                b.getY() + border * normalVector.getY(),
+                b.getX() - border * normalVector.getX(),
+                b.getY() - border * normalVector.getY(),
+                a.getX() - border * normalVector.getX(),
+                a.getY() - border * normalVector.getY(),
+                a.getX() + border * normalVector.getX(),
+                a.getY() + border * normalVector.getY()
+            };
+            javafx.scene.shape.Polygon line = new javafx.scene.shape.Polygon(temp);
+            if(line.contains(p.getX(), p.getY())) return true;
+        }
+        return false;
+    }
+
+    private javafx.scene.shape.Polygon getFxPolygon() {
+        double[] vertices = new double[this.getPoints().size() * 2];
+        for(int i = 0; i < this.getPoints().size(); i++) {
+            vertices[2*i] = this.getPoints().get(i).getX();
+            vertices[2*i+1] = this.getPoints().get(i).getY();
+        }
+        return new javafx.scene.shape.Polygon(vertices);
     }
 
     /**
@@ -122,6 +176,7 @@ public class SmartShape extends Squiggle {
                 currVertex = extremePoint;
             }
         }
+
         if(getRelativeAngle(vertices.getFirst(), vertices.getLast(), tempPoints.getFirst()) < SLOPE_LENIENCE)
             vertices.add(tempPoints.getFirst());
 
