@@ -67,6 +67,14 @@ I WANT   : To be able to erase strokes drawn on the canvas
 SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
            away at them using a PrecisionEraser
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.430 : huaethan : InProgress
+NAME     : SmartShape is not selectable
+PRIORITY : 1
+ESTIMATE : 1 hour : ACTUAL :
+ISSUE    : The selection tool is not functional when trying to select
+           a SmartShape
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
