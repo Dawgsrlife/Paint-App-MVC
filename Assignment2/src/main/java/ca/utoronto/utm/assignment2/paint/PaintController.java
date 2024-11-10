@@ -99,6 +99,5 @@ public class PaintController implements EventHandler<MouseEvent> {
     public void removeShape(Shape selectedShape) {
             model.removeShape(selectedShape);
     }
-
 }
 

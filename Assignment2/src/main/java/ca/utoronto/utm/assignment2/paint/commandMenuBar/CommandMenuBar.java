@@ -66,12 +66,12 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");
 
-        menuItem = new MenuItem("Copy");
+        menuItem = new CommandCopy(propertiesPanel);
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");
 
-        menuItem = new MenuItem("Paste");
+        menuItem = new CommandPaste(propertiesPanel);
         menuItem.setOnAction(this);
         menu.getItems().add(menuItem);
         menuItem.getStyleClass().add("menu-item");

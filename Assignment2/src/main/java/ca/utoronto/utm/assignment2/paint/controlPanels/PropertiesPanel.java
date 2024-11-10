@@ -211,20 +211,11 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     }
 
     public Shape getCurrentlyLoadedShape(String command) {
-        if (command.equals("select")) {
-            // Return the currently selected shape
-            return currentShape;
-        } else if (command.equals("cut")) {
-            // Return the currently selected shape to be cut
-            return currentShape;
-        }
-        // Otherwise, return null since no shape is selected for cutting
-        return null;
+        return this.currentShape;
     }
 
-    public void clearProperties() {
+    public void clearCLS() {
         currentShape = null;
-        // Clear text fields, reset sliders, or update the UI accordingly
     }
 
     public void cutSelectedShape() {
@@ -233,7 +224,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
             //Zmodel.removeShape(currentShape);
 
             // Clear the current shape after cutting
-            clearProperties();
+            clearCLS();
         }
     }
 }

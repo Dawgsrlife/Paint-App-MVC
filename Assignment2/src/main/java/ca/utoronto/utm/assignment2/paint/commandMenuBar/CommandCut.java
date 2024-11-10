@@ -33,10 +33,8 @@ public class CommandCut extends MenuItem implements Command {
         Shape selectedShape = propertiesPanel.getCurrentlyLoadedShape("cut");
 
         if (selectedShape != null) {
-            //Clipboard.add(selectedShape);
-
             controller.removeShape(selectedShape);
-            propertiesPanel.clearProperties();
+            propertiesPanel.clearCLS();
             scene.getRoot().requestLayout();
             System.out.println("Cut operation completed.");
 
