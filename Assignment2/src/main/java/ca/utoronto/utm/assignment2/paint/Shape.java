@@ -68,4 +68,6 @@ public abstract class Shape {
     public String toString() {
         return start + "," + end+ "," + type + "," + properties;
     }
+
+    public void finalizeShape() {}
 }

@@ -62,10 +62,12 @@ public class PaintController implements EventHandler<MouseEvent> {
                 textShape.activateTextField(canvasPane, this);  // Display the TextField after drawing the text box
             } else {
                 // Finalize and add the shape to the model for other modes
+                this.shape.finalizeShape();
                 finalizeShape();
             }
         } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown() & !scp.getMode().equals("select")) {
             // finalize by putting shape into models array (polyline)
+            this.shape.finalizeShape();
             finalizeShape();
             System.out.println("Finished " + scp.getMode());
         }
