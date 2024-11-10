@@ -39,28 +39,6 @@ SO THAT  : I can highlight important parts of the canvas or use the tool for
            unique visual effects.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.015 : chen2046 : InProgress
-NAME     : Text Tool
-PRIORITY : 3
-ESTIMATE : 3 hour : ACTUAL :
-AS A     : user
-I WANT   : Click on the Text button to display a text box that can be moved
-           to the corresponding position on the canvas, and in the text box
-           you can enter the desired words.
-SO THAT  : I can insert text on the canvas and customize its appearance
-           like font and color.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.017 : huaethan : InProgress
-NAME     : Smart Shape Snapping
-PRIORITY : 3
-ESTIMATE : 3 days : ACTUAL :
-AS A     : user
-I WANT   : To be able to draw a squiggle that resembles a shape and have the
-           program automatically turn it into a polygon
-SO THAT  : I can draw a variety of shapes quickly and easily
---------------------------------------------------------------------------
---------------------------------------------------------------------------
 TYPE     : USER STORY US4.023 : mengale1 : NotStarted
 NAME     : Editing panel
 PRIORITY : 3
@@ -546,6 +524,38 @@ AS A     : user
 I WANT   : A satisfying GUI that isn't just the basic old look of JavaFX
 SO THAT  : I can enjoy a paint application with a sleek and modern look and
            feel.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.015 : chen2046 : InProgress
+NAME     : Text Tool
+PRIORITY : 3
+ESTIMATE : 3 hour : ACTUAL : 2 days
+AS A     : user
+I WANT   : Click on the Text button to display a text box that can be moved
+           to the corresponding position on the canvas, and in the text box
+           you can enter the desired words.
+SO THAT  : I can insert text on the canvas and customize its appearance
+           like font and color.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.017 : huaethan : InProgress
+NAME     : Smart Shape Snapping
+PRIORITY : 3
+ESTIMATE : 3 days : ACTUAL : 1 week
+AS A     : user
+I WANT   : To be able to draw a squiggle that resembles a shape and have the
+           program automatically turn it into a polygon
+SO THAT  : I can draw a variety of shapes quickly and easily
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.420 : tianji61 : Complete
+NAME     : Drag a shape
+PRIORITY : 2
+ESTIMATE : 1 hour : ACTUAL : 1 hour
+AS A     : user
+I WANT   : Manipulate a shape's location.
+SO THAT  : I can drag a selected shape around the canvas, place it where
+           ever I want it to be.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
