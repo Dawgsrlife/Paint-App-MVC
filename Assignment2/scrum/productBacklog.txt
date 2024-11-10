@@ -55,10 +55,10 @@ SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
            away at them using a PrecisionEraser
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.430 : huaethan : InProgress
+TYPE     : BUG BUG4.430 : huaethan : Completed
 NAME     : SmartShape is not selectable
 PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
+ESTIMATE : 1 hour : ACTUAL : 1 hour
 ISSUE    : The selection tool is not functional when trying to select
            a SmartShape
 --------------------------------------------------------------------------
