@@ -100,4 +100,13 @@ public class PaintController implements EventHandler<MouseEvent> {
     public void persistTextBox(Text textShape) {
         model.addShape(textShape);
     }
+
+    public Shape getShape() {
+        return shape;
+    }
+
+    public void setShape(Shape shape) {
+        this.shape = shape;
+    }
 }
+

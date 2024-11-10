@@ -33,11 +33,12 @@ public class Paint extends Application {
         Pane canvasPane = new Pane();
 
         this.model = new PaintModel();
-        menuBar = new CommandMenuBar(model, scene);
+
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
         this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
         this.view = new PaintView(model, controller, canvasPane);
+        menuBar = new CommandMenuBar(propertiesPanel,this.model, scene, controller);
 
         root.setTop(menuBar);
         root.setCenter(view);

@@ -17,7 +17,7 @@ public class CommandOpen extends MenuItem implements Command {
         super("Open");
     }
     @Override
-    public void execute(PaintModel model, Scene scene) {
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
         FileChooser fc = new FileChooser();
         fc.setTitle("Open canvas");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("A2S", "*.a2s"));

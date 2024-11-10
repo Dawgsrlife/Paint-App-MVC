@@ -1,4 +1,37 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
-public class CommandCopy {
+import ca.utoronto.utm.assignment2.paint.*;
+import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
+
+import java.util.ArrayList;
+
+public class CommandCopy extends MenuItem implements Command {
+
+    public CommandCopy() {
+        super("copy");
+    }
+
+    @Override
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
+        if (controller.getShape() != null) {
+            Shape oldShape = controller.getShape();
+            Point start = new Point(oldShape.getStart().getX(), oldShape.getStart().getY());
+            Point end = new Point(oldShape.getEnd().getX(), oldShape.getEnd().getY());
+            ArrayList<Point> points = new ArrayList<>();
+            PaintProperties newProperties = new PaintProperties(
+                    oldShape.getProperties().isFilled(),
+                    oldShape.getProperties().getFillColor(),
+                    oldShape.getProperties().getStrokeColor(),
+                    oldShape.getProperties().getStrokeThickness(),
+                    oldShape.getProperties().getVertices());
+            Shape newCopy = PaintStrategy.getPaintStrategy(
+                    controller.getShape().getType(),
+                    start, end,
+                    newProperties, points);
+            controller.setShape(newCopy);
+            model.addShape(newCopy);
+            System.out.println("in");
+        }
+    }
 }

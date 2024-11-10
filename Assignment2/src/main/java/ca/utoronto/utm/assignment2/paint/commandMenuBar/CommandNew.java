@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
+import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -11,7 +12,7 @@ public class CommandNew extends MenuItem implements Command {
         super("New");
     }
     @Override
-    public void execute(PaintModel model, Scene scene) {
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "Are you sure you want to create a new canvas? \n" +
                         "Unsaved changes cannot be restored.",
