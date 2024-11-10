@@ -199,6 +199,9 @@ Nov 9,2024
 	                  new implementations by group members.
 
 Nov 10,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Have STA256 term test. Progress on BUG4.220 and
+                          handle pull requests.
+	What I will do today: Complete BUG4.220. Handle pull requests. Complete the
+	                      rest of the tasks assigned in productBacklog.txt
+	Obstacles I face:     Implementing design patterns through moving all
+                          necessary fields around; adjusting architecture.
