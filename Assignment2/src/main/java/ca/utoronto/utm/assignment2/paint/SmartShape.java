@@ -107,17 +107,22 @@ public class SmartShape extends Squiggle {
             }
             Point c = getVector(a,b);
             Point zero = new Point(0, 0);
-            Point normalVector = new Point(c.getY() / dist(c, zero), - c.getX() / dist(c, zero));
-            double border = getProperties().getStrokeThickness();
+
+            // normalize this vector
+            c.setX(c.getX() / dist(c, zero));
+            c.setY(c.getY() / dist(c, zero));
+
+            Point normalVector = new Point(c.getY(), - c.getX());
+            double border = getProperties().getStrokeThickness() / 2;
             double[] temp = {
-                b.getX() + border * normalVector.getX(),
-                b.getY() + border * normalVector.getY(),
-                b.getX() - border * normalVector.getX(),
-                b.getY() - border * normalVector.getY(),
-                a.getX() - border * normalVector.getX(),
-                a.getY() - border * normalVector.getY(),
-                a.getX() + border * normalVector.getX(),
-                a.getY() + border * normalVector.getY()
+                b.getX() + border * normalVector.getX() - border * c.getX(),
+                b.getY() + border * normalVector.getY() - border * c.getY(),
+                b.getX() - border * normalVector.getX() - border * c.getX(),
+                b.getY() - border * normalVector.getY() - border * c.getY(),
+                a.getX() - border * normalVector.getX() + border * c.getX(),
+                a.getY() - border * normalVector.getY() + border * c.getY(),
+                a.getX() + border * normalVector.getX() + border * c.getX(),
+                a.getY() + border * normalVector.getY() + border * c.getY()
             };
             javafx.scene.shape.Polygon line = new javafx.scene.shape.Polygon(temp);
             if(line.contains(p.getX(), p.getY())) return true;
