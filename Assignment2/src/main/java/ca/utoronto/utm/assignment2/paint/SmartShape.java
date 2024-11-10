@@ -107,8 +107,8 @@ public class SmartShape extends Squiggle {
             }
             Point c = getVector(a,b);
             Point zero = new Point(0, 0);
-            Point normalVector = new Point(a.getY() / dist(a, zero), - a.getX() / dist(a, zero));
-            double border = getProperties().getStrokeThickness() / 2;
+            Point normalVector = new Point(c.getY() / dist(c, zero), - c.getX() / dist(c, zero));
+            double border = getProperties().getStrokeThickness();
             double[] temp = {
                 b.getX() + border * normalVector.getX(),
                 b.getY() + border * normalVector.getY(),
