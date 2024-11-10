@@ -143,7 +143,7 @@ Nov 9,2024
 
 Nov 10,2024
 	What I did yesterday: Implemented US4.101
-	What I will do today: Remove the stage property handler in Paint.java, fully implement US4.410
+	What I will do today: Remove the stage property handler in Paint.java, fully implement US4.410, implement US4.420
 	Obstacles I face: Tried to apply smooth transitions on the elements, but would rely on a lot of
 	                  stuff nothing related to this assignment, thus gave up at the end.
 
