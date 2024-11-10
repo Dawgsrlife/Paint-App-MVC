@@ -1,8 +1,8 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Polyline;
 
 import java.util.ArrayList;
 
@@ -30,7 +30,7 @@ public class Squiggle extends Shape {
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);
-            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+            g2d.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
         }
     }
 
@@ -45,10 +45,10 @@ public class Squiggle extends Shape {
     }
 
     @Override
-    boolean includeCursor(Point p) {
+    public boolean includeCursor(Point p) {
         for (Point point : points) {
-            Ellipse strokePoint = new Ellipse(point.x, point.y, getProperties().getStrokeThickness(), getProperties().getStrokeThickness());
-            if (strokePoint.contains(p.x, p.y)) {
+            Ellipse strokePoint = new Ellipse(point.getX(), point.getY(), getProperties().getStrokeThickness(), getProperties().getStrokeThickness());
+            if (strokePoint.contains(p.getX(), p.getY())) {
                 System.out.println("in");
                 return true;
             }
@@ -73,5 +73,13 @@ public class Squiggle extends Shape {
             if (!p.equals(getStart())) path.append(",").append(p);
         }
         return super.toString() + path;
+    }
+
+    @Override
+    public void move(double dx, double dy) {
+        for (Point p : getPoints()) {
+            p.setX(p.getX() + dx);
+            p.setY(p.getY() + dy);
+        }
     }
 }

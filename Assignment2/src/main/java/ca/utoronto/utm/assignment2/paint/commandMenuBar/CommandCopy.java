@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 
@@ -19,6 +21,9 @@ public class CommandCopy extends MenuItem implements Command {
             Point start = new Point(oldShape.getStart().getX(), oldShape.getStart().getY());
             Point end = new Point(oldShape.getEnd().getX(), oldShape.getEnd().getY());
             ArrayList<Point> points = new ArrayList<>();
+            for (Point point : oldShape.getPoints()) {
+                points.add(new Point(point.getX(), point.getY()));
+            }
             PaintProperties newProperties = new PaintProperties(
                     oldShape.getProperties().isFilled(),
                     oldShape.getProperties().getFillColor(),
@@ -31,7 +36,6 @@ public class CommandCopy extends MenuItem implements Command {
                     newProperties, points);
             controller.setShape(newCopy);
             model.addShape(newCopy);
-            System.out.println("in");
         }
     }
 }

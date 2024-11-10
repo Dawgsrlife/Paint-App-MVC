@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;

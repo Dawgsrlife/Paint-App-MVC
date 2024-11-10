@@ -10,6 +10,7 @@ module ca.utoronto.utm.assignment2 {
     exports ca.utoronto.utm.assignment2.paint;
     exports ca.utoronto.utm.assignment2.paint.controlPanels;
     exports ca.utoronto.utm.assignment2.paint.commandMenuBar;
+    exports ca.utoronto.utm.assignment2.paint.shapes;
 
 
 }

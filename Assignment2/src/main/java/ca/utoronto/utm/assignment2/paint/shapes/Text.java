@@ -1,5 +1,7 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintController;
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
@@ -31,15 +33,15 @@ public class Text extends Rectangle {
     private void setupTextField(Point start) {
         this.textField = new TextField();
         this.textField.setPromptText("Enter text");
-        this.textField.setLayoutX(start.x);
-        this.textField.setLayoutY(start.y);
+        this.textField.setLayoutX(start.getX());
+        this.textField.setLayoutY(start.getY());
         this.textField.setFont(font);
         this.textField.setVisible(true);
         this.textField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black;");
     }
 
     @Override
-    void paint(GraphicsContext g2d) {
+    public void paint(GraphicsContext g2d) {
         double[] info = getPaintInfo();
 
         if (getProperties().getStrokeThickness() != 0.0) {

@@ -1,5 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
@@ -20,7 +21,7 @@ public class Rectangle extends Shape {
     }
 
     @Override
-    void paint(GraphicsContext g2d) {
+    public void paint(GraphicsContext g2d) {
         if (getProperties().getStrokeThickness() != 0.0) {
             g2d.setStroke(getProperties().getStrokeColor());
             g2d.setLineWidth(getProperties().getStrokeThickness());
@@ -43,15 +44,15 @@ public class Rectangle extends Shape {
 
     @Override
     protected double[] getPaintInfo() {
-        double startX = Math.min(getStart().x, getEnd().x);
-        double startY = Math.min(getStart().y, getEnd().y);
-        double width = Math.abs(getEnd().x - getStart().x);
-        double height = Math.abs(getEnd().y - getStart().y);
+        double startX = Math.min(getStart().getX(), getEnd().getX());
+        double startY = Math.min(getStart().getY(), getEnd().getY());
+        double width = Math.abs(getEnd().getX() - getStart().getX());
+        double height = Math.abs(getEnd().getY() - getStart().getY());
         return new double[]{startX, startY, width, height};
     }
 
     @Override
-    boolean includeCursor(Point p) {
+    public boolean includeCursor(Point p) {
         double[] info = getPaintInfo();
         javafx.scene.shape.Rectangle outer = new javafx.scene.shape.Rectangle(
                 info[0] - getProperties().getStrokeThickness() / 2,
@@ -59,8 +60,8 @@ public class Rectangle extends Shape {
                 info[2] + getProperties().getStrokeThickness(),
                 info[3] + getProperties().getStrokeThickness());
         if (getProperties().isFilled()) {
-            System.out.println(outer.contains(p.x, p.y));
-            return outer.contains(p.x, p.y);
+            System.out.println(outer.contains(p.getX(), p.getY()));
+            return outer.contains(p.getX(), p.getY());
         }
         javafx.scene.shape.Rectangle inner = new javafx.scene.shape.Rectangle(
                 info[0] + getProperties().getStrokeThickness() / 2,
@@ -68,6 +69,14 @@ public class Rectangle extends Shape {
                 info[2] - getProperties().getStrokeThickness(),
                 info[3] - getProperties().getStrokeThickness()
         );
-        return outer.contains(p.x, p.y) & !inner.contains(p.x, p.y);
+        return outer.contains(p.getX(), p.getY()) & !inner.contains(p.getX(), p.getY());
+    }
+
+    @Override
+    public void move(double dx, double dy) {
+        getStart().setX(getStart().getX() + dx);
+        getStart().setY(getStart().getY() + dy);
+        getEnd().setX(getEnd().getX() + dx);
+        getEnd().setY(getEnd().getY() + dy);
     }
 }

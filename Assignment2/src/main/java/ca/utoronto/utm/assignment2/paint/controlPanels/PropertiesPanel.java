@@ -1,8 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.controlPanels;
 
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
-import ca.utoronto.utm.assignment2.paint.Point;
-import ca.utoronto.utm.assignment2.paint.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;

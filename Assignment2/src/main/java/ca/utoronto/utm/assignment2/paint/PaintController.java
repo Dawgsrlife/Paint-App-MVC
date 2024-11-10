@@ -2,6 +2,10 @@ package ca.utoronto.utm.assignment2.paint;
 
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Polyline;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Text;
 import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
@@ -50,10 +54,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
             if (scp.getMode().equals("select") & this.shape != null) {
-                shape.getStart().setX(shape.getStart().getX() + point.x - lastPoint.x);
-                shape.getStart().setY(shape.getStart().getY() + point.y - lastPoint.y);
-                shape.getEnd().setX(shape.getEnd().getX() + point.x - lastPoint.x);
-                shape.getEnd().setY(shape.getEnd().getY() + point.y - lastPoint.y);
+                shape.move(point.getX() - lastPoint.getX(), point.getY() - lastPoint.getY());
                 model.update();
             } else if (this.shape != null){
                 // update shape ending point on MOUSE_DRAGGED

@@ -1,5 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.shapes.*;
+
 import java.util.ArrayList;
 
 public class PaintStrategy {

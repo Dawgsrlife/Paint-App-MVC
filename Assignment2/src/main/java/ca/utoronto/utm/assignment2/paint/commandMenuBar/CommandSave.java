@@ -2,7 +2,7 @@ package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
 import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
-import ca.utoronto.utm.assignment2.paint.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;

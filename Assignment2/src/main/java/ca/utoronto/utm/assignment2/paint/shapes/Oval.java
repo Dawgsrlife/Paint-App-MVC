@@ -1,5 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Ellipse;
 
@@ -10,7 +11,7 @@ public class Oval extends Shape {
     }
 
     @Override
-    void paint(GraphicsContext g2d) {
+    public void paint(GraphicsContext g2d) {
         if (getProperties().getStrokeThickness() != 0.0) {
             g2d.setStroke(getProperties().getStrokeColor());
             g2d.setLineWidth(getProperties().getStrokeThickness());
@@ -33,25 +34,33 @@ public class Oval extends Shape {
 
     @Override
     protected double[] getPaintInfo() {
-        double startX = Math.min(getStart().x, getEnd().x);
-        double startY = Math.min(getStart().y, getEnd().y);
-        double width = Math.abs(getEnd().x - getStart().x);
-        double height = Math.abs(getEnd().y - getStart().y);
+        double startX = Math.min(getStart().getX(), getEnd().getX());
+        double startY = Math.min(getStart().getY(), getEnd().getY());
+        double width = Math.abs(getEnd().getX() - getStart().getX());
+        double height = Math.abs(getEnd().getY() - getStart().getY());
         return new double[]{startX, startY, width, height};
     }
 
     @Override
-    boolean includeCursor(Point p) {
+    public boolean includeCursor(Point p) {
         double[] info = getPaintInfo();
         Ellipse outer = new Ellipse(info[0] + (info[2] / 2), info[1] + (info[3] / 2),
                 info[2] / 2 + getProperties().getStrokeThickness() / 2,
                 info[3] / 2 + getProperties().getStrokeThickness() / 2);
         if (getProperties().isFilled()) {
-            return outer.contains(p.x, p.y);
+            return outer.contains(p.getX(), p.getY());
         }
         Ellipse inner = new Ellipse(info[0] + (info[2] / 2), info[1] + (info[3] / 2),
                 info[2] / 2 - getProperties().getStrokeThickness() / 2,
                 info[3] / 2 - getProperties().getStrokeThickness() / 2);
-        return outer.contains(p.x, p.y) & !inner.contains(p.x, p.y);
+        return outer.contains(p.getX(), p.getY()) & !inner.contains(p.getX(), p.getY());
+    }
+
+    @Override
+    public void move(double dx, double dy) {
+        getStart().setX(getStart().getX() + dx);
+        getStart().setY(getStart().getY() + dy);
+        getEnd().setX(getEnd().getX() + dx);
+        getEnd().setY(getEnd().getY() + dy);
     }
 }

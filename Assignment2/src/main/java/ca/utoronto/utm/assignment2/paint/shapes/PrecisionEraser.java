@@ -1,5 +1,7 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
+import ca.utoronto.utm.assignment2.paint.PaintView;
 import javafx.scene.canvas.GraphicsContext;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class PrecisionEraser extends Squiggle {
         for (int i = 0; i < getPoints().size() - 1; i++) {
             Point p1 = getPoints().get(i);
             Point p2 = getPoints().get(i + 1);
-            g2d.strokeLine(p1.x, p1.y, p2.x, p2.y);
+            g2d.strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
         }
     }
 

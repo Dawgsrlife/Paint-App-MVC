@@ -1,5 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
+
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Stack;
