@@ -14,6 +14,7 @@ public class PaintController implements EventHandler<MouseEvent> {
     private final PropertiesPanel pp;
     private Shape shape;
     private final Pane canvasPane;
+    private Point lastPoint = new Point(0, 0);
 
     public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, Pane canvasPane) {
         this.model = model;
@@ -49,7 +50,11 @@ public class PaintController implements EventHandler<MouseEvent> {
             }
         } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
             if (scp.getMode().equals("select") & this.shape != null) {
-                System.out.println("drag");
+                shape.getStart().setX(shape.getStart().getX() + point.x - lastPoint.x);
+                shape.getStart().setY(shape.getStart().getY() + point.y - lastPoint.y);
+                shape.getEnd().setX(shape.getEnd().getX() + point.x - lastPoint.x);
+                shape.getEnd().setY(shape.getEnd().getY() + point.y - lastPoint.y);
+                model.update();
             } else if (this.shape != null){
                 // update shape ending point on MOUSE_DRAGGED
                 this.shape.setEnd(point);
@@ -71,6 +76,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             finalizeShape();
             System.out.println("Finished " + scp.getMode());
         }
+        lastPoint = point;
     }
 
     /**
