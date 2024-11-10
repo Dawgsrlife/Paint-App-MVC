@@ -191,9 +191,12 @@ Nov 8,2024
 	                  time.
 
 Nov 9,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Studied for STA256 Term Test.
+	What I will do today: Have STA256 term test. Progress on BUG4.220 and
+	                      handle pull requests.
+	Obstacles I face: Implement mode strategy (previously the idea was drawing
+	                  strategy), including the updated version of master with
+	                  new implementations by group members.
 
 Nov 10,2024
 	What I did yesterday:
