@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 
 public class PolylineModeStrategy extends DrawModeStrategy implements ModeStrategy {
 

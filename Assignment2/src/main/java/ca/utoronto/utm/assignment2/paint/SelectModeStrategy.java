@@ -1,6 +1,8 @@
 package ca.utoronto.utm.assignment2.paint;
 
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 
 public class SelectModeStrategy implements ModeStrategy {
     private final PaintModel model;
@@ -33,10 +35,7 @@ public class SelectModeStrategy implements ModeStrategy {
         Shape shape = model.getCurrentShape();
         Point lastPoint = model.getLastPoint();
 
-        shape.getStart().setX(shape.getStart().getX() + point.x - lastPoint.x);
-        shape.getStart().setY(shape.getStart().getY() + point.y - lastPoint.y);
-        shape.getEnd().setX(shape.getEnd().getX() + point.x - lastPoint.x);
-        shape.getEnd().setY(shape.getEnd().getY() + point.y - lastPoint.y);
+        shape.move(point.getX() - lastPoint.getX(), point.getY() - lastPoint.getY());
 
         model.update();
     }
