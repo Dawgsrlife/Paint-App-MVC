@@ -117,24 +117,24 @@ Nov 5,2024
 	Obstacles I face: Deciding which algorithm is best
 
 Nov 6,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed pull requests and came up with a new implementation for SmartShape
+	What I will do today: Continue working on SmartShape
+	Obstacles I face: This goofy ahh class
 
 Nov 7,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Completed the base implementation of US4.017
+	What I will do today: Try to figure out how to detect round shapes
+	Obstacles I face: This is difficult bruh
 
 Nov 8,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Gave up on detecting round shapes
+	What I will do today: Nothing
+	Obstacles I face: Guilty conscience
 
 Nov 9,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing
+	What I will do today: Finish US4.017 and start US4.010
+	Obstacles I face: I have little time
 
 Nov 10,2024
 	What I did yesterday:

@@ -6,7 +6,6 @@ Description:
 	Display cursor's current coordinate, in order to make user aware of where
 	the shape is going to be located.
 
-
 Reference: 
 	US4.019
 --------------------------------------------------------------------------------
@@ -14,7 +13,6 @@ FeatureName: New
 
 Description: 
 	Work on a new canvas, with everything added previously removed.
-
 
 Reference: 
 	US4.100
@@ -24,7 +22,6 @@ FeatureName: Open
 Description:
 	Open a previously saved *.a2s canvas file.
 
-
 Reference:
 	US4.101
 --------------------------------------------------------------------------------
@@ -33,7 +30,62 @@ FeatureName: Save
 Description:
 	Save current canvas into a *.a2s file.
 
-
 Reference:
 	US4.102
+--------------------------------------------------------------------------------
+FeatureName: Cut
+
+Description:
+	After successfully selecting a shape, the user can cut the basic shape on
+	the canvas.
+    The steps using menubar:
+    1. Draw a shape.
+    2. Choose Select on the left side button. Click the shape to select the shape.
+    3. On Edit menubar, click Cut. The selected shape disappear.
+
+Reference:
+	US4.025
+--------------------------------------------------------------------------------
+FeatureName: Copy
+
+Description:
+	After successfully selecting a shape, the user can copy a shape.
+    The steps using menubar:
+    1. Draw a shape.
+    2. Choose Select on the left side button. Click the shape to select the shape.
+    3. On Edit menubar, click Copy. The selected shape was copied to clipboard without
+    removing it from the canvas.
+
+Reference:
+	US4.025
+--------------------------------------------------------------------------------
+FeatureName: Paste
+
+Description:
+	After successfully copying a shape, the user can paste the basic shape on
+    the canvas. This should go with keyboard shortcuts in order to place the copied
+    shape at the desired place.
+
+Reference:
+	US4.025
+--------------------------------------------------------------------------------
+FeatureName: Keyboard shortcuts with Cut, Copy and Paste.
+
+Description:
+    Cut with keyboard(Ctrl + X).
+    Copy with keyboard(Ctrl + C).
+    Paste with keyboard(Ctrl + V).
+
+Reference:
+	US4.029
+--------------------------------------------------------------------------------
+FeatureName: Polygon painter
+
+Description:
+	Draw a right polygon with as much sides as you want! Can't believe it does
+	not have its own backlog, since it's a side product we got when fixing
+	another bug
+
+Reference:
+	US4.210
 --------------------------------------------------------------------------------

@@ -1,14 +1,16 @@
 package ca.utoronto.utm.assignment2.paint;
 
 
-import ca.utoronto.utm.assignment2.paint.controlPanels.EditingPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandMenuBar;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.util.Objects;
 
 public class Paint extends Application {
     PaintModel model; // Model
@@ -17,7 +19,6 @@ public class Paint extends Application {
     CommandMenuBar menuBar; // Control
     ShapeChooserPanel shapeChooserPanel; // Control
     PropertiesPanel propertiesPanel; // Control
-    EditingPanel editingPanel;
     // commandManager;
 
     public static void main(String[] args) {
@@ -27,24 +28,22 @@ public class Paint extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        BorderPane root = new BorderPane();
+        Scene scene = new Scene(root);
+        Pane canvasPane = new Pane();
+
         this.model = new PaintModel();
-        menuBar = new CommandMenuBar();
+        menuBar = new CommandMenuBar(model, scene);
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
-        editingPanel = new EditingPanel();
-        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, editingPanel);
-        this.view = new PaintView(model, controller);
+        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
+        this.view = new PaintView(model, controller, canvasPane);
 
-
-        BorderPane root = new BorderPane();
-        root.setTop(menuBar.createMenuBar(model));
+        root.setTop(menuBar);
         root.setCenter(view);
-        BorderPane left = new BorderPane();
-        left.setTop(shapeChooserPanel);
-        left.setCenter(propertiesPanel);
-        root.setLeft(left);
-        root.setRight(editingPanel);
-        Scene scene = new Scene(root);
+        root.setLeft(shapeChooserPanel);
+        root.setRight(propertiesPanel);
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("commandMenuBar/paint-style.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Paint");
         stage.show();
@@ -55,12 +54,12 @@ public class Paint extends Application {
         // width change handler
         stage.widthProperty().addListener((obs, oldWidth, newWidth) -> {
             view.setWidth(view.getWidth() + newWidth.doubleValue() - oldWidth.doubleValue());
-            view.update();
+            model.update();
         });
         // height change handler
         stage.heightProperty().addListener((obs, oldHeight, newHeight) -> {
             view.setHeight(view.getHeight() + newHeight.doubleValue() - oldHeight.doubleValue());
-            view.update();
+            model.update();
         });
     }
 }

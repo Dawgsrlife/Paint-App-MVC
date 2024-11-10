@@ -41,127 +41,115 @@ Oct 20,2024
 
 Oct 21,2024
 	What I did yesterday: Update arch.txt according to discussion.
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Conceptualize the structure of the program
+	                      based on the existing code.
+	Obstacles I face: Nothing.
 
 Oct 22,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish arch.txt according to the code structure.
+	What I will do today: Test new classes functionalities.
+	Obstacles I face: Nothing.
 
 Oct 23,2024
-	What I did yesterday:
+	What I did yesterday: Test new classes functionalities.
 	What I will do today: Start US2.025 and update sprintBacklog2.txt
 	Obstacles I face: Nothing
 
 Oct 24,2024
 	What I did yesterday: Start US2.025 and update sprintBacklog2.txt
 	What I will do today: US2.025 in progress.
-	Obstacles I face: Found a bug: the size of arrayList shape is not correct when check how many shapes are
-	                  added to the arrayList in model.
+	Obstacles I face: Found a bug: the size of arrayList shape is not correct
+	                  when check how many shapes are added to the arrayList in model.
 
 Oct 25,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Working on US4.025.
+	What I will do today: Keep constructing US4.025
+	Obstacles I face: Try not to break other code in order to implement US4.025.
 
 Oct 26,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Working on US4.025.
+	What I will do today:Catching up on 236 assignments.
+	Obstacles I face: Do not have enough time to manage heavy course-load.
 
 Oct 27,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Nothing. Due to another assignment for 236 course.
+	What I will do today: Catching up on 236 assignments.
+	Obstacles I face: Do not have enough time to manage heavy course-load.
 
 Oct 28,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Catching up on 236 assignments.
+	What I will do today: Nothing. Due to another assignment for 236 course.
+	Obstacles I face: Do not have enough time to manage heavy course-load.
 
 Oct 29,2024
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Check US4.025 and there was commandMenuBar for those
+                          US4.025 features.
+	Obstacles I face: Nothing.
 
-Oct 30,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+Oct 30, 2024
+	What I did yesterday: Check US4.025 and there was commandMenuBar for those
+	                      US4.025 features.
+	What I will do today:Rested.
+	Obstacles I face: Cannot contact my group because I'm on another continent.
 
 Oct 31,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Rested.
+	What I will do today: Rested.
+	Obstacles I face: Cannot contact my group because I'm on another continent.
 
 Nov 1,2024
 	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I will do today: Rested.
+	Obstacles I face: Cannot contact my group because I'm on another continent.
 
 Nov 2,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Rested
+	What I will do today:Rested
+	Obstacles I face: Cannot contact my group because I'm on another continent.
 
 Nov 3,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday:Nothing.
+	What I will do today: Work on US4.014.
+	Obstacles I face: Decide whether should keep the clear button since its functionality
+	                  is overlapping with New button.
 
 Nov 4,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish US4.014. Decide to keep New button instead of Clear button.
+	What I will do today: Redesign the UI of the left column of Canvas.
+	                     （like where to put shapes, text button)
+	Obstacles I face: Consider what counts as a good user page that clear and elegant。
 
 Nov 5,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Re-implement ShapeChooserPanel and ShapeChooserPanelButton
+	                      for redesign Canvas buttons.
+	What I will do today: Add Text button into the Canvas.
+	Obstacles I face: Decide where to put the Text button.
 
 Nov 6,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Add Text button into the Canvas.
+	What I will do today: Improve the functionality of Text. Working on US4.015.
+	Obstacles I face: A bug was found in the implementation of US4.015. that textField appears when
+	                  users click the screen instead of textField should only appear when the textBox
+	                  is drawn. Also, everytime users change the property of a textbox, the text itself
+	                  is changed along with it.
 
 Nov 7,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Implement textbox features.
+	What I will do today: There is an update on master, change my branch to fix in master code.
+	Obstacles I face: Some code breaks after merge master into US4.015.
 
 Nov 8,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Work on US4.015.
+	What I will do today: Finish US4.015. Wait other group member to pull US4.015 into master.
+	Obstacles I face: Some bugs occurs on Text.
 
 Nov 9,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
+	What I did yesterday: Finish US4.015.
+	What I will do today: Finish US4.025.
+	Obstacles I face: CommandPaste needed to be improved since it only pastes on the same place.
 
 Nov 10,2024
-	What I did yesterday:
-	What I will do today:
+	What I did yesterday: Finish US4.025.
+	What I will do today: Finish US4.029. Fix some bugs for text features.
 	Obstacles I face:
-
-Nov 11,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 12,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 13,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
-Nov 14,2024
-	What I did yesterday:
-	What I will do today:
-	Obstacles I face:
-
