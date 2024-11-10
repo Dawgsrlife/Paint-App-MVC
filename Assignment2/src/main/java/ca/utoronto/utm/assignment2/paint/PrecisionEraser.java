@@ -14,7 +14,7 @@ public class PrecisionEraser extends Squiggle {
 
     @Override
     public void paint(GraphicsContext g2d) {
-        g2d.setStroke(PaintView.backgroundColor);
+        g2d.setStroke(PaintView.BACKGROUND_COLOR);
 
         for (int i = 0; i < getPoints().size() - 1; i++) {
             Point p1 = getPoints().get(i);

@@ -10,6 +10,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class Paint extends Application {
     PaintModel model; // Model
     PaintView view; // View
@@ -25,23 +27,23 @@ public class Paint extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        this.model = new PaintModel();
-        this.menuBar = new CommandMenuBar();
-        this.shapeChooserPanel = new ShapeChooserPanel();
-        this.propertiesPanel = new PropertiesPanel();
-
-        // Create a Pane to be used as the canvas
-        Pane canvasPane = new Pane();
-        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
-        this.view = new PaintView(model, controller, canvasPane); // Pass canvasPane to view
-
 
         BorderPane root = new BorderPane();
-        root.setTop(menuBar.createMenuBar(model));
-        root.setCenter(canvasPane); // Set canvasPane in the center for drawing
+        Scene scene = new Scene(root);
+        Pane canvasPane = new Pane();
+
+        this.model = new PaintModel();
+        menuBar = new CommandMenuBar(model, scene);
+        shapeChooserPanel = new ShapeChooserPanel();
+        propertiesPanel = new PropertiesPanel();
+        this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
+        this.view = new PaintView(model, controller, canvasPane);
+
+        root.setTop(menuBar);
+        root.setCenter(view);
         root.setLeft(shapeChooserPanel);
         root.setRight(propertiesPanel);
-        Scene scene = new Scene(root);
+        scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("commandMenuBar/paint-style.css")).toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Paint");
         stage.show();

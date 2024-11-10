@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
 import ca.utoronto.utm.assignment2.paint.PaintModel;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 
 public class CommandUndo extends MenuItem implements Command {
@@ -8,7 +9,7 @@ public class CommandUndo extends MenuItem implements Command {
         super("Undo");
     }
     @Override
-    public void execute(PaintModel model) {
+    public void execute(PaintModel model, Scene scene) {
         model.undo();
     }
 }

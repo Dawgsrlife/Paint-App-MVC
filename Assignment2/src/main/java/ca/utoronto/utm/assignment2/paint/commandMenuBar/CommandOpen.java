@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.MenuItem;
@@ -16,14 +17,15 @@ public class CommandOpen extends MenuItem implements Command {
         super("Open");
     }
     @Override
-    public void execute(PaintModel model) {
+    public void execute(PaintModel model, Scene scene) {
         FileChooser fc = new FileChooser();
         fc.setTitle("Open canvas");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("A2S", "*.a2s"));
         File file = fc.showOpenDialog(new Stage());
         try (BufferedReader br = new BufferedReader(new FileReader(file))){
             Alert alert = new Alert(Alert.AlertType.WARNING,
-                    "You Really want to open this canvas? Unsaved changes will be lost.",
+                    "Are you sure you want to open this canvas? \n" +
+                            "Any unsaved changes will be permanently lost.",
                     ButtonType.YES, ButtonType.NO);
             alert.showAndWait();
             if (alert.getResult() == ButtonType.NO) {
