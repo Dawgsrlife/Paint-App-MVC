@@ -16,8 +16,8 @@ public class CommandCopy extends MenuItem implements Command {
 
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
-        if (controller.getShape() != null) {
-            Shape oldShape = controller.getShape();
+        if (model.getCurrentShape() != null) {
+            Shape oldShape = model.getCurrentShape();
             Point start = new Point(oldShape.getStart().getX(), oldShape.getStart().getY());
             Point end = new Point(oldShape.getEnd().getX(), oldShape.getEnd().getY());
             ArrayList<Point> points = new ArrayList<>();
@@ -31,10 +31,10 @@ public class CommandCopy extends MenuItem implements Command {
                     oldShape.getProperties().getStrokeThickness(),
                     oldShape.getProperties().getVertices());
             Shape newCopy = PaintStrategy.getPaintStrategy(
-                    controller.getShape().getType(),
+                    model.getCurrentShape().getType(),
                     start, end,
                     newProperties, points);
-            controller.setShape(newCopy);
+            model.setCurrentShape(newCopy);
             model.addShape(newCopy);
         }
     }

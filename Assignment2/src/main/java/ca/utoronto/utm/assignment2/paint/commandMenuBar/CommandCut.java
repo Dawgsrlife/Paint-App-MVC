@@ -12,8 +12,8 @@ public class CommandCut extends MenuItem implements Command {
 
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
-        if (controller.getShape() != null) {
-            model.removeShape(controller.getShape());
+        if (model.getCurrentShape() != null) {
+            model.removeShape(model.getCurrentShape());
         }
     }
 }

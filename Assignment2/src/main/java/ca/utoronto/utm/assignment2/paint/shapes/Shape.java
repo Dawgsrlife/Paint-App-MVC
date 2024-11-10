@@ -15,19 +15,23 @@ import java.util.ArrayList;
  * @author tianji61
  */
 public abstract class Shape {
-
-    // default fields
+    // Default Fields
     private Point start;
     private Point end;
     private String type;
     private final PaintProperties properties;
     private final ArrayList<Point> points = new ArrayList<>();
 
+    // Tracking Fields
+    private boolean finalized;
+
     public Shape(Point start, Point end, String type, PaintProperties properties) {
         this.start = start;
         this.end = end;
         this.type = type;
         this.properties = properties;
+
+        this.finalized = true;
     }
 
     abstract public void paint(GraphicsContext g2d);
@@ -79,4 +83,12 @@ public abstract class Shape {
     }
 
     public void finalizeShape() {}
+
+    public boolean isFinalized() {
+        return finalized;
+    }
+
+    public void setFinalized(boolean finalized) {
+        this.finalized = finalized;
+    }
 }

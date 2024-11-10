@@ -10,8 +10,9 @@ import java.util.Stack;
 public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
     private final Stack<Shape> undoStack = new Stack<>();
+    private Shape currentShape;
     private Shape tempShape;
-
+    private Point lastPoint = new Point(0, 0);
 
     /**
      * Get all steps queued to be painted
@@ -23,8 +24,24 @@ public class PaintModel extends Observable {
         return tempShapes;
     }
 
+    public Shape getCurrentShape() {
+        return currentShape;
+    }
+
+    public void setCurrentShape(Shape shape) {
+        this.currentShape = shape;
+    }
+
     public Shape getTempShape() {
         return tempShape;
+    }
+
+    public Point getLastPoint() {
+        return lastPoint;
+    }
+
+    public void setLastPoint(Point lastPoint) {
+        this.lastPoint = lastPoint;
     }
 
     /**
