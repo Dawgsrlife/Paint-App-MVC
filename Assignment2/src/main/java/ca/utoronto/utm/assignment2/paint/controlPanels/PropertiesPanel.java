@@ -29,7 +29,6 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     private final ArrayList<Label> labels = new ArrayList<>();
     private final ArrayList<TextField> coordinates = new ArrayList<>();
     private final ArrayList<Rectangle> rectangles = new ArrayList<>();
-    private Shape currentShape;
 
     public PropertiesPanel() {
         // Background, padding styling, and gaps
@@ -61,7 +60,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
         this.add(rectangles.getLast(), 2, 2);
 
-        this.add(new Label("Border Color"), 0, 7);
+        this.add(new Label("Stroke Color"), 0, 7);
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
         this.add(rectangles.getLast(), 2, 7);
 
@@ -205,15 +204,5 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         coordinates.get(4).setText((int)s.getEnd().getY() - s.getStart().getY() + "");
         coordinates.get(4).setDisable(false);
         updateVisualizer();
-
-        this.currentShape = s;
-    }
-
-    public Shape getCurrentlyLoadedShape() {
-        return this.currentShape;
-    }
-
-    public void clearCLS() {
-        currentShape = null;
     }
 }

@@ -23,6 +23,9 @@ public class CommandOpen extends MenuItem implements Command {
         fc.setTitle("Open canvas");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("A2S", "*.a2s"));
         File file = fc.showOpenDialog(new Stage());
+        if (file == null) {
+            return;
+        }
         try (BufferedReader br = new BufferedReader(new FileReader(file))){
             Alert alert = new Alert(Alert.AlertType.WARNING,
                     "Are you sure you want to open this canvas? \n" +

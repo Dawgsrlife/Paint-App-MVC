@@ -14,9 +14,10 @@ public class CommandCopyright extends MenuItem implements Command {
 
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+        Alert alert = new Alert(Alert.AlertType.NONE,
                 "Haha, jokes on you, we don't respect copyrights",
                 ButtonType.OK);
+        alert.setTitle("User Guide");
         alert.showAndWait();
     }
 }

@@ -14,7 +14,6 @@ public class CommandLightMode extends MenuItem implements Command {
 
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
-        System.out.println("in");
         scene.getStylesheets().set(0, Objects.requireNonNull(this.getClass().getResource("paint-style.css")).toExternalForm());
     }
 }

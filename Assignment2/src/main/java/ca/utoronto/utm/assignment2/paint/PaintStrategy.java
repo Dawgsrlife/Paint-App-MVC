@@ -27,6 +27,7 @@ public class PaintStrategy {
             case "PrecisionEraser" -> new PrecisionEraser(start, pp, path);
             case "Polygon" -> new Polygon(start, end, pp);
             case "Text" -> new Text(start, end, pp);
+            case "HighLighter" -> new Highlighter(start, pp, path);
             default -> throw new IllegalArgumentException("Unknown mode: " + mode);
         };
     }
