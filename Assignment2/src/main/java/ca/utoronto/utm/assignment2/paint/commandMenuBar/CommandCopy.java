@@ -17,7 +17,7 @@ public class CommandCopy extends MenuItem implements Command {
 
     @Override
     public void execute(PaintModel model, Scene scene) {
-        Shape selectedShape = propertiesPanel.getCurrentlyLoadedShape("copy");
+        Shape selectedShape = propertiesPanel.getCurrentlyLoadedShape();
         if (selectedShape != null) {
             Clipboard.add(selectedShape);
         }

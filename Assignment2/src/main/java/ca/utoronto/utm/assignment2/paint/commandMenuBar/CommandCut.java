@@ -30,12 +30,12 @@ public class CommandCut extends MenuItem implements Command {
         }
 
         // Get the currently selected shape
-        Shape selectedShape = propertiesPanel.getCurrentlyLoadedShape("cut");
+        Shape selectedShape = propertiesPanel.getCurrentlyLoadedShape();
 
         if (selectedShape != null) {
+            model.addUndoStack(selectedShape);
             controller.removeShape(selectedShape);
             propertiesPanel.clearCLS();
-            scene.getRoot().requestLayout();
             System.out.println("Cut operation completed.");
 
         } else {

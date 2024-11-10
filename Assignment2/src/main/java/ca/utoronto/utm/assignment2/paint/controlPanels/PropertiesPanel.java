@@ -3,7 +3,6 @@ package ca.utoronto.utm.assignment2.paint.controlPanels;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import ca.utoronto.utm.assignment2.paint.Point;
 import ca.utoronto.utm.assignment2.paint.Shape;
-import ca.utoronto.utm.assignment2.paint.commandMenuBar.CommandCut;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -210,21 +209,11 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         this.currentShape = s;
     }
 
-    public Shape getCurrentlyLoadedShape(String command) {
+    public Shape getCurrentlyLoadedShape() {
         return this.currentShape;
     }
 
     public void clearCLS() {
         currentShape = null;
-    }
-
-    public void cutSelectedShape() {
-        if (currentShape != null) {
-            // Remove the current shape from the model (assuming model reference is available)
-            //Zmodel.removeShape(currentShape);
-
-            // Clear the current shape after cutting
-            clearCLS();
-        }
     }
 }
