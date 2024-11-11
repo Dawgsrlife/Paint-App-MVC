@@ -27,18 +27,7 @@ public class PaintController implements EventHandler<MouseEvent> {
     }
 
     public void setModeStrategy(String mode) {
-        switch (mode) {
-            case "Select" -> modeStrategy = new SelectModeStrategy(model, pp);
-            case "ObjectEraser" -> modeStrategy = new ObjectEraserStrategy(model);
-            case "Polyline" -> {
-                // Make a new polyline shape first if it doesn't yet exist.
-                if (model.getCurrentShape() == null) modeStrategy = new DrawModeStrategy(model, mode, pp);
-
-                modeStrategy = new PolylineModeStrategy(model, mode, pp);
-            }
-            case "text" -> modeStrategy = new TextModeStrategy(model, mode, pp, canvasPane);
-            default -> modeStrategy = new DrawModeStrategy(model, mode, pp);
-        }
+        modeStrategy = ModeStrategyFactory.getModeStrategy(mode, model, pp, canvasPane);
     }
 
     @Override
