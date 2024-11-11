@@ -6,6 +6,8 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
+    private String previousMode;
+    private String currentMode;
 
     public ShapeChooserPanel() {
 
@@ -40,6 +42,9 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             row++;
             button.setOnAction(this);
         }
+
+        previousMode = "Select";
+        currentMode = "Select";
     }
 
     @Override
@@ -49,9 +54,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
             ShapeChooserPanelButton button = (ShapeChooserPanelButton) o;
             button.setSelected(button.equals(source));
         }
+        previousMode = currentMode;
+        currentMode = determineMode();
     }
 
-    public String getMode() {
+    private String determineMode() {
         String mode = "Select";
         for (Object o : this.getChildren()) {
             ShapeChooserPanelButton button = (ShapeChooserPanelButton) o;
@@ -59,6 +66,16 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
         return mode;
     }
+
+    public String getMode() {
+        return currentMode;
+    }
+
+    public String getPreviousMode() {
+        return previousMode;
+    }
+
+    public void setPreviousMode(String previousMode) {
+        this.previousMode = previousMode;
+    }
 }
-
-

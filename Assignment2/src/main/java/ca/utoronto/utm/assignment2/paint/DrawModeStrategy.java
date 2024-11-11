@@ -26,11 +26,6 @@ public class DrawModeStrategy implements ModeStrategy {
         // Thus, exit if the primary button isn't used
         if (!isPrimaryButton) return;
 
-        // Relies on short-circuit evaluation:
-        if (model.getTempShape() != null && !model.getTempShape().isFinalized()) finalizeShape();
-        // E.g. Polyline isn't finalized until the user right-clicks ^
-        // so simply finalize it when they attempt to draw with another shape.
-
         model.setCurrentShape(PaintStrategy.getPaintStrategy(mode, point, point, properties.getPaintProperties(), null));
 
         // TODO: remove the print statement for the final product
