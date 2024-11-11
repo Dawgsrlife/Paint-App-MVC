@@ -3,7 +3,6 @@ package ca.utoronto.utm.assignment2.paint.shapes;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Font;
 
 /**
@@ -20,6 +19,7 @@ public class Text extends Rectangle {
 
     public Text(Point start, Point end, PaintProperties properties) {
         super(start, end, properties);
+        properties.setFilled(true);
         setType("Text");
         this.textContent = ""; // Initially empty text
         this.font = new Font("Arial", 20); // Default font and size
@@ -33,11 +33,8 @@ public class Text extends Rectangle {
         this.textField.setLayoutX(start.getX());
         this.textField.setLayoutY(start.getY());
         this.textField.setFont(font);
-        textField.setMinWidth(10);
-        textField.setMinHeight(10);
         this.textField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black;");
         this.textField.setVisible(true);
-        System.out.println("Prompt ");
     }
 
     @Override
@@ -74,5 +71,16 @@ public class Text extends Rectangle {
 
     public void setTextContent(String textContent) {
         this.textContent = textContent;
+    }
+
+    @Override
+    public void move(double dx, double dy) {
+        getStart().setX(getStart().getX() + dx);
+        getStart().setY(getStart().getY() + dy);
+        getEnd().setX(getEnd().getX() + dx);
+        getEnd().setY(getEnd().getY() + dy);
+        this.textField.setLayoutX(getStart().getX() + dx);
+        textField.setDisable(true);
+        this.textField.setLayoutY(getStart().getY() + dy);
     }
 }

@@ -47,7 +47,7 @@ public class ModeStrategyFactory {
 
                 return new PolylineModeStrategy(model, mode, pp);
             }
-            case "text" -> {
+            case "Text" -> {
                 return new TextModeStrategy(model, mode, pp, canvasPane);
             }
             default -> {
