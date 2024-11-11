@@ -36,6 +36,7 @@ public class Square extends Polygon {
      *
      * @param properties The paint properties to apply to the square.
      */
+    @Override
     public void setProperties(PaintProperties properties) {
         properties.setVertices(4);
         super.setProperties(properties);

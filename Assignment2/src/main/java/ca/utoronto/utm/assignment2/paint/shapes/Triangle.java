@@ -13,4 +13,18 @@ public class Triangle extends Polygon {
         pp.setVertices(3);
         setType("Triangle");
     }
+
+    /**
+     * Overrides the setProperties method to ensure that the number of vertices
+     * for a triangle is always set to 3, even if the paint properties are updated.
+     * This ensures that any attempt to modify the number of vertices in a triangle
+     * does not affect its inherent 3-vertex structure.
+     *
+     * @param properties The paint properties to apply to the triangle.
+     */
+    @Override
+    public void setProperties(PaintProperties properties) {
+        properties.setVertices(3);
+        super.setProperties(properties);
+    }
 }
