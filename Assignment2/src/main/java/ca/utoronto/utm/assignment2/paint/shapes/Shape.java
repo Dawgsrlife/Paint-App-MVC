@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * shape can be painted (with or without filling), moved around on the canvas, and checked if
  * a point lies within its bounds. Shapes can be finalized to indicate they are ready for use.</p>
  *
- * @author tianji61
+ * @author tianji61 / mengale1
  */
 public abstract class Shape {
 

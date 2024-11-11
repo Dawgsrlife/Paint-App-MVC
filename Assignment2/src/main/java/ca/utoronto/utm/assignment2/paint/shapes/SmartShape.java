@@ -6,15 +6,31 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
+/**
+ * SmartShape extends the Squiggle class to provide functionality
+ * for creating shapes that can be finalized into closed polygons
+ * based on certain conditions, such as proximity of points and
+ * angular tolerance.
+ *
+ * @author huaethan
+ */
 public class SmartShape extends Squiggle {
-    final private double CLOSE_CONDITION = 15; // distance between first and last point
-                                       // must be within this value
+    // Constants defining shape behavior
+    final private double CLOSE_CONDITION = 15; // distance between first and last point must be within this value
     final private double SLOPE_LENIENCE = 2 * Math.PI / 3; // 120 degrees in radians
     final private double VERTEX_DISTANCE = 30; // defines the minimum distance between two vertices
 
-    private boolean isSquiggle;
+    private boolean isSquiggle; // Indicates if the shape is still a squiggle
+    public ArrayList<Point> tempPoints; // Temporary list of points defining the squiggle
 
-    public ArrayList<Point> tempPoints;
+    /**
+     * Constructs a SmartShape with a starting point, paint properties,
+     * and an initial path of points.
+     *
+     * @param point The starting point of the shape
+     * @param pp Paint properties for the shape (e.g., fill color, stroke color)
+     * @param path A list of points defining the squiggle path
+     */
     public SmartShape(Point point, PaintProperties pp, ArrayList<Point> path) {
         super(point, pp, path);
         getProperties().setFilled(pp.isFilled());
@@ -22,25 +38,49 @@ public class SmartShape extends Squiggle {
         tempPoints = new ArrayList<>();
     }
 
+
     /**
-     * Gets the vector obtained from a - b
-     * @param a First point, can be considered a vector
-     * @param b Second point, can be considered a vector
-     * @return the vector a - b
+     * Gets the vector from point b to point a (a - b).
+     *
+     * @param a First point
+     * @param b Second point
+     * @return The vector representing the difference between points a and b
      */
     private Point getVector(Point a, Point b) {
         return new Point(a.getX() - b.getX(), a.getY() - b.getY());
     }
 
+    /**
+     * Calculates the Euclidean distance between two points.
+     *
+     * @param a First point
+     * @param b Second point
+     * @return The distance between points a and b
+     */
     private double dist(Point a, Point b) {
         Point v = getVector(a,b);
         return Math.sqrt(v.getX() * v.getX() + v.getY() * v.getY());
     }
 
+    /**
+     * Calculates the Euclidean distance of a point from the origin (0,0).
+     *
+     * @param a The point to measure
+     * @return The distance from the origin to point a
+     */
     private double dist(Point a) {
         return dist(a, new Point(0,0));
     }
 
+
+    /**
+     * Calculates the relative angle between two vectors formed from a given origin point.
+     *
+     * @param a The first point defining the first vector
+     * @param b The second point defining the second vector
+     * @param origin The origin point to calculate the vectors from
+     * @return The angle between the two vectors in radians
+     */
     private double getRelativeAngle(Point a, Point b, Point origin) {
         Point aVec = getVector(a,origin);
         Point bVec = getVector(b,origin);
@@ -48,16 +88,35 @@ public class SmartShape extends Squiggle {
         return Math.acos(normedDotProduct);
     }
 
+    /**
+     * Calculates the slope of the line between two points.
+     *
+     * @param a First point
+     * @param b Second point
+     * @return The slope of the line defined by points a and b
+     */
     private double getSlope(Point a, Point b) {
         return (a.getY() - b.getY()) / (a.getX() - b.getX());
     }
 
+    /**
+     * Sets the end point of the shape and adds it to the temporary points list.
+     *
+     * @param point The point to set as the end of the shape
+     */
     @Override
     public void setEnd(Point point) {
         tempPoints.add(point);
         super.setEnd(point);
     }
 
+    /**
+     * Paints the shape on the given graphics context.
+     * If the shape is still a squiggle, it delegates painting to the parent class.
+     * Otherwise, it draws the finalized shape as a polygon.
+     *
+     * @param g2d The graphics context to draw the shape on
+     */
     @Override
     public void paint(GraphicsContext g2d) {
         if(isSquiggle) {
@@ -86,6 +145,14 @@ public class SmartShape extends Squiggle {
         }
     }
 
+    /**
+     * Checks if a given point is inside the shape.
+     * If the shape is a squiggle, the check is delegated to the parent class.
+     * If the shape is finalized as a polygon, the method checks if the point is inside the polygon.
+     *
+     * @param p The point to check
+     * @return True if the point is inside the shape, false otherwise
+     */
     @Override
     public boolean includeCursor(Point p) {
         ArrayList<Point> points = this.getPoints();
@@ -131,6 +198,11 @@ public class SmartShape extends Squiggle {
         return false;
     }
 
+    /**
+     * Creates a JavaFX Polygon from the shape's points to use in contain checks.
+     *
+     * @return A JavaFX Polygon representing the shape
+     */
     private javafx.scene.shape.Polygon getFxPolygon() {
         double[] vertices = new double[this.getPoints().size() * 2];
         for(int i = 0; i < this.getPoints().size(); i++) {
@@ -141,15 +213,29 @@ public class SmartShape extends Squiggle {
     }
 
     /**
-     * Finalizes the shape by interpolating a polygon using
-     * tempPoints
-     *
+     * Finalizes the squiggle into a closed shape by interpolating between points
+     * and forming a polygon if the first and last points are close enough.
+     * <p>
+     * Iterates through the points and selects vertices based on angle and distance
+     * to ensure the shape is smooth and forms a closed loop.
+     * </p>
      * The algorithm works as follows:
-     * - Check if the last point and first point are close enough
-     *   to each other. If not, this shape remains a squiggle
-     * - If the condition above is true, then the squiggle should
-     *   form a closed shape
-     * - Iterate through the points, keeping track of the
+     * - Iterate through the points, keeping track of the vertices that should
+     *   form the final shape.
+     * - For each point in the squiggle, attempt to find
+     *   the best fitting vertex that minimizes the angle between the current
+     *   vertex, the current point, and any other point further down the path.
+     * - A vertex is considered valid if it is far enough from its neighbours,
+     *   and the angle between the points is small enough to be considered part
+     *   of the shape's smooth curve.
+     * - Once the best vertex is determined, it is added to the final shape's
+     *   list of vertices, and the search continues from this new vertex.
+     * - After processing all points, check if the shape can be closed by
+     *   comparing the angle between the first and last vertex.
+     *   If they form
+     *   a small enough angle, they are connected, completing the polygon.
+     * - If the shape is successfully closed, the squiggle is transformed into
+     *   a polygon; otherwise, it remains a squiggle.
      */
     @Override
     public void finalizeShape() {
