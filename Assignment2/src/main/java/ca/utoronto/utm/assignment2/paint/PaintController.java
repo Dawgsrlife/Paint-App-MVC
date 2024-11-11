@@ -3,11 +3,8 @@ package ca.utoronto.utm.assignment2.paint;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import ca.utoronto.utm.assignment2.paint.shapes.Point;
-import ca.utoronto.utm.assignment2.paint.shapes.Polyline;
-import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import ca.utoronto.utm.assignment2.paint.shapes.Text;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
@@ -30,9 +27,10 @@ public class PaintController implements EventHandler<MouseEvent> {
     }
 
     public void setModeStrategy(String mode) {
-        switch (mode.toLowerCase()) {
-            case "select" -> modeStrategy = new SelectModeStrategy(model, pp);
-            case "polyline" -> {
+        switch (mode) {
+            case "Select" -> modeStrategy = new SelectModeStrategy(model, pp);
+            case "ObjectEraser" -> modeStrategy = new ObjectEraserStrategy(model);
+            case "Polyline" -> {
                 // Make a new polyline shape first if it doesn't yet exist.
                 if (model.getCurrentShape() == null) modeStrategy = new DrawModeStrategy(model, mode, pp);
 
