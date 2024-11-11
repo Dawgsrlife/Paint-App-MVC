@@ -45,7 +45,7 @@ public class PaintController implements EventHandler<MouseEvent> {
     public void handle(MouseEvent mouseEvent) {
         // Grab current point and set coords
         Point point = new Point(mouseEvent.getX(), mouseEvent.getY());
-        pp.setMouseCoords(point);
+        if (! mouseEvent.getSource().equals(pp)) pp.setMouseCoords(point);
 
         switch (mouseEvent.getEventType().toString()) {
             case "MOUSE_PRESSED" -> {
@@ -61,6 +61,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             }
         }
         model.setLastPoint(point);
+        model.update();
     }
 
     /**

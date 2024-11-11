@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint.controlPanels;
 
+import ca.utoronto.utm.assignment2.paint.PaintModel;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import ca.utoronto.utm.assignment2.paint.shapes.Point;
 import ca.utoronto.utm.assignment2.paint.shapes.Shape;
@@ -31,6 +32,8 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     private final ArrayList<Label> labels = new ArrayList<>();
     private final ArrayList<TextField> coordinates = new ArrayList<>();
     private final ArrayList<Rectangle> rectangles = new ArrayList<>();
+    private Shape selectedShape;
+    private PaintModel pm;
 
     public PropertiesPanel() {
         // Background, padding styling, and gaps
@@ -57,6 +60,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         Label fillLabel = new Label("Fill");
         this.add(fillLabel, 0, 1);
         this.add(fill, 2, 1);
+        fill.addEventHandler(MouseEvent.MOUSE_CLICKED, this);
 
         this.add(new Label("Fill Color"), 0, 2);
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
@@ -121,6 +125,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
             coordinates.add(new TextField(""));
             coordinates.getLast().setAlignment(Pos.CENTER);
             coordinates.getLast().setDisable(true);
+            coordinates.getLast().setEditable(false);
             this.add(coordinates.getLast(), 1, i);
             setColumnSpan(coordinates.getLast(), 2);
         }
@@ -131,6 +136,12 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     @Override
     public void handle(MouseEvent mouseEvent) {
         updateVisualizer();
+        if (selectedShape != null) {
+            selectedShape.setProperties(getPaintProperties());
+        }
+        if (pm != null) {
+            pm.update();
+        }
     }
 
     public void setMouseCoords(Point p) {
@@ -170,7 +181,10 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         return new PaintProperties(fill.isSelected(), fillColor, borderColor, borderWidth, vertices);
     }
 
-    public void loadPaintProperties(Shape s) {
+    public void loadPaintProperties(PaintModel pm, Shape s) {
+        selectedShape = s;
+        this.pm = pm;
+        if (s == null) return;
         PaintProperties pp = s.getProperties();
         // load fill type
         fill.setSelected(pp.isFilled());
