@@ -222,3 +222,33 @@ Example:
 	This class extends the Oval class because its implementation is very similar. This drawing mode also falls into
 	the DrawingModeStrategy category for shapes.
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+New Panel:
+Description:
+	A new panel is a feature that changes the way the entire model behaves, more than just adding a
+	new drawing mode. For example, a panel that allows for a variety of colors and border thickness of shapes
+	makes a significant difference to the function of the model.
+
+	The panel should implement some kind of EventHandler to get user input in order to change the PaintModel.
+	The panel does not directly update the PaintModel. Instead, a reference to the panel is stored in the
+	PaintController, which gets and sends the information to the PaintModel whenever a gesture is detected.
+	The PaintModel will know what to do with the information, and changes itself accordingly.
+
+Implementation:
+	(inventory of ideas, required files, how they are tied to the architecture,
+		naming conventions (example: images/ButtonIconSquare.jpg, MHStrategySquare, ShapeSquare...)
+
+	Suppose that a developer wanted to add a panel called X. A class named XPanel should be created and
+	implement some kind of EventHandler. The visual aspects of the panel, such as buttons or sliders, should
+	be created and placed accordingly within the application window. The handle method should change some field
+	inside of XPanel. A getter for this information should also be implemented.
+
+	Inside of the PaintController, a reference to XPanel should be stored. Upon the invocation of the handle method
+	inside of PaintController, it should relay the information from the XPanel to the PaintModel.
+
+	Change the PaintModel accordingly to make XPanel functional.
+
+Example:
+	For example, the PropertiesPanel allows users to change the colour, opacity, border colour, and border thickness
+	of the shapes that they are drawing. The handle method updates
+--------------------------------------------------------------------------------
