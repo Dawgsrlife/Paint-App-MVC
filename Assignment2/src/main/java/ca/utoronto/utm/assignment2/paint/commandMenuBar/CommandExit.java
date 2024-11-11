@@ -23,6 +23,7 @@ public class CommandExit extends MenuItem implements Command {
     /**
      * This command executes when the user selects the "Exit" option from the
      * menu, allowing the application to shut down properly.
+     *
      * @param model      The PaintModel, which manages the application's state.
      * @param scene      The JavaFX Scene associated with the paint application, allowing commands to interact with the UI.
      * @param controller The PaintController, which provides access to control and manipulate the paint application

@@ -25,6 +25,7 @@ public class CommandCopyright extends MenuItem implements Command {
     /**
      * Executes the command to display an alert dialog with a humorous copyright
      * message.
+     *
      * @param model      The PaintModel, which manages the application's state.
      * @param scene      The JavaFX Scene associated with the paint application, allowing commands to interact with the UI.
      * @param controller The PaintController, which provides access to control and manipulate the paint application

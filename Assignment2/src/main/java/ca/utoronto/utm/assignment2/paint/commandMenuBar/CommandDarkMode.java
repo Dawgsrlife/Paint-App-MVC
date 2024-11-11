@@ -27,6 +27,7 @@ public class CommandDarkMode extends MenuItem implements Command {
      * Executes the dark mode command, applying a dark mode stylesheet to the
      * application Scene. This method replaces the current stylesheet with
      * "paint-style-dark.css".
+     *
      * @param model      The PaintModel, which manages the application's state.
      * @param scene      The JavaFX Scene associated with the paint application, allowing commands to interact with the UI.
      * @param controller The PaintController, which provides access to control and manipulate the paint application

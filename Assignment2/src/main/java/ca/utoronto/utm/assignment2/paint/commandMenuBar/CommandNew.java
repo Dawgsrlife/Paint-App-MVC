@@ -25,9 +25,10 @@ public class CommandNew extends MenuItem implements Command {
 
     /**
      * Executes the new canvas command. This method displays a confirmation dialog
-     * to the user to verify if they want to create a new canvas. If the user confirms,
-     * the current canvas is cleared, which removes all shapes and starts fresh.
-     * Otherwise, the program exits the dialog and canvas remains the same.
+     * to the user to verify if they want to create a new canvas.
+     * If the user confirms, the current canvas is cleared, which removes all shapes
+     * and starts fresh. Otherwise, the program exits the dialog and canvas remains the same.
+     *
      * @param model      The PaintModel that manages the application's state, including shapes.
      * @param scene      The JavaFX Scene.
      * @param controller The PaintController.
