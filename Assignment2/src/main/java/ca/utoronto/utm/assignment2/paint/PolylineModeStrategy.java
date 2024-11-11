@@ -3,11 +3,14 @@ package ca.utoronto.utm.assignment2.paint;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.shapes.Point;
 import ca.utoronto.utm.assignment2.paint.shapes.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Polyline;
 
 public class PolylineModeStrategy extends DrawModeStrategy implements ModeStrategy {
+    Polyline polyline;
 
     public PolylineModeStrategy(PaintModel model, String mode, PropertiesPanel pp) {
         super(model, mode, pp);
+        polyline = (Polyline)model.getCurrentShape();
     }
 
     @Override
@@ -21,21 +24,19 @@ public class PolylineModeStrategy extends DrawModeStrategy implements ModeStrate
         // Disable the ability to do anything by pressing both buttons
         if (isPrimaryButton && isSecondaryButton) return;
 
-        Shape shape = model.getCurrentShape();
-
-        // TODO: handle polyline creation
-        if (shape == null) {
-            System.out.println("Make polyline work! Not yet working with this Strategy.");
-            return;
-        }
-
-        if (isPrimaryButton) {
-            shape.setEnd(point);
-            model.addTempShape(shape);
-        } else if (isSecondaryButton) {
-            shape.finalizeShape();
-            finalizeShape();  // from superclass
-            shape.setFinalized(true);  // After ending a Polyline, mark it finalized
+        if (polyline == null || !polyline.hasStarted()) {
+            super.onMousePressed(point, isPrimaryButton, isSecondaryButton);
+            polyline = (Polyline)model.getCurrentShape();
+            polyline.setStarted(true);
+        } else if (polyline.hasStarted()) {
+            if (isPrimaryButton) {
+                polyline.setEnd(point);
+                model.addTempShape(polyline);
+            } else if (isSecondaryButton) {
+                polyline.finalizeShape();
+                finalizeShape();  // from superclass
+                polyline.setFinalized(true);  // After ending a Polyline, mark it finalized
+            }
         }
     }
 
