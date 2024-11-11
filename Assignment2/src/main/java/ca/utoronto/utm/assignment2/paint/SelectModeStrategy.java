@@ -25,18 +25,17 @@ public class SelectModeStrategy implements ModeStrategy {
         if (!isPrimaryButton) return;
 
         model.setCurrentShape(model.getSelected(point));
-        if (model.getCurrentShape() != null) properties.loadPaintProperties(model.getCurrentShape());
+        properties.loadPaintProperties(model, model.getCurrentShape());
     }
 
     @Override
     public void onMouseDragged(Point point) {
         if (model.getCurrentShape() == null) return;
 
+        properties.loadPaintProperties(model, model.getCurrentShape());
         Shape shape = model.getCurrentShape();
         Point lastPoint = model.getLastPoint();
-
         shape.move(point.getX() - lastPoint.getX(), point.getY() - lastPoint.getY());
-
         model.update();
     }
 
