@@ -1,91 +1,171 @@
 (replicate sections below for each feature you want to highlight)
 --------------------------------------------------------------------------------
+FeatureName: Smart Shape Snapping
+
+Description:
+Automatically convert squiggle shapes into polygons when they closely resemble
+a standard shape. This feature allows for faster shape creation and greater
+ease of use for the user, especially when precision isn’t the priority.
+
+Reference:
+US4.017
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Text Tool
+
+Description:
+Allow users to insert and edit text directly onto the canvas.
+This tool supports customization of text properties such as font and color,
+and the ability to move the text box after placement.
+
+Reference:
+US4.015
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Polygon Painter
+
+Description:
+Enable users to draw polygons with any number of sides, offering flexibility
+for creating a variety of shapes. This feature was an unexpected bonus that
+emerged while addressing another issue, adding valuable functionality without
+the need for a dedicated backlog item.
+
+Reference:
+US4.210
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Precision Eraser
+
+Description:
+Allow users to erase parts of shapes with fine control
+by adjusting the eraser size.
+This tool ensures users can delete specific areas
+without affecting other parts of their artwork, ensuring precision.
+
+References:
+US3.009, US4.027
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Undo and Redo
+
+Description:
+Implement Undo and Redo functionality through both menu and keyboard shortcuts,
+allowing users to easily revert or reapply their last drawing actions.
+This feature enhances usability by providing greater flexibility in editing.
+
+Reference:
+US4.014
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Stroke Eraser
+
+Description:
+Provide users with an eraser tool that allows them to delete entire shapes
+from the canvas in a simple action, instead of erasing stroke by stroke,
+making it more efficient to remove unwanted shapes.
+
+Reference:
+US4.028
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Pretty GUI
+
+Description:
+Redesign the user interface to be modern and visually appealing,
+replacing the basic JavaFX default look
+with a more polished and user-friendly experience.
+
+Reference:
+US4.410
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+FeatureName: Polyline
+
+Description:
+Refactor the Polyline tool to be consistent with the Strategy design pattern,
+improving its functionality and simplifying its interaction with other tools
+in the application.
+
+Reference:
+US1.013, US3.026, BUG4.460
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 FeatureName: Cursor Coordinate Display
 
-Description: 
-	Display cursor's current coordinate, in order to make user aware of where
-	the shape is going to be located.
+Description:
+Display the current coordinates of the cursor, allowing users to see the exact
+location where shapes will be placed on the canvas.
+This feature improves precision during shape placement.
 
-Reference: 
-	US4.019
+Reference:
+US4.019
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: New
 
-Description: 
-	Work on a new canvas, with everything added previously removed.
+Description:
+Start with a fresh canvas, clearing any previously added shapes to provide
+a clean workspace for new creations.
 
-Reference: 
-	US4.100
+Reference:
+US4.100
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: Open
 
 Description:
-	Open a previously saved *.a2s canvas file.
+Open an existing canvas file saved in the *.a2s format,
+allowing users to continue working on previously saved projects.
 
 Reference:
-	US4.101
+US4.101
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: Save
 
 Description:
-	Save current canvas into a *.a2s file.
+Save the current state of the canvas into a *.a2s file,
+preserving all shapes and configurations for later use.
 
 Reference:
-	US4.102
+US4.102
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: Cut
 
 Description:
-	After successfully selecting a shape, the user can cut the basic shape on
-	the canvas.
-    The steps using menubar:
-    1. Draw a shape.
-    2. Choose Select on the left side button. Click the shape to select the shape.
-    3. On Edit menubar, click Cut. The selected shape disappear.
+Allow users to cut a selected shape from the canvas after it has been chosen.
+The steps using the menu bar are as follows:
+1. Draw a shape.
+2. Select the shape using the "Select" tool on the left.
+3. Click "Cut" under the Edit menu to remove the selected shape from the canvas.
 
 Reference:
-	US4.025
+US4.025
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: Copy
 
 Description:
-	After successfully selecting a shape, the user can copy a shape.
-    The steps using menubar:
-    1. Draw a shape.
-    2. Choose Select on the left side button. Click the shape to select the shape.
-    3. On Edit menubar, click Copy. The selected shape was copied to clipboard without
-    removing it from the canvas.
+Enable users to copy a selected shape to the clipboard
+without removing it from the canvas.
+
+The steps using the menu bar are as follows:
+1. Draw a shape.
+2. Select the shape using the "Select" tool on the left.
+3. Click "Copy" under the Edit menu to copy the shape.
 
 Reference:
-	US4.025
+US4.025
+--------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 FeatureName: Paste
 
 Description:
-	After successfully copying a shape, the user can paste the basic shape on
-    the canvas. This should go with keyboard shortcuts in order to place the copied
-    shape at the desired place.
+Allow users to paste a previously copied shape onto the canvas.
+The pasted shape can be positioned using keyboard shortcuts for easier placement.
 
 Reference:
-	US4.025
+US4.025
 --------------------------------------------------------------------------------
-FeatureName: Keyboard shortcuts with Cut, Copy and Paste.
-
-Description:
-    Cut with keyboard(Ctrl + X).
-    Copy with keyboard(Ctrl + C).
-    Paste with keyboard(Ctrl + V).
-
-Reference:
-	US4.029
---------------------------------------------------------------------------------
-FeatureName: Polygon painter
-
-Description:
-	Draw a right polygon with as much sides as you want! Can't believe it does
-	not have its own backlog, since it's a side product we got when fixing
-	another bug
-
-Reference:
-	US4.210
 --------------------------------------------------------------------------------
