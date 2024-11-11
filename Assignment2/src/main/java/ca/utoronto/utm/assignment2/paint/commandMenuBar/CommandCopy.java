@@ -8,12 +8,33 @@ import javafx.scene.control.MenuItem;
 
 import java.util.ArrayList;
 
+/**
+ * The CommandCopy class implements the Command interface to handle
+ * copying the currently selected shape in the PaintModel. This class
+ * creates a copy of the selected shape and adds it as a new shape
+ * within the model, allowing for easy duplication of shapes.
+ */
 public class CommandCopy extends MenuItem implements Command {
 
+    /**
+     * Initializes a new CommandCopy MenuItem with the label "copy".
+     */
     public CommandCopy() {
         super("copy");
     }
 
+    /**
+     * Executes the copy command. If a shape is currently selected in the model,
+     * this method creates a copy of the shape's properties, coordinates,
+     * and any associated points, then adds the new shape to the model.
+     * This method utilizes a factory method in PaintStrategy to create
+     * the appropriate shape type, ensuring it creates a new instance of the correct
+     * type in the application.
+     *
+     * @param model      The PaintModel.
+     * @param scene      The JavaFX Scene.
+     * @param controller The PaintController.
+     */
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
         if (model.getCurrentShape() != null) {
