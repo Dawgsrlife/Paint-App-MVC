@@ -19,11 +19,26 @@ import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
 /**
- * This is a class defining PropertiesPanel
- * A propertiesPanel is where user can justify properties a shape is already painted on the canvas
- * or a shape is going to be created
+ * This is a class defining PropertiesPanel.
+ * A PropertiesPanel allows users to modify properties of a shape that has been drawn on the canvas,
+ * or set properties for a shape that will be created.
  *
- * @author tianji61 / mengale1
+ * The panel includes controls to adjust fill and stroke colors, thickness, vertices count, and coordinates.
+ * It also updates the visual representation of these properties in real time.
+ * Implements EventHandler to listen and respond to user interactions with UI elements.
+ *
+ * Dependencies:
+ * - PaintModel: The main model managing the state of the canvas.
+ * - PaintProperties: Stores the current properties of a shape.
+ * - Shape: Represents a shape with properties that can be modified by this panel.
+ * - Point: Represents the coordinates of a shape's start and end points.
+ *
+ * @see PaintModel
+ * @see PaintProperties
+ * @see Shape
+ * @see Point
+ *
+ * @author tianji61
  */
 public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent> {
 
@@ -144,10 +159,17 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         }
     }
 
+    /**
+     * Sets the display coordinates in the panel.
+     * @param p The point containing x and y coordinates.
+     */
     public void setMouseCoords(Point p) {
         this.coordinates.getFirst().setText((int)p.getX() + " | " + (int)p.getY());
     }
 
+    /**
+     * Updates the UI to reflect current slider values and color previews.
+     */
     private void updateVisualizer() {
         for (int i = 0; i < sliders.size(); i++) {
             labels.get(i).setText(labels.get(i).getText().split(":")[0] + ": " + (int)sliders.get(i).getValue());
@@ -181,6 +203,11 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         return new PaintProperties(fill.isSelected(), fillColor, borderColor, borderWidth, vertices);
     }
 
+
+    /**
+     * Retrieves the properties from the panel to apply to a shape.
+     * @return A PaintProperties object containing current settings.
+     */
     public void loadPaintProperties(PaintModel pm, Shape s) {
         selectedShape = s;
         this.pm = pm;

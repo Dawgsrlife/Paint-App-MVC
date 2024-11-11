@@ -5,6 +5,21 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.layout.GridPane;
 
+/**
+ * ShapeChooserPanel is a control panel in a painting application that enables users to select different shapes
+ * to draw on the canvas. It contains buttons for each shape type, represented by SVG icons, and only one shape
+ * can be selected at a time.
+ *
+ * ShapeChooserPanel implements EventHandler<ActionEvent> to handle button clicks and ensure that only one button
+ * remains selected at any time. The selected shape determines the drawing mode in the application.
+ *
+ * Dependencies:
+ * - ShapeChooserPanelButton: A custom button class representing a shape with an SVG icon and command.
+ *
+ * @see ShapeChooserPanelButton
+ *
+ * Author: Ethan
+ */
 public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEvent> {
 
     public ShapeChooserPanel() {
@@ -51,6 +66,11 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
         }
     }
 
+    /**
+     * Returns the command (mode) of the currently selected shape.
+     *
+     * @return A string representing the current drawing mode (e.g., "Circle", "Square").
+     */
     public String getMode() {
         String mode = "Select";
         for (Object o : this.getChildren()) {

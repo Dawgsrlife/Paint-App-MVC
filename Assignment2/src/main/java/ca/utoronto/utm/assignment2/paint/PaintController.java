@@ -3,7 +3,6 @@ package ca.utoronto.utm.assignment2.paint;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
 import ca.utoronto.utm.assignment2.paint.shapes.Point;
-import ca.utoronto.utm.assignment2.paint.shapes.Text;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
