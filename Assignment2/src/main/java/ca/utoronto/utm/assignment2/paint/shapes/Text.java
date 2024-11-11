@@ -23,7 +23,6 @@ public class Text extends Rectangle {
         setType("Text");
         this.textContent = ""; // Initially empty text
         this.font = new Font("Arial", 20); // Default font and size
-
         this.textField = new TextField();
         setupTextField(start);
     }
@@ -36,6 +35,7 @@ public class Text extends Rectangle {
         this.textField.setFont(font);
         this.textField.setVisible(true);
         this.textField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black;");
+        System.out.println("Prompt ");
     }
 
     @Override
