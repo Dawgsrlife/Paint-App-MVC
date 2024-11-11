@@ -11,6 +11,17 @@ Reference:
 US4.017
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+FeatureName: Editing Panel Ability
+
+Description:
+The user is able to select shapes and customize its parameters as appropriate.
+For example, they may change the colour of the fill, stroke, or even the number
+of vertices of the shape if it is a polygon.
+
+Reference:
+US4.023
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 FeatureName: Text Tool
 
 Description:
@@ -167,5 +178,4 @@ The pasted shape can be positioned using keyboard shortcuts for easier placement
 
 Reference:
 US4.025
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
