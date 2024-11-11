@@ -34,10 +34,17 @@ ISSUE    : The selection tool is not functional when trying to select
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
 TYPE     : BUG BUG4.450 : UTORID : NotStarted
-NAME     : Text box behaviour is questionable.
+NAME     : Text box behaviour is questionable
 PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL : 1 hour
+ESTIMATE : 1 hour : ACTUAL :
 ISSUE    : Text boxes currently cannot drag alongside the text content.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.460 : mengale1 : InProgress
+NAME     : Polyline disabled
+PRIORITY : 1
+ESTIMATE : 30 mins : ACTUAL :
+ISSUE    : Polyline is currently disabled in the Strategy architecture.
 --------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
