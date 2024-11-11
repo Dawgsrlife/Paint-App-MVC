@@ -38,6 +38,14 @@ PRIORITY : 1
 ESTIMATE : 30 mins : ACTUAL :
 ISSUE    : Polyline is currently disabled in the Strategy architecture.
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.441 : huaethan : InProgress
+NAME     : Factory Design Pattern for ModeStrategy
+PRIORITY : 3
+ESTIMATE : 30 mins : ACTUAL :
+ISSUE    : The creation of the ModeStrategy classes are bundled inside of
+           PaintController, violating the open/closed principle.
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------

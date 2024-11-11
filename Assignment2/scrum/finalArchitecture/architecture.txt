@@ -2,17 +2,86 @@
 
 # MVC
 # ModelClasses
-	(list your classes here, no description)
+	PaintModel
 # ViewClasses
-	(list your classes here, no description)
+	PaintView
+	PropertiesPanel
+	ShapeChooserPanel
+
 # ControllerClasses
-	(list your classes here, no description)
+	PaintController
 
 # (other logical  ways of collecting your classes)
+# Paint Modes
+    Shape
+    Circle
+    Oval
+    Polygon
+    Polyline
+    Rectangle
+    SmartShape
+    Square
+    Squiggle
+    Text
+    Triangle
+
+# MenuBar Classes
+    Command
+    CommandCopy
+    CommandCopyright
+    CommandCut
+    CommandDarkMode
+    CommandExit
+    CommandLightMode
+    CommandMenuBar
+    CommandNew
+    CommandOpen
+    CommandPaste
+    CommandRedo
+    CommandUndo
+
+# Mode Strategies
+    ModeStrategy
+    DrawModeStrategy
+    ObjectEraserStrategy
+    PaintStrategy
+    PolylineModeStrategy
+    SelectModeStrategy
+    TextModeStrategy
 	
 # Design Patterns Used (collections of classes into DP)
 --------------------------------------------------------------------------------
-	(For each design pattern, pull from  and modify designPatternTemplate.txt)
+--------------------------------------------------------------------------------
+Name: (name) (so you can refer to it below)
+Pattern Name: Observer/Observable
+Reference:
+	https://www.oodesign.com/images/design_patterns/behavioral/observer_implementation_-_uml_class_diagram.gif
+
+Purpose:
+	(why is this pattern implemented? think SOLID as possible reasons and explain in terms of the application)
+	This pattern is used in order to implement the MVC pattern, which follows the principle of dependency
+	inversion. By doing this, the PaintPanel and PaintModel classes are decoupled and allows for more
+	observers to monitor the PaintModel, which is open for extension but closed for modification.
+
+UML:
+	(include a UML or refer to one included in the finalArchitecture directory)
+	(make it easy on us, and organize the diagram so that it looks like the
+	reference pattern).
+
+Classes:
+	(list classes involved and their roles based on Reference above)
+	PaintPanel: Observer
+	PaintModel: Observable
+
+Usage:
+	(Briefly describe why a developer would be playing with this part of
+	the code and how they would use it to achieve that purpose)
+	These classes should mainly be unchanged, save for situations where bugs need to be fixed
+	or a big feature is being added to the application. For example, the addition of drawing layers
+	is a jump in complexity compared to adding a new drawing mode, and requires changes to the model
+	in order to implement.
+
+--------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
 # High Level Architecture Discussion
