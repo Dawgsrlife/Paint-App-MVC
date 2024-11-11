@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
+import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -12,10 +13,11 @@ public class CommandCopyright extends MenuItem implements Command {
     }
 
     @Override
-    public void execute(PaintModel model, Scene scene) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
+        Alert alert = new Alert(Alert.AlertType.NONE,
                 "Haha, jokes on you, we don't respect copyrights",
                 ButtonType.OK);
+        alert.setTitle("User Guide");
         alert.showAndWait();
     }
 }

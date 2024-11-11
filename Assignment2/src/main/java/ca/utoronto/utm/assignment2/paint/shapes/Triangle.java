@@ -1,4 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
+
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 
 /**
  * A class representing a triangle on the canvas

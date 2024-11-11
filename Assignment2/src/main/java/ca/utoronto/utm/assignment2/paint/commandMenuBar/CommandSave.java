@@ -1,7 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
+import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintModel;
-import ca.utoronto.utm.assignment2.paint.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -16,7 +17,7 @@ public class CommandSave extends MenuItem implements Command {
         super("Save");
     }
     @Override
-    public void execute(PaintModel model, Scene scene) {
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
         FileChooser fc = new FileChooser();
         fc.setTitle("Save canvas");
         fc.setInitialFileName("New-Canvas.a2s");

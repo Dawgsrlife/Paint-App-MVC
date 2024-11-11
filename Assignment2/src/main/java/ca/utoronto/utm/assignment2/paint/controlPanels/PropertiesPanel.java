@@ -1,8 +1,8 @@
 package ca.utoronto.utm.assignment2.paint.controlPanels;
 
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
-import ca.utoronto.utm.assignment2.paint.Point;
-import ca.utoronto.utm.assignment2.paint.Shape;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 /**
  * This is a class defining PropertiesPanel
+ * A propertiesPanel is where user can justify properties a shape is already painted on the canvas
+ * or a shape is going to be created
  *
  * @author tianji61 / mengale1
  */
@@ -33,7 +35,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     public PropertiesPanel() {
         // Background, padding styling, and gaps
         this.setPrefWidth(200);
-        this.setVgap(5.0);
+        this.setVgap(10.0);
         this.setHgap(15);
         this.setPadding(new Insets(10.0));
         getStyleClass().add("properties-panel");
@@ -60,7 +62,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
         this.add(rectangles.getLast(), 2, 2);
 
-        this.add(new Label("Border Color"), 0, 7);
+        this.add(new Label("Stroke Color"), 0, 7);
         rectangles.add(new Rectangle(20, 20, Color.BLACK));
         this.add(rectangles.getLast(), 2, 7);
 
@@ -109,7 +111,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         sliders.get(8).setValue(5);
 
         // Configure polygon vertices
-        sliders.get(9).setMin(4);
+        sliders.get(9).setMin(5);
         sliders.get(9).setMax(20);
 
 

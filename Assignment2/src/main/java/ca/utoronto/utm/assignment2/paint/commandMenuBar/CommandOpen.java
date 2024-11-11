@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint.commandMenuBar;
 
 import ca.utoronto.utm.assignment2.paint.*;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -17,11 +18,14 @@ public class CommandOpen extends MenuItem implements Command {
         super("Open");
     }
     @Override
-    public void execute(PaintModel model, Scene scene) {
+    public void execute(PaintModel model, Scene scene, PaintController controller) {
         FileChooser fc = new FileChooser();
         fc.setTitle("Open canvas");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("A2S", "*.a2s"));
         File file = fc.showOpenDialog(new Stage());
+        if (file == null) {
+            return;
+        }
         try (BufferedReader br = new BufferedReader(new FileReader(file))){
             Alert alert = new Alert(Alert.AlertType.WARNING,
                     "Are you sure you want to open this canvas? \n" +

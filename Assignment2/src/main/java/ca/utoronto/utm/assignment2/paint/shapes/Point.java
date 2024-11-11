@@ -1,7 +1,7 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
 public class Point{
-    protected double x, y; // Available to our package
+    private double x, y; // Available to our package
 
     public Point(double x, double y) {
         this.x = x;

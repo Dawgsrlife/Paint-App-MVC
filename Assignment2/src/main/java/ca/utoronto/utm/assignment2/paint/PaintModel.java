@@ -1,6 +1,7 @@
 package ca.utoronto.utm.assignment2.paint;
 
-import javafx.scene.shape.Circle;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -9,8 +10,9 @@ import java.util.Stack;
 public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
     private final Stack<Shape> undoStack = new Stack<>();
+    private Shape currentShape;
     private Shape tempShape;
-
+    private Point lastPoint = new Point(0, 0);
 
     /**
      * Get all steps queued to be painted
@@ -22,8 +24,24 @@ public class PaintModel extends Observable {
         return tempShapes;
     }
 
+    public Shape getCurrentShape() {
+        return currentShape;
+    }
+
+    public void setCurrentShape(Shape shape) {
+        this.currentShape = shape;
+    }
+
     public Shape getTempShape() {
         return tempShape;
+    }
+
+    public Point getLastPoint() {
+        return lastPoint;
+    }
+
+    public void setLastPoint(Point lastPoint) {
+        this.lastPoint = lastPoint;
     }
 
     /**
@@ -57,6 +75,12 @@ public class PaintModel extends Observable {
         update();
     }
 
+    public void undo(Shape shape) {
+        shapes.remove(shape);
+        undoStack.push(shape);
+        update();
+    }
+
     public void redo() {
         if(undoStack.isEmpty()) return;
         shapes.push(undoStack.pop());
@@ -80,5 +104,10 @@ public class PaintModel extends Observable {
     public void update() {
         this.setChanged();
         this.notifyObservers();
+    }
+
+    public void removeShape(Shape selectedShape) {
+        shapes.remove(selectedShape);
+        update();
     }
 }

@@ -33,14 +33,15 @@ public class Paint extends Application {
         Pane canvasPane = new Pane();
 
         this.model = new PaintModel();
-        menuBar = new CommandMenuBar(model, scene);
+
         shapeChooserPanel = new ShapeChooserPanel();
         propertiesPanel = new PropertiesPanel();
         this.controller = new PaintController(model, shapeChooserPanel, propertiesPanel, canvasPane);
         this.view = new PaintView(model, controller, canvasPane);
+        menuBar = new CommandMenuBar(model, scene, controller);
 
         root.setTop(menuBar);
-        root.setCenter(view);
+        root.setCenter(canvasPane);
         root.setLeft(shapeChooserPanel);
         root.setRight(propertiesPanel);
         scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("commandMenuBar/paint-style.css")).toExternalForm());

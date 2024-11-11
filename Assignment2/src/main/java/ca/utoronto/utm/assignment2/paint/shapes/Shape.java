@@ -1,7 +1,9 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
+
+import java.util.ArrayList;
 
 /**
  * This class represents a shape instance on canvas,
@@ -13,27 +15,34 @@ import javafx.scene.paint.Color;
  * @author tianji61
  */
 public abstract class Shape {
-
-    // default fields
+    // Default Fields
     private Point start;
     private Point end;
     private String type;
     private final PaintProperties properties;
+    private final ArrayList<Point> points = new ArrayList<>();
+
+    // Tracking Fields
+    private boolean finalized;
 
     public Shape(Point start, Point end, String type, PaintProperties properties) {
         this.start = start;
         this.end = end;
         this.type = type;
         this.properties = properties;
+
+        this.finalized = true;
     }
 
-    abstract void paint(GraphicsContext g2d);
+    abstract public void paint(GraphicsContext g2d);
 
-    protected abstract void fill(GraphicsContext g2d);
+    abstract protected void fill(GraphicsContext g2d);
 
-    protected abstract double[] getPaintInfo();
+    abstract protected double[] getPaintInfo();
 
-    abstract boolean includeCursor(Point p);
+    abstract public boolean includeCursor(Point p);
+
+    abstract public void move(double dx, double dy);
 
 
     public Point getStart() {
@@ -64,10 +73,22 @@ public abstract class Shape {
         return properties;
     }
 
+    public ArrayList<Point> getPoints() {
+        return points;
+    }
+
     @Override
     public String toString() {
         return start + "," + end+ "," + type + "," + properties;
     }
 
     public void finalizeShape() {}
+
+    public boolean isFinalized() {
+        return finalized;
+    }
+
+    public void setFinalized(boolean finalized) {
+        this.finalized = finalized;
+    }
 }

@@ -1,5 +1,6 @@
-package ca.utoronto.utm.assignment2.paint;
+package ca.utoronto.utm.assignment2.paint.shapes;
 
+import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.shape.Rectangle;
 
@@ -28,12 +29,12 @@ public class SmartShape extends Squiggle {
      * @return the vector a - b
      */
     private Point getVector(Point a, Point b) {
-        return new Point(a.x - b.x, a.y - b.y);
+        return new Point(a.getX() - b.getX(), a.getY() - b.getY());
     }
 
     private double dist(Point a, Point b) {
         Point v = getVector(a,b);
-        return Math.sqrt(v.x * v.x + v.y * v.y);
+        return Math.sqrt(v.getX() * v.getX() + v.getY() * v.getY());
     }
 
     private double dist(Point a) {
@@ -43,7 +44,7 @@ public class SmartShape extends Squiggle {
     private double getRelativeAngle(Point a, Point b, Point origin) {
         Point aVec = getVector(a,origin);
         Point bVec = getVector(b,origin);
-        double normedDotProduct = (aVec.x * bVec.x + aVec.y * bVec.y)/(dist(aVec) * dist(bVec));
+        double normedDotProduct = (aVec.getX() * bVec.getX() + aVec.getY() * bVec.getY())/(dist(aVec) * dist(bVec));
         return Math.acos(normedDotProduct);
     }
 
@@ -69,8 +70,8 @@ public class SmartShape extends Squiggle {
         double[] xArr = new double[numPoints];
         double[] yArr = new double[numPoints];
         for(int i = 0; i < numPoints; i++) {
-            xArr[i] = points.get(i).x;
-            yArr[i] = points.get(i).y;
+            xArr[i] = points.get(i).getX();
+            yArr[i] = points.get(i).getY();
         }
 
         PaintProperties pp = getProperties();

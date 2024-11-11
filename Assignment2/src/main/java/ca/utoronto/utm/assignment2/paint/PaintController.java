@@ -2,95 +2,65 @@ package ca.utoronto.utm.assignment2.paint;
 
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.controlPanels.ShapeChooserPanel;
+import ca.utoronto.utm.assignment2.paint.shapes.Point;
+import ca.utoronto.utm.assignment2.paint.shapes.Text;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class PaintController implements EventHandler<MouseEvent> {
-
     private final PaintModel model;
     private final ShapeChooserPanel scp;
     private final PropertiesPanel pp;
-    private Shape shape;
     private final Pane canvasPane;
-    private Point lastPoint = new Point(0, 0);
+
+    private ModeStrategy modeStrategy;
 
     public PaintController(PaintModel model, ShapeChooserPanel scp, PropertiesPanel pp, Pane canvasPane) {
         this.model = model;
         this.scp = scp;
         this.pp = pp;
         this.canvasPane = canvasPane;
+
+        // Default drawing mode
+        setModeStrategy(scp.getMode());
+    }
+
+    public void setModeStrategy(String mode) {
+        switch (mode) {
+            case "Select" -> modeStrategy = new SelectModeStrategy(model, pp);
+            case "ObjectEraser" -> modeStrategy = new ObjectEraserStrategy(model);
+            case "Polyline" -> {
+                // Make a new polyline shape first if it doesn't yet exist.
+                if (model.getCurrentShape() == null) modeStrategy = new DrawModeStrategy(model, mode, pp);
+
+                modeStrategy = new PolylineModeStrategy(model, mode, pp);
+            }
+            case "text" -> modeStrategy = new TextModeStrategy(model, mode, pp, canvasPane);
+            default -> modeStrategy = new DrawModeStrategy(model, mode, pp);
+        }
     }
 
     @Override
     public void handle(MouseEvent mouseEvent) {
+        // Grab current point and set coords
         Point point = new Point(mouseEvent.getX(), mouseEvent.getY());
         pp.setMouseCoords(point);
 
-        // determine mouse event type
-        EventType<MouseEvent> event = (EventType<MouseEvent>) mouseEvent.getEventType();
-        if (event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isPrimaryButtonDown()) {
-            if (scp.getMode().equals("select")) {
-                this.shape = model.getSelected(point);
-                if (this.shape != null) {
-                    pp.loadPaintProperties(shape);
-                }
-            } else if (scp.getMode().equals("Polyline") & this.shape != null) {
-                this.shape.setEnd(point);
-                model.addTempShape(this.shape);
-            } else {
-                // If the shape to be created is a Polyline, then finalize it
-                if (model.getTempShape() instanceof Polyline) {
-                    finalizeShape();
-                }
-                // create shape and initialize starting point on MOUSE_PRESSED
-                System.out.println("Started " + scp.getMode());
-                this.shape = PaintStrategy.getPaintStrategy(scp.getMode(), point, point, pp.getPaintProperties(), null);
+        switch (mouseEvent.getEventType().toString()) {
+            case "MOUSE_PRESSED" -> {
+                // Update the mode strategy only on mouse press
+                setModeStrategy(scp.getMode());
+                modeStrategy.onMousePressed(point, mouseEvent.isPrimaryButtonDown(), mouseEvent.isSecondaryButtonDown());
             }
-        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_DRAGGED) & mouseEvent.isPrimaryButtonDown()) {
-            if (scp.getMode().equals("select") & this.shape != null) {
-                shape.getStart().setX(shape.getStart().getX() + point.x - lastPoint.x);
-                shape.getStart().setY(shape.getStart().getY() + point.y - lastPoint.y);
-                shape.getEnd().setX(shape.getEnd().getX() + point.x - lastPoint.x);
-                shape.getEnd().setY(shape.getEnd().getY() + point.y - lastPoint.y);
-                model.update();
-            } else if (this.shape != null){
-                // update shape ending point on MOUSE_DRAGGED
-                this.shape.setEnd(point);
-                model.addTempShape(this.shape);
+            case "MOUSE_MOVED" -> modeStrategy.onMouseMoved(point);
+            case "MOUSE_DRAGGED" -> modeStrategy.onMouseDragged(point);
+            case "MOUSE_RELEASED" -> modeStrategy.onMouseReleased(point);
+            default -> {
+                // If there's a new event type, you can add more cases or handle it
             }
-        } else if (!scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_RELEASED) & !scp.getMode().equals("select")) {
-            if (scp.getMode().equals("Text") & this.shape != null) {
-                // Finalize the Text shape and activate the TextField for input
-                Text textShape = (Text) this.shape;
-                textShape.activateTextField(canvasPane, this);  // Display the TextField after drawing the text box
-            } else {
-                // Finalize and add the shape to the model for other modes
-                this.shape.finalizeShape();
-                finalizeShape();
-            }
-        } else if (scp.getMode().equals("Polyline") & event.equals(MouseEvent.MOUSE_PRESSED) & mouseEvent.isSecondaryButtonDown() & !scp.getMode().equals("select")) {
-            // finalize by putting shape into models array (polyline)
-            this.shape.finalizeShape();
-            finalizeShape();
-            System.out.println("Finished " + scp.getMode());
         }
-        lastPoint = point;
-    }
-
-    /**
-     * this method finalizes a sketching process
-     * clears template shape
-     * adds finalized version into models array
-     */
-    public void finalizeShape() {
-        model.addShape(this.shape);
-        // clean cache on MOUSE_RELEASED
-        if (this.shape != null) {
-            System.out.println("    ^ Added");
-            this.shape = null;
-        }
+        model.setLastPoint(point);
     }
 
     /**

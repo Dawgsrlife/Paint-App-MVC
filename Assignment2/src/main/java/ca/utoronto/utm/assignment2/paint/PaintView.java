@@ -1,5 +1,6 @@
 package ca.utoronto.utm.assignment2.paint;
 
+import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.MouseEvent;
@@ -15,7 +16,7 @@ public class PaintView extends Canvas implements Observer {
     private final Pane canvasPane;
 
     public PaintView(PaintModel model, PaintController controller, Pane canvasPane) {
-        super(500, 500);
+        super(700, 700);
         this.model = model;
         this.model.addObserver(this);
         this.canvasPane = canvasPane;
