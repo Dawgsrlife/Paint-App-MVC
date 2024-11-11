@@ -13,20 +13,19 @@ import java.util.ArrayList;
  * or release of the left mouse button
  */
 public class Squiggle extends Shape {
+    // Special field for lines
     private final ArrayList<Point> points = new ArrayList<>();
-    private final double strokeSize;
 
     public Squiggle(Point point, PaintProperties pp, ArrayList<Point> path) {
         super(point, point, "Squiggle", pp);
         points.add(point);
         if (path != null) this.points.addAll(path);
-        strokeSize = pp.getStrokeThickness();
     }
 
     @Override
     public void paint(GraphicsContext g2d) {
         g2d.setStroke(getProperties().getStrokeColor());
-        g2d.setLineWidth(strokeSize);
+        g2d.setLineWidth(getProperties().getStrokeThickness());
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
             Point p2 = points.get(i + 1);
