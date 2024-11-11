@@ -33,7 +33,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
     public PropertiesPanel() {
         // Background, padding styling, and gaps
         this.setPrefWidth(200);
-        this.setVgap(5.0);
+        this.setVgap(10.0);
         this.setHgap(15);
         this.setPadding(new Insets(10.0));
         getStyleClass().add("properties-panel");
@@ -109,7 +109,7 @@ public class PropertiesPanel extends GridPane implements EventHandler<MouseEvent
         sliders.get(8).setValue(5);
 
         // Configure polygon vertices
-        sliders.get(9).setMin(4);
+        sliders.get(9).setMin(5);
         sliders.get(9).setMax(20);
 
 

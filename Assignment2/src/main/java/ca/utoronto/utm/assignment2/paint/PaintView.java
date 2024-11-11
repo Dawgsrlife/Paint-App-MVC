@@ -16,7 +16,7 @@ public class PaintView extends Canvas implements Observer {
     private final Pane canvasPane;
 
     public PaintView(PaintModel model, PaintController controller, Pane canvasPane) {
-        super(500, 500);
+        super(700, 700);
         this.model = model;
         this.model.addObserver(this);
         this.canvasPane = canvasPane;
