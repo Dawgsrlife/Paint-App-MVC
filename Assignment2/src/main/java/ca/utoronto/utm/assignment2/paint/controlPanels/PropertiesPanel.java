@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 /**
  * This is a class defining PropertiesPanel
+ * A propertiesPanel is where user can justify properties a shape is already painted on the canvas
+ * or a shape is going to be created
  *
  * @author tianji61 / mengale1
  */
