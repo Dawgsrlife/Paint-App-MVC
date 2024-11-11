@@ -139,21 +139,23 @@ UML:
 	(include a UML or refer to one included in the finalArchitecture directory)
 	(make it easy on us, and organize the diagram so that it looks like the
 	reference pattern).
+	Refer to Factory.uml
 
 Classes:
 	(list classes involved and their roles based on Reference above)
-	class1: role1
-	class2: role1
-	class3: role1
-	class4: role1
+	ModeStrategyFactory: Factory
+	PaintController: Client
+	ModeStrategy: Product
+	DrawModeStrategy/ObjectEraserStrategy/...: ConcreteStrategy
 
 Usage:
 	(Briefly describe why a developer would be playing with this part of
 	the code and how they would use it to achieve that purpose)
+	When adding a new feature and a new strategy must be implemented, a developer
+	must add this concrete strategy into the ModeStrategyFactory so that the
+	PaintController gains access to this strategy.
 
 --------------------------------------------------------------------------------
-
-
 --------------------------------------------------------------------------------
 # High Level Architecture Discussion
 
@@ -161,4 +163,62 @@ Usage:
 	developer how to modify, extend, or understand your code)
 
 	(For each story, pull from and modify the highLevelTemplate.txt)
+--------------------------------------------------------------------------------
+New Drawing Mode:
+Description:
+	(description of what the feature is and how it is tied to the architecture
+	application and the code...)
 
+	A drawing mode enables a user to naturally draw a shape on the screen. The
+	drawing mode consists of an image icon appearing in the left button panel.
+	When the user clicks the image icon, the drawing mode is enabled. This means
+	that a strategy for handling user input for this drawing mode is installed.
+
+	Currently, the handling of the mouse events are done in the PaintController.
+	In order for the PaintController to be able to correctly call the methods that
+	each drawing mode requires, a ModeStrategy is used to direct the method calls.
+
+	When a mouse event is detected, the PaintController creates an instance of some
+	ModeStrategy class, which depends on the current drawing mode. The PaintController
+	then figures out which input was detected and calls the respective method of the
+	ModeStrategy.
+
+	The ModeStrategy is aware of the behaviour from each class. Thus it can call the
+	correct methods on the shape to attain the desired result.
+
+Implementation:
+	(inventory of ideas, required files, how they are tied to the architecture,
+		naming conventions (example: images/ButtonIconSquare.jpg, MHStrategySquare, ShapeSquare...)
+
+	To add a new drawing mode named X, provide a new class named X that extends Shape or some subclass
+	of Shape (i.e. Square, Triangle, etc.) and implement the needed methods accordingly.
+
+	Then, consider whether any of the existing ModeStrategy classes match the behaviour of X. If this is
+	the case, then simply making sure that the right ModeStrategy is returned in ModeStrategyFactory is
+	sufficient to make X functional. Otherwise, if none of the strategies will get X to work properly,
+	create a new class called XStrategy (or another fitting name) that implements ModeStrategy or
+	implements another concrete ModeStrategy. Implement the methods for each mouse event as necessary.
+	Change the ModeStrategyFactory to be able to return XStrategy when the drawing mode is X.
+
+	Finally, extend the ArrayList in ShapeChooserPanel to include X
+
+	(list of aspects of code to touch to implement the new drawing mode)
+
+	image icon: Create an SVG icon and place it into the 'svgs' array of ShapeChooserPanel. Make sure that
+	the index of this SVG icon is the same as the index of the matching mode X.
+
+	MouseHandlerStrategy:
+		On a mouse event, the handle method inside PaintController is called. The PaintController will
+		instantiate a new ModeStrategy using the ModeStrategyFactory and call its methods according to the
+		given mouse event.
+
+Example:
+	The Circle drawing mode allows the user to begin creating a circle upon clicking and holding the left
+	mouse button. This point is the center of the circle. Dragging while the left mouse button is pressed
+	will resize the circle so that the radius is touching the mouse, keeping the center in the initial position.
+	The user can release the button to finalize the circle, which stops the resizing and continue drawing other
+	shapes on the canvas.
+
+	This class extends the Oval class because its implementation is very similar. This drawing mode also falls into
+	the DrawingModeStrategy category for shapes.
+--------------------------------------------------------------------------------
