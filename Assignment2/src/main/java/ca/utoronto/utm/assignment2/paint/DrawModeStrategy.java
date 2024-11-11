@@ -32,9 +32,6 @@ public class DrawModeStrategy implements ModeStrategy {
         // so simply finalize it when they attempt to draw with another shape.
 
         model.setCurrentShape(PaintStrategy.getPaintStrategy(mode, point, point, properties.getPaintProperties(), null));
-
-        // TODO: remove the print statement for the final product
-        System.out.println("Started " + mode);
     }
 
     @Override
