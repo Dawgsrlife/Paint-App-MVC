@@ -16,16 +16,16 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.023 : mengale1 : InProgress
+TYPE     : USER STORY US4.023 : mengale1 : Complete
 NAME     : Editing panel
 PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL :
+ESTIMATE : 2 hours : ACTUAL : 2 hours
 AS A     : user
 I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of a shapes I drew.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.430 : huaethan : Completed
+TYPE     : BUG BUG4.430 : huaethan : Complete
 NAME     : SmartShape is not selectable
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL : 1 hour
