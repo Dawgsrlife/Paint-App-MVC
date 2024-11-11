@@ -16,7 +16,7 @@ public class ModeStrategyFactory {
             }
             case "Polyline" -> {
                 // Make a new polyline shape first if it doesn't yet exist.
-                if (model.getCurrentShape() == null) return new DrawModeStrategy(model, mode, pp);
+                if (model.getCurrentShape() == null) return new PolylineModeStrategy(model, mode, pp);
 
                 return new PolylineModeStrategy(model, mode, pp);
             }
