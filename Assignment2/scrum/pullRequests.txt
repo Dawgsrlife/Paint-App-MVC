@@ -2,6 +2,7 @@ Pull Requests:
 
 BUG4.430    author:huaethan puller:chen2046 status:Waiting
 US4.029     author:chen2046 puller:huaethan status:waiting
+BUG4.440    author:tianji61 puller:         status:Waiting
 
 US4.017     author:huaethan puller:tianji61 status:Completed
 US4.410     author:tianji61 puller:huaethan status:Completed
