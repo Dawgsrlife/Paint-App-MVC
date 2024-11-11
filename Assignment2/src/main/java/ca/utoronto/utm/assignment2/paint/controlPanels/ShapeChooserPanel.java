@@ -10,7 +10,7 @@ public class ShapeChooserPanel extends GridPane implements EventHandler<ActionEv
     public ShapeChooserPanel() {
 
         // adding gap between elements
-        this.setVgap(5.0);
+        this.setVgap(10.0);
         this.setPadding(new Insets(10.0));
         getStyleClass().add("shape-chooser-panel");
 

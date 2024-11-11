@@ -32,13 +32,6 @@ ESTIMATE : 1 hour : ACTUAL : 1 hour
 ISSUE    : The selection tool is not functional when trying to select
            a SmartShape
 --------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG4.440 : UTORID : NotStarted
-NAME     : Square Class Refactoring
-PRIORITY : 1
-ESTIMATE : 30 mins : ACTUAL :
-ISSUE    : Square has unexpected behaviour and should ideally extend Polygon
---------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
@@ -585,6 +578,13 @@ AS A     : user
 I WANT   : To be able to erase strokes drawn on the canvas
 SO THAT  : I can have a handy tool to erase entire shapes instead of rubbing
            away at them using a PrecisionEraser
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.440 : tianji61 : Complete
+NAME     : Square Class Refactoring
+PRIORITY : 1
+ESTIMATE : 5 minutes : ACTUAL : 5 minutes
+ISSUE    : Square has unexpected behaviour and should ideally extend Polygon
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################
