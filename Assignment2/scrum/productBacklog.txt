@@ -42,6 +42,13 @@ ESTIMATE : 1 hour : ACTUAL : 1 hour
 ISSUE    : The selection tool is not functional when trying to select
            a SmartShape
 --------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.440 : UTORID : NotStarted
+NAME     : Square Class Refactoring
+PRIORITY : 1
+ESTIMATE : 30 mins : ACTUAL :
+ISSUE    : Square has unexpected behaviour and should ideally extend Polygon
+--------------------------------------------------------------------------
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
