@@ -15,38 +15,6 @@
 #     NotStarted,InProgress, Incomplete,Complete
 # as appropriate.
 
---------------------------------------------------------------------------
-TYPE     : USER STORY US4.023 : mengale1 : Complete
-NAME     : Editing panel
-PRIORITY : 3
-ESTIMATE : 2 hours : ACTUAL : 2 hours
-AS A     : user
-I WANT   : Refer to US2.020.
-SO THAT  : Justify properties of a shapes I drew.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG4.450 : UTORID : NotStarted
-NAME     : Text box behaviour is questionable
-PRIORITY : 1
-ESTIMATE : 1 hour : ACTUAL :
-ISSUE    : Text boxes currently cannot drag alongside the text content.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG4.460 : mengale1 : InProgress
-NAME     : Polyline disabled
-PRIORITY : 1
-ESTIMATE : 30 mins : ACTUAL :
-ISSUE    : Polyline is currently disabled in the Strategy architecture.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-TYPE     : BUG BUG4.441 : huaethan : InProgress
-NAME     : Factory Design Pattern for ModeStrategy
-PRIORITY : 3
-ESTIMATE : 30 mins : ACTUAL :
-ISSUE    : The creation of the ModeStrategy classes are bundled inside of
-           PaintController, violating the open/closed principle.
---------------------------------------------------------------------------
-
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
 TYPE     : USER STORY US1.001 : rosenbl6 : Complete
@@ -607,6 +575,30 @@ PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL : 1 hour
 ISSUE    : The selection tool is not functional when trying to select
            a SmartShape
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : USER STORY US4.023 : mengale1 : Complete
+NAME     : Editing panel
+PRIORITY : 3
+ESTIMATE : 2 hours : ACTUAL : 2 hours
+AS A     : user
+I WANT   : Refer to US2.020.
+SO THAT  : Justify properties of a shapes I drew.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.460 : mengale1 : Complete
+NAME     : Polyline disabled
+PRIORITY : 1
+ESTIMATE : 30 mins : ACTUAL : 30 mins
+ISSUE    : Polyline is currently disabled in the Strategy architecture.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+TYPE     : BUG BUG4.441 : huaethan : Complete
+NAME     : Factory Design Pattern for ModeStrategy
+PRIORITY : 3
+ESTIMATE : 30 mins : ACTUAL :
+ISSUE    : The creation of the ModeStrategy classes are bundled inside of
+           PaintController, violating the open/closed principle.
 --------------------------------------------------------------------------
 
 # OMITTED USER STORIES/BUGS BELOW   ###########################################

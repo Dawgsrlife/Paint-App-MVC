@@ -1,10 +1,5 @@
 Pull Requests:
 
-US4.023     author:mengale1 puller:chen2046 status:InProcess
-US4.029     author:chen2046 puller:huaethan status:waiting
-BUG4.460    author:mengale1 puller:huaethan status:waiting
-BUG4.441    auther:huaethan puller:mengale1 status:Waiting
-
 US4.017     author:huaethan puller:tianji61 status:Completed
 US4.410     author:tianji61 puller:huaethan status:Completed
 US4.210     author:tianji61 puller:huaethan status:Completed
@@ -32,3 +27,6 @@ US4.028     author:chen2046 puller:tianji61 status:Completed
 BUG4.440    author:tianji61 puller:mengale1 status:Completed
 US4.420     author:chen2046 puller:mengale1 status:Completed
 BUG4.430    author:huaethan puller:chen2046 status:Completed
+US4.023     author:mengale1 puller:chen2046 status:Completed
+BUG4.460    author:mengale1 puller:huaethan status:Completed
+BUG4.441    auther:huaethan puller:mengale1 status:Completed

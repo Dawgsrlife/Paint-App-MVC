@@ -32,9 +32,6 @@ public class DrawModeStrategy implements ModeStrategy {
         // so simply finalize it when they attempt to draw with another shape.
 
         model.setCurrentShape(PaintStrategy.getPaintStrategy(mode, point, point, properties.getPaintProperties(), null));
-
-        // TODO: remove the print statement for the final product
-        System.out.println("Started " + mode);
     }
 
     @Override
@@ -63,8 +60,6 @@ public class DrawModeStrategy implements ModeStrategy {
     public void finalizeShape() {
         Shape shape = model.getCurrentShape();
         model.addShape(shape);
-        // TODO: delete the following line later for the final product:
-        if (shape != null) System.out.println("    ^ Added");
 
         // Clean the cache on MOUSE_RELEASED
         if (shape != null) model.setCurrentShape(null);
