@@ -27,3 +27,4 @@ US4.015     author:chen2046 puller:tianji61 status:Completed
 US4.420     author:tianji61 puller:chen2046 status:Completed
 US4.025     author:chen2046 puller:tianji61 status:Completed
 BUG4.220    author:mengale1 puller:tianji61 status:Completed
+US4.028     author:chen2046 puller:tianji61 status:Completed
