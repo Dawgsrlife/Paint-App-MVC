@@ -9,9 +9,17 @@ import java.util.Stack;
 
 /**
  * PaintModel is responsible for managing shapes in the paint application.
- * It maintains the stack of shapes, supports undo and redo operations,
- * and handles selection and temporary shape storage while drawing.
- * As an Observable, PaintModel notifies controllers and views of any changes
+ * <p>
+ * This class maintains the stack of shapes drawn on the canvas, supporting undo and redo operations,
+ * as well as handling temporary shape storage while drawing. It allows for selection of shapes,
+ * manipulation of shapes via cut, copy, and paste, and notifies observers of any changes.
+ * </p>
+ * As an Observable, PaintModel notifies the controller and view when changes are made to the model,
+ * ensuring synchronization between the model and the UI.
+ *
+ * @see Shape
+ * @see Point
+ * @author tianji61 / huaethan
  */
 public class PaintModel extends Observable {
     private final Stack<Shape> shapes = new Stack<>();
@@ -22,9 +30,9 @@ public class PaintModel extends Observable {
     private Point lastPoint = new Point(0, 0);
 
     /**
-     * Get all steps queued to be painted
+     * Get all shapes queued to be painted, including any temporary shape being drawn.
      *
-     * @return An array list of all the steps
+     * @return An array list of all the shapes.
      */
     public ArrayList<Shape> getShapes() {
         ArrayList<Shape> tempShapes = new ArrayList<>(shapes);
@@ -33,8 +41,7 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Returns the currently selected shape. This is for edit
-     * function cut, copy and paste.
+     * Returns the currently selected shape. This shape is used for edit functions such as cut, copy, and paste.
      *
      * @return The current shape in the model.
      */
@@ -52,7 +59,7 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Returns the temporary shape being drawn.
+     * Returns the temporary shape being drawn by the user.
      *
      * @return The temporary shape, if any.
      */
@@ -61,7 +68,7 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Returns the last point of the user's mouse on canvas.
+     * Returns the last point recorded from the user's mouse on the canvas.
      *
      * @return The last point.
      */
@@ -70,7 +77,7 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Sets the last point for the drawing action.
+     * Sets the last point recorded from the user's mouse on the canvas.
      *
      * @param lastPoint The point to set as the last point.
      */
@@ -79,10 +86,10 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Add a Shape instance into tempShapes list
-     * for buffer indicating when mouse is not
-     * released yet
-     * @param shape a shape instance
+     * Adds a shape to the temporary shape list, indicating that the shape is being drawn but has not been released.
+     * It also clears the undo stack.
+     *
+     * @param shape The shape instance to add as the temporary shape.
      */
     public void addTempShape(Shape shape) {
         tempShape = shape;
@@ -94,8 +101,9 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Add a Shape instance into steps list
-     * @param shape a shape instance
+     * Adds a shape to the main shape list once it has been finalized.
+     *
+     * @param shape The shape to add to the main list of shapes.
      */
     public void addShape(Shape shape) {
         tempShape = null;
@@ -124,7 +132,7 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Redo the last undone action by moving the top shape from the undo stack back to the main stack.
+     * Redoes the last undone action by moving the top shape from the undo stack back to the main stack.
      */
     public void redo() {
         if(undoStack.isEmpty()) return;
@@ -133,7 +141,7 @@ public class PaintModel extends Observable {
     }
 
     /**
-     * Clears all shapes from the main stack.
+     * Clears all shapes from the main shape stack.
      */
     public void clear() {
         shapes.clear();
@@ -144,7 +152,7 @@ public class PaintModel extends Observable {
      * Returns the shape under the cursor at a given point, if any.
      *
      * @param p The point to check.
-     * @return The shape at the point, or null if none found.
+     * @return The shape at the point, or null if no shape is found.
      */
     public Shape getSelected(Point p) {
         for (int j = shapes.size() - 1; j >= 0; j--) {
@@ -173,10 +181,20 @@ public class PaintModel extends Observable {
         update();
     }
 
+    /**
+     * Gets the shape currently stored in the clipboard for cut/copy/paste operations.
+     *
+     * @return The shape in the clipboard.
+     */
     public Shape getClipBoard() {
         return clipBoard;
     }
 
+    /**
+     * Sets the shape to be stored in the clipboard.
+     *
+     * @param clipBoard The shape to store in the clipboard.
+     */
     public void setClipBoard(Shape clipBoard) {
         this.clipBoard = clipBoard;
     }
