@@ -10,12 +10,27 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SeparatorMenuItem;
 
+/**
+ * CommandMenuBar is responsible for creating the "File", "Edit", "Accessibility", and
+ * "Help" menus, each containing different commands that the user can execute.(Constructor)
+ * This class implements the EventHandler interface to handle menu item actions,
+ * executing the appropriate command when a user selects a menu item.(handle method)
+ */
 public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent> {
 
     PaintModel model;
     Scene scene;
     PaintController controller;
 
+    /**
+     * Initializes a new CommandMenuBar instance, adding all menus on the top of the canvas
+     * and their respective command items to provide the user interface for controlling
+     * the application.
+     *
+     * @param model      The PaintModel that manages shapes and shapes' interactions.
+     * @param scene      The JavaFX Scene to which this menu bar is added.
+     * @param controller The PaintController.
+     */
     public CommandMenuBar(PaintModel model, Scene scene, PaintController controller) {
         this.model = model;
         this.scene = scene;
@@ -122,6 +137,13 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
         getMenus().add(menu);
     }
 
+    /**
+     * Handles the execution of commands when a menu item is selected.
+     * This method casts the event source to a Command and executes
+     * it to specific command class.
+     *
+     * @param event The ActionEvent triggered by selecting a menu item.
+     */
     @Override
     public void handle(ActionEvent event) {
         Command c = (Command) event.getSource();
