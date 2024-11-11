@@ -7,7 +7,7 @@ import ca.utoronto.utm.assignment2.paint.shapes.Shape;
 public class DrawModeStrategy implements ModeStrategy {
     protected final PaintModel model;
     protected final String mode;
-    private final PropertiesPanel properties;
+    PropertiesPanel properties;
 
     public DrawModeStrategy(PaintModel model, String mode, PropertiesPanel pp) {
         this.model = model;

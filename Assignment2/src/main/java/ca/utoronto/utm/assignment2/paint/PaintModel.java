@@ -110,4 +110,9 @@ public class PaintModel extends Observable {
         shapes.remove(selectedShape);
         update();
     }
+
+    public void addUndoStack(Shape selectedShape) {
+        undoStack.push(selectedShape);
+    }
+
 }

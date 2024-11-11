@@ -1,6 +1,5 @@
 package ca.utoronto.utm.assignment2.paint.shapes;
 
-import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
@@ -15,22 +14,20 @@ import javafx.scene.text.Font;
  * Author: chen2046
  */
 public class Text extends Rectangle {
-
-    private String text;
+    private String textContent;
     private TextField textField;
     private final Font font;
 
     public Text(Point start, Point end, PaintProperties properties) {
         super(start, end, properties);
         setType("Text");
-        this.text = ""; // Initially empty text
+        this.textContent = ""; // Initially empty text
         this.font = new Font("Arial", 20); // Default font and size
-
         this.textField = new TextField();
         setupTextField(start);
     }
 
-    private void setupTextField(Point start) {
+    public void setupTextField(Point start) {
         this.textField = new TextField();
         this.textField.setPromptText("Enter text");
         this.textField.setLayoutX(start.getX());
@@ -38,6 +35,7 @@ public class Text extends Rectangle {
         this.textField.setFont(font);
         this.textField.setVisible(true);
         this.textField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black;");
+        System.out.println("Prompt ");
     }
 
     @Override
@@ -57,37 +55,22 @@ public class Text extends Rectangle {
     @Override
     protected void fill(GraphicsContext g2d) {
         double[] info = getPaintInfo();
-        if (!text.isEmpty()) {
+        if (!textContent.isEmpty()) {
             g2d.setFill(getProperties().getFillColor());
             g2d.setFont(font);
-            g2d.fillText(this.text, info[0] + 5, info[1] + 20); // Text offset
+            g2d.fillText(this.textContent, info[0] + 5, info[1] + 20); // Text offset
         }
     }
 
-    public void activateTextField(Pane canvasPane, PaintController controller) {
-        canvasPane.getChildren().remove(textField);
-        setupTextField(getStart());
-        canvasPane.getChildren().add(textField);
-
-        textField.setOnAction(e -> {
-            if (!textField.getText().trim().isEmpty()) { // check if there is a text entered by users
-                saveTextAndRemoveTextField(canvasPane, controller);
-            } else {
-                // remove textField if it is empty
-                canvasPane.getChildren().remove(textField);
-                textField = null;
-            }
-        });
-
+    public TextField getTextField() {
+        return textField;
     }
 
-    private void saveTextAndRemoveTextField(Pane canvasPane, PaintController controller) {
-        if (textField != null) {
-            this.text = textField.getText();
-            canvasPane.getChildren().remove(textField);
-            textField = null;
-            controller.persistTextBox(this); // Save text shape in model
-        }
+    public void setTextField(TextField textField) {
+        this.textField = textField;
     }
 
+    public void setTextContent(String textContent) {
+        this.textContent = textContent;
+    }
 }
