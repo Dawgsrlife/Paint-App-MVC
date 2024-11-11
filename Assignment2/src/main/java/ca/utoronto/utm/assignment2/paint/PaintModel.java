@@ -18,6 +18,7 @@ public class PaintModel extends Observable {
     private final Stack<Shape> undoStack = new Stack<>();
     private Shape currentShape;
     private Shape tempShape;
+    private Shape clipBoard;
     private Point lastPoint = new Point(0, 0);
 
     /**
@@ -170,5 +171,13 @@ public class PaintModel extends Observable {
     public void removeShape(Shape selectedShape) {
         shapes.remove(selectedShape);
         update();
+    }
+
+    public Shape getClipBoard() {
+        return clipBoard;
+    }
+
+    public void setClipBoard(Shape clipBoard) {
+        this.clipBoard = clipBoard;
     }
 }

@@ -10,6 +10,11 @@ public class Square extends Polygon {
         setType("Square");
     }
 
+    /**
+     * An override to make sure vertices property change would not reflect to square,
+     * which is a special instance of polygon.
+     * @param properties paint details
+     */
     public void setProperties(PaintProperties properties) {
         properties.setVertices(4);
         super.setProperties(properties);

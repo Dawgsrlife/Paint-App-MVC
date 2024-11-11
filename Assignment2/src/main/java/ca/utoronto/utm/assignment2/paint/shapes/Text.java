@@ -33,8 +33,10 @@ public class Text extends Rectangle {
         this.textField.setLayoutX(start.getX());
         this.textField.setLayoutY(start.getY());
         this.textField.setFont(font);
-        this.textField.setVisible(true);
+        textField.setMinWidth(10);
+        textField.setMinHeight(10);
         this.textField.setStyle("-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: black;");
+        this.textField.setVisible(true);
         System.out.println("Prompt ");
     }
 

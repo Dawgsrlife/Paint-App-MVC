@@ -13,9 +13,9 @@ public class CommandPaste extends MenuItem implements Command {
 
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
-        if (model.getCurrentShape() != null) {
-            model.addShape(model.getCurrentShape());
-            model.setCurrentShape(null);
+        if (model.getClipBoard() != null) {
+            model.addShape(model.getClipBoard());
+            model.setClipBoard(null);
         }
     }
 }
