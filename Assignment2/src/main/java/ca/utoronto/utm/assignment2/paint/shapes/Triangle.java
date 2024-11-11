@@ -3,7 +3,11 @@ package ca.utoronto.utm.assignment2.paint.shapes;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 
 /**
- * A class representing a triangle on the canvas
+ * Represents a triangle shape on the canvas.
+ * <p>
+ * This class ensures that the triangle
+ * always has three vertices, maintaining its inherent shape structure. Inherits
+ * behavior from the Polygon class.
  *
  * @author mengale1
  */
