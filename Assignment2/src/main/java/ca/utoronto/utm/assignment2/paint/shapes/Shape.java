@@ -34,14 +34,37 @@ public abstract class Shape {
         this.finalized = true;
     }
 
+    /**
+     * This method paints the border of a shape instance (holographs)
+     * @param g2d g2d painter
+     */
     abstract public void paint(GraphicsContext g2d);
 
+    /**
+     * This method fills a shape instance if it's being marked to be filled (filled shapes)
+     * @param g2d g2d painter
+     */
     abstract protected void fill(GraphicsContext g2d);
 
+    /**
+     * This method returns basic paint info of a certain shape, but content could be different
+     * for different shape instances
+     * @return an array of paint info that could be pass into g2d painter
+     */
     abstract protected double[] getPaintInfo();
 
+    /**
+     * This method checks if a certain point is included in this shape
+     * @param p a point instance, normally a mouse event coords
+     * @return true - in the shape / false - not in the shape
+     */
     abstract public boolean includeCursor(Point p);
 
+    /**
+     * This method transforms this shape instance with a provided displacement vector
+     * @param dx displacement on x axis
+     * @param dy displacement on y axis
+     */
     abstract public void move(double dx, double dy);
 
 
@@ -86,6 +109,9 @@ public abstract class Shape {
         return start + "," + end+ "," + type + "," + properties;
     }
 
+    /**
+     * This is a marker for if the shape is finalized from creation
+     */
     public void finalizeShape() {}
 
     public boolean isFinalized() {

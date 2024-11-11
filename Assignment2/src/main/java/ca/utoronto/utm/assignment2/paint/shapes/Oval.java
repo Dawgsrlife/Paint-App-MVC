@@ -34,6 +34,7 @@ public class Oval extends Shape {
 
     @Override
     protected double[] getPaintInfo() {
+        // calculate basic info of a oval
         double startX = Math.min(getStart().getX(), getEnd().getX());
         double startY = Math.min(getStart().getY(), getEnd().getY());
         double width = Math.abs(getEnd().getX() - getStart().getX());
@@ -43,6 +44,7 @@ public class Oval extends Shape {
 
     @Override
     public boolean includeCursor(Point p) {
+        // check if cursor is inside the border (for holographes)
         double[] info = getPaintInfo();
         Ellipse outer = new Ellipse(info[0] + (info[2] / 2), info[1] + (info[3] / 2),
                 info[2] / 2 + getProperties().getStrokeThickness() / 2,
@@ -50,6 +52,7 @@ public class Oval extends Shape {
         if (getProperties().isFilled()) {
             return outer.contains(p.getX(), p.getY());
         }
+        // check if cursor is inside the fill (for filled graphs)
         Ellipse inner = new Ellipse(info[0] + (info[2] / 2), info[1] + (info[3] / 2),
                 info[2] / 2 - getProperties().getStrokeThickness() / 2,
                 info[3] / 2 - getProperties().getStrokeThickness() / 2);

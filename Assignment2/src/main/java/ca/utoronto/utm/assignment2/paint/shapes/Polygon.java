@@ -33,13 +33,20 @@ public class Polygon extends Shape {
 
     @Override
     public double[] getPaintInfo() {
+        // calculate basic variables for calculation vertices
         double radius = Math.sqrt(Math.pow(getStart().getX() - getEnd().getX(), 2) +
                 Math.pow(getStart().getY() - getEnd().getY(), 2));
         double theta = Math.atan((getStart().getY() - getEnd().getY()) / (getStart().getX() - getEnd().getX()));
         return new double[]{getStart().getX(), getStart().getY(), radius, theta};
     }
 
+    /**
+     * This method return a set of polygon vertices
+     * @param border border width
+     * @return an arraylist of vertices of a g2d polygon
+     */
     public ArrayList<double[]> getPaintInfo(double border) {
+        // get actual vertices
         ArrayList<double[]> result = new ArrayList<>();
         result.add(new double[getProperties().getVertices()]);
         result.add(new double[getProperties().getVertices()]);
@@ -61,6 +68,12 @@ public class Polygon extends Shape {
         return outer.contains(p.getX(), p.getY()) & !inner.contains(p.getX(), p.getY());
     }
 
+    /**
+     * This method returns an instance of JavaFX build in area of a polygon,
+     * supports selection calculation.
+     * @param border border width
+     * @return a FX polygon instance
+     */
     private javafx.scene.shape.Polygon getFxPolygon(double border) {
         ArrayList<double[]> info = getPaintInfo(border);
         double[] vertices = new double[info.get(0).length * 2];

@@ -10,12 +10,6 @@ import javafx.scene.canvas.GraphicsContext;
  */
 public class Rectangle extends Shape {
 
-    /**
-     * Initialize a Rectangle with two given coordinates
-     *
-     * @param start starting coordinate
-     * @param end   ending coordinate
-     */
     public Rectangle(Point start, Point end, PaintProperties pp) {
         super(start, end, "Rectangle", pp);
     }
