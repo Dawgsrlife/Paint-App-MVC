@@ -250,5 +250,6 @@ Implementation:
 
 Example:
 	For example, the PropertiesPanel allows users to change the colour, opacity, border colour, and border thickness
-	of the shapes that they are drawing. The handle method updates
+	of the shapes that they are drawing. The handle method updates the values of each property. Then, whenever
+	PaintController's handle method is called, the properties are sent to the PaintModel to use in drawing a shape.
 --------------------------------------------------------------------------------
