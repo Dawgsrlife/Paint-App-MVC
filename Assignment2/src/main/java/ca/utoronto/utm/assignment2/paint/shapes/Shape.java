@@ -19,7 +19,7 @@ public abstract class Shape {
     private Point start;
     private Point end;
     private String type;
-    private final PaintProperties properties;
+    private PaintProperties properties;
     private final ArrayList<Point> points = new ArrayList<>();
 
     // Tracking Fields
@@ -71,6 +71,10 @@ public abstract class Shape {
 
     public PaintProperties getProperties() {
         return properties;
+    }
+
+    public void setProperties(PaintProperties properties) {
+        this.properties = properties;
     }
 
     public ArrayList<Point> getPoints() {

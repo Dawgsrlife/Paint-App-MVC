@@ -9,4 +9,9 @@ public class Square extends Polygon {
         pp.setVertices(4);
         setType("Square");
     }
+
+    public void setProperties(PaintProperties properties) {
+        properties.setVertices(4);
+        super.setProperties(properties);
+    }
 }
