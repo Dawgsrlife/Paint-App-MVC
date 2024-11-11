@@ -3,49 +3,68 @@ package ca.utoronto.utm.assignment2.paint;
 import ca.utoronto.utm.assignment2.paint.controlPanels.PropertiesPanel;
 import ca.utoronto.utm.assignment2.paint.shapes.Point;
 import ca.utoronto.utm.assignment2.paint.shapes.Text;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
-public class TextModeStrategy implements ModeStrategy {
-    private PaintModel model;
-    private PropertiesPanel propertiesPanel;
-    private Text currentText;
-    private Pane canvasPane;
-    private PaintController controller;
+public class TextModeStrategy extends DrawModeStrategy implements ModeStrategy {
+    private final Pane canvasPane;
+    Text text;
 
-    public TextModeStrategy(PaintModel model, Pane canvasPane, PropertiesPanel pp, PaintController controller) {
-        this.model = model;
+    public TextModeStrategy(PaintModel model, String mode, PropertiesPanel pp, Pane canvasPane) {
+        super(model, mode, pp);
         this.canvasPane = canvasPane;
-        this.propertiesPanel = pp;
-        this.controller = controller;
-    }
-
-    @Override
-    public void onMouseMoved(Point point) {
+        this.text = (Text)model.getCurrentShape();
     }
 
     @Override
     public void onMousePressed(Point point, boolean isPrimaryButton, boolean isSecondaryButton) {
-        if (!isPrimaryButton) return;
-
-        // Create a new text object
-        currentText = new Text(point, point, propertiesPanel.getPaintProperties());
-        model.addShape(currentText);
+        super.onMousePressed(point, isPrimaryButton, isSecondaryButton);
         System.out.println("Started text box at: " + point);
     }
 
     @Override
-    public void onMouseDragged(Point point) {
-        if (currentText == null) return;
-        currentText.setEnd(point);
-        model.update();
+    public void onMouseReleased(Point point) {
+        super.onMouseReleased(point);
+
+        // Finalize the text box with content
+        activateTextField();
+        System.out.println("Completed text box creation at: " + point);
     }
 
-    @Override
-    public void onMouseReleased(Point point) {
-        if (currentText == null) return;
+    private void activateTextField() {
+        if (text == null) return;
 
-        // Finalize the text box
-        currentText.activateTextField(canvasPane, this.controller);
-        System.out.println("Completed text box creation at: " + point);
+        TextField textField = text.getTextField();
+        canvasPane.getChildren().remove(textField);
+        text.setupTextField(text.getStart());
+        canvasPane.getChildren().add(textField);
+        textField.requestFocus();
+
+        System.out.println("TextField added at: " + textField.getLayoutX() + ", " + textField.getLayoutY());
+
+        textField.setOnAction(e -> saveTextAndRemoveTextField());
+
+        textField.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
+            if (!isNowFocused) {
+                if (!textField.getText().trim().isEmpty()) {
+                    saveTextAndRemoveTextField();
+                } else {
+                    canvasPane.getChildren().remove(textField);
+                    text.setTextField(null);
+                }
+            }
+        });
+    }
+
+    private void saveTextAndRemoveTextField() {
+        TextField textField = text.getTextField();
+
+        if (textField != null) {
+            text.setTextContent(textField.getText());
+            canvasPane.getChildren().remove(textField);
+            text.setTextField(null);
+            model.addShape(text); // Save text shape in model
+            System.out.println("Text saved");
+        }
     }
 }

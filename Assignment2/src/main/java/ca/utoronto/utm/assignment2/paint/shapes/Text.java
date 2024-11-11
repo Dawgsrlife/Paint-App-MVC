@@ -1,6 +1,5 @@
 package ca.utoronto.utm.assignment2.paint.shapes;
 
-import ca.utoronto.utm.assignment2.paint.PaintController;
 import ca.utoronto.utm.assignment2.paint.PaintProperties;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
@@ -15,22 +14,21 @@ import javafx.scene.text.Font;
  * Author: chen2046
  */
 public class Text extends Rectangle {
-
-    private String text;
+    private String textContent;
     private TextField textField;
     private final Font font;
 
     public Text(Point start, Point end, PaintProperties properties) {
         super(start, end, properties);
         setType("Text");
-        this.text = ""; // Initially empty text
+        this.textContent = ""; // Initially empty text
         this.font = new Font("Arial", 20); // Default font and size
 
         this.textField = new TextField();
         setupTextField(start);
     }
 
-    private void setupTextField(Point start) {
+    public void setupTextField(Point start) {
         this.textField = new TextField();
         this.textField.setPromptText("Enter text");
         this.textField.setLayoutX(start.getX());
@@ -57,44 +55,22 @@ public class Text extends Rectangle {
     @Override
     protected void fill(GraphicsContext g2d) {
         double[] info = getPaintInfo();
-        if (!text.isEmpty()) {
+        if (!textContent.isEmpty()) {
             g2d.setFill(getProperties().getFillColor());
             g2d.setFont(font);
-            g2d.fillText(this.text, info[0] + 5, info[1] + 20); // Text offset
+            g2d.fillText(this.textContent, info[0] + 5, info[1] + 20); // Text offset
         }
     }
 
-    public void activateTextField(Pane canvasPane, PaintController controller) {
-        canvasPane.getChildren().remove(textField);
-        setupTextField(getStart());
-        canvasPane.getChildren().add(textField);
-        textField.requestFocus();
-
-        System.out.println("TextField added at: " + textField.getLayoutX() + ", " + textField.getLayoutY());
-
-        textField.setOnAction(e -> saveTextAndRemoveTextField(canvasPane, controller));
-
-        textField.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
-            if (!isNowFocused) {
-                if (!textField.getText().trim().isEmpty()) {
-                    saveTextAndRemoveTextField(canvasPane, controller);
-                } else {
-                    canvasPane.getChildren().remove(textField);
-                    textField = null;
-                }
-            }
-        });
-
+    public TextField getTextField() {
+        return textField;
     }
 
-    private void saveTextAndRemoveTextField(Pane canvasPane, PaintController controller) {
-        if (textField != null) {
-            this.text = textField.getText();
-            canvasPane.getChildren().remove(textField);
-            textField = null;
-            controller.persistTextBox(this); // Save text shape in model
-            System.out.println("Text saved");
-        }
+    public void setTextField(TextField textField) {
+        this.textField = textField;
     }
 
+    public void setTextContent(String textContent) {
+        this.textContent = textContent;
+    }
 }

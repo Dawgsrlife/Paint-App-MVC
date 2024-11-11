@@ -38,6 +38,7 @@ public class PaintController implements EventHandler<MouseEvent> {
 
                 modeStrategy = new PolylineModeStrategy(model, mode, pp);
             }
+            case "text" -> modeStrategy = new TextModeStrategy(model, mode, pp, canvasPane);
             default -> modeStrategy = new DrawModeStrategy(model, mode, pp);
         }
     }
@@ -56,11 +57,7 @@ public class PaintController implements EventHandler<MouseEvent> {
             }
             case "MOUSE_MOVED" -> modeStrategy.onMouseMoved(point);
             case "MOUSE_DRAGGED" -> modeStrategy.onMouseDragged(point);
-            case "MOUSE_RELEASED" -> {
-                modeStrategy.onMouseReleased(point);
-
-            }
-            case "text" -> modeStrategy = new TextModeStrategy(model, canvasPane, this.pp, this);
+            case "MOUSE_RELEASED" -> modeStrategy.onMouseReleased(point);
             default -> {
                 // If there's a new event type, you can add more cases or handle it
             }
