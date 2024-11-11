@@ -3,6 +3,7 @@ Pull Requests:
 US4.023     author:mengale1 puller:chen2046 status:InProcess
 US4.029     author:chen2046 puller:huaethan status:waiting
 BUG4.460    author:mengale1 puller:?        status:waiting
+BUG4.441    auther:huaethan puller:UTORID   status:Waiting
 
 US4.017     author:huaethan puller:tianji61 status:Completed
 US4.410     author:tianji61 puller:huaethan status:Completed
