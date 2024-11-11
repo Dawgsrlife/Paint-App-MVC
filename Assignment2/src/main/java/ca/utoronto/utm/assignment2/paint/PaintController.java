@@ -59,12 +59,8 @@ public class PaintController implements EventHandler<MouseEvent> {
             case "MOUSE_RELEASED" -> {
                 modeStrategy.onMouseReleased(point);
 
-                // TODO: temporary for Text shapes - will create TextModeStrategy.java
-                if ("Text".equals(scp.getMode()) && model.getTempShape() instanceof Text) {
-                    Text textShape = (Text) model.getTempShape();
-                    textShape.activateTextField(canvasPane, this);
-                }
             }
+            case "text" -> modeStrategy = new TextModeStrategy(model, canvasPane, this.pp, this);
             default -> {
                 // If there's a new event type, you can add more cases or handle it
             }

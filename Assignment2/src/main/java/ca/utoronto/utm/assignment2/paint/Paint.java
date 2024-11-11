@@ -41,7 +41,7 @@ public class Paint extends Application {
         menuBar = new CommandMenuBar(model, scene, controller);
 
         root.setTop(menuBar);
-        root.setCenter(view);
+        root.setCenter(canvasPane);
         root.setLeft(shapeChooserPanel);
         root.setRight(propertiesPanel);
         scene.getStylesheets().add(Objects.requireNonNull(this.getClass().getResource("commandMenuBar/paint-style.css")).toExternalForm());

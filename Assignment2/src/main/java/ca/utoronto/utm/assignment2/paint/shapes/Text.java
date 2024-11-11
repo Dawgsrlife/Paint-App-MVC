@@ -68,14 +68,20 @@ public class Text extends Rectangle {
         canvasPane.getChildren().remove(textField);
         setupTextField(getStart());
         canvasPane.getChildren().add(textField);
+        textField.requestFocus();
 
-        textField.setOnAction(e -> {
-            if (!textField.getText().trim().isEmpty()) { // check if there is a text entered by users
-                saveTextAndRemoveTextField(canvasPane, controller);
-            } else {
-                // remove textField if it is empty
-                canvasPane.getChildren().remove(textField);
-                textField = null;
+        System.out.println("TextField added at: " + textField.getLayoutX() + ", " + textField.getLayoutY());
+
+        textField.setOnAction(e -> saveTextAndRemoveTextField(canvasPane, controller));
+
+        textField.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
+            if (!isNowFocused) {
+                if (!textField.getText().trim().isEmpty()) {
+                    saveTextAndRemoveTextField(canvasPane, controller);
+                } else {
+                    canvasPane.getChildren().remove(textField);
+                    textField = null;
+                }
             }
         });
 
@@ -87,6 +93,7 @@ public class Text extends Rectangle {
             canvasPane.getChildren().remove(textField);
             textField = null;
             controller.persistTextBox(this); // Save text shape in model
+            System.out.println("Text saved");
         }
     }
 
