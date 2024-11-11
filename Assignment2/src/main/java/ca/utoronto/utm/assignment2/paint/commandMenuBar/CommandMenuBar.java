@@ -24,7 +24,6 @@ public class CommandMenuBar extends MenuBar implements EventHandler<ActionEvent>
         MenuItem menuItem;
         getStyleClass().add("menu-bar");
 
-
         // A menu for File
 
         menu = new Menu("File");

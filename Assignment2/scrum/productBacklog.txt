@@ -16,7 +16,7 @@
 # as appropriate.
 
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.023 : mengale1 : NotStarted
+TYPE     : USER STORY US4.023 : mengale1 : InProgress
 NAME     : Editing panel
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL :
@@ -45,7 +45,7 @@ ISSUE    : The selection tool is not functional when trying to select
 
 # COMPLETED USER STORIES/BUGS BELOW ###########################################
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.001 : rosenbl6 : Completed
+TYPE     : USER STORY US1.001 : rosenbl6 : Complete
 NAME     : Draw Circle
 PRIORITY : 1
 ESTIMATE : 2 hours ACTUAL : 2 hours
@@ -55,14 +55,14 @@ I WANT   : To click the center of the circle, drag, and release to specify
 SO THAT  : I can add circles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.001 : mengale1 : Completed
+TYPE     : BUG BUG1.001 : mengale1 : Complete
 NAME     : Icons instead of text for drawing mode selection
 PRIORITY : 1
 ESTIMATE : 1 hour    ACTUAL : 15 minutes
 ISSUE    : Would be nice to have icons instead of "Circle", "Rectangle", ...
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.002 : tianji61 : Completed
+TYPE     : BUG BUG1.002 : tianji61 : Complete
 NAME     : Drawing selection mode not indicated
 PRIORITY : 1
 ESTIMATE : 30 minutes    ACTUAL : 30 minutes
@@ -71,7 +71,7 @@ ISSUE    : Currently, you can't tell which mode "Circle", "Rectangle", ...
            to highlight the currently selected mode?
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.005 : huaethan : Completed
+TYPE     : BUG BUG1.005 : huaethan : Complete
 NAME     : Squiggle is broken
 PRIORITY : 1
 ESTIMATE : 1 hour    ACTUAL : 2 hours
@@ -80,7 +80,7 @@ ISSUE    : Squiggles are connected to each other by a straight line. Each drag
            with the representation of the squiggles in the Model.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.006 : tianji61 : Completed
+TYPE     : BUG BUG1.006 : tianji61 : Complete
 NAME     : Circle drawing is broken
 PRIORITY : 1
 ESTIMATE : 30 minutes    ACTUAL : 15 minutes
@@ -89,7 +89,7 @@ ISSUE    : The first click should specify the center of the circle, with
            implementation.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.002 : tianji61 : Completed
+TYPE     : USER STORY US1.002 : tianji61 : Complete
 NAME     : Draw Circle Feedback
 PRIORITY : 2
 ESTIMATE : 1 hour    ACTUAL : 15 minutes
@@ -103,7 +103,7 @@ SO THAT  : I can see the circle I am about to build on release of the mouse
            button.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.003 : tianji61 : Completed
+TYPE     : USER STORY US1.003 : tianji61 : Complete
 NAME     : Draw Rectangle
 PRIORITY : 2
 ESTIMATE : 1 hour    ACTUAL : 1 hour
@@ -114,7 +114,7 @@ I WANT   : To click on one corner of a rectangle, drag, and release to
 SO THAT  : I can add rectangles to my canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.004 : chen2046 : Completed
+TYPE     : USER STORY US1.004 : chen2046 : Complete
 NAME     : Draw Rectangle Feedback
 PRIORITY : 2
 ESTIMATE : 1 hour    ACTUAL : 1 hour
@@ -123,7 +123,7 @@ I WANT   : Similarly to Draw Circle Feedback, display the rectangle in mid const
 SO THAT  : I can see the rectangle I am about to build on release of the mouse button.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.011 : chen2046 : Completed
+TYPE     : USER STORY US1.011 : chen2046 : Complete
 NAME     : Draw Square
 PRIORITY : 2
 ESTIMATE : 2 hour    ACTUAL : 2 hours
@@ -133,7 +133,7 @@ I WANT   : Be able to start dragging and drawing the square on the canvas
 SO THAT  : I can draw squares to my canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.007 : tianji61 : Completed
+TYPE     : BUG BUG1.007 : tianji61 : Complete
 NAME     : Square creation does not fix position on mouse move
 PRIORITY : 3
 ESTIMATE : 1 hour    ACTUAL : 1 hour
@@ -141,7 +141,7 @@ ISSUE    : A corner does not fix at the mouse clicked point when creating
            a Square on the panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.012 : huaethan : Completed
+TYPE     : BUG BUG1.012 : huaethan : Complete
 NAME     : Circle radius selection is wrong
 PRIORITY : 1
 ESTIMATE : 30 minutes ACTUAL :
@@ -149,7 +149,7 @@ ISSUE    : The radius of the Circle is not set properly. The outer edge of
            the Circle should be touching the cursor.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.012 : tianji61 : Completed
+TYPE     : USER STORY US1.012 : tianji61 : Complete
 NAME     : Canvas size adjustable
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL : 2 hours
@@ -160,7 +160,7 @@ SO THAT  : I can draw on a bigger canvas. As well as see what is drawn
            outside the current showing canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.013 : mengale1 : Completed
+TYPE     : USER STORY US1.013 : mengale1 : Complete
 NAME     : Polyline
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL : 3 hours
@@ -170,7 +170,7 @@ I WANT   : To be able to left-click to create the vertices that join line
 SO THAT  : I can create polylines on my canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US1.016 : tianji61 : Completed
+TYPE     : USER STORY US1.016 : tianji61 : Complete
 NAME     : Cursor index
 PRIORITY : 3
 ESTIMATE : 30 minutes ACTUAL : 1 hour
@@ -179,7 +179,7 @@ I WANT   : To know which pixel I am pointing at.
 SO THAT  : I can make more precise editing on the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG1.010 : huaethan : Completed
+TYPE     : BUG BUG1.010 : huaethan : Complete
 NAME     : Squiggle draws incorrectly if clicked without dragging
 PRIORITY : 1
 ESTIMATE : 1 hour    ACTUAL : 30 minutes
@@ -188,7 +188,7 @@ ISSUE    : When the user is in the Squiggle mode, clicking without dragging
            other, which is not intended.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.004 : tianji61 : Completed
+TYPE     : BUG BUG3.004 : tianji61 : Complete
 NAME     : Architecture behind Model is poor
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 2 hours
@@ -200,7 +200,7 @@ ISSUE    : Having a list of different types of drawable things in the
            here.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.008 : tianji61 : Completed
+TYPE     : BUG BUG2.008 : tianji61 : Complete
 NAME     : Shapes ordering
 PRIORITY : 2
 ESTIMATE : 30 minutes    ACTUAL : 2 hours
@@ -208,7 +208,7 @@ ISSUE    : Ordering of shapes when printed on canvas should follow the
            order they have been created.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.018 : huaethan : Completed
+TYPE     : USER STORY US2.018 : huaethan : Complete
 NAME     : Oval
 PRIORITY : 3
 ESTIMATE : 30 minutes : ACTUAL : 30 minutes
@@ -217,7 +217,7 @@ I WANT   : To be able to place oval shapes on the canvas by dragging to
            change its size.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.020 : tianji61 : Completed
+TYPE     : USER STORY US2.020 : tianji61 : Complete
 NAME     : GUI redesign
 PRIORITY : 2
 ESTIMATE : 30 minutes : ACTUAL : 30 minutes
@@ -227,7 +227,7 @@ I WANT   : More functions on interface, allow me to change color,
 SO THAT  : Make selection to those functions in corresponding areas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.021 : tianji61 : Completed
+TYPE     : USER STORY US2.021 : tianji61 : Complete
 NAME     : GUI redesign
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL : 2 hours
@@ -236,7 +236,7 @@ I WANT   : Refer to US2.020.
 SO THAT  : Justify properties of the shapes I am going to draw.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.005 : tianji61 : Completed
+TYPE     : USER STORY US2.005 : tianji61 : Complete
 NAME     : Color selector
 PRIORITY : 3
 ESTIMATE : 1 hour    ACTUAL : 1 hour
@@ -259,7 +259,7 @@ I WANT   : To be able to select the current drawing color, to be applied
 SO THAT  : I can draw shapes in different color.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG2.003 : huaethan | tianji61 : Completed
+TYPE     : BUG BUG2.003 : huaethan | tianji61 : Complete
 NAME     : Architecture behind choosing selection mode is poor
 PRIORITY : 3
 ESTIMATE : 3 hours    ACTUAL : 4 hours
@@ -270,7 +270,7 @@ ISSUE    : Code is not modular and is difficult to expand. Need a better
            'if' blocks in the PaintPanel mouse event code.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US2.024 : mengale1 : Completed
+TYPE     : USER STORY US2.024 : mengale1 : Complete
 NAME     : Triangle
 PRIORITY : 1
 ESTIMATE : 2 hours : ACTUAL :
@@ -281,7 +281,7 @@ SO THAT  : I can draw triangle shapes of different colours and sizes on the
            canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.008 : huaethan : Completed
+TYPE     : USER STORY US3.008 : huaethan : Complete
 NAME     : Undo/Redo button
 PRIORITY : 3
 ESTIMATE : 2 hours : ACTUAL : 30 minutes
@@ -291,7 +291,7 @@ I WANT   : To be able to undo and redo shapes or squiggles that I have previousl
 	       and 'ctrl + y' (redo).
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.011 : tianji61 : Completed
+TYPE     : BUG BUG3.011 : tianji61 : Complete
 NAME     : Drawing shapes lags the canvas
 PRIORITY : 2
 ESTIMATE : 30 minutes    ACTUAL : 30 minutes
@@ -299,7 +299,7 @@ ISSUE    : When drawing squiggles or polylines, the canvas works fine, but
            when a shape is first drawn, the canvas stutters heavily.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.009 : tianji61 : Completed
+TYPE     : BUG BUG3.009 : tianji61 : Complete
 NAME     : Both icons and text for drawing mode selection
 PRIORITY : 2
 ESTIMATE : 10 minutes    ACTUAL : 10 minutes
@@ -308,7 +308,7 @@ ISSUE    : It would be nice to have both icons and text to describe the
            confusing to understand
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.026 : mengale1 : Completed
+TYPE     : USER STORY US3.026 : mengale1 : Complete
 NAME     : Stroke size configuration
 PRIORITY : 1
 ESTIMATE : 1 hour : ACTUAL : 1 hour
@@ -317,7 +317,7 @@ I WANT   : To be able to configure the size of squiggles and polylines
 SO THAT  : I can draw squiggles and polylines of varying thicknesses.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.015 : tianji61 : Completed
+TYPE     : BUG BUG3.015 : tianji61 : Complete
 NAME     : PropertyPanel repeatedly used
 PRIORITY : 1
 ESTIMATE : 2 hours    ACTUAL : 1 hour
@@ -325,7 +325,7 @@ ISSUE    : Sometimes same property assign to all shapes of the canvas on
            creating a new shape.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US3.009 : mengale1 : Completed
+TYPE     : USER STORY US3.009 : mengale1 : Complete
 NAME     : Eraser
 PRIORITY : 2
 ESTIMATE : 2 hours : ACTUAL : 1 hour
@@ -335,7 +335,7 @@ I WANT   : To be able to select an Eraser tool and use it to delete
 SO THAT  : I can erase my mistakes or draw transparent regions onto the canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG3.013 : mengale1 : Completed
+TYPE     : BUG BUG3.013 : mengale1 : Complete
 NAME     : Complete polyline
 PRIORITY : 2
 ESTIMATE : 30 mins    ACTUAL : 20 mins
@@ -344,7 +344,7 @@ ISSUE    : Switching to another shape and then drawing with the new shape
            complete the polyline upon switching to another shape tool.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.015 : mengale1 : Completed
+TYPE     : BUG BUG4.015 : mengale1 : Complete
 NAME     : Stroke size configuration issue
 PRIORITY : 2
 ESTIMATE : 30 mins    ACTUAL : 30 mins
@@ -352,7 +352,7 @@ ISSUE    : Drawing shapes while messing with the stroke size causes unexpected
            behaviour, such as existing eraser strokes becoming large and small.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.007 : tianji61 : Completed
+TYPE     : USER STORY US4.007 : tianji61 : Complete
 NAME     : Line thickness selector
 PRIORITY : 3
 ESTIMATE : 30 minutes    ACTUAL : 30 minutes
@@ -377,7 +377,7 @@ SO THAT  : I can adjust the thickness of a border and / or squiggle
            thickness with a single slider.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.016 : tianji61 : Completed
+TYPE     : BUG BUG4.016 : tianji61 : Complete
 NAME     : Duplicated control panel
 PRIORITY : 3
 ESTIMATE : 15 mins    ACTUAL : 15mins
@@ -385,7 +385,7 @@ ISSUE    : function of StepsPanel is duplicated with menu bar, one has to
            be removed
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.014 : tianji61 : Completed
+TYPE     : BUG BUG4.014 : tianji61 : Complete
 NAME     : Undo and Redo MenuBar Button
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL : 30 minutes
@@ -393,7 +393,7 @@ ISSUE    : The undo and redo buttons on the menubar are currently not
            functional.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.019 : tianji61 : Completed
+TYPE     : USER STORY US4.019 : tianji61 : Complete
 NAME     : Coordinate display
 PRIORITY : 3
 ESTIMATE : 15 minutes   ACTUAL : 15 minutes
@@ -403,7 +403,7 @@ I WANT   : It makes more sense if coordinate display in tool selection
 SO THAT  : I can see coordinates of cursor in tool selection panel.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.100 : tianji61 : Completed
+TYPE     : USER STORY US4.100 : tianji61 : Complete
 NAME     : MenuBar - New
 PRIORITY : 3
 ESTIMATE : 1 hour   ACTUAL :
@@ -412,7 +412,7 @@ I WANT   : Clear the whole canvas.
 SO THAT  : Draw on a new canvas
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.101 : tianji61 : Completed
+TYPE     : USER STORY US4.101 : tianji61 : Complete
 NAME     : MenuBar - Open
 PRIORITY : 3
 ESTIMATE : 15 minutes   ACTUAL :
@@ -421,7 +421,7 @@ I WANT   : Open a canvas I saved before.
 SO THAT  : Continue work on a file on a saved canvas.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.102 : tianji61 : Completed
+TYPE     : USER STORY US4.102 : tianji61 : Complete
 NAME     : MenuBar - Save
 PRIORITY : 3
 ESTIMATE : 15 minutes   ACTUAL :
@@ -431,7 +431,7 @@ SO THAT  : Save a canvas, so that I can resume work on the canvas saved
            later.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : USER STORY US4.006 : mengale1 : Completed
+TYPE     : USER STORY US4.006 : mengale1 : Complete
 NAME     : Fill style selector
 PRIORITY : 3
 ESTIMATE : 1 hour : ACTUAL : 1 hour
@@ -568,7 +568,7 @@ SO THAT  : I can be as precise or imprecise as needed when creating erase
            strokes.
 --------------------------------------------------------------------------
 --------------------------------------------------------------------------
-TYPE     : BUG BUG4.220 : mengale1 : Complete
+TYPE     : BUG BUG4.220 : mengale1 : Completed
 NAME     : PaintController Does not Follow Open/Closed Principle
 PRIORITY : 3
 ESTIMATE : 2 hours ACTUAL : 3 hours
