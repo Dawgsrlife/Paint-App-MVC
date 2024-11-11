@@ -16,7 +16,7 @@ import javafx.scene.layout.Pane;
  * </p>
  * @author chen2046
  */
-public class TextModeStrategy extends DrawModeStrategy implements ModeStrategy {
+public class TextModeStrategy extends DrawModeStrategy {
     private final Pane canvasPane;
     Text text;
 
@@ -46,9 +46,7 @@ public class TextModeStrategy extends DrawModeStrategy implements ModeStrategy {
     @Override
     public void onMousePressed(Point point, boolean isPrimaryButton, boolean isSecondaryButton) {
         super.onMousePressed(point, isPrimaryButton, isSecondaryButton);
-
         text = new Text(point, point, properties.getPaintProperties());
-        System.out.println("Started text box at: " + point);
     }
 
     /**
@@ -61,7 +59,6 @@ public class TextModeStrategy extends DrawModeStrategy implements ModeStrategy {
     public void onMouseReleased(Point point) {
         super.onMouseReleased(point);
         activateTextField();
-        System.out.println("Completed text bo x creation at: " + point);
     }
 
     /**
@@ -74,8 +71,6 @@ public class TextModeStrategy extends DrawModeStrategy implements ModeStrategy {
         TextField textField = text.getTextField();
         text.setupTextField(text.getStart());
         canvasPane.getChildren().add(textField);
-        System.out.println("TextField added at: " + textField.getLayoutX() + ", " + textField.getLayoutY());
-
         textField.setOnAction(e -> saveTextAndRemoveTextField());
 
         textField.focusedProperty().addListener((obs, wasFocused, isNowFocused) -> {
@@ -100,8 +95,10 @@ public class TextModeStrategy extends DrawModeStrategy implements ModeStrategy {
         if (textField != null) {
             text.setTextContent(textField.getText());
             canvasPane.getChildren().remove(textField);
+            textField = (TextField)canvasPane.getChildren().getLast();
+            text.setTextContent(textField.getText());
+            canvasPane.getChildren().removeLast();
             model.addShape(text); // Save text shape in model
-            System.out.println("Text saved");
         }
         text.setTextField(null);
     }
