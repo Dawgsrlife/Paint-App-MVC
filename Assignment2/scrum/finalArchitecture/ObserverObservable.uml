@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="213.16666666666663" y="-14.0">java.util.Observable</node>
+    <node x="-21.0" y="166.0">ca.utoronto.utm.assignment2.paint.PaintView</node>
+    <node x="-17.0" y="-14.0">java.util.Observer</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.Observable" target="java.util.Observer" relationship="TO_MANY">
+      <point x="0.0" y="-14.0" />
+      <point x="282.66666666666663" y="80.0" />
+      <point x="74.5" y="80.0" />
+      <point x="30.5" y="14.0" />
+    </edge>
+    <edge source="ca.utoronto.utm.assignment2.paint.PaintView" target="java.util.Observer" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="42.0" y="80.0" />
+      <point x="13.5" y="80.0" />
+      <point x="-30.5" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.5" showDependencies="true" x="67.5" y="100.0" />
+  <SelectedNodes>
+    <node>ca.utoronto.utm.assignment2.paint.PaintView</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

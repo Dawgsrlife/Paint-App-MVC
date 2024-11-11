@@ -52,7 +52,7 @@
 # Design Patterns Used (collections of classes into DP)
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-Name: (name) (so you can refer to it below)
+Name: PaintView/PaintModel
 Pattern Name: Observer/Observable
 Reference:
 	https://www.oodesign.com/images/design_patterns/behavioral/observer_implementation_-_uml_class_diagram.gif
@@ -60,13 +60,14 @@ Reference:
 Purpose:
 	(why is this pattern implemented? think SOLID as possible reasons and explain in terms of the application)
 	This pattern is used in order to implement the MVC pattern, which follows the principle of dependency
-	inversion. By doing this, the PaintPanel and PaintModel classes are decoupled and allows for more
+	inversion. By doing this, the PaintView and PaintModel classes are decoupled and allows for more
 	observers to monitor the PaintModel, which is open for extension but closed for modification.
 
 UML:
 	(include a UML or refer to one included in the finalArchitecture directory)
 	(make it easy on us, and organize the diagram so that it looks like the
 	reference pattern).
+	Refer to ObserverObservable.uml
 
 Classes:
 	(list classes involved and their roles based on Reference above)
@@ -82,6 +83,73 @@ Usage:
 	in order to implement.
 
 --------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Name: ModeStrategy
+Pattern Name: Strategy
+Reference:
+	https://www.oodesign.com/images/design_patterns/behavioral/strategy_implementation_-_uml_class_diagram.gif
+
+Purpose:
+	(why is this pattern implemented? think SOLID as possible reasons and explain in terms of the application)
+	The strategy pattern is implemented in order for the application to remain open to extension but closed
+	to modification. In the case of this application, implementing the strategy design pattern is logical because
+	the behavior of each drawing mode will differ from one another, causing the need for different method calls
+	for different mouse events. Using the ModeStrategy interface, new drawing modes or ways to interact with the
+	canvas can be added without changing any code within the PaintModel.
+
+UML:
+	(include a UML or refer to one included in the finalArchitecture directory)
+	(make it easy on us, and organize the diagram so that it looks like the
+	reference pattern).
+	Refer to Strategy.uml
+
+Classes:
+	(list classes involved and their roles based on Reference above)
+	PaintModel: Context
+	ModeStrategy: IStrategy
+	DrawModeStrategy: ConcreteStrategyA
+	SelectModeStrategy: ConcreteStrategyB
+    ObjectEraserStrategy: ConcreteStrategyC
+    PolylineModeStrategy: ConcreteStrategyD
+    TextModeStrategy: ConcreteStrategyE
+
+Usage:
+	(Briefly describe why a developer would be playing with this part of
+	the code and how they would use it to achieve that purpose)
+	This design pattern may be interacted with when attempting to implement a
+	new mode to the canvas. Developers should check whether their new feature
+	is compatible with any of the existing ModeStrategy implementations. If not,
+	they should create a new class that extends ModeStrategy and implement their
+	desired behaviour for the new mode.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Name: (name) (so you can refer to it below)
+Pattern Name: Factory
+Reference: (link to a specific version of a DP in https://www.oodesign.com/), for example...
+	https://www.oodesign.com/images/stories/factory%20implementation.gif
+
+Purpose:
+	(why is this pattern implemented? think SOLID as possible reasons and explain in terms of the application)
+
+UML:
+	(include a UML or refer to one included in the finalArchitecture directory)
+	(make it easy on us, and organize the diagram so that it looks like the
+	reference pattern).
+
+Classes:
+	(list classes involved and their roles based on Reference above)
+	class1: role1
+	class2: role1
+	class3: role1
+	class4: role1
+
+Usage:
+	(Briefly describe why a developer would be playing with this part of
+	the code and how they would use it to achieve that purpose)
+
+--------------------------------------------------------------------------------
+
 
 --------------------------------------------------------------------------------
 # High Level Architecture Discussion
