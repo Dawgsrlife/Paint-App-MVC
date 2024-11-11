@@ -34,8 +34,7 @@ public class CommandCopy extends MenuItem implements Command {
                     model.getCurrentShape().getType(),
                     start, end,
                     newProperties, points);
-            model.setCurrentShape(newCopy);
-            model.addShape(newCopy);
+            model.setClipBoard(newCopy);
         }
     }
 }

@@ -13,6 +13,7 @@ public class CommandCut extends MenuItem implements Command {
     @Override
     public void execute(PaintModel model, Scene scene, PaintController controller) {
         if (model.getCurrentShape() != null) {
+            model.setClipBoard(model.getCurrentShape());
             model.removeShape(model.getCurrentShape());
         }
     }
