@@ -26,6 +26,11 @@ public class DrawModeStrategy implements ModeStrategy {
         // Thus, exit if the primary button isn't used
         if (!isPrimaryButton) return;
 
+        // Relies on short-circuit evaluation:
+        if (model.getTempShape() != null && !model.getTempShape().isFinalized()) finalizeShape();
+        // E.g. Polyline isn't finalized until the user right-clicks ^
+        // so simply finalize it when they attempt to draw with another shape.
+
         model.setCurrentShape(PaintStrategy.getPaintStrategy(mode, point, point, properties.getPaintProperties(), null));
 
         // TODO: remove the print statement for the final product
@@ -58,8 +63,6 @@ public class DrawModeStrategy implements ModeStrategy {
     public void finalizeShape() {
         Shape shape = model.getCurrentShape();
         model.addShape(shape);
-        // TODO: delete the following line later for the final product:
-        if (shape != null) System.out.println("    ^ Added");
 
         // Clean the cache on MOUSE_RELEASED
         if (shape != null) model.setCurrentShape(null);
