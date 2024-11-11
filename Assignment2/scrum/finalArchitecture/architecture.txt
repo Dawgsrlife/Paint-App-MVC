@@ -124,13 +124,16 @@ Usage:
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-Name: (name) (so you can refer to it below)
+Name: ModeStrategyFactory
 Pattern Name: Factory
 Reference: (link to a specific version of a DP in https://www.oodesign.com/), for example...
 	https://www.oodesign.com/images/stories/factory%20implementation.gif
 
 Purpose:
 	(why is this pattern implemented? think SOLID as possible reasons and explain in terms of the application)
+	The factory design pattern is implemented to maintain the open/closed principle. In the case of the application,
+	the PaintController does not know which ModeStrategy to use. The use of the ModeStrategyFactory allows for
+	new ModeStrategy classes to be added as features without changing the code inside of PaintController.
 
 UML:
 	(include a UML or refer to one included in the finalArchitecture directory)
