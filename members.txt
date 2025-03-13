@@ -1,4 +1,4 @@
-member1: tianji61 Jiaye Tian aki.tian@mail.utoronto.ca
-member2: huaethan Ethan Hua ethan.hua@mail.utoronto.ca
-member3: mengale1 Alexander Meng alex.meng@mail.utoronto.ca
-member4: chen2046 Jiaqi Chen jackiejiaqi.chen@mail.utoronto.ca
+member1: tianji61 Jiaye Tian
+member2: huaethan Ethan Hua
+member3: mengale1 Alexander Meng
+member4: chen2046 Jiaqi Chen
